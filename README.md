@@ -434,7 +434,7 @@ Data structure is a specialised format for organizing, processing retrieving and
     
     Continouse delivery (CD) picks up where continous intergration ends, and automates application delivery to selected environments, including production, development, and testing environments. Continuous delivery is an automated way to push code changes to these environments which allows the developer could continuous update small changes when CI is valid.
     
-- [ ] Scalability, Horizontal & Vertical Scaling
+- [x] Scalability, Horizontal & Vertical Scaling
 
     Scalability is the property of a system to handle a growing amount of work by adding resources to the system (Wikipedia). It is a measure of a system's ability to increase or decrease in performance and cost in resopnse to changes in application and system processing demands.
     
