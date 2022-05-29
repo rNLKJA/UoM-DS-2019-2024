@@ -142,7 +142,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Optimality Conditions]()
 - [ ] [Steepest Descent Method]()
 - [ ] [Rate of convergence]()
-- [ ] [Newton's method - Quasi Netwon method]
+- [ ] [Newton's method - Quasi Netwon method]()
 - [ ] [Broyden–Fletcher–Goldfarb–Shanno algorithm (BFGS)]()
 - [ ] [Lagrange multipliers and sensitivity analysis]()
 - [ ] [KKT conditions]()
@@ -283,6 +283,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 Data structure is a specialised format for organizing, processing retrieving and storing data. It makes human and machine have a better understanding of data storage. Specifically, it could be use for storing data, managing resources and services, data exchange, ordering and sorting, indexing, searching, scalability in a more efficient way (David & Sarah, 2021).
 
 - [x] [Linked List](./notebooks/DS/LinkedList.ipynb)
+
     Linked list is a linear data structure that includes a series of connected nodes. Linked list can be defined as the nodes that are randomly stored in the memory. A node in the linked list contains two parts, i.e., first is the data part and second is the address part. The last node of the list contains a pointer to the null. After array, linked list is the second most used data structure. In a linked list, every link contains a connection to another link (Java T Point).
     
     Linked lists are among the simplest and most common data structures. They can be used to implement several other common abstract data types, including lists, stacks, queues, associative arrays, and S-expressions, though it is not uncommon to implement those data structures directly without using a linked list as the basis (Wikipedia).
