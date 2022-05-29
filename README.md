@@ -261,7 +261,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Informed Search Algorithm]()
 - [ ] [Hill Climbing Algorithm]()
 - [ ] [A* Search]()
-- [ ] [Means-Ends Analysis]
+- [ ] [Means-Ends Analysis]()
 
 #### [Adversarial Search]()
 - [ ] [Minimax Search]()
