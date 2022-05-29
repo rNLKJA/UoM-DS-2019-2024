@@ -357,17 +357,44 @@ Data structure is a specialised format for organizing, processing retrieving and
 ### Others
 #### **Concepts**
 - [ ] [k-anonymity]()
-- [ ] [FAIR principle]()
+- [x] [FAIR principle](https://www.go-fair.org/fair-principles/)
+    
+    FAIR Guiding Principles of scientific data management and stewardship provide guidelines to improve the **Findability, Accessibility, Interoperability, Reuse** of digital assest. The principle emphasis machine actionabiilty (i.e. the capacity of computational systems to find, access, interoperate, and reuse data with none or minimal human intervention) because humans increasingly rely on computational support to dael with data as a result of the increase in volumne, complexity, and creation speed of data (GO FAIR).
+    
+    According to Go-Fair, it define the following **FAIRification process**
+    Findable:
+        - (Meta)data are assigned a globally unique and persistent identifier
+        - Data are described with rich metadata
+        - Metadata clearly and explicityly include the identifier of the data they describe
+        - (Meta)data are registered or indexed in a searchable resource
+    Accessible:
+        - (Meta)data are retrievable by their identifier using a standardised communications protocol
+            - The protocol is open, free, and universally implementable
+            - The protocol allows for an authentication and authorisation procedure, where necessary
+        - Metadata are accessible, even when the data are no longer available
+    Interoperable:
+        - (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
+        - (Meta)data use vocabularies that follow FAIR principles
+        - (Meta)data include qualified references to other (meta)data
+    Reusable:
+        - (Meta)data are richly described with a plurality of accurate and relevant attributes
+            - (Meta)data are released with a clear and accessible data usage license
+            - (Meta)data are associated with detailed provenance
+            - (Meta)data meet domain-relevant community standards
+    
+    In short, follow the FAIR principle, a dataset will contain a meaningful metadata that describes where to find the data, how to access the data, how to use the data and finally help user optimise the reuse of data.
 - [ ] [5W1H]()
 - [ ] [Word2vec]()
 - [ ] [Bag of words (BoW)]()
 - [ ] [CI/CD]()
 - [ ] [Scalability]()
+
 #### **Programming skills**
 - [ ] [Regex]()
 - [ ] [Linux System Commands]()
 - [ ] [Python Decoration Function]()
 - [ ] [Basic Web Scrapping]()
+
 #### **Data Science Lifecycle**
 - [ ] [SMART Goal]()
 - [ ] [OSEMN Framework]()
@@ -375,6 +402,7 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [ ] [Cross-Industry Standard Process for Data Mining Framework (CRISP-DM)]()
 - [ ] [Agile Management]()
 - [ ] [Waterfall Management]()
+
 #### **Database skills**
 - [ ] [MySQL]()
 - [ ] [SQLITE]()
@@ -394,3 +422,6 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
 - Java T Point. (). *Linked list*. https://www.javatpoint.com/ds-linked-list.
+
+**Others**
+- GO FAIR. (). *FAIR Principles**. https://www.go-fair.org/fair-principles/.
