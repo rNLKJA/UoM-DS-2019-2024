@@ -202,16 +202,16 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Discretisation]()
 
 #### Supervised Learning Methods
-- [ ] [K Nearest Neighbors](./notebooks/sl/KNN.ipynb)
-- [ ] [Regression](./notebooks/sl/Regression.ipynb)
-    - [ ] [Linear Regression](./notebooks/sl/LinearRegression.ipynb)
+- [ ] [K Nearest Neighbors](./notebooks/SL/KNN.ipynb)
+- [ ] [Regression](./notebooks/SL/Regression.ipynb)
+    - [ ] [Linear Regression](./notebooks/SL/LinearRegression.ipynb)
     - [ ] [Simple Linear Regression]()
     - [ ] [Multiple Linear Regression]()  
-    - [ ] [Logistic Regression](./notebooks/sl/LogisticRegression.ipynb)
+    - [ ] [Logistic Regression](./notebooks/SL/LogisticRegression.ipynb)
     - [ ] [Backward Elimination]()
     - [ ] [Polynomial Regression]()
-- [ ] [Perceptron](./notebooks/sl/Perceptron.ipynb)
-- [ ] [Navie Bayes](./notebooks/sl/NaiveBayes.ipynb)
+- [ ] [Perceptron](./notebooks/SL/Perceptron.ipynb)
+- [ ] [Navie Bayes](./notebooks/SL/NaiveBayes.ipynb)
 - [ ] [Support Vector Machine (SVM)]()
 - [ ] [Decision Tree]()
 - [ ] [Random Forest]()
@@ -280,7 +280,51 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 ### [Cluster and Cloud Computing]()
 
 ### Data Structure
-- [ ] [Linked List]()
+Data structure is a specialised format for organizing, processing retrieving and storing data. It makes human and machine have a better understanding of data storage. Specifically, it could be use for storing data, managing resources and services, data exchange, ordering and sorting, indexing, searching, scalability in a more efficient way (David & Sarah, 2021).
+
+- [ ] [Linked List](./notebooks/DS/LinkedList.ipynb)
+    Linked list is a linear data structure that includes a series of connected nodes. Linked list can be defined as the nodes that are randomly stored in the memory. A node in the linked list contains two parts, i.e., first is the data part and second is the address part. The last node of the list contains a pointer to the null. After array, linked list is the second most used data structure. In a linked list, every link contains a connection to another link (Java T Point).
+    
+    Linked lists are among the simplest and most common data structures. They can be used to implement several other common abstract data types, including lists, stacks, queues, associative arrays, and S-expressions, though it is not uncommon to implement those data structures directly without using a linked list as the basis (Wikipedia).
+    
+    Linked lists overcome the limitations of array, a linked list doesn't require a fix size, this is because the memory space a linked list is dynamic allocated. Unlike an array, linked list doesn't need extra time if we want to increase the list size. Also linked list could store various type of data instead of fixed one.
+    
+    **Linked list could classified into the following types:**
+    - Singly-linked list
+        A linked list only link in one direction, a new node also insert at the end of the linked list.
+    - Doubly-linked list
+        A node in linked list have two direction pointer, the headers point to the previous node and the next node. 
+    - Circular singly linked list
+        The last node of the list always point to the first node of the linked list.
+    - Circular doubly linked list
+        The last node of the list point to the first node, and each node also have a pointer link to the previous node.
+    
+    | **Advantages**                  | **Disadvantages**                                                                         |
+    | :-----------------------------: | :---------------------------------------------------------------------------------------: |
+    | Dynamic size data structure     | More memory usage compare to an array                                                     |
+    | Easy insertion and deletion     | Traversal is not easy because it cannot be randomly accessed                              |
+    | Memory consumption is efficient | Reverse traversal is hard, a double-linked list need extra space to store another pointer |
+    | Easy implement                  |                                                                                           |
+
+   
+    **Time Complexity**
+
+    | Operation | Average case time complexity | Worst case time complexity | Description                          |
+    | :-------- | :--------------------------: | :------------------------: | :----------------------------------- |
+    | Insertion | O(1)                         | O(1)                       | Insert to the end of the linked list |
+    | Deletion  | O(1)                         | O(1)                       | Delect only need one operation       |
+    | Search    | O(n)                         | O(n)                       | Linear search time because it requires search from the start to the end |
+   
+    n is the number of nodes in the given tree.
+   
+    **Space Complexity**
+    
+    | Operation | Space Complexity | 
+    | :-------- | :--------------: | 
+    | Insertion | O(n)             | 
+    | Deletion  | O(n)             |
+    | Search    | O(n)             |
+  
 - [ ] [Stack]()
 - [ ] [Queue]()
 - [ ] [Tree]()
@@ -317,6 +361,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Word2vec]()
 - [ ] [Bag of words (BoW)]()
 - [ ] [CI/CD]()
+- [ ] [Scalability]()
 #### **Programming skills**
 - [ ] [Regex]()
 - [ ] [Linux System Commands]()
@@ -341,5 +386,10 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Repositories**
 - [MLfromscratch](https://github.com/python-engineer/MLfromscratch/blob/master/mlfromscratch/kmeans.py)
 
-**Articles**
+
+**Machine Learning Articles**
 - [Machine Learning Basics with the K-Nearest Neighbors Algorithm](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
+
+**Data Structure**
+- David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
+- Java T Point. (). *Linked list*. https://www.javatpoint.com/ds-linked-list.

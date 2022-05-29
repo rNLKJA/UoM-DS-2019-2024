@@ -4,6 +4,7 @@
 | :---- | :----: |
 | AI | Artificial Intelligence |
 | DR | Dimensional Reduction |
+| DS | Data Structure |
 | MISC | Some mathematical concepts |
 | NN | Neural Network |
 | OR | Operation Research |
