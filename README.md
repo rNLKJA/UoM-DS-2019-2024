@@ -310,10 +310,10 @@ Data structure is a specialised format for organizing, processing retrieving and
    
     **Time Complexity**
 
-    | Operation | Average case time complexity | Worst case time complexity | Description                          |
-    | :-------- | :--------------------------: | :------------------------: | :----------------------------------- |
-    | Insertion | O(1)                         | O(1)                       | Insert to the end of the linked list |
-    | Deletion  | O(1)                         | O(1)                       | Delect only need one operation       |
+    | Operation | Average case time complexity | Worst case time complexity | Description                                                             |
+    | :-------- | :--------------------------: | :------------------------: | :---------------------------------------------------------------------- |
+    | Insertion | O(1)                         | O(1)                       | Insert to the end of the linked list                                    |
+    | Deletion  | O(1)                         | O(1)                       | Delect only need one operation                                          |
     | Search    | O(n)                         | O(n)                       | Linear search time because it requires search from the start to the end |
    
     n is the number of nodes in the given tree.
@@ -362,29 +362,25 @@ Data structure is a specialised format for organizing, processing retrieving and
     FAIR Guiding Principles of scientific data management and stewardship provide guidelines to improve the **Findability, Accessibility, Interoperability, Reuse** of digital assest. The principle emphasis machine actionabiilty (i.e. the capacity of computational systems to find, access, interoperate, and reuse data with none or minimal human intervention) because humans increasingly rely on computational support to dael with data as a result of the increase in volumne, complexity, and creation speed of data (GO FAIR).
     
     According to Go-Fair, it define the following **FAIRification process**
-    
-    **Findable:**
-    - (Meta)data are assigned a globally unique and persistent identifier
-    - Data are described with rich metadata
-    - Metadata clearly and explicityly include the identifier of the data they describe
-    - (Meta)data are registered or indexed in a searchable resource
-    
-    **Accessible:**
-    - (Meta)data are retrievable by their identifier using a standardised communications protocol
-        - The protocol is open, free, and universally implementable
-        - The protocol allows for an authentication and authorisation procedure, where necessary
-    - Metadata are accessible, even when the data are no longer available
-    
-    **Interoperable:**
-    - (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
-    - (Meta)data use vocabularies that follow FAIR principles
-    - (Meta)data include qualified references to other (meta)data
-    
-    **Reusable:**
-    - (Meta)data are richly described with a plurality of accurate and relevant attributes
-        - (Meta)data are released with a clear and accessible data usage license
-        - (Meta)data are associated with detailed provenance
-        - (Meta)data meet domain-relevant community standards
+    Findable:
+        - (Meta)data are assigned a globally unique and persistent identifier
+        - Data are described with rich metadata
+        - Metadata clearly and explicityly include the identifier of the data they describe
+        - (Meta)data are registered or indexed in a searchable resource
+    Accessible:
+        - (Meta)data are retrievable by their identifier using a standardised communications protocol
+            - The protocol is open, free, and universally implementable
+            - The protocol allows for an authentication and authorisation procedure, where necessary
+        - Metadata are accessible, even when the data are no longer available
+    Interoperable:
+        - (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
+        - (Meta)data use vocabularies that follow FAIR principles
+        - (Meta)data include qualified references to other (meta)data
+    Reusable:
+        - (Meta)data are richly described with a plurality of accurate and relevant attributes
+            - (Meta)data are released with a clear and accessible data usage license
+            - (Meta)data are associated with detailed provenance
+            - (Meta)data meet domain-relevant community standards
     
     In short, follow the FAIR principle, a dataset will contain a meaningful metadata that describes where to find the data, how to access the data, how to use the data and finally help user optimise the reuse of data.
 - [ ] [5W1H]()
