@@ -1,6 +1,6 @@
-# Machine Learning From Scratch
+# Data Science Undergrad to Master
 
-This repository store that everything I learned from [UoM](https://www.unimelb.edu.au/) and other online sources. For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
+This repository store that everything I learned from [UoM](https://www.unimelb.edu.au/) and other online sources from 2019 to 2024. For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
 If you notice something not so clear or errors or contents that confusing to other audiences, just start a issue and let's see what we can improve on it.
 Also, if there is a better way for categorisation, don't be hesitate starting a new issue! Let's make others life more easier!
 
@@ -32,9 +32,10 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
     - [Frontend Development](#frontend-development)
     - [Backend Development](#backend-development)
     - [Data Structure](#data-structure)
+    - [Cluster and Cloud Computing](#cluster-and-cloud-computing)
     - [Database Management System](#database-management-system)
-    - [Online Data Sources](#online-data-sources)
     - [Block Chain](#block-chain)
+    - [Online Data Sources](#online-data-sources)
     - [Others](#others)
         - [Concepts](#concepts)
         - [Programming skills](#programming-skills)
@@ -154,7 +155,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 
 ### Machine Learning
 #### Dimensionality Reduction Methods
-- [ ] [Principal Component Analysis (PCA)](./notebooks/PCA.ipynb)
+- [ ] [Principal Component Analysis (PCA)](./dr/notebooks/PCA.ipynb)
 - [ ] [t-distributed stochastic neighbor embedding (t-SNE)]()
 - [ ] [Kernel PCA]()
 - [ ] [Graph-based kernel PCA]()
@@ -201,16 +202,16 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Discretisation]()
 
 #### Supervised Learning Methods
-- [ ] [K Nearest Neighbors](./notebooks/KNN.ipynb)
-- [ ] [Regression](./notebooks/Regression.ipynb)
-    - [ ] [Linear Regression](./notebooks/LinearRegression.ipynb)
+- [ ] [K Nearest Neighbors](./notebooks/sl/KNN.ipynb)
+- [ ] [Regression](./notebooks/sl/Regression.ipynb)
+    - [ ] [Linear Regression](./notebooks/sl/LinearRegression.ipynb)
     - [ ] [Simple Linear Regression]()
     - [ ] [Multiple Linear Regression]()  
-    - [ ] [Logistic Regression](./notebooks/LogisticRegression.ipynb)
+    - [ ] [Logistic Regression](./notebooks/sl/LogisticRegression.ipynb)
     - [ ] [Backward Elimination]()
     - [ ] [Polynomial Regression]()
-- [ ] [Perceptron](./notebooks/Perceptron.ipynb)
-- [ ] [Navie Bayes](./notebooks/NaiveBayes.ipynb)
+- [ ] [Perceptron](./notebooks/sl/Perceptron.ipynb)
+- [ ] [Navie Bayes](./notebooks/sl/NaiveBayes.ipynb)
 - [ ] [Support Vector Machine (SVM)]()
 - [ ] [Decision Tree]()
 - [ ] [Random Forest]()
@@ -276,6 +277,8 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 
 ### [Backend Development]()
 
+### [Cluster and Cloud Computing]()
+
 ### Data Structure
 - [ ] [Linked List]()
 - [ ] [Stack]()
@@ -294,6 +297,8 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Hasing]()
 - [ ] [Raid]()
 
+### [Block Chain]()
+
 ### Online Data Sources
 - [Data.gov](https://catalog.data.gov/dataset): One of the most comprehensive data souces in the U.S. It could be helpful for web application design or design data visualisation.
 - [U.S. Census Bureau](https://www.census.gov/): Demographic information from federal, state, and local governments, and commercial entities in the U.S.
@@ -302,8 +307,6 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [Dataset Search](https://datasetsearch.research.google.com/): The Dataset search is a search engine designed specifically for data sets.
 - [国家统计局](https://data.stats.gov.cn/): National Bureau of Statistics of China contains demographic information of provience, city, etc.
 - [Australian Bureau of Statistics](https://www.abs.gov.au/census): Australian Census Data.
-
-### [Block Chain]()
 
 ### Others
 #### **Concepts**
