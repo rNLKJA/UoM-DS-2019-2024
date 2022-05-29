@@ -133,7 +133,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Experimental Design]()
   
 #### **Techniques of Operational Research**
-- [ ] [Simplex Method]
+- [ ] [Simplex Method]()
 - [ ] [Golden section search]()
 - [ ] [Fibonacci search]()
 - [ ] [Newton's method]()
@@ -253,7 +253,7 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Types of Agent]()
 - [ ] [Intelligent Agent]()
 - [ ] [Agent Environment]()
-- [ ] [Turing Test in AI]
+- [ ] [Turing Test in AI]()
 
 #### Problem-solving
 - [ ] [Uniform Search Algorithm]()
