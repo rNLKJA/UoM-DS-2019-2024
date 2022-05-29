@@ -1,8 +1,11 @@
 # Data Science Undergrad to Master
 
 This repository store that everything I learned from [UoM](https://www.unimelb.edu.au/) and other online sources from 2019 to 2024. For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
+
 If you notice something not so clear or errors or contents that confusing to other audiences, just start a issue and let's see what we can improve on it.
 Also, if there is a better way for categorisation, don't be hesitate starting a new issue! Let's make others life more easier!
+
+One thing I like to mention is although I will try to paraphrase every concept in my own words, sometimes I will directly copy past the concept from others work. You can always find the original page just follow the reference page. Maybe the original content could give you a better understanding.
 
 ## Notebooks
 ### Table of Contents
@@ -45,7 +48,28 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 
 ### Mathematical Concepts
 #### **Math Miscs**
-- [ ] [Minkowski distance]()
+- [x] Minkowski distance
+    
+    The Minkowski distance or Minkowski metric is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance. It is named after the German mathematician Hermann Minkowski.
+    
+    The Minkowski distance of order p (where p is an integer) between two points: X = (x_1, x_2, ..., x_n) and Y = (y_1, y_2, ..., y_n) in R^n is defined as:
+    
+    ```math
+    D(X, Y) = {\sum^n_{i=1} |x_i - y_i|^p} ^ \frac{1}{p}
+    ```
+    
+    In most of time, people using Minkowski distance with p = 1 and p = 2, which corresponding to manhatten distance and euclidean distance.
+    
+    ```
+    # when p = 1, Minkowski distance = Manhatten distance
+    D(X, Y) = \sum^n_{i=1} |x_i - y_i|
+    
+    # when p = 2 Minkowski distance = Manhatten distance
+    D(X, Y) = {\sum^n_{i=1} |x_i - y_i|^2} ^ \frac{1}{2} = \sqrt{\sum^n_{i=1} |x_i - y_i|^2}
+    ```
+    
+    Check python implementation [here](./src/distance.py).
+
 - [ ] [Standard Deviation and Variance]()
 - [ ] [Eigenvalue & Eigenvectors]()
 - [ ] [Variability of Sums (Covariance)]()
@@ -267,11 +291,13 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Minimax Search]()
 - [ ] [Monte Carlo Search Tree]()
 
-#### **Knowledge Represent**
+#### Knowledge Represent
 
-#### **Uncertain Knowledge R**
+#### Uncertain Knowledge R
 
-### [Natural Language Processing]()
+### Natural Language Processing
+- [ ] [Word2vec]()
+- [ ] [Bag of words (BoW)]()
 
 ### [Frontend Development]()
 
@@ -357,46 +383,149 @@ Data structure is a specialised format for organizing, processing retrieving and
 ### Others
 #### **Concepts**
 - [ ] [k-anonymity]()
+- [ ] [l-diversity]()
 - [x] [FAIR principle](https://www.go-fair.org/fair-principles/)
     
     FAIR Guiding Principles of scientific data management and stewardship provide guidelines to improve the **Findability, Accessibility, Interoperability, Reuse** of digital assest. The principle emphasis machine actionabiilty (i.e. the capacity of computational systems to find, access, interoperate, and reuse data with none or minimal human intervention) because humans increasingly rely on computational support to dael with data as a result of the increase in volumne, complexity, and creation speed of data (GO FAIR).
     
     According to Go-Fair, it define the following **FAIRification process**
     Findable:
-        - (Meta)data are assigned a globally unique and persistent identifier
-        - Data are described with rich metadata
-        - Metadata clearly and explicityly include the identifier of the data they describe
-        - (Meta)data are registered or indexed in a searchable resource
+    - (Meta)data are assigned a globally unique and persistent identifier
+    - Data are described with rich metadata
+    - Metadata clearly and explicityly include the identifier of the data they describe
+    - (Meta)data are registered or indexed in a searchable resource
+    
     Accessible:
-        - (Meta)data are retrievable by their identifier using a standardised communications protocol
-            - The protocol is open, free, and universally implementable
-            - The protocol allows for an authentication and authorisation procedure, where necessary
-        - Metadata are accessible, even when the data are no longer available
+    - (Meta)data are retrievable by their identifier using a standardised communications protocol
+        - The protocol is open, free, and universally implementable
+        - The protocol allows for an authentication and authorisation procedure, where necessary
+    - Metadata are accessible, even when the data are no longer available
+    
     Interoperable:
-        - (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
-        - (Meta)data use vocabularies that follow FAIR principles
-        - (Meta)data include qualified references to other (meta)data
+    - (Meta)data use a formal, accessible, shared, and broadly applicable language for knowledge representation
+    - (Meta)data use vocabularies that follow FAIR principles
+    - (Meta)data include qualified references to other (meta)data
+    
     Reusable:
-        - (Meta)data are richly described with a plurality of accurate and relevant attributes
-            - (Meta)data are released with a clear and accessible data usage license
-            - (Meta)data are associated with detailed provenance
-            - (Meta)data meet domain-relevant community standards
+    - (Meta)data are richly described with a plurality of accurate and relevant attributes
+        - (Meta)data are released with a clear and accessible data usage license
+        - (Meta)data are associated with detailed provenance
+        - (Meta)data meet domain-relevant community standards
     
     In short, follow the FAIR principle, a dataset will contain a meaningful metadata that describes where to find the data, how to access the data, how to use the data and finally help user optimise the reuse of data.
-- [ ] [5W1H]()
-- [ ] [Word2vec]()
-- [ ] [Bag of words (BoW)]()
-- [ ] [CI/CD]()
-- [ ] [Scalability]()
+- [x] 5W1H
+
+    5W1H stands for What? Who? Where? When? Why? How? This method consists of asking a systematic set of questions to collect all the data necessary to draw up a report of the existing situation with the aim to identifying the true nature of the problem and describing the context precisely (Humanperf Software, 2018).
+    
+    By asking the right questions, make the situation easy understand and problem-solving process rational and efficient (David, 2019).
+    - What: description of the problem;
+    - Who: the responsible parties;
+    - Where: the location of the problem;
+    - When: temporal characteristics of the problem (at what point in time, how often)
+    - How: the effects of the problem?
+    - Why: reasons, cause of the problems?
+
+    In the real world, a situation may not have so many questions could be asked. However, it's a good practice to keep your mind focus on the situation or problem itself.
+    
+- [x] CI/CD
+    > Isaac Sacolick: CI/CD is a best practice for devops and agile development. Here's how software development teams automate continuous integration and delivery all the way through the CI/CD pipeline.
+    
+    Continuous integration (CI) is a coding philosophy and set of practices that derive development teams to frequently implement small code changes and check them into a version control repository. So the team could continuous intergrate and validate changes. Continuous integrations establishes an automated way to build, package and test their applications. This encourage the programmer commit more frequently which leads to better collaboartion and code code quality.
+    
+    Continouse delivery (CD) picks up where continous intergration ends, and automates application delivery to selected environments, including production, development, and testing environments. Continuous delivery is an automated way to push code changes to these environments which allows the developer could continuous update small changes when CI is valid.
+    
+- [ ] Scalability, Horizontal & Vertical Scaling
+
+    Scalability is the property of a system to handle a growing amount of work by adding resources to the system (Wikipedia). It is a measure of a system's ability to increase or decrease in performance and cost in resopnse to changes in application and system processing demands.
+    
+    Scalability can be measured over multiple dimensions, such as:
+    - Administrative scalability: The ability for an increasing number of organizations or users to access a system.
+    - Functional scalability: The ability to enhance the system by adding new functionality without disrupting existing activities.
+    - Geographic scalability: The ability to maintain effectiveness during expansion from a local area to a larger region.
+    - Load scalability: The ability for a distributed system to expand and contract to accommodate heavier or lighter loads, including, the ease with which a system or component can be modified, added, or removed, to accommodate changing loads.
+    - Generation scalability: The ability of a system to scale by adopting new generations of components.
+    - Heterogeneous scalability is the ability to adopt components from different vendors.
+
+    Most of time, people may talk scale a system horizontally or vertially:
+    
+    - Horizontal Scaling
+        
+        Horizontal scaling refers to adding addtional nodes or machines to respond new demands (CloudZero, 2021). For example, if a web server has a increase demand on network traffic, by horizontal scaling, we add more server to increase the access nodes for future users.
+        
+        | Advantages                                    | Disadvantages                                     |
+        | --------------------------------------------- | ------------------------------------------------- |
+        | Scaling is easier from a hardware perspective | Increased complexity of maintenance and operation |
+        | Fewer periods of downtime                     | Increased inital costs                            |
+        | Increase resilience and fault tolerance       |                                                   |
+        | Increaseed performance                        |                                                   |
+        
+    - Vertical Scaling
+        
+        Vertical scaling refers to distribute more resources or add more power to the current machine (CloudZero, 2021). For example, by upgrading CPUs, increase RAM size to increase the server computing power.
+        
+        | Advantages                         | Disadvantages                   |
+        | ---------------------------------- | ------------------------------- |
+        | Cost-effective                     | Higher possibility for downtime | 
+        | Less complex process communication | Single point of failure         |
+        | Less complicated maintainance      | Upgrade limitation              |
+        | Less need for software changes     |                                 |
+    
+    Depends on the demands, you may choose horizontal or vertical scaling based on factors like: cost, future-proofing, topographic distribution, reliability, upgradeability and flexibility, or performance and complexity.
 
 #### **Programming skills**
 - [ ] [Regex]()
 - [ ] [Linux System Commands]()
 - [ ] [Python Decoration Function]()
 - [ ] [Basic Web Scrapping]()
+- [x] Classmethod vs. Staticmethod
+    - A class method takes cls as the first parameter while a static method needs no specific parameters.
+    - A class method can access or modify the class state while a static method can’t access or modify it.
+    - In general, static methods know nothing about the class state. They are utility-type methods that take some parameters and work upon those parameters. On the other hand class methods must have class as a parameter.
+    - We use @classmethod decorator in python to create a class method and we use @staticmethod decorator to create a static method in python.
+    
+    ```python
+    # example of use of classmehtod and staticmethod
+    class Distance:
+        # a static method calculate the minkowski distance based on given array X, Y
+        @staticmethod
+        def Minkowski(X, Y, p):
+            return np.power(np.sum(np.abs(X - Y)), (1 / p))
+
+        # a class method calculate the Manhatten distance based on Distance object method
+        @classmethod
+        def Manhatten(clf, X, Y):
+            return clf.Minkowski(X, Y, p=1)
+    ```
 
 #### **Data Science Lifecycle**
-- [ ] [SMART Goal]()
+- [x] SMART Goals
+    
+    SMART goals stands for Specific, Measurable, Achievable, Relevant, and Time-Bound (Kat, 2021).
+    
+    Specific: You need to have a specific goal for effectiveness, in general you could ask question like:
+    - What needs to be accomplished?
+    - Who's responsible for it?  
+    - What steps need to be taken to achieve it?
+    
+    > e.g. Grow the number of monthly users of Techfirm’s mobile app by optimizing our app-store listing and creating targeted social media campaigns.
+    
+    Measurable: Goals must be measurable, set milestones to check your working progress. Or setting a trackable benchmark.
+    
+    > Increase the number of monthly users of Techfirm’s mobile app by 1,000 by optimizing our app-store listing and creating targeted social media campaigns for four social media platforms: Facebook, Twitter, Instagram, and LinkedIn.
+    
+    Achievable: Goals must be realistic, realistic goals brings true outcomes!
+    
+    > Increase the number of monthly users of Techfirm’s mobile app by 1,000 by optimizing our app-store listing and creating targeted social media campaigns for three social media platforms: Facebook, Twitter, and Instagram.
+    
+    
+    Relevant: Current goals must align with the project targets, think about the big picture, ask question: Why are you setting the goal that you're setting?
+    
+    > Grow the number of monthly users of Techfirm’s mobile app by 1,000 by optimizing our app-store listing and creating targeted social media campaigns for three social media platforms: Facebook, Twitter, and Instagram. Because mobile users tend to use our product longer, growing our app usage will ultimately increase profitability.
+    
+    Time-Bounded: To properly measure success, you and your team need to be on the same page about when a goal has been reached. Find a precise time-bound could help you track with a designed time framework.
+    
+    > Grow the number of monthly users of Techfirm’s mobile app by 1,000 within Q1 of 2022. This will be accomplished by optimizing our app-store listing and creating targeted social media campaigns, which will begin running in February 2022, on three social media platforms: Facebook, Twitter, and Instagram. Since mobile is our primary point of conversion for paid-customer signups, growing our app usage will ultimately increase sales.
+    
 - [ ] [OSEMN Framework]()
 - [ ] [Team Data Science Process Framework (TDSP)]()
 - [ ] [Cross-Industry Standard Process for Data Mining Framework (CRISP-DM)]()
@@ -405,7 +534,7 @@ Data structure is a specialised format for organizing, processing retrieving and
 
 #### **Database skills**
 - [ ] [MySQL]()
-- [ ] [SQLITE]()
+- [ ] [Sqlite]()
 - [ ] [MongoDB]()
 
 ## Reference
@@ -415,13 +544,22 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Repositories**
 - [MLfromscratch](https://github.com/python-engineer/MLfromscratch/blob/master/mlfromscratch/kmeans.py)
 
+**Math Miscs**
+- Wikipedia. (14, Jan 2022). *Minkoski distance*. https://en.wikipedia.org/wiki/Minkowski_distance
 
 **Machine Learning Articles**
-- [Machine Learning Basics with the K-Nearest Neighbors Algorithm](https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
+- Onel, H. (11, Sep 2018). *Machine Learning Basics with the K-Nearest Neighbors Algorithm*. https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
-- Java T Point. (). *Linked list*. https://www.javatpoint.com/ds-linked-list.
+- Java T Point. (2022). *Linked list*. https://www.javatpoint.com/ds-linked-list.
 
 **Others**
-- GO FAIR. (). *FAIR Principles**. https://www.go-fair.org/fair-principles/.
+- GO FAIR. (2021). *FAIR Principles**. https://www.go-fair.org/fair-principles/.
+- Isaac, S. (15, Apr 2022). *What is CI/CD? Continuous integration and continuous delivery explained*. https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html.
+- Humanperf Software (3, May 2018). *NowIUnderstand Glossary: the 5W1H method*. https://www.humanperf.com/en/blog/nowiunderstand-glossary/articles/5W1H-method.
+- David, G. (16, May 2021). *The 5W1H Method: Project management defined and applied*. https://www.wimi-teamwork.com/blog/the-5w1h-method-project-management-defined-and-applied/.
+- Wikipedia. (7, May 2022). *Scalability*. https://en.wikipedia.org/wiki/Scalability.
+- CloudZero. (30, Jun 2021). *Horizontal Vs. Vertical Scaling: How Do They Compare?*. https://www.cloudzero.com/blog/horizontal-vs-vertical-scaling.
+- Kat, B. (26, Dec 2021). *How to write SMART goals*. https://www.atlassian.com/blog/productivity/how-to-write-smart-goals.
+- Geeks For Geeks. (24, Aug 2021). *Class method vs Static method in Python*. https://www.geeksforgeeks.org/class-method-vs-static-method-python/.
