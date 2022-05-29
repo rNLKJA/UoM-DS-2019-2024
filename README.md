@@ -285,7 +285,8 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 - [ ] [Queue]()
 - [ ] [Tree]()
 - [ ] [Graph]()
-- [ ] [Sorting ALgorithms]()
+- [ ] [Sorting Algorithms]()
+- [ ] [Searching Algorithms]()
 
 ### Database Management System
 - [ ] [Data Modeling]()
