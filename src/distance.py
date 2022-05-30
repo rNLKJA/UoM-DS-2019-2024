@@ -12,12 +12,12 @@ class Distance:
         if type(X) == list or type(Y) == list:
             X, Y = np.array(X), np.array(Y)
 
-        return np.power(np.sum(np.abs(X - Y)), (1 / p))
+        return np.power(np.sum(np.power(np.abs(X - Y), p)), (1 / p))
 
     @classmethod
-    def Manhatten(clf, X, Y):
+    def Manhattan(clf, X, Y):
         """
-        Calculate the Manhatten distance via calling Minkowski distance with p value = 1
+        Calculate the Manhattan distance via calling Minkowski distance with p value = 1
         It follow the function: $D(X, Y) = \sum^n_{i=1} |x_i - y_i|$
         """
         return clf.Minkowski(X, Y, p=1)
