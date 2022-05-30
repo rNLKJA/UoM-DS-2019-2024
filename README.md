@@ -542,19 +542,105 @@ Data structure is a specialised format for organizing, processing retrieving and
     
     **iNterpret**: Explain the model by checking the ability for unseen data, or using visualisation to cheek its performance.
     
-- [ ] [Team Data Science Process Framework (TDSP)]()
-- [ ] [Cross-Industry Standard Process for Data Mining Framework (CRISP-DM)]()
-- [ ] [Agile Management]()
-- [ ] [Waterfall Management]()
+- [x] Team Data Science Process Framework (TDSP)
+    
+    The Team Data Science Process (TDSP) is an agile, iterative data science methodology to deliver predictive analytics solutions and intelligent applications efficiently. TDSP helps improve team collaboration and learning by suggesting how team roles work best together. TDSP includes best practices and structures from Microsoft and other industry leaders to help toward successful implementation of data science initiatives. The goal is to help companies fully realize the benefits of their analytics program.
+    
+    Detailed description is available on [Microsoft Doc](https://docs.microsoft.com/en-us/azure/architecture/data-science-process/overview).
+    
+    The framework main focus on the lifecycle outlines the major stages that projects typically execute, often iteratively:
+    - Business understanding
+    - Data acquisition and understanding
+    - Modeling
+    - Deployment
+    
+    <img src="https://docs.microsoft.com/en-us/azure/architecture/data-science-process/media/overview/tdsp-lifecycle2.png" witdh=100%>
+    
+    It provides a standard workflow for working on a big data analysis project or construct a data oriented product. Microsoft also provides a [template repository](https://github.com/Azure/Azure-TDSP-ProjectTemplate) for project initiate.
+    
+- [x] Cross-Industry Standard Process for Data Mining Framework (CRISP-DM)
 
+    From [Wikipedia](https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining): Cross-industry standard process for data mining, known as CRISP-DM,[1] is an open standard process model that describes common approaches used by data mining experts. It is the most widely-used analytics model.[2]
 
+    In 2015, IBM released a new methodology called Analytics Solutions Unified Method for Data Mining/Predictive Analytics[3][4] (also known as ASUM-DM) which refines and extends CRISP-DM.
+    
+    It go through six main phases:
+    - Business understanding: understand business content and requirements
+    - Data understanding: understand the data based on meta data or provided data dictionary
+    - Data preparation: processing data in a nice and clean format
+    - Modeling: construct data product
+    - Evaluation: check data product performance
+    - Deployment: publish the product
+
+    The sequence of the phases is not strict and moving back and forth between different phases is usually required. The arrows in the process diagram indicate the most important and frequent dependencies between phases. The outer circle in the diagram symbolizes the cyclic nature of data mining itself. A data mining process continues after a solution has been deployed. The lessons learned during the process can trigger new, often more focused business questions, and subsequent data mining processes will benefit from the experiences of previous ones.
+    
+- [x] Agile Project Management ([Atlassian explanation](https://www.atlassian.com/agile))
+
+    Agile is an iterative approach to project management and software development that helps teams deliver value to their customers faster and with fewer headaches. Instead of betting everything on a "big bang" launch, an agile team delivers work in small, but consumable, increments. Requirements, plans, and results are evaluated continuously so teams have a natural mechanism for responding to change quickly.
+    
+    Agile project management is an iterative approach to managing software development projects that focuses on continuous releases and incorporating customer feedback with every iteration.
+
+    Software teams that embrace agile project management methodologies increase their development speed, expand collaboration, and foster the ability to better respond to market trends.
+
+    Usually, project team use scrum framework, scrum describes a set of meetings, tools, and roles that work in concert to help teams structure and manage their work.
+    
+    In an agile project management, the basic workflow is:
+    - TO DO: Work that has not been started
+    - IN PROGRESS: Work that is actively being looked at by the team
+    - CODE REVIEW: Work that is completed and awaiting review
+    - DONE: Work that is completely finished and meets the team's definition of done.
+    
+    Except these four statuses, it could also include state like BLOCK, ON HOLD to explicitly indicate a project working states. Also, these project statuses can also be shared with the rest of the organization. When building a workflow, think about what metrics are important to report on and what non-team members might be interested in learning. For example, a well designed workflow answers the following questions:
+    - What work has the team completed?
+    - Is the backlog of work increasing or keeping pace with the team?
+    - How many items are in each status?
+    - Are there any bottlenecks that are slowing the team down?
+    - How long does it take to complete an average task?
+    - How many work items didn't pass our quality standards the first time around?
+    
+    Optimizing the workflow leads to better productivity and keep the development team fully utilized.
+    
+    | Advantage of Agile                                  | Disadvantage of Agile                                                                                                         |
+    | --------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+    | Faster feedback cycles                              | Critical path and inter-project dependencies may not be clearly defined as in waterfall                                       |
+    | Identifies problems early                           | There is an organizational learning curve cost                                                                                |
+    | Higher potential for customer satisfaction          | True agile execution with a continuous deployment pipeline has many technical dependencies and engineering costs to establish |
+    | Better visibility / accountability                  |                                                                                                                               |
+    | Dedicated teams drive better productivity over time |                                                                                                                               |
+    | Flexible prioritization focused on value delivery   |                                                                                                                               |
+    
+- [x] Waterfall Project Management （[wrike explanation](https://www.wrike.com/project-management-guide/faq/what-is-waterfall-project-management/)）
+
+    Waterfall project management is the most straightforward way to manage a project.
+
+    Waterfall project management maps out a project into distinct, sequential phases, with each new phase beginning only when the previous one has been completed. The Waterfall system is the most traditional method for managing a project, with team members working linearly towards a set end goal. Each participant has a clearly defined role, and none of the phases or goals are expected to change.
+
+    Waterfall project management works best for projects with long, detailed plans that require a single timeline. Changes are often discouraged (and costly). In contrast, Agile project management involves shorter project cycles, constant testing and adaptation, and overlapping work by multiple teams or contributors.
+    
+    - Requirements: The manager analyzes and gathers all the requirements and documentation for the project.
+    - System design: The manager designs the project’s workflow model.
+    - Implementation: The system is put into practice, and your team begins the work.
+    - Testing: Each element is tested to ensure it works as expected and fulfills the requirements.
+    - Deployment (service) or delivery (product): The service or product is officially launched.
+    - Maintenance: In this final, ongoing stage, the team performs upkeep and maintenance on the resulting product or service.
+    
+    The waterfall project management approach entails a clearly defined sequence of execution with project phases that do not advance until a phase receives final approval. Once a phase is completed, it can be difficult and costly to revisit a previous stage. Agile teams may follow a similar sequence yet do so in smaller increments with regular feedback loops. 
+    
+    | Advantage of Waterfall                                                            | Disadvantage of Waterfall                                                                                                         |
+    | --------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- |
+    | Requires less coordination due to clearly defined phases sequential processes     | Harder to break up and share work because of stricter phase sequences teams are more specialized                                  |
+    | A clear project phase helps to clearly define dependencies of work                | Risk of time waste due to delays and setbacks during phase transitions                                                            |
+    | The cost of the project can be estimated after the requirements are defined       | Additional hiring requirements to fulfill specialized phase teams whereas agile encourages more cross-functional team composition |
+    | Better focus on documentation of designs and requirements                         | Extra communication overhead during handoff between phase transitions                                                             |
+    | The design phase is more methodical and structured before any software is written | Product ownership and engagement may not be as strong when compared to agile since the focus is brought to the current phase      |
 
 ## Reference
 
 All references' style follow the APA7 format based on [UoM APA7 Guide](https://library.unimelb.edu.au/recite/referencing-styles/apa7).
 
 **Repositories**
-- [MLfromscratch](https://github.com/python-engineer/MLfromscratch/blob/master/mlfromscratch/kmeans.py)
+- MLfromscratch, https://github.com/python-engineer/MLfromscratch/.
+- Azure-TDSP-ProjectTemplate, https://github.com/Azure/Azure-TDSP-ProjectTemplate.
 
 **Math Miscs**
 - Wikipedia. (14, Jan 2022). *Minkoski distance*. https://en.wikipedia.org/wiki/Minkowski_distance
@@ -577,3 +663,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Geeks For Geeks. (24, Aug 2021). *Class method vs Static method in Python*. https://www.geeksforgeeks.org/class-method-vs-static-method-python/.
 - Cher, H L. (3, Jan 2019). *5 Steps of a Data Science Project Lifecycle*. https://towardsdatascience.com/5-steps-of-a-data-science-project-lifecycle-26c50372b492.
 - Salesforce. (2021). *CRM 101: What is CRM*. https://www.salesforce.com/crm/what-is-crm/.
+- Wikipedia. (5, Apr 2022). *Cross-industry standard process for data mining*. https://en.wikipedia.org/wiki/Cross-industry_standard_process_for_data_mining.
+- Microsoft. (2022). *What is the Team Data Science Process?*. https://docs.microsoft.com/en-us/azure/architecture/data-science-process/overview.
+- Atlassian. (2022). *Agile Coach*. https://www.atlassian.com/agile.
+- Wrike. (2022). *What Is Waterfall Project Management?*. https://www.wrike.com/project-management-guide/faq/what-is-waterfall-project-management/.
