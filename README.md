@@ -2,8 +2,8 @@
 
 This repository store that everything I learned from [UoM](https://www.unimelb.edu.au/) and other online sources from 2019 to 2024. For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
 
-If you notice something not so clear or errors or contents that confusing to other audiences, just start a issue and let's see what we can improve on it.
-Also, if there is a better way for categorisation, don't be hesitate starting a new issue! Let's make others life more easier!
+If you notice something not so clear or errors or contents that confusing to other audiences, just start an issue and let's see what we can improve on it.
+Also, if there is a better way for categorisation, don't be hesitate starting a new issue! Let's make DS life more easier!
 
 One thing I like to mention is although I will try to paraphrase every concept in my own words, sometimes I will directly copy past the concept from others work. You can always find the original page just follow the reference page. Maybe the original content could give you a better understanding.
 
@@ -42,31 +42,15 @@ One thing I like to mention is although I will try to paraphrase every concept i
     - [Others](#others)
         - [Concepts](#concepts)
         - [Programming skills](#programming-skills)
-        - [Data Science Lifecycle](#data-science-lifecycle)
         - [Database skills](#database-skills)
+        - [Data Science Lifecycle](#data-science-lifecycle)
 - [Reference](#reference)
 
 ### Mathematical Concepts
 #### **Math Miscs**
-- [x] Minkowski distance
+- [x] [Minkowski distance](./notebooks/MISC/Minkowski.ipynb)
     
     The Minkowski distance or Minkowski metric is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance. It is named after the German mathematician Hermann Minkowski.
-    
-    The Minkowski distance of order p (where p is an integer) between two points: X = (x_1, x_2, ..., x_n) and Y = (y_1, y_2, ..., y_n) in R^n is defined as:
-    
-    ```math
-    D(X, Y) = {\sum^n_{i=1} |x_i - y_i|^p} ^ \frac{1}{p}
-    ```
-    
-    In most of time, people using Minkowski distance with p = 1 and p = 2, which corresponding to manhatten distance and euclidean distance.
-    
-    ```
-    # when p = 1, Minkowski distance = Manhatten distance
-    D(X, Y) = \sum^n_{i=1} |x_i - y_i|
-    
-    # when p = 2 Minkowski distance = Manhatten distance
-    D(X, Y) = {\sum^n_{i=1} |x_i - y_i|^2} ^ \frac{1}{2} = \sqrt{\sum^n_{i=1} |x_i - y_i|^2}
-    ```
     
     Check python implementation [here](./src/distance.py).
 
@@ -434,7 +418,7 @@ Data structure is a specialised format for organizing, processing retrieving and
     
     Continouse delivery (CD) picks up where continous intergration ends, and automates application delivery to selected environments, including production, development, and testing environments. Continuous delivery is an automated way to push code changes to these environments which allows the developer could continuous update small changes when CI is valid.
     
-- [x] Scalability, Horizontal & Vertical Scaling
+- [ ] Scalability, Horizontal & Vertical Scaling
 
     Scalability is the property of a system to handle a growing amount of work by adding resources to the system (Wikipedia). It is a measure of a system's ability to increase or decrease in performance and cost in resopnse to changes in application and system processing demands.
     
@@ -496,6 +480,11 @@ Data structure is a specialised format for organizing, processing retrieving and
         def Manhatten(clf, X, Y):
             return clf.Minkowski(X, Y, p=1)
     ```
+    
+#### **Database skills**
+- [ ] [MySQL]()
+- [ ] [Sqlite]()
+- [ ] [MongoDB]()
 
 #### **Data Science Lifecycle**
 - [x] SMART Goals
@@ -526,16 +515,28 @@ Data structure is a specialised format for organizing, processing retrieving and
     
     > Grow the number of monthly users of Techfirm’s mobile app by 1,000 within Q1 of 2022. This will be accomplished by optimizing our app-store listing and creating targeted social media campaigns, which will begin running in February 2022, on three social media platforms: Facebook, Twitter, and Instagram. Since mobile is our primary point of conversion for paid-customer signups, growing our app usage will ultimately increase sales.
     
-- [ ] [OSEMN Framework]()
+- [x] OSEMN Framework
+    
+    OSEMN stands for Obtain, Scrub, Explore, Model, and iNterpret.
+    
+    <img src="https://miro.medium.com/max/1400/1*eE8DP4biqtaIK3aIy1S2zA.png" alt="Data Science Process (a.k.a the O.S.E.M.N. framework)" width=100%>
+    
+    **Obtain**: When the project start, we need to obtain data from available data sources. For example query from database, or using web scrapping techniques.
+    
+    **Scurb**: Clean the data and convert data into a canonical format for future task. For example, you may need to eliminate outliers or missing values and standardising data into a uniform format.
+    
+    **Explore**: Check dataset insights to find meaningful feature for future machine learning work.
+    
+    **Model**: Construct models based on explored features.
+    
+    **iNterpret**: Explain the model by checking the ability for unseen data, or using visualisation to cheek its performance.
+    
 - [ ] [Team Data Science Process Framework (TDSP)]()
 - [ ] [Cross-Industry Standard Process for Data Mining Framework (CRISP-DM)]()
 - [ ] [Agile Management]()
 - [ ] [Waterfall Management]()
 
-#### **Database skills**
-- [ ] [MySQL]()
-- [ ] [Sqlite]()
-- [ ] [MongoDB]()
+
 
 ## Reference
 
@@ -563,3 +564,4 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - CloudZero. (30, Jun 2021). *Horizontal Vs. Vertical Scaling: How Do They Compare?*. https://www.cloudzero.com/blog/horizontal-vs-vertical-scaling.
 - Kat, B. (26, Dec 2021). *How to write SMART goals*. https://www.atlassian.com/blog/productivity/how-to-write-smart-goals.
 - Geeks For Geeks. (24, Aug 2021). *Class method vs Static method in Python*. https://www.geeksforgeeks.org/class-method-vs-static-method-python/.
+- Cher, H L. (3, Jan 2019). *5 Steps of a Data Science Project Lifecycle*. https://towardsdatascience.com/5-steps-of-a-data-science-project-lifecycle-26c50372b492.
