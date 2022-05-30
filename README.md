@@ -418,7 +418,7 @@ Data structure is a specialised format for organizing, processing retrieving and
     
     Continouse delivery (CD) picks up where continous intergration ends, and automates application delivery to selected environments, including production, development, and testing environments. Continuous delivery is an automated way to push code changes to these environments which allows the developer could continuous update small changes when CI is valid.
     
-- [ ] Scalability, Horizontal & Vertical Scaling
+- [x] Scalability, Horizontal & Vertical Scaling
 
     Scalability is the property of a system to handle a growing amount of work by adding resources to the system (Wikipedia). It is a measure of a system's ability to increase or decrease in performance and cost in resopnse to changes in application and system processing demands.
     
@@ -455,10 +455,21 @@ Data structure is a specialised format for organizing, processing retrieving and
         | Less need for software changes     |                                 |
     
     Depends on the demands, you may choose horizontal or vertical scaling based on factors like: cost, future-proofing, topographic distribution, reliability, upgradeability and flexibility, or performance and complexity.
+    
+- [x] Customer Relationship Management (CRM)
+
+    Customer relationship management (CRM) is a technology for managing all your company’s relationships and interactions with customers and potential customers. The goal is simple: Improve business relationships to grow your business. A CRM system helps companies stay connected to customers, streamline processes, and improve profitability.
+
+    When people talk about CRM, they are usually referring to a CRM system, a tool that helps with contact management, sales management, agent productivity, and more. CRM tools can now be used to manage customer relationships across the entire customer lifecycle, spanning marketing, sales, digital commerce, and customer service interactions.
+
+    A CRM solution helps you focus on your organization’s relationships with individual people — including customers, service users, colleagues, or suppliers — throughout your lifecycle with them, including finding new customers, winning their business, and providing support and additional services throughout the relationship.
+    
+    More information please check [here](https://www.salesforce.com/crm/what-is-crm/).
 
 #### **Programming skills**
 - [ ] [Regex]()
 - [ ] [Linux System Commands]()
+- [ ] [Shell Script]()
 - [ ] [Python Decoration Function]()
 - [ ] [Basic Web Scrapping]()
 - [x] Classmethod vs. Staticmethod
@@ -565,3 +576,4 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Kat, B. (26, Dec 2021). *How to write SMART goals*. https://www.atlassian.com/blog/productivity/how-to-write-smart-goals.
 - Geeks For Geeks. (24, Aug 2021). *Class method vs Static method in Python*. https://www.geeksforgeeks.org/class-method-vs-static-method-python/.
 - Cher, H L. (3, Jan 2019). *5 Steps of a Data Science Project Lifecycle*. https://towardsdatascience.com/5-steps-of-a-data-science-project-lifecycle-26c50372b492.
+- Salesforce. (2021). *CRM 101: What is CRM*. https://www.salesforce.com/crm/what-is-crm/.
