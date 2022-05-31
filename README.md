@@ -1,3 +1,5 @@
+<img src="./img/st_kilda.jpg" width=100% alt='st_kilda melb vic au'>
+
 # Data Science Undergrad to Master
 
 This repository store that everything I learned from [UoM](https://www.unimelb.edu.au/) and other online sources from 2019 to 2024. For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
@@ -196,7 +198,7 @@ Statistics is a mathematical body of science that pertains to the collection, an
 
 #### Voting Methods
 
-[[Voting](https://en.wikipedia.org/wiki/Voting#Voting_methods)] Voting is a method for a group, such as a meeting or an electorate, in order to make a collective decision or express an opinion usually following discussions, debates or election campaigns. Democracies elect holders of high office by voting. Residents of a place represented by an elected official are called "constituents", and those constituents who cast a ballot for their chosen candidate are called "voters". There are different systems for collecting votes, but while many of the systems used in decision-making can also be used as electoral systems, any which cater for proportional representation can only be used in elections.
+[[Wikipedia](https://en.wikipedia.org/wiki/Voting#Voting_methods)] Voting is a method for a group, such as a meeting or an electorate, in order to make a collective decision or express an opinion usually following discussions, debates or election campaigns. Democracies elect holders of high office by voting. Residents of a place represented by an elected official are called "constituents", and those constituents who cast a ballot for their chosen candidate are called "voters". There are different systems for collecting votes, but while many of the systems used in decision-making can also be used as electoral systems, any which cater for proportional representation can only be used in elections.
 
 - [ ] Voting Criteria
     - Mutual Majority
