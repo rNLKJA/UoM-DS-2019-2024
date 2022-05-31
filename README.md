@@ -1,6 +1,6 @@
 <img src="./img/st_kilda.jpg" width=100% alt='st_kilda melb vic au'>
 
-# Data Science Path from Undergradate to Master
+<div align=center><h1>Data Science Path from Undergradate to Master</h1></div>
 
 This repository store the notes about everything I learned from [UoM](https://www.unimelb.edu.au/) [Data Science Major](https://study.unimelb.edu.au/find/courses/major/data-science/) and other online sources from 2019 to 2024. 
 For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
@@ -58,11 +58,12 @@ You can always find the original page just follow the reference page. Maybe the 
 
 ---
 
-### Mathematical Concepts
+<div align=center><h3>Mathematical Concepts</h3></div>
 
 [[Elaine & Johathan (2021)](https://www.livescience.com/38936-mathematics.html)] Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, computers, software, architecture (ancient and modern), art, money, engineering and even sports.
 
-#### Math Miscs
+<div align=center><h4>Math Miscs</h4></div>
+
 - [x] [Minkowski distance](./notebooks/MISC/Minkowski.ipynb)
     
     The Minkowski distance or Minkowski metric is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance. It is named after the German mathematician Hermann Minkowski.
@@ -103,7 +104,9 @@ You can always find the original page just follow the reference page. Maybe the 
 - [ ] [Underfit & Overfit]()
 - [ ] [Cost Function]()
 
-#### Probability
+---
+
+<div align=center><h4>Probability</h4></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Probability_theory)] Probability theory is the branch of mathematics concerned with probability. Although there are several different probability interpretations, probability theory treats the concept in a rigorous mathematical manner by expressing it through a set of axioms. Typically these axioms formalise probability in terms of a probability space, which assigns a measure taking values between 0 and 1, termed the probability measure, to a set of outcomes called the sample space. Any specified subset of the sample space is called an event. Central subjects in probability theory include discrete and continuous random variables, probability distributions, and stochastic processes (which provide mathematical abstractions of non-deterministic or uncertain processes or measured quantities that may either be single occurrences or evolve over time in a random fashion). Although it is not possible to perfectly predict random events, much can be said about their behavior. Two major results in probability theory describing such behaviour are the law of large numbers and the central limit theorem.
 
@@ -138,7 +141,9 @@ You can always find the original page just follow the reference page. Maybe the 
 - [ ] [Bayesian Inference]()
 - [ ] [Probability Cheat Sheet]()
 
-#### Statistics
+---
+
+<div align=center><h4>Statistics</h4></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Statistics)] Statistics is the discipline that concerns the collection, organization, analysis, interpretation, and presentation of data. In applying statistics to a scientific, industrial, or social problem, it is conventional to begin with a statistical population or a statistical model to be studied. Populations can be diverse groups of people or objects such as "all people living in a country" or "every atom composing a crystal". Statistics deals with every aspect of data, including the planning of data collection in terms of the design of surveys and experiments.
 
@@ -171,7 +176,10 @@ Statistics is a mathematical body of science that pertains to the collection, an
 - [ ] [Variational Inference]()
 - [ ] [Experimental Design]()
 
-#### Discrete Mathes and Operations Research: Linear Programming
+---
+
+<div align=center><h4>Discrete Mathes and Operations Research: Linear Programming</h4></div>
+
 - [ ] Introduction to Linear Programming
 - [ ] Geometry of Linear Programming
 - [ ] Geometry of LP in higher Dimensions
@@ -182,8 +190,10 @@ Statistics is a mathematical body of science that pertains to the collection, an
 - [ ] Non-standard Formulations
 - [ ] Duality Theory
 - [ ] Sensitivity Analysis
-  
-#### Techniques of Operational Research
+
+---
+
+<div align=center><h4>Techniques of Operational Research</h4></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Operations_research)] Operational research (OR) encompasses the development and the use of a wide range of problem-solving techniques and methods applied in the pursuit of improved decision-making and efficiency, such as simulation, mathematical optimization, queueing theory and other stochastic-process models, Markov decision processes, econometric methods, data envelopment analysis, neural networks, expert systems, decision analysis, and the analytic hierarchy process.[5] Nearly all of these techniques involve the construction of mathematical models that attempt to describe the system. Because of the computational and statistical nature of most of these fields, OR also has strong ties to computer science and analytics. Operational researchers faced with a new problem must determine which of these techniques are most appropriate given the nature of the system, the goals for improvement, and constraints on time and computing power, or develop a new technique specific to the problem at hand (and, afterwards, to that type of problem).
 
@@ -206,7 +216,9 @@ Statistics is a mathematical body of science that pertains to the collection, an
 - [ ] [Exact penalty method]()
 - [ ] [Comparison of penalty methods]()
 
-#### Voting Methods
+---
+
+<div align=center><h4>Voting Methods</h4></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Voting#Voting_methods)] Voting is a method for a group, such as a meeting or an electorate, in order to make a collective decision or express an opinion usually following discussions, debates or election campaigns. Democracies elect holders of high office by voting. Residents of a place represented by an elected official are called "constituents", and those constituents who cast a ballot for their chosen candidate are called "voters". There are different systems for collecting votes, but while many of the systems used in decision-making can also be used as electoral systems, any which cater for proportional representation can only be used in elections.
 
@@ -224,20 +236,30 @@ Statistics is a mathematical body of science that pertains to the collection, an
 - [ ] Borda count
 - [ ] Score voting
 
-### Machine Learning
+---
+
+<div align=center><h3>Machine Learning</h3></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Machine_learning)] Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance on some set of tasks.[1] It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so.[2] Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
 
-#### Dimensionality Reduction Methods
+---
+
+<div align=center><h4>Dimensionality Reduction Methods</h4></div>
+
 [[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension. Working in high-dimensional spaces can be undesirable for many reasons; raw data are often sparse as a consequence of the curse of dimensionality, and analyzing the data is usually computationally intractable (hard to control or deal with). Dimensionality reduction is common in fields that deal with large numbers of observations and/or large numbers of variables, such as signal processing, speech recognition, neuroinformatics, and bioinformatics.
 
-##### Feature selection
+---
+
+<div align=center><h5>Feature selection</h5></div>
+
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Feature selection approaches try to find a subset of the input variables (also called features or attributes). The three strategies are: the filter strategy (e.g. information gain), the wrapper strategy (e.g. search guided by accuracy), and the embedded strategy (selected features are added or removed while building the model based on prediction errors).
 
 Data analysis such as regression or classification can be done in the reduced space more accurately than in the original space.
 
-##### Feature projection
+---
+
+<div align=center><h5>Feature projection</h5></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Feature projection (also called feature extraction) transforms the data from the high-dimensional space to a space of fewer dimensions. The data transformation may be linear, as in principal component analysis (PCA), but many nonlinear dimensionality reduction techniques also exist.[4][5] For multidimensional data, tensor representation can be used in dimensionality reduction through multilinear subspace learning.
 
@@ -254,7 +276,9 @@ Data analysis such as regression or classification can be done in the reduced sp
 - [ ] [Non-negative matrix factorization (NMF)]()
 - [ ] [Uniform Manifold Approximation and Projection (UMAP)]()
 
-##### Dimension reduction
+---
+
+<div align=center><h5>Dimension reduction</h5></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] For high-dimensional datasets (i.e. with number of dimensions more than 10), dimension reduction is usually performed prior to applying a K-nearest neighbors algorithm (k-NN) in order to avoid the effects of the curse of dimensionality.[20]
 
@@ -262,7 +286,9 @@ Feature extraction and dimension reduction can be combined in one step using pri
 
 For very-high-dimensional datasets (e.g. when performing similarity search on live video streams, DNA data or high-dimensional time series) running a fast approximate K-NN search using locality-sensitive hashing, random projection, "sketches", or other high-dimensional similarity search techniques from the VLDB conference toolbox might be the only feasible option.
 
-#### Evaluation Metrics
+---
+
+<div align=center><h4>Evaluation Metrics</h4></div>
 - [ ] [TP, FP, TN, FN]()
 - [ ] [Confusion Matrix]()
 - [ ] [Precision, Recall, F1-score]()
@@ -273,30 +299,45 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Information Gain]()
 - [ ] [Joint Mutual Information]()
 
-#### Wrapper Methods
+---
+
+<div align=center><h4>Wrapper Methods</h4></div>
+
 - [ ] [Step-wise Forward Feature Selection]()
 - [ ] [Backward Feature Elimination]()
 - [ ] [Exhaustive Feature Selection]()
 - [ ] [Recursive Feature Elimination]()
 - [ ] [Boruta]()
 
-#### Embeded Methods
+---
+
+<div align=center><h4>Embeded Methods</h4></div>
+
 - [ ] [Lasso Regularization (L1)]()
 - [ ] [Ridge Regularization (L2)]()
 - [ ] [Random Forest Importance]()
 
-#### Ensemble Learning
+---
+
+<div align=center><h4>Ensemble Learning</h4></div>
+#### 
 - [ ] [Bagging (Bootstrap Aggregating)]()
 - [ ] [Boosting]()
 
-#### Data Processing Concepts
+---
+
+<div align=center><h4>Data Processing Concepts</h4></div>
+
 - [ ] [One Hot Encoding]()
 - [ ] [Dummy Encoding]()
 - [ ] [Normalisation]()
 - [ ] [Standardisation]()
 - [ ] [Discretisation]()
 
-#### Supervised Learning Methods
+---
+
+<div align=center><h4>Supervised Learning Methods</h4></div>
+ 
 - [ ] [K Nearest Neighbors](./notebooks/SL/KNN.ipynb)
 - [ ] [Regression](./notebooks/SL/Regression.ipynb)
     - [ ] [Linear Regression](./notebooks/SL/LinearRegression.ipynb)
@@ -315,7 +356,10 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Light GBM]()
 - [ ] [Recommending System]()
 
-#### Unsupervised Learning Methods
+---
+
+<div align=center><h4>Unsupervised Learning Methods</h4></div>
+
 - [ ] [k-means clustering (KMean)](./notebooks/KMean.ipynb)
 - [ ] [Hierarchical Clustering]()
 - [ ] [Anomaly detection]()
@@ -323,7 +367,10 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Apriori algorithm]()
 - [ ] [Singular value decomposition]()
 
-### Neural Network
+---
+
+<div align=center><h3>Neural Network</h3></div>
+
 - [ ] [Neuron]()
 - [ ] [Layers]()
 - [ ] [Epoch]()
@@ -331,7 +378,10 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Convolutional Neural Network]()
 - [ ] [Genetic Algorithm]()
 
-#### Activation Functions
+---
+
+<div align=center><h4>Activation Functions</h4></div>
+
 - [ ] [Linear Activation]()
 - [ ] [Heaviside Activation]()
 - [ ] [Logistic Activation]()
@@ -343,7 +393,9 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Genetric Algorithm]()
 - [ ] [Ensembler]()
 
-### Artificial Intelligence
+---
+
+<div align=center><h3>Artificial Intelligence</h3></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Artificial_intelligence)] Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to the natural intelligence displayed by animals including humans. AI research has been defined as the field of study of intelligent agents, which refers to any system that perceives its environment and takes actions that maximize its chance of achieving its goals.
 
@@ -380,7 +432,10 @@ The term "artificial intelligence" had previously been used to describe machines
 | [Super AI](./doc/AI/types/super_ai.md)             | [Theory of Mind](./doc/AI/types/theory_of_mind.md)       |
 |                                                    | [Self-Awareness](./doc/AI/types/self_awareness.md)       |
 
-#### Intelligent Agent
+---
+
+<div align=center><h4>Intelligent Agent</h4></div>
+
 - [x] [Types of Agent](./doc/AI/agent/type.md)
     
     Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
@@ -406,7 +461,10 @@ The term "artificial intelligence" had previously been used to describe machines
 
     Turing Test was introduced by Alan Turing in his 1950 paper, "Computing Machinery and Intelligence", which considered the question, "Can Machine think?"
 
-#### Problem-solving
+---
+
+<div align=center><h4>Problem-solving</h4></div>
+
 - [x] [Search Algorithms](./doc/AI/solving/search_algo.md)
 
     Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
@@ -460,26 +518,41 @@ The term "artificial intelligence" had previously been used to describe machines
     - m = maximum depth of any node
     - ℓ = depth limit parameter
 
-#### [Adversarial Search](#)
+---
+
+<div align=center><h4>Adversarial Search</h4></div>
+
 - [ ] [Minimax Search]()
 - [ ] [Alpha-beta Pruning]()
 - [ ] [Monte Carlo Search Tree]()
 
-#### Knowledge Represent
+---
 
-#### Uncertain Knowledge R
+<div align=center><h4>Knowledge Represent</h4></div>
 
-### Natural Language Processing
+---
+
+<div align=center><h4>Uncertain Knowledge R</h4></div>
+
+---
+
+<div align=center><h3>Natural Language Processing</h3></div>
+
 - [ ] [Word2vec]()
 - [ ] [Bag of words (BoW)]()
 
-### [Frontend Development](#)
+<div align=center><h3>Frontend Development</h3></div>
 
-### [Backend Development](#)
+<div align=center><h3>Backend Development</h3></div>
 
-### [Cluster and Cloud Computing](#)
+---
 
-### Data Structure
+<div align=center><h3>Cluster and Cloud Computing</h3></div>
+
+---
+
+<div align=center><h3>Data Structure</h3></div>
+
 Data structure is a specialised format for organizing, processing retrieving and storing data. It makes human and machine have a better understanding of data storage. Specifically, it could be use for storing data, managing resources and services, data exchange, ordering and sorting, indexing, searching, scalability in a more efficient way (David & Sarah, 2021).
 
 - [x] [Linked List](./notebooks/DS/LinkedList.ipynb)
@@ -533,7 +606,9 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [ ] [Sorting Algorithms]()
 - [ ] [Searching Algorithms]()
 
-### Database Management System ([ADDYNAMICS](https://www.appdynamics.com/topics/database-management-systems))
+---
+
+<div align=center><h3>Database Management System (<a href='https://www.appdynamics.com/topics/database-management-systems'>ADDYNAMICS</a>)</h3></div>
 
 Database Management Systems (DBMS) are software systems used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the database.
 
@@ -562,7 +637,9 @@ Database management systems can be classified based on a variety of criteria suc
 - [ ] [Hasing]()
 - [ ] [Raid]()
 
-### Block Chain [Java T Point](https://www.javatpoint.com/blockchain-tutorial)
+---
+
+<div align=center><h3>Block Chain (<a href='https://www.javatpoint.com/blockchain-tutorial'>Java T Point</a>)</h3></div>
 
 A blockchain is a constantly growing ledger which keeps a permanent record of all the transactions that have taken place in a secure, chronological, and immutable way.
 
@@ -601,7 +678,10 @@ Blockchain technology has become popular because of the following.
 |                                         | [Sending and Receiving Bitcoin]()        |
 |                                         | [Converting Bitcoins to Fiat Currency]() |
 
-### Online Data Sources
+---
+
+<div align=center><h3>Online Dataset Sources</h3></div>
+
 - [Data.gov](https://catalog.data.gov/dataset): One of the most comprehensive data souces in the U.S. It could be helpful for web application design or design data visualisation.
 - [U.S. Census Bureau](https://www.census.gov/): Demographic information from federal, state, and local governments, and commercial entities in the U.S.
 - [Open Data Network](https://www.opendatanetwork.com/): Powerful data search engine cover the fields like finance, public safety, infrastructure, and housing and development. 
@@ -610,8 +690,16 @@ Blockchain technology has become popular because of the following.
 - [国家统计局](https://data.stats.gov.cn/): National Bureau of Statistics of China contains demographic information of provience, city, etc.
 - [Australian Bureau of Statistics](https://www.abs.gov.au/census): Australian Census Data.
 
-### Others
-#### Concepts
+---
+
+<div align=center><h3>Others</h3></div>
+
+Some uncategoried notes.
+
+---
+
+<div align=center><h4>Concepts</h4></div>
+
 - [ ] [k-anonymity]()
 - [ ] [l-diversity]()
 - [x] [FAIR principle](https://www.go-fair.org/fair-principles/)
@@ -716,7 +804,11 @@ Blockchain technology has become popular because of the following.
     
 - [ ] Game Theory
 
-#### Programming skills
+
+---
+
+<div align=center><h4>Programming Skills</h4></div>
+
 - [ ] [Regex]()
 - [ ] [Linux System Commands]()
 - [ ] [Shell Script]()
@@ -742,12 +834,20 @@ Blockchain technology has become popular because of the following.
             return clf.Minkowski(X, Y, p=1)
     ```
     
-#### Database skills
+
+---
+
+<div align=center><h4>Database Skills</h4></div>
+
 - [ ] [MySQL]()
 - [ ] [Sqlite]()
 - [ ] [MongoDB]()
 
-#### Data Science Lifecycle
+
+---
+
+<div align=center><h4>Data Science Life Cycle</h4></div>
+
 - [x] SMART Goals
     
     SMART goals stands for Specific, Measurable, Achievable, Relevant, and Time-Bound (Kat, 2021).
@@ -884,7 +984,10 @@ Blockchain technology has become popular because of the following.
     | Better focus on documentation of designs and requirements                         | Extra communication overhead during handoff between phase transitions                                                             |
     | The design phase is more methodical and structured before any software is written | Product ownership and engagement may not be as strong when compared to agile since the focus is brought to the current phase      |
 
-## Reference
+
+---
+
+<div align=center><h2>Reference</h2></div>
 
 All references' style follow the APA7 format based on [UoM APA7 Guide](https://library.unimelb.edu.au/recite/referencing-styles/apa7).
 
@@ -930,3 +1033,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Wrike. (2022). *What Is Waterfall Project Management?*. https://www.wrike.com/project-management-guide/faq/what-is-waterfall-project-management/.
 - APPDYNAMICS. (2022). *What is Database Management Systems (DBMS)?*. https://www.appdynamics.com/topics/database-management-systems.
 - Wikipedia. (16, May 2022). *Dimensionality reduction*. https://en.wikipedia.org/wiki/Dimensionality_reduction.
+
+---
+
+<div align=right><p>@rNLKJA</p></div>
