@@ -260,7 +260,7 @@ Data analysis such as regression or classification can be done in the reduced sp
 
 Feature extraction and dimension reduction can be combined in one step using principal component analysis (PCA), linear discriminant analysis (LDA), canonical correlation analysis (CCA), or non-negative matrix factorization (NMF) techniques as a pre-processing step followed by clustering by K-NN on feature vectors in reduced-dimension space. In machine learning this process is also called low-dimensional embedding.[21]
 
-For very-high-dimensional datasets (e.g. when performing similarity search on live video streams, DNA data or high-dimensional time series) running a fast approximate K-NN search using locality-sensitive hashing, random projection,[22] "sketches",[23] or other high-dimensional similarity search techniques from the VLDB conference toolbox might be the only feasible option.
+For very-high-dimensional datasets (e.g. when performing similarity search on live video streams, DNA data or high-dimensional time series) running a fast approximate K-NN search using locality-sensitive hashing, random projection, "sketches", or other high-dimensional similarity search techniques from the VLDB conference toolbox might be the only feasible option.
 
 #### Evaluation Metrics
 - [ ] [TP, FP, TN, FN]()
@@ -857,7 +857,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Math Miscs**
 - Wikipedia. (14, Jan 2022). *Minkoski distance*. https://en.wikipedia.org/wiki/Minkowski_distance.
 - Wikipedia. (21, Apr 2022). *Probability theory*. https://en.wikipedia.org/wiki/Probability_theory.
-- Wikipedia. (). *Statistics*. https://en.wikipedia.org/wiki/Statistics.
+- Wikipedia. (20, Feb 2022). *Statistics*. https://en.wikipedia.org/wiki/Statistics.
 - Wikipedia. (6, May 2022). *Operational research*. https://en.wikipedia.org/wiki/Operations_research.
 - Wikipedia. (21, May 2022). *Voting*. https://en.wikipedia.org/wiki/Voting#Voting_methods.
 - Elaine, J H & Jonathan, G. (11, Nov 2021). *What is mathematics*. https://www.livescience.com/38936-mathematics.html. 
