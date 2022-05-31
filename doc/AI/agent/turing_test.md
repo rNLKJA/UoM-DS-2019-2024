@@ -12,7 +12,7 @@ The conversation between all players is via keyboard and screen so the result wo
 
 The test result does not depend on each correct answer, but only how closely its responses like a human answer. The computer is permitted to do everything possible to force a wrong identification by the interrogator.s
 
-### features required for a machine to pass the Turing test:
+### Features required for a machine to pass the Turing test:
 - **Natural language processing**: NLP is required to communicate with Interrogator in general human language like English.
 - **Knowledge representation**: To store and retrieve information during the test.
 - **Automated reasoning**: To use the previously stored information for answering the questions.

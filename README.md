@@ -381,7 +381,7 @@ The term "artificial intelligence" had previously been used to describe machines
 |                                                    | [Self-Awareness](./doc/AI/types/self_awareness.md)       |
 
 #### Intelligent Agent
-- [x] [Types of Agent](./doc/AI/agent/Types_of_AI_Agents.ipynb)
+- [x] [Types of Agent](./doc/AI/agent/type.md)
     
     Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
     - Simple reflex agent
@@ -403,6 +403,8 @@ The term "artificial intelligence" had previously been used to describe machines
     The environment is where agent lives, operate and provide the agent with something to sense and act upon it. An environment is mostly said to be non-feministic.
 
 - [x] [Turing Test in AI](./doc/AI/agent/turing_test.md)
+
+    Turing Test was introduced by Alan Turing in his 1950 paper, "Computing Machinery and Intelligence", which considered the question, "Can Machine think?"
 
 #### Problem-solving
 - [ ] [Uniform Search Algorithm]()

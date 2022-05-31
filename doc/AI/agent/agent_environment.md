@@ -4,7 +4,7 @@ An environment is everything in the world which surrounds the agent, but it is n
 
 The environment is where agent lives, operate and provide the agent with something to sense and act upon it. An environment is mostly said to be non-feministic.
 
-### features of Environment
+### Features of Environment
 
 As per Russel and Norvig, an environment can have various features from the point of view of an agent:
 - **Fully observable vs. Partially Observable**

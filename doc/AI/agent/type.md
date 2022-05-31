@@ -2,7 +2,7 @@
 
 #### Simple reflex agent
 
-<img src='./simple-reflex-agent.png' width=100% />
+<img src='./simple-reflex-agent.png' />
 
 - The Simple reflex agents are the simplest agents. These agents take decisions on the basis of the current percepts and ignore the rest of the percept history.
 - These agents only succeed in the fully observable environment.
@@ -16,7 +16,7 @@
 
 #### Model-based reflex agent
 
-<img src="./model-based-reflex-agent.png" width=100% />
+<img src="./model-based-reflex-agent.png"  />
 
 - The Model-based agent can work in a partially observable environment, and track the situation.
 - A model-based agent has two important factors:
@@ -29,7 +29,7 @@
     
 #### Goal-based agents
 
-<img src="./goal-based-agent.png" width=100% />
+<img src="./goal-based-agent.png"  />
 
 - The knowledge of the current state environment is not always sufficient to decide for an agent to what to do.
 - The agent needs to know its goal which describes desirable situations.
@@ -39,7 +39,7 @@
 
 #### Utility-based agents
 
-<img src="./utility-based-agent.png" width=100% />
+<img src="./utility-based-agent.png"  />
 
 - These agents are similar to the goal-based agent but provide an extra component of utility measurement which makes them different by providing a measure of success at a - given state.
 - Utility-based agent act based not only goals but also the best way to achieve the goal.
@@ -48,7 +48,7 @@
 
 #### Learning agents
 
-<img src="./learning-agent.png" width=100% />
+<img src="./learning-agent.png"  />
 
 - A learning agent in AI is the type of agent which can learn from its past experiences, or it has learning capabilities.
 - It starts to act with basic knowledge and then able to act and adapt automatically through learning.
