@@ -407,15 +407,24 @@ The term "artificial intelligence" had previously been used to describe machines
     Turing Test was introduced by Alan Turing in his 1950 paper, "Computing Machinery and Intelligence", which considered the question, "Can Machine think?"
 
 #### Problem-solving
+- [ ] [Search Algorithms](./doc/AI/solving/search_algo.md)
+
+    Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
+        
 - [ ] [Uniform Search Algorithm]()
+
+    Uninformed search is a class of general-purpose search algorithms which operats in brute-force way. Uninformed search algorithms do not have additional information about state or search space other than how to traverse the tree, so it is also called blind search.
+
 - [ ] [Heuristic Function]()
 - [ ] [Informed Search Algorithm]()
 - [ ] [Hill Climbing Algorithm]()
+- [ ] [Greedy Search]()
 - [ ] [A* Search]()
 - [ ] [Means-Ends Analysis]()
 
 #### [Adversarial Search](#)
 - [ ] [Minimax Search]()
+- [ ] [Alpha-beta Pruning]()
 - [ ] [Monte Carlo Search Tree]()
 
 #### Knowledge Represent
