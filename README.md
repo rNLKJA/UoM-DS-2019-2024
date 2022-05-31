@@ -411,12 +411,12 @@ The term "artificial intelligence" had previously been used to describe machines
 
     Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
         
-- [ ] [Uniform Search Algorithm]()
+- [ ] [Uniform Search Algorithm](./doc/AI/solving/uninformed.md)
 
     Uninformed search is a class of general-purpose search algorithms which operats in brute-force way. Uninformed search algorithms do not have additional information about state or search space other than how to traverse the tree, so it is also called blind search.
 
-- [ ] [Heuristic Function]()
-- [ ] [Informed Search Algorithm]()
+- [ ] [Heuristic Function](./doc/AI/solving/heuristic.md)
+- [ ] [Informed Search Algorithm](./doc/AI/solving/informed.md)
 - [ ] [Hill Climbing Algorithm]()
 - [ ] [Greedy Search]()
 - [ ] [A* Search]()

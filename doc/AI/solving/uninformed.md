@@ -95,14 +95,14 @@ Birectional search can use search techniques such as BFS, DFS, DLS, etc.
 - m = maximum depth of any node
 - ℓ = depth limit parameter
 
-| Uninformed Search Algorithm            | Time Complexity     | Space Complexity    | Completeness                           | Optimality Comparisons                                                   |
-| -------------------------------------- | ------------------- | ------------------- | -------------------------------------- | ------------------------------------------------------------------------ |
-| Breadth-first search                   | O(b^d)              | O(b^d)              | Complete                               | Optimal                                                                  |
-| Depth-first search                     | O(n^m)              | O(bm)               | Complete                               | Non-optimal                                                              |
-| Depth-limited search                   | O(b^ℓ)              | O(bℓ)               | Complete if solution is above ℓ        | Non-optimal                                                              |
-| Uniform cost search                    | O(b^{1 + [C* / ε]}) | O(b^{1 + [C* / ε]}) | Complete if there is a solution        | Optimal                                                                  |
-| Iterative deepening depth-first search | O(b^d)              | O(bd)               | Complete if branching factor is finite | Optimal if path cost is a non-decreasing function of depth of the node   |
-| Bidirectional search                   | O(b^d)              | O(b^d)              | Complete if both search use BFS        | Optimal                                                                  |
+| Uninformed Search Algorithm            | Time Complexity   | Space Complexity  | Completeness                           | Optimality Comparisons                                                   |
+| -------------------------------------- | ----------------- | ----------------- | -------------------------------------- | ------------------------------------------------------------------------ |
+| Breadth-first search                   | O(b^d)            | O(b^d)            | Complete                               | Optimal                                                                  |
+| Depth-first search                     | O(n^m)            | O(bm)             | Complete                               | Non-optimal                                                              |
+| Depth-limited search                   | O(b^ℓ)            | O(bℓ)             | Complete if solution is above ℓ        | Non-optimal                                                              |
+| Uniform cost search                    | O(b^{1+[C* / ε]}) | O(b^{1+[C* / ε]}) | Complete if there is a solution        | Optimal                                                                  |
+| Iterative deepening depth-first search | O(b^d)            | O(bd)             | Complete if branching factor is finite | Optimal if path cost is a non-decreasing function of depth of the node   |
+| Bidirectional search                   | O(b^d)            | O(b^d)            | Complete if both search use BFS        | Optimal                                                                  |
 
 #### Advantages & Disadvantages of Different Search Algorihtms
 
