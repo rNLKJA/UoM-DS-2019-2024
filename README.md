@@ -342,11 +342,65 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Ensembler]()
 
 ### Artificial Intelligence
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Artificial_intelligence)] Artificial intelligence (AI) is intelligence demonstrated by machines, as opposed to the natural intelligence displayed by animals including humans. AI research has been defined as the field of study of intelligent agents, which refers to any system that perceives its environment and takes actions that maximize its chance of achieving its goals.
+
+The term "artificial intelligence" had previously been used to describe machines that mimic and display "human" cognitive skills that are associated with the human mind, such as "learning" and "problem-solving". This definition has since been rejected by major AI researchers who now describe AI in terms of rationality and acting rationally, which does not limit how intelligence can be articulated.
+
+>  "It is a branch of computer science by which we can create intelligent machines which can behave like a human, think like humans, and able to make decisions." (Java T Point) 
+
+**Goals of Artifical Intelligence**
+- Replicate human intelligence
+- Solve knowledge-intensive tasks
+- An intelligent connection of perception and action
+- Building a machine which can perform tasks that requires human intelligence such as:
+    - Proving a math theorm
+    - Play chess game
+    - Plan some surgical operation
+    - Self-driving a car
+- Creating some system can exhibit intelligent behavior, learn new things by itself, demonstrate, explain, and can advise to its user.
+
+| **Advantages of Artificial Intelligence** | **Disadvantages of Artificial Intelligence** |
+| :---------------------------------------- | :------------------------------------------- |
+| High accuracy with less error             | High cost                                    |
+| High-speed                                | Can't think out of the box                   |
+| High reliability                          | No feelings and emotions                     |
+| Useful for risky areas                    | Increase dependency on machines              |
+| Digital Assistant                         | No original creativity                       |
+| Useful as a public utility                |                                              |
+
+**Artificial Intelligence Types**
+
+| **Based on Capabilities**                          | **Based on functionality**                               |
+| -------------------------------------------------- | -------------------------------------------------------- |
+| [Weak AI / Narrow AI](./doc/AI/types/narrow_ai.md) | [Reactive Machines](./doc/AI/types/reactive_machines.md) | 
+| [General AI](./doc/AI/types/general_ai.md)         | [Limited Memory](./doc/AI/types/limited_memory.md)       |
+| [Super AI](./doc/AI/types/super_ai.md)             | [Theory of Mind](./doc/AI/types/theory_of_mind.md)       |
+|                                                    | [Self-Awareness](./doc/AI/types/self_awareness.md)       |
+
 #### Intelligent Agent
-- [ ] [Types of Agent]()
-- [ ] [Intelligent Agent]()
-- [ ] [Agent Environment]()
-- [ ] [Turing Test in AI]()
+- [x] [Types of Agent](./doc/AI/agent/Types_of_AI_Agents.ipynb)
+    
+    Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
+    - Simple reflex agent
+    - Model-based reflex agent
+    - Goal-based agents
+    - Utility-based agent
+    - Learning Agent
+    
+- [x] [Intelligent Agent](./doc/AI/agent/intelligent_agent.md)
+
+    An agent can be anything that perceiveits environment through sensors and act upon that environment through actuators. An Agent runs in the cycle of perceiving, thinking, and acting.
+    
+    An AI system can be defined as the study of the rational agent and its environment. The agents sense the environment through sensors and act on their environment through actuators. An AI agent can have mental properties such as knowledge, belief, intention, etc.
+    
+- [x] [Agent Environment](./doc/AI/agent/agent_environment.md)
+
+    An environment is everything in the world which surrounds the agent, but it is not a part of an agent itself. An environment can be described as a situation in which an agent is present.
+
+    The environment is where agent lives, operate and provide the agent with something to sense and act upon it. An environment is mostly said to be non-feministic.
+
+- [x] [Turing Test in AI](./doc/AI/agent/turing_test.md)
 
 #### Problem-solving
 - [ ] [Uniform Search Algorithm]()
@@ -356,7 +410,7 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [A* Search]()
 - [ ] [Means-Ends Analysis]()
 
-#### [Adversarial Search]()
+#### [Adversarial Search](#)
 - [ ] [Minimax Search]()
 - [ ] [Monte Carlo Search Tree]()
 
@@ -798,6 +852,10 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Machine Learning Articles**
 - Onel, H. (11, Sep 2018). *Machine Learning Basics with the K-Nearest Neighbors Algorithm*. https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
 - Wikipedia. (26, May 2022). *Machine learning*. https://en.wikipedia.org/wiki/Machine_learning.
+
+**Artificial Intelligence Articles**
+- Wikipedia. (30, May, 2022). *Artificial Intelligent*. https://en.wikipedia.org/wiki/Artificial_intelligence.
+- Java T Point. (2022). *Artificial Intelligent*. https://www.javatpoint.com/artificial-intelligence-tutorial.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
