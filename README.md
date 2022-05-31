@@ -386,7 +386,7 @@ Data structure is a specialised format for organizing, processing retrieving and
         The last node of the list point to the first node, and each node also have a pointer link to the previous node.
     
     | **Advantages**                  | **Disadvantages**                                                                         |
-    | :-----------------------------: | :---------------------------------------------------------------------------------------: |
+    | :------------------------------ | :---------------------------------------------------------------------------------------- |
     | Dynamic size data structure     | More memory usage compare to an array                                                     |
     | Easy insertion and deletion     | Traversal is not easy because it cannot be randomly accessed                              |
     | Memory consumption is efficient | Reverse traversal is hard, a double-linked list need extra space to store another pointer |
