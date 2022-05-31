@@ -424,7 +424,22 @@ The term "artificial intelligence" had previously been used to describe machines
     Here h(n) is heurstic cost, and h*(n) is the estimated cost. Hence heuristic cost should be less than or equal to the estimated cost.
 
 - [x] [Informed Search Algorithm](./doc/AI/solving/informed.md)
+
+     Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
+     
 - [ ] [Hill Climbing Algorithm]()
+
+    Hill climbing algorithm is a local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
+    
+    Hill climbing algorithm is a technique which is used for optimizing the mathematical problems. One of the widely discussed examples of Hill climbing algorithm is Traveling-salesman Problem in which we need to minimize the distance traveled by the salesman.
+    
+    It is also called greedy local search as it only looks to its good immediate neighbor state and not beyond that.
+    
+    A node of hill climbing algorithm has two components which are state and value.
+    
+    Hill Climbing is mostly used when a good heuristic is available.
+    
+    In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
 - [ ] [Means-Ends Analysis]()
 
 - Summary Properties
@@ -892,6 +907,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Artificial Intelligence Articles**
 - Wikipedia. (30, May, 2022). *Artificial Intelligent*. https://en.wikipedia.org/wiki/Artificial_intelligence.
 - Java T Point. (2022). *Artificial Intelligent*. https://www.javatpoint.com/artificial-intelligence-tutorial.
+- Geeks for Geeks. (26, Feb 2022). *Difference between Informed and Uninformed Search in AI*. https://www.geeksforgeeks.org/difference-between-informed-and-uninformed-search-in-ai/.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
