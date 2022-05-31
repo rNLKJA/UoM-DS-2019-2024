@@ -427,6 +427,9 @@ The term "artificial intelligence" had previously been used to describe machines
 
      Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
      
+
+- [x] Uninformed Search vs. Informed Search 
+
 - [ ] [Hill Climbing Algorithm]()
 
     Hill climbing algorithm is a local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
@@ -440,6 +443,7 @@ The term "artificial intelligence" had previously been used to describe machines
     Hill Climbing is mostly used when a good heuristic is available.
     
     In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
+    
 - [ ] [Means-Ends Analysis]()
 
 - Summary Properties
