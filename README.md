@@ -1,6 +1,6 @@
 <img src="./img/st_kilda.jpg" width=100% alt='st_kilda melb vic au'>
 
-# Data Science Undergrad to Master
+# Data Science Path from Undergradate to Master
 
 This repository store that everything I learned from [UoM](https://www.unimelb.edu.au/) and other online sources from 2019 to 2024. For me, this is more like a revision notes / cheatsheet for my future data science releated career. 
 
@@ -9,15 +9,20 @@ Also, if there is a better way for categorisation, don't be hesitate starting a 
 
 One thing I like to mention is although I will try to paraphrase every concept in my own words, sometimes I will directly copy past the concept from others work. You can always find the original page just follow the reference page. Maybe the original content could give you a better understanding.
 
-## Notebooks
-### Table of Contents
+---
+<details close>
+<summary><h3>Table of Contents</h3></summary>
+<br>
+    
 - [Notebooks](#notebooks)
     - [Mathematical Concepts](#mathematical-concepts)
         - [Probability](#probability)
         - [Statistics](#statistics)
+        - [Discrete Mathes and Operations Research: Linear Programming](#discrete-mathes-and-operations-research-linear-programming)
         - [Techniques in Operations Research](#techniques-in-operational-research)
-        - [Evaluation Metrics](#evaluation-metrics)
+        - [Voting methods](#voting-methods)
     - [Machine Learning](#machine-learning)
+        - [Evaluation Metrics](#evaluation-metrics)
         - [Dimensionality Reduction Methods](#dimensionality-reduction-methods)
         - [Wrapper Methods](#wrapper-methods)
         - [Embeded Methods](#embeded-methods)
@@ -47,6 +52,9 @@ One thing I like to mention is although I will try to paraphrase every concept i
         - [Database skills](#database-skills)
         - [Data Science Lifecycle](#data-science-lifecycle)
 - [Reference](#reference)
+</details>
+
+---
 
 ### Mathematical Concepts
 
