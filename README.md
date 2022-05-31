@@ -47,13 +47,18 @@ One thing I like to mention is although I will try to paraphrase every concept i
 - [Reference](#reference)
 
 ### Mathematical Concepts
-#### **Math Miscs**
+
+[[Elaine & Johathan (2021)](https://www.livescience.com/38936-mathematics.html)] Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, computers, software, architecture (ancient and modern), art, money, engineering and even sports.
+
+#### Math Miscs
 - [x] [Minkowski distance](./notebooks/MISC/Minkowski.ipynb)
     
     The Minkowski distance or Minkowski metric is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance. It is named after the German mathematician Hermann Minkowski.
     
     Check python implementation [here](./src/distance.py).
 
+- [ ] Discrete Variable
+- [ ] Continuous Variable
 - [ ] [Standard Deviation and Variance]()
 - [ ] [Eigenvalue & Eigenvectors]()
 - [ ] [Variability of Sums (Covariance)]()
@@ -86,7 +91,12 @@ One thing I like to mention is although I will try to paraphrase every concept i
 - [ ] [Underfit & Overfit]()
 - [ ] [Cost Function]()
 
-#### **Probability**
+#### Probability
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Probability_theory)] Probability theory is the branch of mathematics concerned with probability. Although there are several different probability interpretations, probability theory treats the concept in a rigorous mathematical manner by expressing it through a set of axioms. Typically these axioms formalise probability in terms of a probability space, which assigns a measure taking values between 0 and 1, termed the probability measure, to a set of outcomes called the sample space. Any specified subset of the sample space is called an event. Central subjects in probability theory include discrete and continuous random variables, probability distributions, and stochastic processes (which provide mathematical abstractions of non-deterministic or uncertain processes or measured quantities that may either be single occurrences or evolve over time in a random fashion). Although it is not possible to perfectly predict random events, much can be said about their behavior. Two major results in probability theory describing such behaviour are the law of large numbers and the central limit theorem.
+
+- [ ] [Axioms]()
+- [ ] [Expectation value]()
 - [ ] [Probability Density Function (PDF)]()
 - [ ] [Culmulative Distribution Function (CDF)]()
 - [ ] [Probability Mass Function (PMF)]()
@@ -116,7 +126,16 @@ One thing I like to mention is although I will try to paraphrase every concept i
 - [ ] [Bayesian Inference]()
 - [ ] [Probability Cheat Sheet]()
 
-#### **Statistics**
+#### Statistics
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Statistics)] Statistics is the discipline that concerns the collection, organization, analysis, interpretation, and presentation of data. In applying statistics to a scientific, industrial, or social problem, it is conventional to begin with a statistical population or a statistical model to be studied. Populations can be diverse groups of people or objects such as "all people living in a country" or "every atom composing a crystal". Statistics deals with every aspect of data, including the planning of data collection in terms of the design of surveys and experiments.
+
+Statistics is a mathematical body of science that pertains to the collection, analysis, interpretation or explanation, and presentation of data, or as a branch of mathematics. Some consider statistics to be a distinct mathematical science rather than a branch of mathematics. While many scientific investigations make use of data, statistics is concerned with the use of data in the context of uncertainty and decision making in the face of uncertainty.
+
+- [ ] [Types of data]()
+- [ ] [Descriptive statistics]()
+- [ ] [Inferential statistics]()
+- [ ] [Exploratory data analysis]()
 - [ ] [Linear Model]()
 - [ ] [Non Linear Model]()
 - [ ] [Devariance]()
@@ -139,9 +158,23 @@ One thing I like to mention is although I will try to paraphrase every concept i
 - [ ] [Miture Model - Expectation Maximisation]()
 - [ ] [Variational Inference]()
 - [ ] [Experimental Design]()
+
+#### Discrete Mathes and Operations Research: Linear Programming
+- [ ] Introduction to Linear Programming
+- [ ] Geometry of Linear Programming
+- [ ] Geometry of LP in higher Dimensions
+- [ ] Basic feasible Solutions
+- [ ] Fundamental theorem of Linear Programming
+- [ ] Simplex method
+- [ ] Solution Possibilities
+- [ ] Non-standard Formulations
+- [ ] Duality Theory
+- [ ] Sensitivity Analysis
   
-#### **Techniques of Operational Research**
-- [ ] [Simplex Method]()
+#### Techniques of Operational Research
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Operations_research)] Operational research (OR) encompasses the development and the use of a wide range of problem-solving techniques and methods applied in the pursuit of improved decision-making and efficiency, such as simulation, mathematical optimization, queueing theory and other stochastic-process models, Markov decision processes, econometric methods, data envelopment analysis, neural networks, expert systems, decision analysis, and the analytic hierarchy process.[5] Nearly all of these techniques involve the construction of mathematical models that attempt to describe the system. Because of the computational and statistical nature of most of these fields, OR also has strong ties to computer science and analytics. Operational researchers faced with a new problem must determine which of these techniques are most appropriate given the nature of the system, the goals for improvement, and constraints on time and computing power, or develop a new technique specific to the problem at hand (and, afterwards, to that type of problem).
+
 - [ ] [Golden section search]()
 - [ ] [Fibonacci search]()
 - [ ] [Newton's method]()
@@ -161,19 +194,61 @@ One thing I like to mention is although I will try to paraphrase every concept i
 - [ ] [Exact penalty method]()
 - [ ] [Comparison of penalty methods]()
 
+#### Voting Methods
+
+[[Voting](https://en.wikipedia.org/wiki/Voting#Voting_methods)] Voting is a method for a group, such as a meeting or an electorate, in order to make a collective decision or express an opinion usually following discussions, debates or election campaigns. Democracies elect holders of high office by voting. Residents of a place represented by an elected official are called "constituents", and those constituents who cast a ballot for their chosen candidate are called "voters". There are different systems for collecting votes, but while many of the systems used in decision-making can also be used as electoral systems, any which cater for proportional representation can only be used in elections.
+
+- [ ] Voting Criteria
+    - Mutual Majority
+    - Monotonicity
+    - Participation
+    - Independence of irrelevant alternatives
+    - Later no harm
+- [ ] Plurality voting
+- [ ] Majority judgement
+- [ ] Instant runoff voting
+- [ ] Multiple Rounds voting
+- [ ] Condorcet Voting
+- [ ] Borda count
+- [ ] Score voting
+
 ### Machine Learning
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Machine_learning)] Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance on some set of tasks.[1] It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so.[2] Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
+
 #### Dimensionality Reduction Methods
+[[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension. Working in high-dimensional spaces can be undesirable for many reasons; raw data are often sparse as a consequence of the curse of dimensionality, and analyzing the data is usually computationally intractable (hard to control or deal with). Dimensionality reduction is common in fields that deal with large numbers of observations and/or large numbers of variables, such as signal processing, speech recognition, neuroinformatics, and bioinformatics.
+
+##### Feature selection
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Feature selection approaches try to find a subset of the input variables (also called features or attributes). The three strategies are: the filter strategy (e.g. information gain), the wrapper strategy (e.g. search guided by accuracy), and the embedded strategy (selected features are added or removed while building the model based on prediction errors).
+
+Data analysis such as regression or classification can be done in the reduced space more accurately than in the original space.
+
+##### Feature projection
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Feature projection (also called feature extraction) transforms the data from the high-dimensional space to a space of fewer dimensions. The data transformation may be linear, as in principal component analysis (PCA), but many nonlinear dimensionality reduction techniques also exist.[4][5] For multidimensional data, tensor representation can be used in dimensionality reduction through multilinear subspace learning.
+
 - [ ] [Principal Component Analysis (PCA)](./dr/notebooks/PCA.ipynb)
 - [ ] [t-distributed stochastic neighbor embedding (t-SNE)]()
 - [ ] [Kernel PCA]()
 - [ ] [Graph-based kernel PCA]()
 - [ ] [Linear Discriminant Analysis (LDA)]()
+- [ ] [Generalized Discriminant Analysis (GDA)]()
 - [ ] [Autoencoder]()
 - [ ] [Missing Values Ratio]()
 - [ ] [Low Variance Filter]()
 - [ ] [High Correlation Filter]()
 - [ ] [Non-negative matrix factorization (NMF)]()
 - [ ] [Uniform Manifold Approximation and Projection (UMAP)]()
+
+##### Dimension reduction
+
+[[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] For high-dimensional datasets (i.e. with number of dimensions more than 10), dimension reduction is usually performed prior to applying a K-nearest neighbors algorithm (k-NN) in order to avoid the effects of the curse of dimensionality.[20]
+
+Feature extraction and dimension reduction can be combined in one step using principal component analysis (PCA), linear discriminant analysis (LDA), canonical correlation analysis (CCA), or non-negative matrix factorization (NMF) techniques as a pre-processing step followed by clustering by K-NN on feature vectors in reduced-dimension space. In machine learning this process is also called low-dimensional embedding.[21]
+
+For very-high-dimensional datasets (e.g. when performing similarity search on live video streams, DNA data or high-dimensional time series) running a fast approximate K-NN search using locality-sensitive hashing, random projection,[22] "sketches",[23] or other high-dimensional similarity search techniques from the VLDB conference toolbox might be the only feasible option.
 
 #### Evaluation Metrics
 - [ ] [TP, FP, TN, FN]()
@@ -220,7 +295,7 @@ One thing I like to mention is although I will try to paraphrase every concept i
     - [ ] [Polynomial Regression]()
 - [ ] [Perceptron](./notebooks/SL/Perceptron.ipynb)
 - [ ] [Navie Bayes](./notebooks/SL/NaiveBayes.ipynb)
-- [ ] [Support Vector Machine (SVM)]()
+- [ ] [Support Vector Machine (SVM)](./notebooks/SL/SVM.ipynb)
 - [ ] [Decision Tree]()
 - [ ] [Random Forest]()
 - [ ] [AdaBoost]()
@@ -283,11 +358,11 @@ One thing I like to mention is although I will try to paraphrase every concept i
 - [ ] [Word2vec]()
 - [ ] [Bag of words (BoW)]()
 
-### [Frontend Development]()
+### [Frontend Development](#)
 
-### [Backend Development]()
+### [Backend Development](#)
 
-### [Cluster and Cloud Computing]()
+### [Cluster and Cloud Computing](#)
 
 ### Data Structure
 Data structure is a specialised format for organizing, processing retrieving and storing data. It makes human and machine have a better understanding of data storage. Specifically, it could be use for storing data, managing resources and services, data exchange, ordering and sorting, indexing, searching, scalability in a more efficient way (David & Sarah, 2021).
@@ -343,7 +418,26 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [ ] [Sorting Algorithms]()
 - [ ] [Searching Algorithms]()
 
-### Database Management System
+### Database Management System ([ADDYNAMICS](https://www.appdynamics.com/topics/database-management-systems))
+
+Database Management Systems (DBMS) are software systems used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the database.
+
+DBMS manage the data, the database engine, and the database schema, allowing for data to be manipulated or extracted by users and other programs. This helps provide data security, data integrity, concurrency, and uniform data administration procedures.
+
+DBMS optimizes the organization of data by following a database schema design technique called normalization, which splits a large table into smaller tables when any of its attributes have redundancy in values. DBMS offer many benefits over traditional file systems, including flexibility and a more complex backup system.
+
+Database management systems can be classified based on a variety of criteria such as the data model, the database distribution, or user numbers. The most widely used types of DBMS software are relational, distributed, hierarchical, object-oriented, and network.
+
+**Distributed database management system**: A distributed DBMS is a set of logically interrelated databases distributed over a network that is managed by a centralized database application. This type of DBMS synchronizes data periodically and ensures that any change to data is universally updated in the database.
+
+**ierarchical database management system**: Hierarchical databases organize model data in a tree-like structure. Data storage is either a top-down or bottom-up format and is represented using a parent-child relationship.
+
+**Network database management system**: The network database model addresses the need for more complex relationships by allowing each child to have multiple parents. Entities are organized in a graph that can be accessed through several paths.
+
+**Relational database management system**: Relational database management systems (RDBMS) are the most popular data model because of its user-friendly interface. It is based on normalizing data in the rows and columns of the tables. This is a viable option when you need a data storage system that is scalable, flexible, and able to manage lots of information.
+
+**Object-oriented database management system**: Object-oriented models store data in objects instead of rows and columns. It is based on object-oriented programming (OOP) that allows objects to have members such as fields, properties, and methods.
+
 - [ ] [Data Modeling]()
 - [ ] [Relational Data Model]()
 - [ ] [Normalisation]()
@@ -353,7 +447,44 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [ ] [Hasing]()
 - [ ] [Raid]()
 
-### [Block Chain]()
+### Block Chain [Java T Point](https://www.javatpoint.com/blockchain-tutorial)
+
+A blockchain is a constantly growing ledger which keeps a permanent record of all the transactions that have taken place in a secure, chronological, and immutable way.
+
+- Ledger: It is a file is constantly growing.
+- Permanent: It means once the transaction goes inside a blockchain, you can put up it permanetly in the ledger.
+- Secure: Blockchain placed information in a secure way. It uses very advanced cryptography to make sure that the information is locked inside the blockchain.
+- Chronological: Chronological means every transaction happens after the previous one.
+- Immutable: It means as you build all the transaction onto the blockchain, this ledger can never be changed.
+
+A blockchian is a chain of blocks which contain information. Each block records all of the recent transactions, and once completed goes into the blockchain as a permanent dataset. Each time a block gets completed, a new block is generated.
+
+> A blockchain can be used for the secure transfer of money, property, contracts, etc. without requiring a third-party intermediary like bank or government. Blockchain is a software protocol, but it could not be run without the Internet (like SMTP used in email).
+
+Blockchain technology has become popular because of the following.
+- Time reduction: In the financial industry, blockchain can allow the quicker settlement of trades. It does not take a lengthy process for verification, settlement, and clearance. It is because of a single version of agreed-upon data available between all stakeholders.
+- Unchangeable transactions: Blockchain register transactions in a chronological order which certifies the unalterability of all operations, means when a new block is added to the chain of ledgers, it cannot be removed or modified.
+- Reliability: Blockchain certifies and verifies the identities of each interested parties. This removes double records, reducing rates and accelerates transactions.
+- Security: Blockchain uses very advanced cryptography to make sure that the information is locked inside the blockchain. It uses Distributed Ledger Technology where each party holds a copy of the original chain, so the system remains operative, even the large number of other nodes fall.
+- Collaboration: It allows each party to transact directly with each other without requiring a third-party intermediary.
+- Decentralized: It is decentralized because there is no central authority supervising anything. There are standards rules on how every node exchanges the blockchain information. This method ensures that all transactions are validated, and all valid transactions are added one by one.
+
+| **Block Chain Tutorial Index**          |                                          |
+| --------------------------------------- | ---------------------------------------- |
+| [Blockchain Tutorial]()                 | [Blockchain Key Areas]()                 |
+| [History of Blockchain]()               | [Blockchain Cryptocurrency]()            |
+| [What is Bitcoin]()                     | [Blockchain DAO]()                       |
+| [Blockchain Version]()                  | [Blockchain limitation]()                |
+| [Role of Bitcoin Miners]()              | [Blockchain Double Spending]()           |
+| [Blockchain Block Hashing]()            | [Blockchain Bitcoin Cash]()              |
+| [How Block Hashes Work in Blockchain]() | [Bitcoin Forks and SegWit]()             |
+| [Basic Components of Bitcoint]()        | [Blockchian Merkle Tree]()               |
+| [Blockchain Proof of work]()            | [Blockchain vs. Database]()              |
+| [Coinbase Transaction]()                | [Who sets the Bitcoin Price]()           |
+| [Key Concepts in Bitcoin]()             | [Getting started with Bitcoin]()         |
+|                                         | [How to choose Bitcoin Wallet]()         | 
+|                                         | [Sending and Receiving Bitcoin]()        |
+|                                         | [Converting Bitcoins to Fiat Currency]() |
 
 ### Online Data Sources
 - [Data.gov](https://catalog.data.gov/dataset): One of the most comprehensive data souces in the U.S. It could be helpful for web application design or design data visualisation.
@@ -365,14 +496,15 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [Australian Bureau of Statistics](https://www.abs.gov.au/census): Australian Census Data.
 
 ### Others
-#### **Concepts**
+#### Concepts
 - [ ] [k-anonymity]()
 - [ ] [l-diversity]()
 - [x] [FAIR principle](https://www.go-fair.org/fair-principles/)
     
     FAIR Guiding Principles of scientific data management and stewardship provide guidelines to improve the **Findability, Accessibility, Interoperability, Reuse** of digital assest. The principle emphasis machine actionabiilty (i.e. the capacity of computational systems to find, access, interoperate, and reuse data with none or minimal human intervention) because humans increasingly rely on computational support to dael with data as a result of the increase in volumne, complexity, and creation speed of data (GO FAIR).
     
-    According to Go-Fair, it define the following **FAIRification process**
+    According to Go-Fair, it define the following **FAIRification process**.
+    
     Findable:
     - (Meta)data are assigned a globally unique and persistent identifier
     - Data are described with rich metadata
@@ -397,6 +529,7 @@ Data structure is a specialised format for organizing, processing retrieving and
         - (Meta)data meet domain-relevant community standards
     
     In short, follow the FAIR principle, a dataset will contain a meaningful metadata that describes where to find the data, how to access the data, how to use the data and finally help user optimise the reuse of data.
+    
 - [x] 5W1H
 
     5W1H stands for What? Who? Where? When? Why? How? This method consists of asking a systematic set of questions to collect all the data necessary to draw up a report of the existing situation with the aim to identifying the true nature of the problem and describing the context precisely (Humanperf Software, 2018).
@@ -414,9 +547,9 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [x] CI/CD
     > Isaac Sacolick: CI/CD is a best practice for devops and agile development. Here's how software development teams automate continuous integration and delivery all the way through the CI/CD pipeline.
     
-    Continuous integration (CI) is a coding philosophy and set of practices that derive development teams to frequently implement small code changes and check them into a version control repository. So the team could continuous intergrate and validate changes. Continuous integrations establishes an automated way to build, package and test their applications. This encourage the programmer commit more frequently which leads to better collaboartion and code code quality.
+    Continuous Integration (CI) is a coding philosophy and set of practices that derive development teams to frequently implement small code changes and check them into a version control repository. So the team could continuous intergrate and validate changes. Continuous integrations establishes an automated way to build, package and test their applications. This encourage the programmer commit more frequently which leads to better collaboartion and code code quality.
     
-    Continouse delivery (CD) picks up where continous intergration ends, and automates application delivery to selected environments, including production, development, and testing environments. Continuous delivery is an automated way to push code changes to these environments which allows the developer could continuous update small changes when CI is valid.
+    Continouse Delivery (CD) picks up where continous intergration ends, and automates application delivery to selected environments, including production, development, and testing environments. Continuous delivery is an automated way to push code changes to these environments which allows the developer could continuous update small changes when CI is valid.
     
 - [x] Scalability, Horizontal & Vertical Scaling
 
@@ -465,8 +598,10 @@ Data structure is a specialised format for organizing, processing retrieving and
     A CRM solution helps you focus on your organization’s relationships with individual people — including customers, service users, colleagues, or suppliers — throughout your lifecycle with them, including finding new customers, winning their business, and providing support and additional services throughout the relationship.
     
     More information please check [here](https://www.salesforce.com/crm/what-is-crm/).
+    
+- [ ] Game Theory
 
-#### **Programming skills**
+#### Programming skills
 - [ ] [Regex]()
 - [ ] [Linux System Commands]()
 - [ ] [Shell Script]()
@@ -492,12 +627,12 @@ Data structure is a specialised format for organizing, processing retrieving and
             return clf.Minkowski(X, Y, p=1)
     ```
     
-#### **Database skills**
+#### Database skills
 - [ ] [MySQL]()
 - [ ] [Sqlite]()
 - [ ] [MongoDB]()
 
-#### **Data Science Lifecycle**
+#### Data Science Lifecycle
 - [x] SMART Goals
     
     SMART goals stands for Specific, Measurable, Achievable, Relevant, and Time-Bound (Kat, 2021).
@@ -643,10 +778,16 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Azure-TDSP-ProjectTemplate, https://github.com/Azure/Azure-TDSP-ProjectTemplate.
 
 **Math Miscs**
-- Wikipedia. (14, Jan 2022). *Minkoski distance*. https://en.wikipedia.org/wiki/Minkowski_distance
+- Wikipedia. (14, Jan 2022). *Minkoski distance*. https://en.wikipedia.org/wiki/Minkowski_distance.
+- Wikipedia. (21, Apr 2022). *Probability theory*. https://en.wikipedia.org/wiki/Probability_theory.
+- Wikipedia. (). *Statistics*. https://en.wikipedia.org/wiki/Statistics.
+- Wikipedia. (6, May 2022). *Operational research*. https://en.wikipedia.org/wiki/Operations_research.
+- Wikipedia. (21, May 2022). *Voting*. https://en.wikipedia.org/wiki/Voting#Voting_methods.
+- Elaine, J H & Jonathan, G. (11, Nov 2021). *What is mathematics*. https://www.livescience.com/38936-mathematics.html. 
 
 **Machine Learning Articles**
 - Onel, H. (11, Sep 2018). *Machine Learning Basics with the K-Nearest Neighbors Algorithm*. https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
+- Wikipedia. (26, May 2022). *Machine learning*. https://en.wikipedia.org/wiki/Machine_learning.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
@@ -667,3 +808,5 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Microsoft. (2022). *What is the Team Data Science Process?*. https://docs.microsoft.com/en-us/azure/architecture/data-science-process/overview.
 - Atlassian. (2022). *Agile Coach*. https://www.atlassian.com/agile.
 - Wrike. (2022). *What Is Waterfall Project Management?*. https://www.wrike.com/project-management-guide/faq/what-is-waterfall-project-management/.
+- APPDYNAMICS. (2022). *What is Database Management Systems (DBMS)?*. https://www.appdynamics.com/topics/database-management-systems.
+- Wikipedia. (16, May 2022). *Dimensionality reduction*. https://en.wikipedia.org/wiki/Dimensionality_reduction.
