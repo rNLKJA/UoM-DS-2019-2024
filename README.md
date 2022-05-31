@@ -425,8 +425,6 @@ The term "artificial intelligence" had previously been used to describe machines
 
 - [x] [Informed Search Algorithm](./doc/AI/solving/informed.md)
 - [ ] [Hill Climbing Algorithm]()
-- [ ] [Greedy Search]()
-- [ ] [A* Search]()
 - [ ] [Means-Ends Analysis]()
 
 - Summary Properties
