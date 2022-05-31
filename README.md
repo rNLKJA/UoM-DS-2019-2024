@@ -407,20 +407,45 @@ The term "artificial intelligence" had previously been used to describe machines
     Turing Test was introduced by Alan Turing in his 1950 paper, "Computing Machinery and Intelligence", which considered the question, "Can Machine think?"
 
 #### Problem-solving
-- [ ] [Search Algorithms](./doc/AI/solving/search_algo.md)
+- [x] [Search Algorithms](./doc/AI/solving/search_algo.md)
 
     Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
         
-- [ ] [Uniform Search Algorithm](./doc/AI/solving/uninformed.md)
+- [x] [Uniform Search Algorithm](./doc/AI/solving/uninformed.md)
 
     Uninformed search is a class of general-purpose search algorithms which operats in brute-force way. Uninformed search algorithms do not have additional information about state or search space other than how to traverse the tree, so it is also called blind search.
 
-- [ ] [Heuristic Function](./doc/AI/solving/heuristic.md)
-- [ ] [Informed Search Algorithm](./doc/AI/solving/informed.md)
+- [x] Heuristic Function
+
+    Heuristic is a function which is used in Informed Search, and it finds the most promising path. It takes the current state of the agent as its input and produces the estimation of how close agent is from the goal. The heuristic method, however, might not always give the best solution, but it guaranteed to find a good solution in reasonable time. Heuristic function estimates how close a state is to the goal. It is represented by h(n), and it calculates the cost of an optimal path between the pair of states. The value of the heuristic function is always positive.
+    
+    **Admissbility of the heuristic function is given as: h(n) <= h*(n).
+
+    Here h(n) is heurstic cost, and h*(n) is the estimated cost. Hence heuristic cost should be less than or equal to the estimated cost.
+
+- [x] [Informed Search Algorithm](./doc/AI/solving/informed.md)
 - [ ] [Hill Climbing Algorithm]()
 - [ ] [Greedy Search]()
 - [ ] [A* Search]()
 - [ ] [Means-Ends Analysis]()
+
+- Summary Properties
+
+    | Uninformed Search Algorithm            | Time Complexity | Space Complexity | Completeness                                     | Optimality Comparisons                                                   |
+    | -------------------------------------- | --------------- | ---------------- | ------------------------------------------------ | ------------------------------------------------------------------------ |
+    | Breadth-first search                   | O(b^d)          | O(b^d)           | Complete                                         | Optimal                                                                  |
+    | Depth-first search                     | O(n^m)          | O(bm)            | Complete                                         | Non-optimal                                                              |
+    | Depth-limited search                   | O(b^ℓ)          | O(bℓ)            | Complete if solution is above ℓ                  | Non-optimal                                                              |
+    | Uniform cost search                    | O(b^{1+[C*/ε]}) | O(b^{1+[C*/ε]})  | Complete if there is a solution                  | Optimal                                                                  |
+    | Iterative deepening depth-first search | O(b^d)          | O(bd)            | Complete if branching factor is finite           | Optimal if path cost is a non-decreasing function of depth of the node   |
+    | Bidirectional search                   | O(b^d)          | O(b^d)           | Complete if both search use BFS                  | Optimal                                                                  |
+    | Best-First search                      | O(b^m)          | O(b^m)           | Incomplete                                       | Non-optimal                                                              |
+    | A* search                              | O(b^d)          | O(b^d)           | Complete if finite branching factor & fixed cost | Optimal if heuristic functions is admissible and consistency             |
+    
+    - d = depth of shallowest solution
+    - b = branching factor, a node at every state
+    - m = maximum depth of any node
+    - ℓ = depth limit parameter
 
 #### [Adversarial Search](#)
 - [ ] [Minimax Search]()
