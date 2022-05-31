@@ -289,6 +289,7 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 ---
 
 <div align=center><h4>Evaluation Metrics</h4></div>
+
 - [ ] [TP, FP, TN, FN]()
 - [ ] [Confusion Matrix]()
 - [ ] [Precision, Recall, F1-score]()
@@ -320,7 +321,7 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 ---
 
 <div align=center><h4>Ensemble Learning</h4></div>
-#### 
+
 - [ ] [Bagging (Bootstrap Aggregating)]()
 - [ ] [Boosting]()
 
@@ -484,11 +485,21 @@ The term "artificial intelligence" had previously been used to describe machines
 - [x] [Informed Search Algorithm](./doc/AI/solving/informed.md)
 
      Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
-     
 
-- [x] Uninformed Search vs. Informed Search 
+- [x] Uninformed Search vs. Informed Search (Geeks for Geeks, 2021)
+    
+    | Uninformed Search                                     | Informed Search                                  |
+    | ----------------------------------------------------- | ------------------------------------------------ |
+    | It doesn't use knowledge for searching process        | It uses knowledge for the searching process      |
+    | It finds solution slow as compared to informed search | It finds solution more quickly                   |
+    | It is always complete                                 | It may or may not be complete                    |
+    | Cost is high                                          | Cost is Low                                      |
+    | It consumes moderate time                             | It consumes less time                            |
+    | No suggestion is given regarding the solution in it   | It provides the direction regarding the solution |
+    | It is more lengthy while implementation               | It is less lengthy while implementation          |
+    | DFS, BFS, DLS, UCS, IDDFS                             | Best-First search, A* search                     |
 
-- [ ] [Hill Climbing Algorithm]()
+- [ ] [Hill Climbing Algorithm](./doc/AI/solving/hill.md)
 
     Hill climbing algorithm is a local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
     
