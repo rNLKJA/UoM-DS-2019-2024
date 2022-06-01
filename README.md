@@ -58,6 +58,8 @@ You can always find the original page just follow the reference page. Maybe the 
 
 ---
 
+<img src="./img/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg" width=100% />
+
 <div align=center><h3>Mathematical Concepts</h3></div>
 
 [[Elaine & Johathan (2021)](https://www.livescience.com/38936-mathematics.html)] Mathematics is the science that deals with the logic of shape, quantity and arrangement. Math is all around us, in everything we do. It is the building block for everything in our daily lives, including mobile devices, computers, software, architecture (ancient and modern), art, money, engineering and even sports.
@@ -238,6 +240,8 @@ Statistics is a mathematical body of science that pertains to the collection, an
 
 ---
 
+<img src="./img/arseny-togulev-MECKPoKJYjM-unsplash.jpg" width=100% />
+
 <div align=center><h3>Machine Learning</h3></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Machine_learning)] Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance on some set of tasks.[1] It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so.[2] Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
@@ -395,6 +399,8 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Ensembler]()
 
 ---
+
+<img src="./img/possessed-photography-U3sOwViXhkY-unsplash.jpg" width=100% />
 
 <div align=center><h3>Artificial Intelligence</h3></div>
 
@@ -731,6 +737,8 @@ Database management systems can be classified based on a variety of criteria suc
 
 ---
 
+<img src="./img/shubham-dhage-T9rKvI3N0NM-unsplash.jpg" width=100% />
+
 <div align=center><h3>Block Chain (<a href='https://www.javatpoint.com/blockchain-tutorial'>Java T Point</a>)</h3></div>
 
 A blockchain is a constantly growing ledger which keeps a permanent record of all the transactions that have taken place in a secure, chronological, and immutable way.
@@ -784,9 +792,13 @@ Blockchain technology has become popular because of the following.
 
 ---
 
+<img src="./img/ricardo-gomez-angel-z6CcN8rlftY-unsplash.jpg" width=100% />
+
 <div align=center><h3>Reinforcement Learning</h3></div>
 
 ---
+
+<img src="./img/absolutvision-82TpEld0_e4-unsplash.jpg" width=100% />
 
 <div align=center><h3>Others</h3></div>
 
@@ -902,6 +914,8 @@ Some uncategoried notes.
 
 
 ---
+
+<img src="./img/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg" width=100% />
 
 <div align=center><h4>Programming Skills</h4></div>
 
