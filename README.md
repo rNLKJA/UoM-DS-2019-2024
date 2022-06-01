@@ -649,6 +649,16 @@ The term "artificial intelligence" had previously been used to describe machines
     - *Utility Theory* is used to represent and infer preferences.
     - *Decision theory* = utility theory + probability theory
     
+    **Prior or unconditional probabilities**: probailities that calculated before any (new) evidence.
+    
+    **Posterior or conditional probabilities**: probabilities that calculated after any evidence shows up.
+    
+    **Short Summary**
+    - Probability is a rigorous formalism for uncertain knowledge.
+    - Joint probability distribution specifies probability of every atomic event.
+    - Queries can be answered by summing over atomic events.
+    - For nontrivial domains, we must find a way to reduce the joint size.
+    - Independence and conditional independence provide the tools.
     
 - [x] [Bayes Theorem in AI](./doc/AI/uncertainty/bayes_theorm.md)
 
@@ -752,9 +762,9 @@ Data structure is a specialised format for organizing, processing retrieving and
 
 ---
 
-<img src="./img/database-management-system.jpg" width=100%/>
+<img src="./img/database-management-system.jpg" width=100% />
     
-<div align=center><h3>Database Management System (<a href='https://www.appdynamics.com/topics/database-management-systems'>ADDYNAMICS</a>)</h3></div>
+<div align=center><h3>Database Management System <a href='https://www.appdynamics.com/topics/database-management-systems'>(ADDYNAMICS)</a></h3></div>
 
 
 Database Management Systems (DBMS) are software systems used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the database.
@@ -788,7 +798,7 @@ Database management systems can be classified based on a variety of criteria suc
 
 <img src="./img/shubham-dhage-T9rKvI3N0NM-unsplash.jpg" width=100% />
 
-<div align=center><h3>Block Chain (<a href='https://www.javatpoint.com/blockchain-tutorial'>Java T Point</a>)</h3></div>
+<div align=center><h3>Block Chain <a href='https://www.javatpoint.com/blockchain-tutorial'>(Java T Point)</a></h3></div>
 
 A blockchain is a constantly growing ledger which keeps a permanent record of all the transactions that have taken place in a secure, chronological, and immutable way.
 
@@ -996,7 +1006,6 @@ Some uncategoried notes.
             return clf.Minkowski(X, Y, p=1)
     ```
     
-
 ---
 
 <img src="./img/pexels-manuel-geissinger-325229.jpg" width=100% />
@@ -1007,6 +1016,18 @@ Some uncategoried notes.
 - [ ] [Sqlite]()
 - [ ] [MongoDB]()
 
+---
+
+<img src="./img/brett-jordan-TMj1c5wlO3k-unsplash.jpg" width=100% />
+
+<div align=center><h4>Data Driven Process Improvement</h4></div>
+
+| Data-Driven Process Improvement      | Data Analysis and Visualization        | Applied Analytics and Data for Decision Making     | 
+| ------------------------------------ | -------------------------------------- | -------------------------------------------------- |
+| [Operations and Performance Goals]() | [Data Analysis Software Tools]()       | [Applying Analytics to Implement Solution]()       |
+| [Data Collection]()                  | [Statistical Process Control (SPC)]()  | [Data-Driven Operational Excellence]()             |
+| [Process Mapping]()                  | [Data Visualisation and Translation]() | [Applying Data-Driven Decision]()                  |
+| [Capstone Project 1]()               | [Capstone Project 2]()                 | [Capstone 3]()                                     |
 
 ---
 
