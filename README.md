@@ -108,6 +108,8 @@ You can always find the original page just follow the reference page. Maybe the 
 
 ---
 
+<img src="./img/pexels-lukas-669619.jpg" width=100% />
+
 <div align=center><h4>Probability</h4></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Probability_theory)] Probability theory is the branch of mathematics concerned with probability. Although there are several different probability interpretations, probability theory treats the concept in a rigorous mathematical manner by expressing it through a set of axioms. Typically these axioms formalise probability in terms of a probability space, which assigns a measure taking values between 0 and 1, termed the probability measure, to a set of outcomes called the sample space. Any specified subset of the sample space is called an event. Central subjects in probability theory include discrete and continuous random variables, probability distributions, and stochastic processes (which provide mathematical abstractions of non-deterministic or uncertain processes or measured quantities that may either be single occurrences or evolve over time in a random fashion). Although it is not possible to perfectly predict random events, much can be said about their behavior. Two major results in probability theory describing such behaviour are the law of large numbers and the central limit theorem.
@@ -144,6 +146,8 @@ You can always find the original page just follow the reference page. Maybe the 
 - [ ] [Probability Cheat Sheet]()
 
 ---
+
+<img src="./img/pexels-anna-nekrashevich-6801648.jpg" width=100% />
 
 <div align=center><h4>Statistics</h4></div>
 
@@ -219,6 +223,8 @@ Statistics is a mathematical body of science that pertains to the collection, an
 - [ ] [Comparison of penalty methods]()
 
 ---
+
+<img src="./img/cyrus-crossan-ZqsY740eAOo-unsplash.jpg" width=100% />
 
 <div align=center><h4>Voting Methods</h4></div>
 
@@ -622,6 +628,24 @@ The term "artificial intelligence" had previously been used to describe machines
 
     To represetn uncertain, where we are not sure about the predicates, we need uncertain reasoning or probabilisitic reasoning.
     
+    Probabilisitc assertions summarize effects of:
+    - laziness: failure to enumerate exceptions, qualifications, etc.
+    - ignoreance: lack of releveant facts, initial condition, etc.
+    
+    Subjective or Bayesian probability:
+    - Probabilities related propositions to one's own state of knowledge.
+    
+    These are not claims of some probabilistics tendency in the current situation (but might be learned from past experience of similar situations).
+    
+    > NOTE: P( cause | effect ) = P( effect | cause ) * P( cause ) / P( effect )
+    
+    Probabilities of propositions change with new evidence.
+    
+    Choice of an event depends on personal preference, however, you might want to check other theory for better decision making:
+    - *Utility Theory* is used to represent and infer preferences.
+    - *Decision theory* = utility theory + probability theory
+    
+    
 - [x] [Bayes Theorem in AI](./doc/AI/uncertainty/bayes_theorm.md)
 
     Bayes' theorem is also known as Baye's rule, Bayes' Law, or Bayesian reasoning, which detemines the probability of an event with uncertain knowledge. In probability theory, it relates the conditional probability and marginal probabilities of two random events. Bayes' theorem was named after the British matehmatician Thomas Bayes. The Bayesian inference is an application of Bayes' theorem, which is fundamental to Bayesian statistics. It is a way to calculate the value of P(B|A) with the knowledge P(A|B). Bayes' theorem allows updating the probability prediction of an event by observing new information of the real world.
@@ -632,10 +656,18 @@ The term "artificial intelligence" had previously been used to describe machines
 
 ---
 
+<img src="./img/5-Amazing-Examples-Of-Natural-Language-Processing-NLP-In-Practice-1200x639.jpeg" width=100% />
+
 <div align=center><h3>Natural Language Processing</h3></div>
 
 - [ ] [Word2vec]()
 - [ ] [Bag of words (BoW)]()
+
+---
+
+<img src="./img/1_I5O6NX_DIKYI1VBuLfX77Q.jpeg" width=100% />
+
+<div align=center><h3>Deep Learning</h3><div>
 
 ---
 
@@ -656,6 +688,8 @@ The term "artificial intelligence" had previously been used to describe machines
 <div align=center><h3>Cluster and Cloud Computing</h3></div>
 
 ---
+
+<img src="./img/ricardo-gomez-angel-ZUwXnS7K7Ok-unsplash.jpg" width=100%/>
 
 <div align=center><h3>Data Structure</h3></div>
 
@@ -808,15 +842,14 @@ Blockchain technology has become popular because of the following.
 
 ---
 
-<img src="./img/absolutvision-82TpEld0_e4-unsplash.jpg" width=100% />
+<!-- <img src="./img/absolutvision-82TpEld0_e4-unsplash.jpg" width=100% /> -->
+<img src="./img/vighnesh-dudani-ZQSs0YZUNfA-unsplash.jpg" width=100% />
 
 <div align=center><h3>Others</h3></div>
 
 Some uncategoried notes.
 
 ---
-
-<img src="./img/vighnesh-dudani-ZQSs0YZUNfA-unsplash.jpg" width=100% />
 
 <div align=center><h4>Concepts</h4></div>
 
@@ -970,7 +1003,7 @@ Some uncategoried notes.
 
 ---
 
-<img src="./img/carlos-muza-hpjSkU2UYSU-unsplash.jpg" width=100% />
+<img src="./img/pexels-tima-miroshnichenko-6694878.jpg" width=100% />
 
 <div align=center><h4>Data Science Life Cycle</h4></div>
 
