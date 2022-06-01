@@ -437,7 +437,7 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <div align=center><h4>Intelligent Agent</h4></div>
 
-- [x] [Types of Agent](./doc/AI/agent/type.md)
+- [x] [Types of Agent](./doc/AI/agent/types_of_agent.md)
     
     Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
     - Simple reflex agent
@@ -470,7 +470,7 @@ The term "artificial intelligence" had previously been used to describe machines
 
     Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
         
-- [x] [Uniform Search Algorithm](./doc/AI/solving/uninformed.md)
+- [x] [Uniform Search Algorithm](./doc/AI/solving/uninformed_search.md)
 
     Uninformed search is a class of general-purpose search algorithms which operats in brute-force way. Uninformed search algorithms do not have additional information about state or search space other than how to traverse the tree, so it is also called blind search.
 
@@ -482,7 +482,7 @@ The term "artificial intelligence" had previously been used to describe machines
 
     Here h(n) is heurstic cost, and h*(n) is the estimated cost. Hence heuristic cost should be less than or equal to the estimated cost.
 
-- [x] [Informed Search Algorithm](./doc/AI/solving/informed.md)
+- [x] [Informed Search Algorithm](./doc/AI/solving/informed_search.md)
 
      Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
 
@@ -499,7 +499,7 @@ The term "artificial intelligence" had previously been used to describe machines
     | It is more lengthy while implementation               | It is less lengthy while implementation          |
     | DFS, BFS, DLS, UCS, IDDFS                             | Best-First search, A* search                     |
 
-- [x] [Hill Climbing Algorithm](./doc/AI/solving/hill.md)
+- [x] [Hill Climbing Algorithm](./doc/AI/solving/hill_climbing.md)
 
     Hill climbing algorithm is a local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
     
@@ -513,7 +513,7 @@ The term "artificial intelligence" had previously been used to describe machines
     
     In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
     
-- [x] [Means-Ends Analysis](./doc/AI/solving/mea.md)
+- [x] [Means-Ends Analysis](./doc/AI/solving/means_ends_analysis.md)
 
     Means-Ends Analysis is problem-solving techniques used in Artificial intelligence for limiting search in AI programs. It is a mixture of Backward and Forward search technique. The MEA process centered on the evaluation of the difference between the curernt state and goal state.
 
@@ -539,9 +539,37 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <div align=center><h4>Adversarial Search</h4></div>
 
-- [ ] [Minimax Search]()
-- [ ] [Alpha-beta Pruning]()
-- [ ] [Monte Carlo Search Tree]()
+- [x] [Adversarial Search](./doc/AI/search/adversarial_search.md)
+    
+    Adversarial search is a search, where we examine the problem which arises when we try to plan ahead of the world and other agents are planning against us.
+    
+- [x] [Minimax Search](./doc/AI/search/minimax.md)
+
+    Minimax algorithm is a recurisive or backtracking algorithm which is used in decision making and game theory. It provides an optimal move for the player assuming that opponent is also playing optimally. Minimax algorithm uses recursion to search through the game-tree. Minimax algorithm is mostly used for game playing in AI. Such as Chess, Checkers, tic-tac-toe, go, and various two-players game. This algorithm compute the minimax decision for the current state. In this algorithm, two players play the game, one called MAX and other is called MIN. Both the players fight it as the opponent player gets the minimum benefit while they get the maximum benefit. Both Players of the game are opponent of each other, where MAX will select the maximized value and MIN will select the minimized value. The minimax algorithm performs a depth-first search algrotihm for the exploration of the comlete game tree. The minimax algorithm proceeds all the way down to the terminal node of the tree, then backtrack the tree as the solution.
+
+    *Properties of minimax algorithm*
+    - **Complete**: Minimax algorithm is complete, it will definitely find a solution (if exist) in the finite search tree.
+    - **Optimal**: Minimax algorithm is optimal if both opponent are player optimally.
+    - **Time complexity**: As it performs DFS for the game-tree, so the time complexity of minimax algorithm is **O(b^m)**, where b is branching factor of the game-tree, and m is the maximum depth of the tree.
+    - **Space complexity**: Space complexity of minimax algorithm is aslo similar to DFS which is **O(bm)**.
+
+    *Limitation of the minimax algorithm*:
+    - The main drawback of the minimax algorithm is that it gets really slow for complex games such as Chess, go, etc. This type of games has a huge branching factor, and the player has lots of choices to decide. This limitation of the minimax algorithm can be improved from [alpha-beta pruning](./alpha_beta_pruning.md).
+
+- [x] [Alpha-beta Pruning](./doc/AI/search/alpha_beta_pruning.md)
+
+    Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm. As we have seen in the minimax search algorihtm that the number of game states it has examine are exponential in depth of the tree. Since we cannot eliminate the exponent, but we can cut it to half. Hence there is a technique by which without chekcing each node of the game tree we can compute the corerct minimax decision, and this technique is called pruning. This involves two threshold parameter Alpha and Beta for future expansion, so it is called alpha-beta pruning. It is also called Alpha-Beta Algorithm. Alpha-beta pruning can be applied at any depth of a tree, and sometimes it not only prune the tree leaves but also entire sub-tree. The two-parameter can be defined as: 
+
+    - *Alpha*: The best (highest-value) choice we have found so far at any point along the path for maximier. The initial value of alpha is -inf.
+    - *Beta*: The best (lowest-value) choice we have found so far at any point along the path for minimier. The initial value of beta is inf.
+
+    The alpha-beta pruning is a standard minimax algorithm returns the same move as the standard algorithm does, but it removes all the nodes which are not really affecting the final decision but making algorithm slow. Hence by pruning these node, it makes the algorithm fast.
+    
+    Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm.
+    
+    The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}).
+    
+- [ ] [Monte Carlo Search Tree](./doc/AI/search/monte_carlo_search_tree.md)
 
 ---
 
@@ -558,7 +586,11 @@ The term "artificial intelligence" had previously been used to describe machines
 - [ ] [Word2vec]()
 - [ ] [Bag of words (BoW)]()
 
+---
+
 <div align=center><h3>Frontend Development</h3></div>
+
+---
 
 <div align=center><h3>Backend Development</h3></div>
 
