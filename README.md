@@ -184,6 +184,8 @@ Statistics is a mathematical body of science that pertains to the collection, an
 
 ---
 
+<img src="./img/koukichi-takahashi-fZdX9BW8WDs-unsplash.jpg" width=100% />
+
 <div align=center><h4>Discrete Mathes and Operations Research: Linear Programming</h4></div>
 
 - [ ] Introduction to Linear Programming
@@ -198,6 +200,8 @@ Statistics is a mathematical body of science that pertains to the collection, an
 - [ ] Sensitivity Analysis
 
 ---
+
+<img src="./img/alex-knight-Ys-DBJeX0nE-unsplash.jpg" width=100% />
 
 <div align=center><h4>Techniques of Operational Research</h4></div>
 
@@ -1148,6 +1152,8 @@ Some uncategoried notes.
 
 
 ---
+
+<img src="./img/jezael-melgoza-layMbSJ3YOE-unsplash.jpg" width=100% />
 
 <div align=center><h2>Reference</h2></div>
 
