@@ -667,7 +667,7 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <img src="./img/1_I5O6NX_DIKYI1VBuLfX77Q.jpeg" width=100% />
 
-<div align=center><h3>Deep Learning</h3><div>
+<div align=center><h3>Deep Learning</h3></div>
 
 ---
 
@@ -689,7 +689,7 @@ The term "artificial intelligence" had previously been used to describe machines
 
 ---
 
-<img src="./img/ricardo-gomez-angel-ZUwXnS7K7Ok-unsplash.jpg" width=100%/>
+<img src="./img/ricardo-gomez-angel-ZUwXnS7K7Ok-unsplash.jpg" width=100% />
 
 <div align=center><h3>Data Structure</h3></div>
 
@@ -748,7 +748,10 @@ Data structure is a specialised format for organizing, processing retrieving and
 
 ---
 
+<img src="./img/database-management-system.jpg" width=100%/>
+    
 <div align=center><h3>Database Management System (<a href='https://www.appdynamics.com/topics/database-management-systems'>ADDYNAMICS</a>)</h3></div>
+
 
 Database Management Systems (DBMS) are software systems used to store, retrieve, and run queries on data. A DBMS serves as an interface between an end-user and a database, allowing users to create, read, update, and delete data in the database.
 
