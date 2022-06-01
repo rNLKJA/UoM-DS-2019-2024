@@ -499,7 +499,7 @@ The term "artificial intelligence" had previously been used to describe machines
     | It is more lengthy while implementation               | It is less lengthy while implementation          |
     | DFS, BFS, DLS, UCS, IDDFS                             | Best-First search, A* search                     |
 
-- [ ] [Hill Climbing Algorithm](./doc/AI/solving/hill.md)
+- [x] [Hill Climbing Algorithm](./doc/AI/solving/hill.md)
 
     Hill climbing algorithm is a local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
     
@@ -513,9 +513,11 @@ The term "artificial intelligence" had previously been used to describe machines
     
     In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
     
-- [ ] [Means-Ends Analysis]()
+- [x] [Means-Ends Analysis](./doc/AI/solving/mea.md)
 
-- Summary Properties
+    Means-Ends Analysis is problem-solving techniques used in Artificial intelligence for limiting search in AI programs. It is a mixture of Backward and Forward search technique. The MEA process centered on the evaluation of the difference between the curernt state and goal state.
+
+- [x] Summary Search Algorithm Properties
 
     | Uninformed Search Algorithm            | Time Complexity | Space Complexity | Completeness                                     | Optimality Comparisons                                                   |
     | -------------------------------------- | --------------- | ---------------- | ------------------------------------------------ | ------------------------------------------------------------------------ |
