@@ -620,6 +620,8 @@ The term "artificial intelligence" had previously been used to describe machines
 
 - [x] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
+    Bayesian networks are probabilistic, because these networks are built from a probablity distribution, and also use probability theory for prediction and anomaly detection. Real world applications are probablistic in nature, and to represent the relationship between mutiple events, we need a Bayesian network. It can also be used in various tasks including prediction, anomaly detection, diagnositcs, automated insight, reasoning, time series prediction, and decision making under uncertainty.
+
 ---
 
 <div align=center><h3>Natural Language Processing</h3></div>
