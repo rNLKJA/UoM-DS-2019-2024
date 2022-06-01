@@ -593,7 +593,18 @@ The term "artificial intelligence" had previously been used to describe machines
 
     The reasoning is the mental process of deriving logical conclusion and make predictions from available knowledge, facts, and beliefs. Or we can say, "Reasoning is a way to infer facts from existing data." It is a general process of thinking rationally, to find valid conclusions.
     
-- [ ] [Inductive vs. Deductive Reasoning](./doc/AI/knowledge/Inductive_vs_deductive.md)
+- [x] [Inductive vs. Deductive Reasoning](./doc/AI/knowledge/Inductive_vs_deductive.md)
+
+    | **Basis for comparison** | **Deductive Reasoning**  | **Inductive Reasoning** |
+    | ------------------------ | ------------------------ | ----------------------- |
+    | Definition               | Deductive reasoning is the form of valid reasonin, to deduce new information or conclusion from known related facts and information | Inductive reasoning arraives at a conclusion by the process of generalization using specific facts or data |
+    | Approach                 | Deductive reasoning follows a top-down approach | Inductive reasoning follows a bottom-up approach |
+    | Starts from              | Deductive reasoning starts from premises        | Inductive reasoning starts from conclusion       |
+    | Validity                 | In deductive reasoning conclusion must be true if the premises are true | In inductive reasoning, the truth of premises does not guarantee the truth of conclusions |
+    | Usage                    | Usage of deductive reasoning is difficult, as we need facts which must be true | Use of inductive reasoning is fast and easy, aswe need evidence instead of true facts. We othen use it in our daily life |
+    | Process                  | Thoery -> Hypothesis -> Patterns -> Confirmation | Obserations -> Patterns -> Hypothesis --> Theory |
+    | Argument                 | In deductive reasoning, arguments may be valid or invalid | In inductive reasoning, arguments may be weak or strong |
+    | Structure                | Deductive reasoning reaches from general facts to specific facts | Inductive reasoning reaches from specific facts to general facts |
 
 ---
 
