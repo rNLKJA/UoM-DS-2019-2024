@@ -610,8 +610,14 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <div align=center><h4>Uncertain Knowledge R</h4></div>
 
-- [ ] [Probabilistic Reasoning in AI](./doc/AI/uncertainty/probabilitis_reasoning.md)
-- [ ] [Bayes Theorem in AI](./doc/AI/uncertainty/bayes_theorm.md)
+- [x] [Probabilistic Reasoning in AI](./doc/AI/uncertainty/probabilitis_reasoning.md)
+
+    To represetn uncertain, where we are not sure about the predicates, we need uncertain reasoning or probabilisitic reasoning.
+    
+- [x] [Bayes Theorem in AI](./doc/AI/uncertainty/bayes_theorm.md)
+
+    Bayes' theorem is also known as Baye's rule, Bayes' Law, or Bayesian reasoning, which detemines the probability of an event with uncertain knowledge. In probability theory, it relates the conditional probability and marginal probabilities of two random events. Bayes' theorem was named after the British matehmatician Thomas Bayes. The Bayesian inference is an application of Bayes' theorem, which is fundamental to Bayesian statistics. It is a way to calculate the value of P(B|A) with the knowledge P(A|B). Bayes' theorem allows updating the probability prediction of an event by observing new information of the real world.
+
 - [ ] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
 ---
