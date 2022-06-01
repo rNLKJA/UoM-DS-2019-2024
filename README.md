@@ -575,9 +575,30 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <div align=center><h4>Knowledge Represent</h4></div>
 
+- [ ] Knowledge Based Agent
+- [ ] Knowledge Representation
+- [ ] Knowledge Representation Techniques
+- [ ] Propositional Logic
+- [ ] Rules of Inferece
+- [ ] The Wumpus world
+- [ ] Knowledge-base for Wumps World
+- [ ] First-order logic
+- [ ] Knowledge Engineering in FOL
+- [ ] Inference in First-order logic
+- [ ] Unification in FOL
+- [ ] Resolution in FOL
+- [ ] Forward Chaining and Backward Chaining
+- [ ] Forward Chaining vs. Backward Chaining
+- [ ] Reasoning in AI
+- [ ] Inductive vs. Deductive Reasoning
+
 ---
 
 <div align=center><h4>Uncertain Knowledge R</h4></div>
+
+- [ ] Probabilistic Reasoning in AI
+- [ ] Bayes Theorem in AI
+- [ ] Beyesian Belief Network
 
 ---
 
@@ -738,6 +759,10 @@ Blockchain technology has become popular because of the following.
 - [Dataset Search](https://datasetsearch.research.google.com/): The Dataset search is a search engine designed specifically for data sets.
 - [国家统计局](https://data.stats.gov.cn/): National Bureau of Statistics of China contains demographic information of provience, city, etc.
 - [Australian Bureau of Statistics](https://www.abs.gov.au/census): Australian Census Data.
+
+---
+
+<div align=center><h3>Reinforcement Learning</h3></div>
 
 ---
 
