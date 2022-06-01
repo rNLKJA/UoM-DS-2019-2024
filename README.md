@@ -374,6 +374,8 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
 ---
 
+<img src="./img/fabio-oyXis2kALVg-unsplash.jpg" width=100%>
+
 <div align=center><h3>Neural Network</h3></div>
 
 - [ ] [Neuron]()
@@ -637,13 +639,19 @@ The term "artificial intelligence" had previously been used to describe machines
 
 ---
 
+<img src="./img/dean-pugh-C8NDn4xk9zs-unsplash.jpg" width=100% />
+
 <div align=center><h3>Frontend Development</h3></div>
 
 ---
 
+<img src="./img/kvistholt-photography-oZPwn40zCK4-unsplash.jpg" width=100% />
+
 <div align=center><h3>Backend Development</h3></div>
 
 ---
+
+<img src="./img/sigmund-_dJCBtdUu74-unsplash.jpg" width=100% />
 
 <div align=center><h3>Cluster and Cloud Computing</h3></div>
 
@@ -780,6 +788,8 @@ Blockchain technology has become popular because of the following.
 
 ---
 
+<img src="./img/claudio-schwarz-fyeOxvYvIyY-unsplash.jpg" width=100% />
+
 <div align=center><h3>Online Dataset Sources</h3></div>
 
 - [Data.gov](https://catalog.data.gov/dataset): One of the most comprehensive data souces in the U.S. It could be helpful for web application design or design data visualisation.
@@ -805,6 +815,8 @@ Blockchain technology has become popular because of the following.
 Some uncategoried notes.
 
 ---
+
+<img src="./img/vighnesh-dudani-ZQSs0YZUNfA-unsplash.jpg" width=100% />
 
 <div align=center><h4>Concepts</h4></div>
 
@@ -947,6 +959,8 @@ Some uncategoried notes.
 
 ---
 
+<img src="./img/pexels-manuel-geissinger-325229.jpg" width=100% />
+
 <div align=center><h4>Database Skills</h4></div>
 
 - [ ] [MySQL]()
@@ -955,6 +969,8 @@ Some uncategoried notes.
 
 
 ---
+
+<img src="./img/carlos-muza-hpjSkU2UYSU-unsplash.jpg" width=100% />
 
 <div align=center><h4>Data Science Life Cycle</h4></div>
 
