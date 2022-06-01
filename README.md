@@ -589,16 +589,19 @@ The term "artificial intelligence" had previously been used to describe machines
 - [ ] Resolution in FOL
 - [ ] Forward Chaining and Backward Chaining
 - [ ] Forward Chaining vs. Backward Chaining
-- [ ] Reasoning in AI
-- [ ] Inductive vs. Deductive Reasoning
+- [x] [Reasoning in AI](./doc/AI/knowledge/reasoning_in_AI.md)
+
+    The reasoning is the mental process of deriving logical conclusion and make predictions from available knowledge, facts, and beliefs. Or we can say, "Reasoning is a way to infer facts from existing data." It is a general process of thinking rationally, to find valid conclusions.
+    
+- [ ] [Inductive vs. Deductive Reasoning](./doc/AI/knowledge/Inductive_vs_deductive.md)
 
 ---
 
 <div align=center><h4>Uncertain Knowledge R</h4></div>
 
-- [ ] Probabilistic Reasoning in AI
-- [ ] Bayes Theorem in AI
-- [ ] Beyesian Belief Network
+- [ ] [Probabilistic Reasoning in AI](./doc/AI/uncertainty/probabilitis_reasoning.md)
+- [ ] [Bayes Theorem in AI](./doc/AI/uncertainty/bayes_theorm.md)
+- [ ] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
 ---
 
