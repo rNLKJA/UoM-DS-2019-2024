@@ -750,8 +750,79 @@ The term "artificial intelligence" had previously been used to describe machines
     - Exact inference by variable elimination.
 
 - [ ] Robotics
-
     
+    Artificial intelligence could help robot to perceive the world in a better,  more efficient way.
+    
+    - Robots: Mechanical machines
+    - Effectors: Any parts that make robots move
+    - Sensors: The component make robot perceive the world information
+        - Range finders: sonar (land, underwater), laser range finder, radar (aircraft), tactile sensors, GPS
+        - Image sensors: cameras (visual, infrared)
+        - Proprioceptive sensors: shaft decoders (joints, wheels), inertial sensors, force sensors, torque sensors
+
+    Configuration of robot specified by 6 numbers => 6 degrees of freedom (DOF). 6 is the minimum number required to position end-effector arbitrarily. For dynamical systems, add velocity for each DOF.
+    
+    **Non-holonomic**: a robot that has the number of controls less than the number of DOFs. It means a robot cannot generally transition between two infinitesimally close configurations.
+    
+    **Sources of uncertainty in interaction**<br>
+    There are two major sources of uncertainty for any interacting mobile agent (human or robotics):
+    - Everything they perceive (percepts)
+    - Everything they do (actions)
+    
+    > Kant<br>Disctinction between 'things-in-themselves', and 'appearances'.
+    
+    Problem: How do we relate to these perceptions (perceived reality) with the real world. <br>
+    Occassionally, perceived reality breaks down:
+    - Hallucinations
+    - Optimal Illusions
+    
+    **Sources of uncertainty in perception**<br>
+    A sensor not always work with 100% accuracy, in the real world, there must be some perception error exist, for example, non-precise location, false positive / false negative rate while perceving the environment, undetected small sptial content, finite time for perception actions.
+    
+    Must make assumptions about the way the world behaves in order to interpret the readings at all.
+    - Some finite resolution sampling is sufficient to detect obstacles (consider an obstacle that consists of hundreds of long pins, sparesly distributed, pointing towards the sensor).
+    - Must know something about the structure of the robot to decide what an obstacle is.
+    - Given some sensor reading, only have a finite probabilityy that it is correct - must have some way of dealing with.
+
+    **Confirm location**
+    - Localization: given map and observed landmarks, update pose distribution.
+    - Mapping: give poase and observed landmarks, update map distribution.
+    - Simultaneous Localization and Mapping (SLAM): given observed landmarks, update pose and map distribution.
+    - Probabilistic formulation of SLAM: add landmark localtion L1, ..., Lk to the state vector, proceed as for localization.
+    
+    **Bayesian Inference on Sensors**<br>
+    Need some way to determine whether an obstacle is there, given multiple measurements from a sensor.
+    
+    > Bayesian inference is a method for determining the probability that a hypothesis is true, given a set of measurements. Probability ≈ Belief
+    
+    **Incremental form of Bayes Law**<br>
+    Bayes Law can be extended to handle multiple measurements.
+    - Given a set of independent measurements {M_j}.
+    - What is the probability of the hypothesis H?
+    
+    If measurements are independent, can use incremental form.
+    - Given the current probability distribution P(H).
+    - And a new measurment M.
+    - What is the updated probability distribution P(H).
+    
+    **Solution**: Use Bayes Law in incremental form: P(H) <-- M -- P(M|H) / P(M) * P(H). Sometimes called Bayesian update rule.
+    
+    
+    **Short Summary**
+    - Percepts and actions are both subject to uncertainty.
+    - We cannot interpret out percepts without having a model of what theyy mean, and without (partically invalid) assumptions about how they perform.
+
+    <details close>
+    <summary><b>Implementation for AI</b></summary>
+    <br>
+    
+    If you can't rely on your perceptions or your actions, does that mean that Agent methods we have discussed are of no use?
+    - Many problems don't have uncertainty for perceptions and actions, e.g. scheduling, planning, game-playing, text-based machine translation.
+    - Can incorporate standard agent methods within a system that handles uncertainty, i.e., re-plan if something goes wrong.
+    - Can apply uncertainty handlers to whole system - e.g., Bayesian inference.
+    
+    Certainly for autonomous robots and computer vision interaction with an environment creates many problems that cannot be easily handled with conventional AI techniques.
+    </details>
 
 ---
 
