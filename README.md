@@ -654,6 +654,20 @@ The term "artificial intelligence" had previously been used to describe machines
     
     **Posterior or conditional probabilities**: probabilities that calculated after any evidence shows up.
     
+    Typically, we are interested in the posterior joint distribution of the query variables Y 
+    given specific values e for the evidence variables E.
+    
+    Let the hidden variables be H = X - Y - E, then the required summation of joint entries is doen by summing out the hidden variables:
+    
+    P(Y|E = e) = aP(Y,E = e) = a \sum_n P(Y, E = e, H = h)
+    
+    The terms in the summation are joint entries because Y, E, and H together exhaust the set of random variables.
+    
+    Obvious problems:
+    - Worst-case time complexity O(d^n) where d is the largest arity.
+    - Space complexity O(d^n) to store the joint distribution.
+    
+    
     **Short Summary**
     - Probability is a rigorous formalism for uncertain knowledge.
     - Joint probability distribution specifies probability of every atomic event.
@@ -668,6 +682,62 @@ The term "artificial intelligence" had previously been used to describe machines
 - [x] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
     Bayesian networks are probabilistic, because these networks are built from a probablity distribution, and also use probability theory for prediction and anomaly detection. Real world applications are probablistic in nature, and to represent the relationship between mutiple events, we need a Bayesian network. It can also be used in various tasks including prediction, anomaly detection, diagnositcs, automated insight, reasoning, time series prediction, and decision making under uncertainty.
+    
+    Bayesian network is a simple, graphical notation for conditional independence assertions and hence for compact specification of full joint distribution.
+    
+    **Syntax**
+    - A set of nodes, one per variable.
+    - A directed, acyclic graph (link approximate to "directly influences").
+    - A conditional distribution for each node given its parents: P( X_i | Parents(X_i) ).
+    
+    In the simplest case, conditional distribution represented as a conditional probability table (CPT) giving the distribution over X_i for each combination of parent values.
+    
+    A CPT for Boolean X_i with k Boolean parents has 2^k rows for the combinations of parent values. Each row requires one number p for X_i = True (the number for X_i = false is just 1 - p).
+    
+    If each variable has no more than k parents, the complete network requires O(n * 2^k) numbers. i.e. grows linearly with n, vs. O(2^n) for the full joint distribution.
+    
+    **Global semantics**: it defines the full joint distribution as the product of the local conditional distributions:
+    - P(x_1, ..., x_n) = \prod_{i=1}^n P( x_i | parent(X_i) )
+    
+    **Local semantics**: each node is conditionally independent of its nondescendants given its parents.
+    
+    > Theorem: Local semantics === global semantics
+    
+    **Construct Bayesian Networks**
+    ```
+    1. Choose an ordering of variable X_1, ..., X_n.
+    2. For i = 1 to n:
+        add X_i to the network
+        select parents from X_1, ..., X_{i-1} such that P(X_i|Parents(X_i)) = P(X_i|X_1,...,X_{i-1})
+    
+    This choice of parents guarantees the global semantics 
+                            P(X_1,...,X_n) = \prod^n_{i=1} P(X_i|X_1,...,X_{i-1}) (chain rule)
+                                           = \prod^n_{i=1} P(X_i|Parents(X_i)) (by construction)
+    ```
+    
+    **Inference tasks**
+    - *Simple queries*: compoute posterior marginal P(X_i|E = e)
+    - *Conjunctive queries*: P(X_i, X_j | E = e) = P(X_i|E = e) = P(X_j | X_i, E = e), probabilistic inference required for P(outcome|action, evidence)
+    - *Value of information*: which evidence to seek next?
+    - *Sensitivity analysis*: which probability values are most critical?
+    - *Explanation*： why do I need a new starter motor?
+    
+    **Variable elimination**: Basic operations
+    - *Summing out* a variable from a product of factors:
+        - move any constant factors outside the summation
+        - add up submatrices in pointwise product of remaining factors
+    - *Pointwise product* of factors f_1 and f_2:
+        - f_1(x_1, ..., x_j, y_1 , ...., y_k) \times f_2(y_1, ..., y_k, z_1, ...., z_l) = f(x_1, ..., x_j, y_1, ..., y_k, z_1, ..., z_l)
+        - e.g. f_1(a, b) \times f_2(b, c) = f(a, b, c)
+    
+    **Irrelavent variable**: Theorem: Y is irrelevant unless Y \in Ancestors({X} \cup E).
+    
+    **Short Summary**
+    - Bayes net provide a natural representation for (causually induced) conditional independence.
+    - Topology + CPTs = compact representation of joint distribution.
+    - Generally easy for (non)experts to construct.
+    - Exact inference by enumeration.
+    - Exact inference by variable elimination.
 
 ---
 
