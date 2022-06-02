@@ -723,12 +723,22 @@ The term "artificial intelligence" had previously been used to describe machines
     - *Explanation*： why do I need a new starter motor?
     
     **Variable elimination**: Basic operations
+    
+    Variable elimination carry out summations right-to-left, storing intermediate reuslts (factros) to avoid recomputation.
+    
     - *Summing out* a variable from a product of factors:
         - move any constant factors outside the summation
         - add up submatrices in pointwise product of remaining factors
     - *Pointwise product* of factors f_1 and f_2:
         - f_1(x_1, ..., x_j, y_1 , ...., y_k) \times f_2(y_1, ..., y_k, z_1, ...., z_l) = f(x_1, ..., x_j, y_1, ..., y_k, z_1, ..., z_l)
         - e.g. f_1(a, b) \times f_2(b, c) = f(a, b, c)
+        
+    **Inference by enumeration**
+    
+    Slightly intelligent way to sum out variables from the joint without actually constructing its explicit representation.
+    - Recursive depth-first enumeration: O(n) space, O(d^n) time.
+    
+    > Enumeration is inefficient: repeated computation.
     
     **Irrelavent variable**: Theorem: Y is irrelevant unless Y \in Ancestors({X} \cup E).
     
@@ -738,6 +748,10 @@ The term "artificial intelligence" had previously been used to describe machines
     - Generally easy for (non)experts to construct.
     - Exact inference by enumeration.
     - Exact inference by variable elimination.
+
+- [ ] Robotics
+
+    
 
 ---
 
