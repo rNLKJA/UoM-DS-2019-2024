@@ -594,7 +594,21 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <div align=center><h4>Knowledge Represent</h4></div>
 
-- [ ] Knowledge Based Agent
+- [x] [Knowledge Based Agent](./doc/AI/knowledge/knowledge_based_agent.md)
+
+    An intelligent agent needs knowledge about the real world for taking decisions and reasoning to act efficiently. Knowledge-based agents are those agents who have the capability of maintaining an internal state of knowledge, reason over that knowledge, update their knowledge after observations and take actions. These agents can represent the world with some formal representation and act intelligently.
+    
+    Knowledge-based agents are composed of two main part:
+    - Knowledge-base
+    - Inference system
+    
+    A knowledge-based agent must able to do the following:
+    - An agent should be able to represent states, actions, etc.
+    - An agent should be able to incorporate new percepts
+    - An agent can update the internal representation of the world
+    - An agent can deduce the internal representation of the world
+    - An agent can deduce appropriate actions
+
 - [ ] Knowledge Representation
 - [ ] Knowledge Representation Techniques
 - [ ] Propositional Logic
@@ -812,6 +826,7 @@ The term "artificial intelligence" had previously been used to describe machines
     - Percepts and actions are both subject to uncertainty.
     - We cannot interpret out percepts without having a model of what theyy mean, and without (partically invalid) assumptions about how they perform.
 
+    <br>
     <details close>
     <summary><b>Implementation for AI</b></summary>
     <br>
