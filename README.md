@@ -306,6 +306,19 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 <div align=center><h4>Evaluation Metrics</h4></div>
 
 - [ ] [TP, FP, TN, FN]()
+
+    Performance measurement TP, TN, FP, FN are the parameters used in the evaluation of specificity, sensitivity and accuracy.
+    - True Positive or TP is the number of perfectly identified DR pictures. 
+    - True Negatives or TN is the number of perfectly detected non DR picures. 
+    - False Positive or FP is the number of wrongly detected DR images as positive which is actually non DR. 
+    - False Negative or FN is the number of wrongly detected non DR which is actually DR. 
+    
+    The figure below shows the measurements using these parameters. 
+    - Sensitivity is the percentage of positive cases and specificity is the percentage of negative cases. 
+    - Accuracy is the percentage of correctly identified cases.
+
+    <img src="./img/Performance-measurement-TP-TN-FP-FN-are-the-parameters-used-in-the-evaluation-of.png" align=center />
+    
 - [ ] [Confusion Matrix]()
 - [ ] [Precision, Recall, F1-score]()
 - [ ] [Area Under the Curve - Receiver Operating Characteristics (AUC-ROC)]()
@@ -588,6 +601,12 @@ The term "artificial intelligence" had previously been used to describe machines
     
     The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}).
     
+- [ ] [Temporal Difference Learning (TDLambda)]()
+
+    Temporal difference (TD) learning refers to a class of model-free reinforcement learning methods which learn by bootstrapping from the current estimate of the value function. These methods sample from the environment, like Monte Carlo methods, and perform updates based on current estimates, like dynamic programming methods.
+
+    While Monte Carlo methods only adjust their estimates once the final outcome is known, TD methods adjust predictions to match later, more accurate, predictions about the future before the final outcome is known (Wikipedia, 2022).
+
 - [ ] [Monte Carlo Search Tree](./doc/AI/search/monte_carlo_search_tree.md)
 
     In computer science, Monte Carlo tree search (MCTS) is a heuristic search algorithm for some kinds of decision processes, most notably those employed in software that plays board games. In that context MCTS is used to solve the game tree.
@@ -759,6 +778,25 @@ The term "artificial intelligence" had previously been used to describe machines
 - [x] [Bayes Theorem in AI](./doc/AI/uncertainty/bayes_theorm.md)
 
     Bayes' theorem is also known as Baye's rule, Bayes' Law, or Bayesian reasoning, which detemines the probability of an event with uncertain knowledge. In probability theory, it relates the conditional probability and marginal probabilities of two random events. Bayes' theorem was named after the British matehmatician Thomas Bayes. The Bayesian inference is an application of Bayes' theorem, which is fundamental to Bayesian statistics. It is a way to calculate the value of P(B|A) with the knowledge P(A|B). Bayes' theorem allows updating the probability prediction of an event by observing new information of the real world.
+    
+    ```tex
+    Bayes Law: 
+        P(H,M) = P(H|M)P(M) = P(M|H)P(H)
+        P(H|M) = P(H,M)/P(M)
+               = P(M|H)P(H) / P(M)
+
+        P(M|H) = P(H,M)/P(H)
+               = P(H|M)P(M) / P(H)
+    
+    Elements:
+        - P(H|M): posterior probability
+        - P(H): prior probability
+        - P(M|H): sensor model
+        - P(M): nomralisatio factor
+        
+    Normalisation:
+        P(M) = P(M|H)P(H) + P(M|¬H)P(H)
+    ```
 
 - [x] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
@@ -869,6 +907,11 @@ Must make assumptions about the way the world behaves in order to interpret the 
 
 **Confirm location**
 - Localization: given map and observed landmarks, update pose distribution.
+    
+    This could also achieved by using particle filtering to produce approximate positio estimate, it starts with random samples from uniform prior distribution for robot position. Then the agent update likelihood of each sample using sensor measurements and resample according to updated likelihood. 
+    
+    It requires continously update the distribution for the current state using the lastest measurement. Note, uncertainty of the robot's state grows as it moves until we find a landmark. Assumes that landmarks are identifiable, otherwise posterior distribution is multimodel.
+
 - Mapping: give poase and observed landmarks, update map distribution.
 - Simultaneous Localization and Mapping (SLAM): given observed landmarks, update pose and map distribution.
 - Probabilistic formulation of SLAM: add landmark localtion L1, ..., Lk to the state vector, proceed as for localization.
@@ -877,6 +920,45 @@ Must make assumptions about the way the world behaves in order to interpret the 
 Need some way to determine whether an obstacle is there, given multiple measurements from a sensor.
 
 > Bayesian inference is a method for determining the probability that a hypothesis is true, given a set of measurements. Probability ≈ Belief
+
+<details close>
+<summary>Example: Obstacle Dectection</summary>
+<br>
+
+    - The odds of there being an obstacle present are 1 in 10.
+    - The detector has 5% false positive rate and 10% false negative rate.
+
+    Question:
+    - Probability that an obstacle is present if the detector returns positive?
+    - Probability that an obstacle is present if the detector returns negative?
+
+    Solution:
+    
+    1. Find prior probability
+
+        |                   | Obstacle | Not-obstacle |
+        | ----------------- | -------- | ------------ |
+        | Prior probability | 0.1      | 0.9          |
+    
+    2. Construct a sensor model:
+    
+        | Actual Class \ Prediction Class | Positive | Negative |
+        | ------------------------------- | -------- | -------- |
+        | Obstacle                        | TP: 0.9  | FN: 0.1  |
+        | Not Obstacle                    | FP: 0.05 | TN: 0.95 |
+    
+    3. Calculate the probability
+    
+    ```
+    P(obstacle|positive) = P(obstacle,positive)/P(positive)
+                         = P(positive|obstacle)P(obstacle) / ( P(positive|obstacle)P(obstacle) + P(positive|not-obstacle)P(not-obstacle) )
+                         = 0.9 * 0.1 / (0.9 * 0.1 + 0.05 * 0.9) = 0.667
+
+    P(not-obstacle|negative) = P(not-obstacle,negative) / P(negative)
+                             = P(negative|not-obstacle)P(not-obstacle) / ( P(negative|obstacle)P(obstacle) + P(negative|not-obstacle)P(not-obstacle) )
+                             = 0.95 * 0.9 / (0.1 * 0.1 + 0.95 * 0.9) = 0.0116
+    ```
+</details>
 
 **Incremental form of Bayes Law**<br>
 Bayes Law can be extended to handle multiple measurements.
@@ -889,6 +971,27 @@ If measurements are independent, can use incremental form.
 - What is the updated probability distribution P(H).
 
 **Solution**: Use Bayes Law in incremental form: P(H) <-- M -- P(M|H) / P(M) * P(H). Sometimes called Bayesian update rule.
+
+```
+P(H|M1, M2) = P(M1, M2|H)P(H) / P(M1, M2)
+            = P(M2|H)P(H|M1) / [ P(M2|H)P(H|M1) + P(M2|¬H)P(¬H|M1) ] 
+```
+
+**Motion Planning**
+- Idea: plan in configuration space defined by the robot's DOFs.
+    - The basic problem: ∞^d states. So convert infinite state to finite state space.
+    - Configuration space planning
+        - Cell decomposition:
+            - divide up space into simple cells, each of which can be traversed "easily" (e.g., convex).
+        - Skeletonization:
+            - Skeletonization is a process for reducing foreground regions in a binary image to a skeletal remnant that largely preserves the extent and connectivity of the original region while throwing away most of the original foreground pixels. To see how this works, imagine that the foreground regions in the input binary image are made of some uniform slow-burning material. Light fires simultaneously at all points along the boundary of this region and watch the fire move into the interior. At points where the fire traveling from two different boundaries meets itself, the fire will extinguish itself and the points at which this happens form the so called `quench line`. This line is the skeleton. Under this definition it is clear that thinning produces a sort of skeleton (Fisher et al., 2003).
+            - identify finite number of easily connect points/lines that form a graph such that any two points are connected byt a path on the graph
+- Solution is a point trajectory in free C-space.
+            - Skeletonization could also achieve by
+                - *Voronoi diagram*
+                    - locus of points equidistant from obstacles.
+                - *Probabilisitc Roadmap*
+                    - A probabilistic roadmap is generated by generating random points in C-space and keeping those in freespace; create graph by joining pairs by straight lines.
 
 **Short Summary**
 - Percepts and actions are both subject to uncertainty.
@@ -1441,6 +1544,8 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Geeks for Geeks. (26, Feb 2022). *Difference between Informed and Uninformed Search in AI*. https://www.geeksforgeeks.org/difference-between-informed-and-uninformed-search-in-ai/.
 - Wikipedia. (9, May 2022). *Monte Carlo Tree Search*. https://en.wikipedia.org/wiki/Monte_Carlo_tree_search.
 - Sagar, S. (1, Aug, 2018). *Monte Carlo Tree Search, MCTS For Every Data Science Enthusiast*. https://towardsdatascience.com/monte-carlo-tree-search-158a917a8baa.
+- Wikipedia. (10, May 2022). *Temporal difference learning*. https://en.wikipedia.org/wiki/Temporal_difference_learning.
+- Fisher, R., Perkins, S., Walker, A & Wolfar, E. *Skeletonization/Medial Axis Transform*. https://homepages.inf.ed.ac.uk/rbf/HIPR2/skeleton.html.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
