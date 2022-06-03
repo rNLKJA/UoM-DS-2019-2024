@@ -55,3 +55,15 @@ As per Russel and Norvig, an environment can have various features from the poin
     - An empty room whose state can be defined by its temperature is an example of an accessible environment.
     - Information abuot an event on earth is an example of Inaccessible environment.
 
+### Environment Types Examples
+
+|               | Solitaire | Backgammon | Internet shopping | Taxi |
+| ------------- | --------- | ---------- | ----------------- | ---- | 
+| Observable    | Yes       | Yes        | No                | No   |
+| Deterministic | Yes       | No         | Partly            | No   | 
+| Episodic      | No        | No         | No                | No   |
+| Static        | Yes       | Yes        | Semi              | No   |
+| Discrete      | Yes       | Yes        | Yes               | No   |
+
+The environment type largely determines the agent design. 
+The real world is (of course) partially-observable, stochastic, sequential, dynamic, continuous.

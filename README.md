@@ -434,6 +434,17 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
 The term "artificial intelligence" had previously been used to describe machines that mimic and display "human" cognitive skills that are associated with the human mind, such as "learning" and "problem-solving". This definition has since been rejected by major AI researchers who now describe AI in terms of rationality and acting rationally, which does not limit how intelligence can be articulated.
 
+**Four Approaches to defining AI**
+- Thinking like a human
+    - figure out how we think by introspection or experimentation (cognitive modeling).
+    - self-awwareness is important: "I think therefore I am".
+    - Humans feel emotions and apparently don't always think (or act) rationally.
+- Thinking rationally
+    - problem is how do we define rationality, this could be defined via *logic* since *logic* has greatly influenced AI.
+- Acting like a human
+- Acting rationally
+    - The rational agent: perform actions which will (most likely) achieve one's goals.
+
 >  "It is a branch of computer science by which we can create intelligent machines which can behave like a human, think like humans, and able to make decisions." (Java T Point) 
 
 **Goals of Artifical Intelligence**
@@ -469,18 +480,36 @@ The term "artificial intelligence" had previously been used to describe machines
 
 <div align=center><h4>Intelligent Agent</h4></div>
 
+An agent is any entity which perceives and acts in an environment. The percept sequence is defined as the complete history of content the agent has perceived. Agent behaviour is defined by an agent function mapping the given percept sequence to an action. An agent program is responsible for implementation the agent function within some physical system.
+
+We evaluate agent behavior through the performance measure. A rational agent acts to maximize the expectation of the performance measure, conditioned on the percept sequence to date, and whatever built-in knowledge the agent possesses.
+
+A self-learning agent may undertake actions to modify future percepts, and/or adjust the agent function as it accumulates experience.
+
 - [x] [Types of Agent](./doc/AI/agent/types_of_agent.md)
     
     Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
-    - Simple reflex agent
-    - Model-based reflex agent
-    - Goal-based agents
-    - Utility-based agent
-    - Learning Agent
+    - *Simple reflex agent*：only chooses actions based on the current percept, and ignores all preceding information.
+    - *Model-based reflex agent*：maintains some internal state which depends on the percept history, useful if the current environment cannot be fully described by the current percept.
+    - *Goal-based agents*：makes decisions in order to achieve a set of predefined goals, in addition to maintaining internal state. In practice usually superceded by utility-based agent.
+    - *Utility-based agent*：compares the desirability of different environment states via a utility function. This allows the comparison of different goal states and action sequences and tradeoffs between different goals.
+    - *Learning Agent*: can learn from its past experiences or it has learning capabilities. It starts to act with basic knowledge and then is able to act and adapt automatically through learning. 
+    
+    Agent model: charaterise requirements for an agent in terms of its percepts, actions, environment and performance measure.
+    
+    Agent types: choose and justify choice of agent type for a given problem.
+    
+    Environment types: characterise the environment for a given problem.
     
 - [x] [Intelligent Agent](./doc/AI/agent/intelligent_agent.md)
 
-    An agent can be anything that perceiveits environment through sensors and act upon that environment through actuators. An Agent runs in the cycle of perceiving, thinking, and acting.
+    Any agent composed with four parts:
+    - *Percepts*: percepts or observations of the environment, made by sensors
+    - *Actions*: which affect the environments, made actuators
+    - *Environment*: where the agent exist
+    - *Performance measure*: performance measurement evaluate the desirability of environment states
+
+    In short, an agent can be anything that perceiveits environment through sensors and act upon that environment through actuators. An Agent runs in the cycle of perceiving, thinking, and acting.
     
     An AI system can be defined as the study of the rational agent and its environment. The agents sense the environment through sensors and act on their environment through actuators. An AI agent can have mental properties such as knowledge, belief, intention, etc.
     
@@ -489,10 +518,21 @@ The term "artificial intelligence" had previously been used to describe machines
     An environment is everything in the world which surrounds the agent, but it is not a part of an agent itself. An environment can be described as a situation in which an agent is present.
 
     The environment is where agent lives, operate and provide the agent with something to sense and act upon it. An environment is mostly said to be non-feministic.
+    
+    **Environment Properties**
+    - *Fully/partially observable*: The environment is fully observable if the agent's sensors capture the complete state of the environment at every point in time. Imperfect sensors/models or a fundamental inability to capture environmental state lead to partial observability.
+    - *Single/multi agent*: Self explanatory, although care must be taken in deciding which entities in the environment mustbe considered fellow agents.
+    - *Deterministic/stochastic*: if future states of the environment is a special case of a nondeterministic environment which admits a probabilistic model of environment phenomena.
+    - *Episodic/sequential*: If an agent's percept sequence is divided into noninteracting episodes, where the agent executes a single action based on the current percept, the environment is episodic. In a sequential environment, the current action may affect future environment state and hence future decisions.
+    - *Static/Dynamic*:If the environment can change when the agent is deliberating (executing the agent program), then the environment is dynamic, otherwise static.
+    - *Discrete/continuous*: If the environment has a finite number of distinct states, then the agent only has to contend with a finite set of percepts, and the environment is discrete, otherwise continuous. Similarly, if an agent can choose between a finite number of actions, the action set is discrete.
 
 - [x] [Turing Test in AI](./doc/AI/agent/turing_test.md)
 
     Turing Test was introduced by Alan Turing in his 1950 paper, "Computing Machinery and Intelligence", which considered the question, "Can Machine think?"
+    
+    Problem with Truing test:<br>
+    Turing test is not reproducible, constructive or amenable to mathematical analysis.
 
 ---
 
