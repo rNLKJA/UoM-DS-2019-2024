@@ -625,16 +625,66 @@ The term "artificial intelligence" had previously been used to describe machines
     - Production Rules
     
 - [ ] Propositional Logic
+
+    Propositional logial (PL) is the simplest form of logic where all the statements are made by propositions. A proposition is a declarative statement which is either true or false. It is a technique of knowledge representation in logical and mathematical form.
+    
 - [ ] Rules of Inferece
-- [ ] The Wumpus world
-- [ ] Knowledge-base for Wumps World
+
+    In artificial intelligence, we need intelligent computers which can create new logic from old logic or by evidence, so generating the conclusions from evidence and facts is termed as inference.
+
+- [ ] Example of Knowledge-Based Agent
+    - [ ] The Wumpus world
+    - [ ] Knowledge-base for Wumps World
+    
 - [ ] First-order logic
+
+    First-order logic is another way of knowledge representation in artificial intelligence. It is an extension to propositional logic. FOL is sufficiently expressive to represent the natural language statements in a concise way. First-order logic also known as Predicate logic or First-order predicate logic. First order logic is a powerful language that develops information about the objects in a more easy way and can also express the relationship between thoese objects. First-order logic (like natural language) does not only assume that the world contains facts like propositional logic but also assumes the following things in the world:
+    - **Objects**: A, B, people, numbers, colors, wards, theories, squares, pits, ...
+    - **Relations**: It can be unary reltaion such : red, round, is adjacent, or n-any relation such as: the sister of, the brother of, has color, comes between, ...
+    - **Functions**: Father of, best friend, third inning of, end of, ...
+    
+    As a natural language, first-order logic also has two main parts:
+    - Syntax
+    - Semantics
+
 - [ ] Knowledge Engineering in FOL
+
+    The process of constructing a knowledge-base in first-order logic is called as knowledge- engineering. In knowledge-engineering, someone who investigates a particular domain, learns important concept of that domain, and generates a formal representation of the objects, is known as knowledge engineer.
+    
 - [ ] Inference in First-order logic
+
+    Inference in First-Order Logic is used to deduce new facts or sentences from existing sentences. Before understanding the FOL inference rule, let's understand some basic terminologies used in FOL.
+    
 - [ ] Unification in FOL
+
+    Unification is a process of making two different logical atomic expressions identical by finding a substitution. Unification depends on the substitution process.
+    It takes two literals as input and makes them identical using substitution.
+    Let Ψ1 and Ψ2 be two atomic sentences and 𝜎 be a unifier such that, Ψ1𝜎 = Ψ2𝜎, then it can be expressed as UNIFY(Ψ1, Ψ2).
+
 - [ ] Resolution in FOL
+
+    Resolution is a theorem proving technique that proceeds by building refutation proofs, i.e., proofs by contradictions. It was invented by a Mathematician John Alan Robinson in the year 1965.
+
+    Resolution is used, if there are various statements are given, and we need to prove a conclusion of those statements. Unification is a key concept in proofs by resolutions. Resolution is a single inference rule which can efficiently operate on the conjunctive normal form or clausal form.
+
 - [ ] Forward Chaining and Backward Chaining
+    
+    In artificial intelligence, forward and backward chaining is one of the important topics, but before understanding forward and backward chaining lets first understand that from where these two terms came.
+    
 - [ ] Forward Chaining vs. Backward Chaining
+
+    | Forward Chaining | Backward Chaining |
+    | ---- | ---- |
+    | Forward chaining starts from known facts and applied inference rule to extract more data unit it reaches to the goal | Backward chaining starts from the goal and works backward through inference rules to find the required facts that support the goal |
+    | It is a bottom-up approach | It is a top-down approach |
+    | Forward chaining is known as data-driven inference technique as we reach to the goal using the available data | Backward chaining is known as a goal-driven technique as we start from the goal and divide into sub-goal to extract the facts |
+    | Forward chaining reasoning appplies a breadth-first search strategy | Backward chaining reasoning applies a depth-frist search strategy |
+    | Forward chaining tests for all the available rules | Backward chaining only tests for few required rules |
+    | Forward chaining is suitable for the planning, monitoring, control, and interpretation application | Backward chaining is suitable for diagnostic, prescription, and debugging application |
+    | Forward chaining can generate an infinite number of possible conclusions | Backward chaining generates a finite number of possible conclusions |
+    | It operates in the forward direction | It operates in the backward direction |
+    | Forward chaining is aimed for any conclusion | Backward chaining is only aimed for the required data |
+
 - [x] [Reasoning in AI](./doc/AI/knowledge/reasoning_in_AI.md)
 
     The reasoning is the mental process of deriving logical conclusion and make predictions from available knowledge, facts, and beliefs. Or we can say, "Reasoning is a way to infer facts from existing data." It is a general process of thinking rationally, to find valid conclusions.
@@ -775,82 +825,83 @@ The term "artificial intelligence" had previously been used to describe machines
     - Generally easy for (non)experts to construct.
     - Exact inference by enumeration.
     - Exact inference by variable elimination.
+    
+---
 
-- [ ] Robotics
+<div align=center><h4>Robotics</h4></div>
     
-    Artificial intelligence could help robot to perceive the world in a better,  more efficient way.
-    
-    - Robots: Mechanical machines
-    - Effectors: Any parts that make robots move
-    - Sensors: The component make robot perceive the world information
-        - Range finders: sonar (land, underwater), laser range finder, radar (aircraft), tactile sensors, GPS
-        - Image sensors: cameras (visual, infrared)
-        - Proprioceptive sensors: shaft decoders (joints, wheels), inertial sensors, force sensors, torque sensors
+Artificial intelligence could help robot to perceive the world in a better,  more efficient way.
 
-    Configuration of robot specified by 6 numbers => 6 degrees of freedom (DOF). 6 is the minimum number required to position end-effector arbitrarily. For dynamical systems, add velocity for each DOF.
-    
-    **Non-holonomic**: a robot that has the number of controls less than the number of DOFs. It means a robot cannot generally transition between two infinitesimally close configurations.
-    
-    **Sources of uncertainty in interaction**<br>
-    There are two major sources of uncertainty for any interacting mobile agent (human or robotics):
-    - Everything they perceive (percepts)
-    - Everything they do (actions)
-    
-    > Kant<br>Disctinction between 'things-in-themselves', and 'appearances'.
-    
-    Problem: How do we relate to these perceptions (perceived reality) with the real world. <br>
-    Occassionally, perceived reality breaks down:
-    - Hallucinations
-    - Optimal Illusions
-    
-    **Sources of uncertainty in perception**<br>
-    A sensor not always work with 100% accuracy, in the real world, there must be some perception error exist, for example, non-precise location, false positive / false negative rate while perceving the environment, undetected small sptial content, finite time for perception actions.
-    
-    Must make assumptions about the way the world behaves in order to interpret the readings at all.
-    - Some finite resolution sampling is sufficient to detect obstacles (consider an obstacle that consists of hundreds of long pins, sparesly distributed, pointing towards the sensor).
-    - Must know something about the structure of the robot to decide what an obstacle is.
-    - Given some sensor reading, only have a finite probabilityy that it is correct - must have some way of dealing with.
+- Robots: Mechanical machines
+- Effectors: Any parts that make robots move
+- Sensors: The component make robot perceive the world information
+    - Range finders: sonar (land, underwater), laser range finder, radar (aircraft), tactile sensors, GPS
+    - Image sensors: cameras (visual, infrared)
+    - Proprioceptive sensors: shaft decoders (joints, wheels), inertial sensors, force sensors, torque sensors
 
-    **Confirm location**
-    - Localization: given map and observed landmarks, update pose distribution.
-    - Mapping: give poase and observed landmarks, update map distribution.
-    - Simultaneous Localization and Mapping (SLAM): given observed landmarks, update pose and map distribution.
-    - Probabilistic formulation of SLAM: add landmark localtion L1, ..., Lk to the state vector, proceed as for localization.
-    
-    **Bayesian Inference on Sensors**<br>
-    Need some way to determine whether an obstacle is there, given multiple measurements from a sensor.
-    
-    > Bayesian inference is a method for determining the probability that a hypothesis is true, given a set of measurements. Probability ≈ Belief
-    
-    **Incremental form of Bayes Law**<br>
-    Bayes Law can be extended to handle multiple measurements.
-    - Given a set of independent measurements {M_j}.
-    - What is the probability of the hypothesis H?
-    
-    If measurements are independent, can use incremental form.
-    - Given the current probability distribution P(H).
-    - And a new measurment M.
-    - What is the updated probability distribution P(H).
-    
-    **Solution**: Use Bayes Law in incremental form: P(H) <-- M -- P(M|H) / P(M) * P(H). Sometimes called Bayesian update rule.
-    
-    
-    **Short Summary**
-    - Percepts and actions are both subject to uncertainty.
-    - We cannot interpret out percepts without having a model of what theyy mean, and without (partically invalid) assumptions about how they perform.
+Configuration of robot specified by 6 numbers => 6 degrees of freedom (DOF). 6 is the minimum number required to position end-effector arbitrarily. For dynamical systems, add velocity for each DOF.
 
-    <br>
-    <details close>
-    <summary><b>Implementation for AI</b></summary>
-    <br>
-    
-    If you can't rely on your perceptions or your actions, does that mean that Agent methods we have discussed are of no use?
-    - Many problems don't have uncertainty for perceptions and actions, e.g. scheduling, planning, game-playing, text-based machine translation.
-    - Can incorporate standard agent methods within a system that handles uncertainty, i.e., re-plan if something goes wrong.
-    - Can apply uncertainty handlers to whole system - e.g., Bayesian inference.
-    
-    Certainly for autonomous robots and computer vision interaction with an environment creates many problems that cannot be easily handled with conventional AI techniques.
-    </details>
+**Non-holonomic**: a robot that has the number of controls less than the number of DOFs. It means a robot cannot generally transition between two infinitesimally close configurations.
+
+**Sources of uncertainty in interaction**<br>
+There are two major sources of uncertainty for any interacting mobile agent (human or robotics):
+- Everything they perceive (percepts)
+- Everything they do (actions)
+
+> Kant<br>Disctinction between 'things-in-themselves', and 'appearances'.
+
+Problem: How do we relate to these perceptions (perceived reality) with the real world. <br>
+Occassionally, perceived reality breaks down:
+- Hallucinations
+- Optimal Illusions
+
+**Sources of uncertainty in perception**<br>
+A sensor not always work with 100% accuracy, in the real world, there must be some perception error exist, for example, non-precise location, false positive / false negative rate while perceving the environment, undetected small sptial content, finite time for perception actions.
+
+Must make assumptions about the way the world behaves in order to interpret the readings at all.
+- Some finite resolution sampling is sufficient to detect obstacles (consider an obstacle that consists of hundreds of long pins, sparesly distributed, pointing towards the sensor).
+- Must know something about the structure of the robot to decide what an obstacle is.
+- Given some sensor reading, only have a finite probabilityy that it is correct - must have some way of dealing with.
+
+**Confirm location**
+- Localization: given map and observed landmarks, update pose distribution.
+- Mapping: give poase and observed landmarks, update map distribution.
+- Simultaneous Localization and Mapping (SLAM): given observed landmarks, update pose and map distribution.
+- Probabilistic formulation of SLAM: add landmark localtion L1, ..., Lk to the state vector, proceed as for localization.
+
+**Bayesian Inference on Sensors**<br>
+Need some way to determine whether an obstacle is there, given multiple measurements from a sensor.
+
+> Bayesian inference is a method for determining the probability that a hypothesis is true, given a set of measurements. Probability ≈ Belief
+
+**Incremental form of Bayes Law**<br>
+Bayes Law can be extended to handle multiple measurements.
+- Given a set of independent measurements {M_j}.
+- What is the probability of the hypothesis H?
+
+If measurements are independent, can use incremental form.
+- Given the current probability distribution P(H).
+- And a new measurment M.
+- What is the updated probability distribution P(H).
+
+**Solution**: Use Bayes Law in incremental form: P(H) <-- M -- P(M|H) / P(M) * P(H). Sometimes called Bayesian update rule.
+
+**Short Summary**
+- Percepts and actions are both subject to uncertainty.
+- We cannot interpret out percepts without having a model of what theyy mean, and without (partically invalid) assumptions about how they perform.
+
+<br>
+<details close>
+<summary><b>Implementation for AI</b></summary>
+<br>
+
+If you can't rely on your perceptions or your actions, does that mean that Agent methods we have discussed are of no use?
+- Many problems don't have uncertainty for perceptions and actions, e.g. scheduling, planning, game-playing, text-based machine translation.
+- Can incorporate standard agent methods within a system that handles uncertainty, i.e., re-plan if something goes wrong.
+- Can apply uncertainty handlers to whole system - e.g., Bayesian inference.
+
+Certainly for autonomous robots and computer vision interaction with an environment creates many problems that cannot be easily handled with conventional AI techniques.
+</details>
 
 ---
 
