@@ -590,6 +590,10 @@ The term "artificial intelligence" had previously been used to describe machines
     
 - [ ] [Monte Carlo Search Tree](./doc/AI/search/monte_carlo_search_tree.md)
 
+    In computer science, Monte Carlo tree search (MCTS) is a heuristic search algorithm for some kinds of decision processes, most notably those employed in software that plays board games. In that context MCTS is used to solve the game tree.
+    
+    MCTS is an algorithm that figures out the best move out of a set of moves by Selecting → Expanding → Simulating → Updating the nodes in tree to find the final solution. This method is repeated until it reaches the solution and learns the policy of the game (SAGAR, 2018).
+    
 ---
 
 <div align=center><h4>Knowledge Represent</h4></div>
@@ -1432,9 +1436,11 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Wikipedia. (26, May 2022). *Machine learning*. https://en.wikipedia.org/wiki/Machine_learning.
 
 **Artificial Intelligence Articles**
-- Wikipedia. (30, May, 2022). *Artificial Intelligent*. https://en.wikipedia.org/wiki/Artificial_intelligence.
+- Wikipedia. (30, May 2022). *Artificial Intelligent*. https://en.wikipedia.org/wiki/Artificial_intelligence.
 - Java T Point. (2022). *Artificial Intelligent*. https://www.javatpoint.com/artificial-intelligence-tutorial.
 - Geeks for Geeks. (26, Feb 2022). *Difference between Informed and Uninformed Search in AI*. https://www.geeksforgeeks.org/difference-between-informed-and-uninformed-search-in-ai/.
+- Wikipedia. (9, May 2022). *Monte Carlo Tree Search*. https://en.wikipedia.org/wiki/Monte_Carlo_tree_search.
+- Sagar, S. (1, Aug, 2018). *Monte Carlo Tree Search, MCTS For Every Data Science Enthusiast*. https://towardsdatascience.com/monte-carlo-tree-search-158a917a8baa.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
