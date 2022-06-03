@@ -609,8 +609,21 @@ The term "artificial intelligence" had previously been used to describe machines
     - An agent can deduce the internal representation of the world
     - An agent can deduce appropriate actions
 
-- [ ] Knowledge Representation
-- [ ] Knowledge Representation Techniques
+- [x] [Knowledge Representation](./doc/AI/knowledge/knowledge_representation.md)
+
+    Humans are best at understanding, reasoning, and interpreting knowledge. Human knows things, which is knowledge and as per their knowledge they perform various actions in the real world. But how machines do all these things comes under knowledge representation and reasoning. Hence we can describe Knowledge representation as following:
+    - Knowledge representation and reasoning (KR, KRR) is the part of Artificial intelligence which concerned with AI agents thinking and how thinking contributes to intelligent behavior of agents.
+    - It is responsible for representing information about the real world so that a computer can understand and can utilize this knowledge to solve the complex real world problems such as diagnosis a medical condition or communicating with humans in natural language.
+    - It is also a way which describes how we can represent knowledge in artificial intelligence. Knowledge representation is not just storing data into some database, but it also enables an intelligent machine to learn from that knowledge and experiences so that it can behave intelligently like a human.
+
+- [x] [Knowledge Representation Techniques](./doc/AI/knowledge/knowledge_representation_techniques.md)
+
+    There are mainly four ways of knowledge representation which are given as follows:
+    - Logical representaiton
+    - Semantic Network Representation
+    - Frame Representation
+    - Production Rules
+    
 - [ ] Propositional Logic
 - [ ] Rules of Inferece
 - [ ] The Wumpus world
