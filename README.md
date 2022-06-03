@@ -616,6 +616,22 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     **Admissbility of the heuristic function is given as: h(n) <= h*(n).
 
     Here h(n) is heurstic cost, and h*(n) is the estimated cost. Hence heuristic cost should be less than or equal to the estimated cost.
+    
+    Admissibnle heuristics can be derived from the exact solution cost of relaxed version of the problem. 
+    - For example, if the rules of the 8-puzzle are relaxed so that a tile can move anywhere then h1(n) gives the shortest solution.
+        - h1(n) = number of misplaced tiles
+        - h2(n) = total Manhattan distance
+    - If the rules are relaxed so that a tile can move to any adjacent square, then h2(n) gives the shortest solution.
+    
+    h(σ) ≤ min(cost(σ → goal)) = h*(σ), ∀σ ∈ Σ
+    
+    An admissible heuristic defines an optimal cost estimate; it never overestimate the cost to the goal. Note sacrificing admissibilty does not completely void the heuristic function - you lose guarantees of optimality, but non-admissible heuristics may allow you search method to run faster as less nodes in the priority queue need to be expanded - in general there is a tradeoff between speed/optimality.
+    
+    **Consistency/Monotony**
+    
+    h(σ) ≤ cost(σ, σ′,A) + h(σ′) ∀σ ∈ Σ, A(σ) = σ′
+    
+    This is the triangle inequality applied to costs of graph states. Here cost(σ, σ′,A) denotes the cost to the agent of taking action A in state σ to end up in state σ′.
 
 - [x] [Informed Search Algorithm](./doc/AI/solving/informed_search.md)
 
@@ -648,6 +664,21 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
     
+    ```
+    function HILL-CLIMBING(problem) returns a solution state
+        inputs: problem
+        local variables: current, a node
+                         next, a node
+        current <- MAKE-NODE(INITIAL-STATE[problem])
+        loop do
+            next <- a highest-valued successor of current
+            if VALUE[next] < VALUE[current] then return current
+            current <- next
+        ends
+    ```
+    
+    The problem of hill-climbing algorithm is it can get stuck on local maxima.
+    
 - [x] [Means-Ends Analysis](./doc/AI/solving/means_ends_analysis.md)
 
     Means-Ends Analysis is problem-solving techniques used in Artificial intelligence for limiting search in AI programs. It is a mixture of Backward and Forward search technique. The MEA process centered on the evaluation of the difference between the curernt state and goal state.
@@ -669,6 +700,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     | (Uninformed Search) Iterative deepening depth-first search | O(b^d)          | O(bd)            | Complete if branching factor is finite           | Optimal if path cost is a non-decreasing function of depth of the node   |
     | (Uninformed Search) Bidirectional search                   | O(b^d)          | O(b^d)           | Complete                                         | Optimal if both search use BFS                                           |
     | (Informed Search) Best-First search                        | O(b^m)          | O(b^m)           | Incomplete                                       | Non-optimal                                                              |
+    | (Informed Search) Greedy search                            | O(b^m)          | O(b^m)           | Incomplete                                       | Non-optimal                                                              |
     | (Informed Search) A* search                                | O(b^d)          | O(b^d)           | Complete if finite branching factor & fixed cost | Optimal if heuristic functions is admissible and consistency             |
     
     - d = depth of shallowest solution
@@ -680,6 +712,11 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
 - There are lots of variety of uniformed search strategies.
 - Iterative deepening search uses only linear space and not much more time than other uninformed search algorithms.
 
+- Heuristics help reduce search cost, however, finding an optimal solution is still difficult. 
+- Greedy best-first is not optimal but can be efficient.
+- A* search is complete and optimal but is prohibitive in memory.
+- Hill-climbing methods operate on complete-state formulations, requires less memeory, but not optimal.
+
 ---
 
 <div align=center><h4>Adversarial Search</h4></div>
@@ -688,15 +725,58 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     Adversarial search is a search, where we examine the problem which arises when we try to plan ahead of the world and other agents are planning against us.
     
+    Usually, a game will have an unpreditable opponent and time limits for play. Thus our agent should use adversarial search find solution with a form contingency plan and approaximate the best solution in time bounds.
+    
+    **Types of Games**: game types could be described as the following table.
+    
+    |                       | Deterministic                      | Chance                                    |
+    | --------------------- | ---------------------------------- | ----------------------------------------- |
+    | Perfect information   | chess<br>checkers<br>go<br>othello | backgammon<br>monopoly                    |
+    | Imperfect information |                                    | bridge<br>poker<br>scrable<br>nuclear war |
+    
+    Games illustrate seveval important points about AI.
+    - perfection is unattainable => must approximate and make trade-offs 
+    - uncertainty limits the value of look-ahead 
+    - programs could use TDLearning (self-learning agent) to learn the game from past game experience or using supervised learning like gradient decent search to find the best solution.
+        - problems
+            - Delayed reinforcement: reward resulting from an action may not be received until several time steps later, which also slows down the learning.
+            - Credit assignment: need to know which action(s) was responsible for the outcome.
+    
 - [x] [Minimax Search](./doc/AI/search/minimax.md)
 
+    > Minimax is a perfect play for deterministic, perfect-information games.
+
     Minimax algorithm is a recurisive or backtracking algorithm which is used in decision making and game theory. It provides an optimal move for the player assuming that opponent is also playing optimally. Minimax algorithm uses recursion to search through the game-tree. Minimax algorithm is mostly used for game playing in AI. Such as Chess, Checkers, tic-tac-toe, go, and various two-players game. This algorithm compute the minimax decision for the current state. In this algorithm, two players play the game, one called MAX and other is called MIN. Both the players fight it as the opponent player gets the minimum benefit while they get the maximum benefit. Both Players of the game are opponent of each other, where MAX will select the maximized value and MIN will select the minimized value. The minimax algorithm performs a depth-first search algrotihm for the exploration of the comlete game tree. The minimax algorithm proceeds all the way down to the terminal node of the tree, then backtrack the tree as the solution.
+    
+    ```
+    function MINIMAX-DECISION(game) returns an operator
+        for each op in OPERATIONS[game] do
+            VALUE[op] <- MINIMAX_VALUE( APPLY(op, game), game )
+        end
+        return the op with the highest VALUE[op]
+    
+    function MINIMAX-VALUE(state, game) returns a utility value
+        if TERMINAL-TEST[game](state) then
+            return UTILITY[game](state)
+        else if MAX is to move in state then
+            return the highest MINIMAX-VALUE of SUCCESSORS(state)
+        else if MIN is to move in state then
+            return the lowest MINIMAX-VALUE of SUCCESSORS(state)
+    ```
 
     *Properties of minimax algorithm*
     - **Complete**: Minimax algorithm is complete, it will definitely find a solution (if exist) in the finite search tree.
     - **Optimal**: Minimax algorithm is optimal if both opponent are player optimally.
     - **Time complexity**: As it performs DFS for the game-tree, so the time complexity of minimax algorithm is **O(b^m)**, where b is branching factor of the game-tree, and m is the maximum depth of the tree.
     - **Space complexity**: Space complexity of minimax algorithm is aslo similar to DFS which is **O(bm)**.
+
+    In the real world, usually there is a resouce limits for minimax algorithm. For example a player has limited time or there is not enough computational power for successors exploration. What we can do is using two approaches:
+    - cutoff test: e.g. depth limit (perhaps add quiescence search)
+        
+        MINIMAX-CUTOFF is identical to MINIMAX-VALUE except we add depth limit as an additional terminal check, and using utility function to replace the evaluation function. 
+        
+    - evaluation fucntion = estimated desirability of position
+    These two approach are effective to shortern the time complexity and space complexity of minimax search. 
 
     *Limitation of the minimax algorithm*:
     - The main drawback of the minimax algorithm is that it gets really slow for complex games such as Chess, go, etc. This type of games has a huge branching factor, and the player has lots of choices to decide. This limitation of the minimax algorithm can be improved from [alpha-beta pruning](./alpha_beta_pruning.md).
@@ -712,13 +792,68 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm.
     
-    The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}).
+    ```
+    function MAX-VALUE(state, game, α, β) returns the minimax value of state
+        inputs: state, current state in game
+                game, game description
+                α, the best score for MAX along the path to state
+                β, the best score for MIN along the path to state
+
+        if CUTOFF-TEST(state) then return EVAL(state)
+        for each s in SUCCESSORS(state) do
+            α <- MAX(α, MIN-VALUE(s, game, α, β))
+            if α >= β then return β
+        end
+        return α
+        
+    function MIN-VALUE(state, game, α, β) returns the minimax value of state
+        if CUTOFF-TEST(state) then return EVAL(state)
+            β <- MIN(β, MAX-VALUE(s, game, α, β))
+            if β <= α then return α
+        end
+        return β
+    ```
     
-- [ ] [Temporal Difference Learning (TDLambda)]()
+    Pruning does not affect final reulst. 
+    
+    The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}). As a result, the agent could doubles depth of search.
+    
+- [ ] [Temporal Difference Learning (TDLeaf(λ))]()
 
     Temporal difference (TD) learning refers to a class of model-free reinforcement learning methods which learn by bootstrapping from the current estimate of the value function. These methods sample from the environment, like Monte Carlo methods, and perform updates based on current estimates, like dynamic programming methods.
 
     While Monte Carlo methods only adjust their estimates once the final outcome is known, TD methods adjust predictions to match later, more accurate, predictions about the future before the final outcome is known (Wikipedia, 2022).
+    
+    From above, we know supervised learning is for sinlge step prediction, but Temporal Difference (TD) leraning is for multi-step prediction. 
+    - Correctness of prediction not known until several steps later
+    - Intermediate steps provide information about correctness of prediction
+    - TD learning is a form of reinforcement learning
+    
+    TDLeaf(λ) algorithm combines temporal difference learning with minimax search, the basic idea is update weight in evaluation function to reduce differences in rewards predicted at different levels in search tree. Good functions should be stable from one move to next.
+    
+    **Notations**
+    - eval(s, w): evaluation function for state s with parameters w = [w_1, ..., w_k]
+    - s_1, ..., s_N: the N states that occurred during a game
+    - r(S_N): reward based on outcome of game {+1, 0, -1}
+    - s_i^l: best leaf found at max cut-off depth using minimax search starting at state s_i
+    
+    To convert evaluation score into a reward, we could using r(s_i^l, w) = tanh(eval(s_i^l, w)) where tanh squashes the evaluation score into the range [-1, +1].
+    
+    ```
+    # Algorithm
+    
+    For i = 1, ..., N-1 Compute temporal difference between successive states
+        d_i = r(s_{i+1}^l, w) - r(s_i^l, w)
+    
+    Update each weight parameter w_j as follows
+        w_j <- w_j + \eta \sum^{N-1}_{i=1} \partial r(s_i^l, w) / \partial w_j [\sum^{N-1}_{m=1} λ^{m-i}d_m]
+    where \eta is the learning rate
+    
+    if λ = 0: weights adjusted to move r(s_i, w) towards r(s_{i+1}, w)
+        i.e. the predicted reward at the next state
+    if λ = 1: weights adjusted to move r(s_i, w) towards r(s_N)
+        i.e. the final true reward (better if eval() is unrealistic)
+    ```
 
 - [ ] [Monte Carlo Search Tree](./doc/AI/search/monte_carlo_search_tree.md)
 

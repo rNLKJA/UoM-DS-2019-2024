@@ -33,12 +33,14 @@ Step 6: For each successor node, algorithm checks for evaluation function f(n), 
 Step 7: Return to Step 2.
 ```
 
+Idea: use an evaluation function for each node - estimate of "desirabiilty" => Expand most desirable unexpanded node.<br>
+Implementation: QUEUEINGFN = insert successors in decreasing order of desirability, more desirable state = high hierachy = primary explored node.
+
 | Advantages                                                                                      | Disadvantages                                                              |
 | ----------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | Best first search can switch between BFS and DFS by gaining the advantages of both algorithms   | It can behave as an unguided depth-first search in the worst case scenario |
 | This algorithm is more efficient than BFS and DFS algorithm                                     | It can get stuck in a loop as DFS                                          |
 |                                                                                                 | This algorithm is not optimal                                              |
-
 
 **Time Complexity**: The worst case time complexity of Greedy best first search is O(b^m).
 
@@ -47,6 +49,22 @@ Step 7: Return to Step 2.
 **Complete**: Greedy best-first search is also incomplete, even if the given state space is finite.
 
 **Optimal**: Greedy best first search algorithm is not optimal.
+
+### Greedy Search
+
+Evaluation fucntion h(n) (heuristic) = estimate of cost from n to goal
+
+e.g. h_{SLD}(n) = a heuristic function evaluate the straight-line distance 
+
+Greedy search expands the node that appears to be closet to goal
+
+**Time Complexity**: O(b^m), but a good heuristic can give dramatic improvement on searching performance
+
+**Space Complexity**: O(b^m), keeps all nodes in memory
+
+**Complete**: No - can get stuck in loops
+
+**Optimal**: Greedy search is not optimal
 
 
 #### A* Search Algorithm
@@ -64,6 +82,15 @@ Step 5: Else if node n' is already in OPEN and CLOSED, then it should be attache
 
 Step 6: Back to step 2.
 ```
+
+Idea: avoid expanding paths that are already expensive
+
+Evalutation function f(n) = g(n) + h(n)
+- g(n) = cost so far to reach n (path cost)
+- h(n) = estimated cost to goal from n
+- f(n) = estimated total cost of path through n to goal
+
+A* search uses a admissible heuristic i.e. h(n) <= h*(n) is the true cost from n. e.g. h_{SLD}(n) never overestimates the actual road distance.
 
 | Advantages                                                             | Disadvantages                                                                                 |
 | ---------------------------------------------------------------------- | --------------------------------------------------------------------------------------------- |
@@ -89,3 +116,15 @@ Step 6: Back to step 2.
 - Consistency: Second required condition is consistency for only A* graph-search. Cost function must be monotonic increase.
 
 If the heuristic function is admissible, then A* tree search will always find the least cost path.
+
+### Iterative Improvement Algorithms
+
+In many optimization problems, path is irrelevant; the goal state itself is the solution. 
+
+Then state space = set of "complete" configurations:
+- Find optimal configuration, e.g. Travelling Salesperson Problem
+- or, find configuration satisfying constraints, e.g. n-queens.
+
+In such cases, can use iterative improvement algorithms, keep a single "current" state and try to improve it.
+
+An iterative improvement algorithm has a constant space, suitable for online as well as offline search.
