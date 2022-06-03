@@ -538,9 +538,72 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
 
 <div align=center><h4>Problem-solving</h4></div>
 
+```
+# Problem solving agent
+funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
+    inputs: p, a perception of the current environment
+    static: s, an action sequence, initially empty
+            state, some description of the current world state
+            g, a goal, initially null
+            problem: a problem formualation
+    
+    state <- UPDATE-STATE(state, p)
+    
+    if s is empty then
+        g <- FORMULATE-GOAL(state)
+        problem <- FORMULATE-PROBLEM(state, g) # need to define the states and operators
+                                               # state is described as how the agent store the perceived information
+                                               # for example, to let a robot move to some point, we need to know 
+                                               #              the current robot coordinates, e.g. robot joint angle. or
+                                               #              to solve a 8 puzzle, the board state is represented by the 
+                                               #              the integer location of the tile
+                                               
+        s <- SEARCH(problem)
+
+    # find valid, optimal, rational actions
+    action <- RECOMMENDATION(s, state)
+    s <- REMAINER(s, state)
+    
+    return action
+```
+
 - [x] [Search Algorithms](./doc/AI/solving/search_algo.md)
 
     Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
+    
+    Basic idea: offline, simulated exploration of state space by generating successors of already-explored states (a.k.a. expanding states).
+    
+    ```
+    function GENERAL-SEARCH(problem, strategy) returns a solution, or failure
+        initialize the search tree using the initial state of problem
+        
+        loop do
+            if there are no candicates for expansion then return failure
+            
+            choose a leaf node for expansion according to strategy
+                if the node contains a goal state then return the corresponding solution
+                else expand the node and add the resulting nodes to the search tree
+        end
+    
+    # implementation
+    
+    function GENREAL-SEARCH(problem, QUEING-FN) returns a solution or failure
+        nodes <- MAKE-QUEUE( MAKE_NODE(INITIAL-STATE[problem]) )
+        loop do
+            if nodes is empty then return failure
+            
+            node <- REMOVE-FRONT(nodes) # since the QUEUE is a priority queue, always pop the first node
+            if GOAL-TEST[problem] applied to STATE(node) succeeds then return node
+            nodes <- QUEUING-FN( nodes, EXPAND(node, OPERATIONS[problem]) )
+                                        # EXPAND function creates new nodes, filling in various fields and using OPERATORS (or ACTIONS) of problem to create the corresponding states.
+        end
+    ```
+    
+    **States vs. Nodes**
+    - A state is a (representation of) a physical configuration.
+    - A node is a data structure constituting part of a search tree includes parent, children, depth, path, cost g(x).
+    
+    > States do not have parents, children, depth, or path cost.
         
 - [x] [Uniform Search Algorithm](./doc/AI/solving/uninformed_search.md)
 
@@ -589,23 +652,33 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
 
     Means-Ends Analysis is problem-solving techniques used in Artificial intelligence for limiting search in AI programs. It is a mixture of Backward and Forward search technique. The MEA process centered on the evaluation of the difference between the curernt state and goal state.
 
-- [x] Summary Search Algorithm Properties
+- [x] Summary Search Stragies/Algorithm Properties
 
-    | Uninformed Search Algorithm            | Time Complexity | Space Complexity | Completeness                                     | Optimality Comparisons                                                   |
-    | -------------------------------------- | --------------- | ---------------- | ------------------------------------------------ | ------------------------------------------------------------------------ |
-    | Breadth-first search                   | O(b^d)          | O(b^d)           | Complete                                         | Optimal                                                                  |
-    | Depth-first search                     | O(n^m)          | O(bm)            | Complete                                         | Non-optimal                                                              |
-    | Depth-limited search                   | O(b^ℓ)          | O(bℓ)            | Complete if solution is above ℓ                  | Non-optimal                                                              |
-    | Uniform cost search                    | O(b^{1+[C*/ε]}) | O(b^{1+[C*/ε]})  | Complete if there is a solution                  | Optimal                                                                  |
-    | Iterative deepening depth-first search | O(b^d)          | O(bd)            | Complete if branching factor is finite           | Optimal if path cost is a non-decreasing function of depth of the node   |
-    | Bidirectional search                   | O(b^d)          | O(b^d)           | Complete if both search use BFS                  | Optimal                                                                  |
-    | Best-First search                      | O(b^m)          | O(b^m)           | Incomplete                                       | Non-optimal                                                              |
-    | A* search                              | O(b^d)          | O(b^d)           | Complete if finite branching factor & fixed cost | Optimal if heuristic functions is admissible and consistency             |
+    A strategy is defined by picking the order of node expansion. Strategies are evaluated along the following dimensions: completeness, time complexity, space complexity, optimality.
+    - Time complexity calculate number of nodes generated/expanded.
+    - Space complexity calculate maximum number of nodes in memeory.
+    - Completeness evaluate is the strategy/algorithm always find a solution if one exist.
+    - Optimality evaluate is the strategy/algorithm always find a least-cost solution.
+
+    |                                                            | Time Complexity | Space Complexity | Completeness                                     | Optimality Comparisons                                                   |
+    | ---------------------------------------------------------- | --------------- | ---------------- | ------------------------------------------------ | ------------------------------------------------------------------------ |
+    | (Uninformed Search) Breadth-first search                   | O(b^d)          | O(b^d)           | Complete                                         | Optimal                                                                  |
+    | (Uninformed Search) Depth-first search                     | O(n^m)          | O(bm)            | Complete                                         | Non-optimal                                                              |
+    | (Uninformed Search) Depth-limited search                   | O(b^ℓ)          | O(bℓ)            | Complete if solution is above ℓ                  | Non-optimal                                                              |
+    | (Uninformed Search) Uniform cost search                    | O(b^{1+[C*/ε]}) | O(b^{1+[C*/ε]})  | Complete if there is a solution                  | Optimal                                                                  |
+    | (Uninformed Search) Iterative deepening depth-first search | O(b^d)          | O(bd)            | Complete if branching factor is finite           | Optimal if path cost is a non-decreasing function of depth of the node   |
+    | (Uninformed Search) Bidirectional search                   | O(b^d)          | O(b^d)           | Complete                                         | Optimal if both search use BFS                                           |
+    | (Informed Search) Best-First search                        | O(b^m)          | O(b^m)           | Incomplete                                       | Non-optimal                                                              |
+    | (Informed Search) A* search                                | O(b^d)          | O(b^d)           | Complete if finite branching factor & fixed cost | Optimal if heuristic functions is admissible and consistency             |
     
     - d = depth of shallowest solution
     - b = branching factor, a node at every state
     - m = maximum depth of any node
     - ℓ = depth limit parameter
+    
+- Problem formulation usually requires abstracting away real-world details to define a state space that can feasibly be explored. 
+- There are lots of variety of uniformed search strategies.
+- Iterative deepening search uses only linear space and not much more time than other uninformed search algorithms.
 
 ---
 

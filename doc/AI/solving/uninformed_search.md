@@ -67,6 +67,16 @@ The search algorithm combiens the benefits of Breadth-first search's fast search
 
 The iterative search algorithm is useful uninformed search when search space is large, and depth of goal node is unknown.
 
+```
+function ITERATIVE-DEEPENING-SEARCH(problem) returns a solution sequence
+    inputs: problem
+    
+    for depth <- 0 to inf do
+        result <- DEPTH-LIMIED-SEARCH(problem, depth)
+        if result != cutoff then return result
+    end
+```
+
 **Completeness**: This algorithm is complete if the branching factor is finite.
 
 **Time complexity**: Suppose b is the branching factor and depth is d then the worst-case time complexity is O(b^d).
