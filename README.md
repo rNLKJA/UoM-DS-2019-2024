@@ -1115,6 +1115,197 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     - Generally easy for (non)experts to construct.
     - Exact inference by enumeration.
     - Exact inference by variable elimination.
+
+---
+
+<div align=center><h4>Constraint Satisfaction Problems</h4></div>
+
+Constraint satisfaction problems (CSPs) are mathematical questions defined as a set of objects whose state must satisfy a number of constraints or limitations. CSPs represent the entities in a problem as a homogeneous collection of finite constraints over variables, which is solved by constraint satisfaction methods. CSPs are the subject of research in both artificial intelligence and operations research, since the regularity in their formulation provides a common basis to analyze and solve problems of many seemingly unrelated families. CSPs often exhibit high complexity, requiring a combination of heuristics and combinatorial search methods to be solved in a reasonable time (Wikipedia).
+
+Standard Search Problem: in standard search problem, state is a 'black box', any old data structure that supports goal test, eval, successor.
+
+CSP has a state which is defined by variables `V_i` with values from Domain `D_i`. The goal test is a set of constriants specifying allowable combinations of values for subsets of variables. Simple example of a formal representation language, CSP allows useful general-purpose algorithms with more power than standard search algorithms.
+
+**Constraint graph**
+- *Binary CSP*: each constraint relates at most two variables.
+- *Constraint graph*: nodes are variables, arcs show constraints.
+
+**Varieties of CSPs**
+- Discrete Variables
+    - finite domains with size `d`, where `n` is the number of variables in the CSP. To find a CSP solution it requires time complexity of O(d^n).
+        - e.g. Boolean CSPs include Boolean satisfiabiilty (NP-complete).
+    - infinite domains (integers, strings, etc.)
+        - e.g., job scheduling, variables are start/end days for each job
+        - need a constraint language, e.g. StartJob_1 + 5 <= StartJob_3
+        - linear constraints solvable, nonlinear undecidable
+- Continuous Variables
+    - e.g. start/end times for Hubble Telescope observations
+    - linear constraints solvable in polynomial time by linear programming (LP) methods.
+
+**Varieties of Constraints**
+- *Unary* constraints involve a single variable. e.g. SA != Green
+- *Binary* constraints involve pairs of variables. e.g. SA != WA
+- *Higher-order* constraints involve 3 or more variables, e.g. cryptarithmetic column constraints
+- *Preference* (soft constraints), e.g. red is better than green often representable by a cost for each variable assignment. Preference is commonly used in constrainted optimization problems.
+
+**Real-World CSPs**<br>
+In the real world, CSP could be any *scheduling* or *planning* problems.
+
+**Search Methods in Constraints Satisfactory Problems**
+- **Applying Standard Search**
+    
+    ```
+    Initial state: the empty assignment, empty set
+    Successor function: assign a value to an unassigned variable that does not conflict with current assignment.
+                        => fail if no legal assignments (not fixable).
+    Goal test: the current assignment is complete
+    ```
+    
+    Standard search is the same for all CSPs, every solution appears at depth n with n variables (could apply depth-first search). It will generate branching factor b = (n - l)d at depth l, hence a search tree will have n!d^n leaves. Since the goal is to solve CSPs, therefore path is irrelavant here, so can also use complete-state formulation to find a valid solution.
+    
+- **Backtracking Search**
+    
+    Variables assignments are commutative, i.e. [WA = red then NT = green] is the same as [WA = green then WA = red]. Backtracking search only need to consider assignments to variable at each node => b = d and there are d^n leaves in a search tree. When apply depth-first search for CSPs with single-variable assignments is called backtracking search. Backtracking search is the basic uninformed algorithm for CSPs.
+    
+    ```
+    function BACKTRACKING-SEARCH(csp) return solution/failure
+        RECURSIVE-BACKTRACKING({}, csp)
+    end function
+    
+    function RECURSIVE-BACKTRACKING(assignment, csp) 
+        if assignment is complete then 
+            return assignment
+        
+        var <- SELECT-UNASSIGNED-VARIABLE(Varaibles[csp], assignment, csp)
+        
+        for each value in ORDER-DOMAIN-VALUES(var, assignment, csp) do
+            if value is consistent with assignment given Constraints[csp] then
+                add {val = value} to assignment
+                result <- RECURSIVE-BACKTRACKING(assignment, csp)
+                
+                if result != failure then
+                    return result
+                
+                remove {val = value} from assignment # because current assignment value cannot reach the goal state
+        return failure
+    end function
+    ```
+    
+    In order to imporve backtracking efficiency, we could use general-purpose methods can give huge gains in speed:
+    - Which variable should be assigned next?
+        
+        `var <- SELECT-UNASSIGNED-VARIBALE(Variables[csp], asssignment, csp)`
+        
+        Solution: use MRV to find the next value
+        > **Minimum Remaining Values (MRV)**: choose the variable with fewest legal values.
+        
+        But, there might exist a tie-breaking among MRV variables or choice of first value, hence we could assign value use
+        > **Degree Heuristic**: choose the variable with the most constraints on remaining variables.
+        
+    - In what order should its value be tried?
+    
+        `ORDER-DOMAIN-VALUES(var, assignment, csp)`
+        
+        Solution: order value use Least constraining value
+        > **Least constraining value**: Given a variable, choose the least constraining value, the one that rules out the fewest values in the remaining variables.
+        
+        In short, we looking for a value which brings the most flexibility for the future search tree.
+            
+    - Can we detect inevitable failure early?
+    
+        > **Forward Checking**: keep track of remaining legal values for unassigned variables, terminate search when any variable has no legal values
+        
+        Forward checking propagets information from assignedd to unassigned variables, but doesn't provide early detetion for all failures. Constraint propagation repeatedly enforces constraints locally.
+        
+        ```
+        function FORWARD-CHECKING(csp) returns a new domain for each var
+            for each variable X in csp do
+                for each unassigned variable Y connected to X do
+                    for each value d in Domain(Y)
+                        if d is inconsistent with Value(X)
+                            Domain(Y) = Domain(Y) - d
+            return csp // modified domains
+        ```
+        
+        > **Arc consistency**: simplest form of propagation makes each arc consistent.
+        
+        X -> Y is arc consistent iff for every x of X there is at least one value of y of Y that satisfies the constraint between X and Y.
+        
+        ```
+        # Arc-consistency ALgorithm: AC-3 
+        function AC-3(csp) returns the CSP, possibly with reduced domains
+            input: csp, a binary CSP with variables {X1, X2, ..., Xn}
+            
+            local variables: queue, a queue of arcs, initially all the arcs in csp
+            while queue is not empty do
+                (Xi, Xj) <- REMOVE-FRIST(queue) # decompose arc into two variables
+                if REMOVE-INCONSISTENT-VALUE(Xi, Xj) then
+                    for each Xk in NEIGHBORS(Xi) do
+                        add (Xk, Xi) to queue
+        end function
+        
+        function REMOVE-INCONSISTENT-VALUE(Xi, Xj) true iff succeeds
+            removed <- false
+            for each x in Domain(Xi) do
+                if no value y Domain(Xi) allows (x, y) to satisfy the constraint Xi <-> Xj then
+                    delete x from Domain(Xi)
+                    removed <- true
+            return removed
+        end function
+        ```
+    
+        AC-3 will have a time complexity of O(n^2d^3), it can be reduced to O(n^2d^2). It is hard to detect all arcs since the problem is NP-hard.
+        
+        Alternative approach: exploit structure of the consistant graph to find **independent subproblems**.
+        
+    - Can we take advantage of problem structure?
+    
+        Suppose each subproblem has c variables out of n total, the worst-case solution cost n/c * d^c, it's a linear cost in n.
+        Unfortuately, completely independent subproblems are rare in practice. However, there are other graph structures that are easy to sovlve.
+        
+        **Tree Structure CSPs** 
+        
+        Theorem: if the constraint graph has no loops, the CSP can be solved in O(nd^2) time. Compare to general CSPs, where worst-case time is O(d^n). This property also applies to logical and probabilisitic [reasoning](./doc/AI/knowledge/knowledge_based_agent.md).
+        
+        ```
+        1. Choose a variable as root, order variables from root to leaves such that every node's parent precedes it in the ordering
+        2. For j from n down to , apply MakeArcConsistent(Parent(Xj), Xj)
+        3. For j from i to n, assign Xj consistently with Parent(Xj)
+        ```
+        
+        **Nearly tree-structured CSPs**
+        - Conditioning: instantiate a variable, prune its neighbors' domains
+        - Cutset conditioning: instantiate (in all ways) a set of variables such that the remaining constraint graph is a tree
+        - Cutset: set of variables that can be deleted so constraint graph forms a tree
+        
+        Cutset size c => runtime O(d^c * (n-c) * d^2), very fast for small c.
+        
+        **Interative algorithms for CSPs - Local Search**
+        
+        Recall from hill-climbing search, hill-climbing typically works with "complete" states, i.e. all variables are assigned.
+        
+        Local search then tries to change one variable assignment at a time.
+        
+        To apply to CSPs:
+        - allow states with unsatisfied constraints (variable selection)
+        - Operators reassign varaible values (value selection)
+        
+        Variable selection: randomly select any conflicted variable.
+        Value selection: by min-conflicts heuristic, choose value that violates the fewest constraints. i.e. hillclimb with h(n) = total number of violated constraints.
+        
+    **Short Summary**
+    - CSPs are a special kind of problem: 
+        - states defined by values of a fixed set of variables
+        - goal test defined by constraints on variables values
+    - Backtracking = depth-first serach with one variable assigned per node
+    - Variable ordering and value selection heuristics help significantly
+    
+    - Forward checking prevents assignments that guarantee later failure
+    - Constraint propagation (e.g., arc consistency) does additional work to constrain values and detect inconsistences
+    - The CSP representation allows analysis of problem structure
+    
+    - Tree-structure CSPs can be solved in linear time
+    - Iterative min-conflicts is usually effective in practice.
     
 ---
 
@@ -1794,6 +1985,8 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Sagar, S. (1, Aug, 2018). *Monte Carlo Tree Search, MCTS For Every Data Science Enthusiast*. https://towardsdatascience.com/monte-carlo-tree-search-158a917a8baa.
 - Wikipedia. (10, May 2022). *Temporal difference learning*. https://en.wikipedia.org/wiki/Temporal_difference_learning.
 - Fisher, R., Perkins, S., Walker, A & Wolfar, E. *Skeletonization/Medial Axis Transform*. https://homepages.inf.ed.ac.uk/rbf/HIPR2/skeleton.html.
+- Wikipedia. (21, May 2022). *Constraint Satisfaction Problem*. https://en.wikipedia.org/wiki/Constraint_satisfaction_problem.
+- Nimmisha, S. (Dec 2022). *Classification of stages of Diabetic Retinopathy using Deep Learning*. https://www.researchgate.net/publication/347447352_Classification_of_stages_of_Diabetic_Retinopathy_using_Deep_Learning.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
