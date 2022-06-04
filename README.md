@@ -1306,7 +1306,146 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
     
     - Tree-structure CSPs can be solved in linear time
     - Iterative min-conflicts is usually effective in practice.
+
+---
+
+<div align=center><h4>Making Collective Decisions - Auctions</h4></div>
+
+**Game Theory**: the theory of strategic decision making.
+- Agent design: GT used to determine what is the best strategy against rational players.
+- Mechanism design: GT used to define the rules of the environment.
+
+From the above the section, we know single agent search or pairs of agetns for adversarial search. In practice, complex applications can involves multi-agent systems, where multiple agents are competing for a space resource, e.g.
+- farmers needing a water allocation in irrigation system
+- mobile phone companies competing for ratio spectrum
+- advertisers competing for ad space on high profile media
+
+Tranditional approach: a cnetralised authority makes an allocation to each agent. But there is an issue that how to make sure that the scarce resource goes to those who value it the most, and that the owners of the resources maximise their financial return.
+
+**Mechanism design for allocation scarce resources**
+
+Mechanism design is the problem of how to design a "game" that results in maximizing a global utility function in a multi-agent system, given that each agent pursues their own (selfish) rational strategy.
+
+In AI, mechanism design aims to construct smart systems out of simpler (possible uncooperative) systems to achieve goals that are beyond the reach of any single system. Here we focus on mechanism design for auctions.
+
+Formally, an auction takes place between an auctioneer agent, who allocates a good or service among a set of agetns called bidders.
+- a language to describe the allowable strategies an agnet can follow
+- a protocol for communicating bids from bidders to the auctioneer
+- an outcome rule, used by the auctioneer to determien the outcome
+
+*Dimension of auction protocols*
+- Winner determination: which bidder wins, and what do they pay?
+    - _First-price auctions_ bidder with the highest bid is alloclated bidder.
+    - _Second-price auctions_ bidder with highest bid wins, but pays the auctioneer the price of the second highest bidder.
+- Knowledge of bids: who can see the bids?
+    - _Open cry_:  every bidder can see all bids from all other bidders.
+    - _Sealed-bid_: bidder can see only its own bids, not those of other bidders.
+- Order of bids: in what order can bids be made?
+    - _One-shot_ each bidder make only on bid.
+    - _Ascending_ each successive bid must exceed the previous bid.
+    - _Descending_ auctionner starts from a high price, and each bid must be lower than the previous bid.
+- Number of goods: How many goods are for sale?
+    - _Single good_: only onw indivisible good is for sale
+    - _Many goods_: many goods are available in the auction
     
+    So bids can include both the price and number of goods wanted by the bidder (e.g., auctioning mobile phone specturm), known as a combinatorial auction.
+    
+*Factors affecting mechanism design*
+
+A major factor is how bidding agents put a value on the good to be auctioned.
+*Private value*: Each bidder i has a utility value v_i that reflects the worth of good to the bidder.
+*Common value*: The worth of the good is the same for all bidders, but that worth is unknown a priori, and must be estimated by each bidder.
+
+**Properties of auctions**
+
+*Desirable properties of an auction*
+What kinds of properties characterise an effective mechansim design for auctions?
+- Efficent: the godos go to the agent who value them the most
+- Discourage collusion: the auction mechanism should discourage illegal or unfair agreements between two or more bidders to manipulate prices.
+- Dominant strategy: there exists a dominant strategy for bidders, where a strategy is dominant if it gives the bidder a better pay-off than any other strategy.
+- Truth-revealing: the dominant strategy reuslts in bidders revealing their true value for the good.
+
+*What does this have to do with AI?*
+- Modern online auctiosn require autonomous agents who can bid on our behalf.
+- These agents to model user's preferences for their bidding strategy。
+- These agents need a representation language for bids.
+
+**Types of auctions**
+
+- ***English auction (ascending-bid)***
+
+    Typically a *first-price, open-cry, ascending* auction.]
+    
+    Protocol and outcome ruel:
+    - auctioneer start by asking for a minimum (reserve) price
+    - auctioneer invites bids from bidders, which must be higher than the current highest price receivied (perhaps requirign a minimum bid increment).
+    - auctioneer ends when no further bids received, and good is sold if final bid exceeds reserve price.
+    - price paid by winner is theri final (highets) bid.
+    
+    > **Domaint Strategy**: Keep bidding in small bids while the current cost is below your utility value v_i for the good.
+    
+    *Properties of English auction*
+    - Is efficient, provided the reserve is realistic (too high -bidder who value sogod may not bid; too low - seller may lose revenue).
+    - Can suffer from the winner's curse: has winner valued the good too higly because no one else made that high bid?
+    - Can be susceptible to collusion:
+        - bidders can agree beforehand to keep bids artifically low
+        - auctioneers can plant "dummy" or bogus bidders to inflate prices
+    
+- ***Dutch auction (descending-bid)***
+
+    Typically an *open-cry, descending* auction.
+    
+    Protocle and outcome rule:
+    - auctioneer starts by asking for extremenly hgih initial value.
+    - auctioneer repreadedly lowers the price of the good in small steps.
+    - acution ends when someone makes a bid at the current offer price.
+    - price paid by winner is the price when their bid was made.
+    
+    Can suffer from similar problems to the English auction.
+    
+    Dutch auctions were used for flower auctions i nthe Netherlands.
+    
+- ***First-price sealed-bid auction***
+
+    Protocol and outcome rule:
+    - each bidder makes a single bid
+    - bid sent to auctioneer so that bidders cannot see each other's bid
+    - winner is the bidder who made the highest bid
+    - price paid by winner is the highest bid
+    
+    > **Dominant strategy**: not clear - bid less that your true value v_i, but how much less depends on other agent's bids, which are unknown.
+    
+    Often used for tender bids for government contracts. 
+    
+    *Properties of first-price sealed-bid auction*
+    - May not be efficient, since agent with highest value v_i might not win the auction.
+    - Much simpler communication than English and Dutch auctions.
+    - Sealed bids make it harder for the type of collusion that occurred in the German spectrum auction.
+
+- ***Vickrey auction***
+
+    Typically a *second-price, sealed-bid* auction.
+    
+    Protocol and outcome rule:
+    - essentially the same as first-price, sealed-bid auction
+    - however, price paid by winner is the price of the second-highest bid
+    
+    > **Dominant strategy**: can show that it is to simply bid your value v_i for the good.
+    
+    Why does winner pay the price of the second-highets bid?
+    - you have nothing to lose by bidding yoru true value, since if it is much higher than the second-highest value, you still only pay the second-highest price. This helsp overcome the winner's curse.
+    
+    *Properties of Vickrey auction*
+    - Is efficient, and truth-revealing, since dominant strategy is to bid your value v_i.
+    - Harder for collusion to occur.
+    - Can be a bit counter-intuitive for human bidders.
+    - Its computation simplicty makes it popular for use in multi-agent AI systems and online auctions.
+
+**Short Summary**
+- Auctions are a mechanism to allocate resoures in multi-agent environments.
+- Appropriate mechansim design can achieve desriable behaviour among selfish agents.
+- Types of auctions in theory practical case studies of online auctions.
+
 ---
 
 <div align=center><h4>Robotics</h4></div>
