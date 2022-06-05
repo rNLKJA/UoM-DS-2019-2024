@@ -953,7 +953,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}). As a result, the agent could doubles depth of search.
     
-    <details>
+    <details open>
     <summary>Questions</summary>
     
     - Here you will investigate the fundamentals of minimax and alpha- beta pruning. Consider noughts and crosses on a 3 ×3 grid. Define Xn as the number of rows, columns or diagonals with exactly n crosses and no noughts. Define On analogously. Assume our utility function assigns +1 to any position with X3 = 1 and −1 to any position with O3 = 1, with all other positions having zero utility. For nonterminal positions, use the evaluation function f(s) = 3X_2(s) + X_1(s) −(3O_2(s) + O_1(s)) . Assume the cross player goes first.
@@ -1078,6 +1078,35 @@ Eval for both players.
     In computer science, Monte Carlo tree search (MCTS) is a heuristic search algorithm for some kinds of decision processes, most notably those employed in software that plays board games. In that context MCTS is used to solve the game tree.
     
     MCTS is an algorithm that figures out the best move out of a set of moves by Selecting → Expanding → Simulating → Updating the nodes in tree to find the final solution. This method is repeated until it reaches the solution and learns the policy of the game (SAGAR, 2018).
+    
+- [ ] [Backtracking]()
+    
+    Backtracking refers to a general method of building sequence of decisions to solve a graph problem incrementally. Suppose we have a partial solution to a problem we would like to extend: A = (a_1, a_2, ..., a_k). To choose next solution component, a_{k+1}:
+    - Recursively evaluate every possible consistent with past decisions. When we establish that a partial solution cannot be extended into a complete solution, or is worse than the current best solution, we terminate the recursive call, thereby pruning regions of state space from the search tree which cannot contain a solution (or an optimal solution if we have some notion of optimality). We backtrack to the deepest node with unexpanded children and invoke recursion again.
+    - Choose a valid successor (or the 'best' one if we have optimality criterion), A ←A \cup a+{k+1}. Repeat until A becomes a complete solution.
+    
+    This implmented as depth-frist/recursive traversal with additional logic at each call that helps narrow the search space, using problem constraints to prune subtrees as early as possible.
+    
+    ```python
+    def backracking_dfs(A, k):
+        if A = (a_1, a_2, ..., a_k) in solution:
+            return A
+        else:
+            k += 1
+            
+            # enumerate all possible candidates extending deepest partial solution
+            candidate_queue = construct_candidates(A, k)
+            
+            # while valid children exist, extend solution by recursion
+            while candidate_queue is not None:
+                A[k] = candidate_queue.pop() # add current candidate to A
+                result = backtrack_dfs(A, k)
+                
+                if result != failure:
+                    return result
+                A[k] = null # backtrack, remove candidate from A
+        return failure
+    ```
     
 ---
 
@@ -1263,6 +1292,22 @@ Eval for both players.
     Normalisation:
         P(M) = P(M|H)P(H) + P(M|¬H)P(H)
     ```
+    
+    Conditional Probability: P(X|H) = P(X|H)P(H) / P(X)
+    - The likelihood P(H|H) is the conditional probability of the data X given fixed H.
+    - The prior P(H) represents information we have that is not part of the collected data X - consider this our pre-existing degree of belief in the hypothesis H before observing any data.
+    - The evidence P(H) is the average overall possible values of H, calculated using the law of total probability.
+         - P(X) = \sum_h P(X|H = h)P(H = h)
+     
+     P(H|X) is the posterior distribution, which represents our updated beliefs around the hypothesis now we have observed data X. Bayes' Theorem may also be conveniently expressed in terms of the posterior odds, which circumvents calculation of the evidence p(H).
+     
+     > p(H|X) / (H^c|X) = P(X|H)  * P(H) / P(X|H^c) * P(H^c)
+     
+     Note H^c may be replaced with ¬H for binary random variables. Conditional probabilities are probabilities as well, so it is straightforward to extend Bayes' Theorem to incorporate extra conditioning on another event Y, provided P(H|Y), P(X|Y) > 0:
+     
+     > P(H|X, Y) = P(X|H, Y) P(H|Y) / P(X, Y)
+     
+     Bayes' Theorem is an apparently simple consequence of the definition of conditional probability, but has deep consequences. The basic intuition here is that going in one direction. e.g. P(X|H) is easier than finding the probability P(H|X) in the other direction.
 
 - [x] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
@@ -1344,6 +1389,12 @@ Standard Search Problem: in standard search problem, state is a 'black box', any
 
 CSP has a state which is defined by variables `V_i` with values from Domain `D_i`. The goal test is a set of constriants specifying allowable combinations of values for subsets of variables. Simple example of a formal representation language, CSP allows useful general-purpose algorithms with more power than standard search algorithms.
 
+In other words, we define CSPs in term of:
+- A set of variables X = {X_1, ..., X_n}. Each variable assumes values in its respective domain, D = {D_1, ..., D_n}.
+- Constraints C expressing restrictions on the domain of individual variables, when considering relationships between variables. For the case of binary constraints, we can represent a CSP as a graph <V, E> where the vertices are the variables and the edges are constraints between pairs of variables.
+
+The CSP is solved when values are assigned to all variables in X without violating the given constraints. The basic idea is to eliminate large regions of search space by identifying combinations of variables/values that violate constraints, then pruning appropriately - this is just backtracking.
+
 **Constraint graph**
 - *Binary CSP*: each constraint relates at most two variables.
 - *Constraint graph*: nodes are variables, arcs show constraints.
@@ -1409,23 +1460,25 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
     end function
     ```
     
+    Constraint satisfication problems are NP-hard - there exists no known algorithm for finding solutions to them in polynomial time. This can be attribtued to the fact that for an n-variable with maximal domain size d, there are an exponential number of possible assignments, O(d^n), we have to sift through to find a satisfactory assignment. Nevertheless, CSPs tend to have more structure than generic graph search problems, allowing us to use various heuristic methods to often find solutsion in an acceptable amount of time.
+    
     In order to imporve backtracking efficiency, we could use general-purpose methods can give huge gains in speed:
     - Which variable should be assigned next?
         
         `var <- SELECT-UNASSIGNED-VARIBALE(Variables[csp], asssignment, csp)`
         
         Solution: use MRV to find the next value
-        > **Minimum Remaining Values (MRV)**: choose the variable with fewest legal values.
+        > **Minimum Remaining Values (MRV)**: choose the successor with the fewest legal values. Selects successor states that are more likely to result in failure (end as dead leaves of recursion tree).
         
         But, there might exist a tie-breaking among MRV variables or choice of first value, hence we could assign value use
-        > **Degree Heuristic**: choose the variable with the most constraints on remaining variables.
+        > **Degree Heuristic**: choose the successor involved in the largest number of constraints on other potential successors. More constraints -> lower branching factor of recursion subtree.
         
     - In what order should its value be tried?
     
         `ORDER-DOMAIN-VALUES(var, assignment, csp)`
         
         Solution: order value use Least constraining value
-        > **Least constraining value**: Given a variable, choose the least constraining value, the one that rules out the fewest values in the remaining variables.
+        > **Least constraining value**: Given a variable, assign the value that makes the feweest choices of variables for neighborin candidates illegal. This permits the maximum remaining flexibility for remaining variables, making likely to find a complete solution in future.
         
         In short, we looking for a value which brings the most flexibility for the future search tree.
             
@@ -1444,6 +1497,15 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
                             Domain(Y) = Domain(Y) - d
             return csp // modified domains
         ```
+
+    - Filter over a CSP
+        
+        Filter over a CSP is note a solution method, but yields a pruned search graph which is faster to traverse. The basic idea is to use local constraints to eliminate illegal variable assignments, by pruning values of domain for each variable that violate binary constraints. This leads us to the arc-consistency (AC-3) algorithm, which we briefly sketch below. Define an arc as a directed edge in the constraint graph in a CSP. The constraint graph is undirected, but we interpret an undirected edge as two directed edges pointing in opposite directions:
+        - A CSP variable is arc-consistent if every value in its domain satisfies all relevant binary constraints.
+        - For X, Y variables involved in a constraint, X -> Y arc-consistent if every value X = x has legal assignment Y = y satisfying the constraint on (X, Y).
+        - The AC-3 algorithm enumerates all possible arcs in a queue Q and makes X_i arc-consistent w.r.t. X_j by reducing the domains of variables accordingly.
+        - If D_i unchanged, move onto next arc. Otherwise append all arcs (X_k, X_i) where X_k is adjacement to X_i to the queue.
+        - AC-3 is not a solution method but defines an equivalent problem that is faster to traverse via backtracking, as the variables have smaller domains.
         
         > **Arc consistency**: simplest form of propagation makes each arc consistent.
         
@@ -2173,6 +2235,19 @@ Some uncategoried notes.
 
 <div align=center><h4>Data Science Life Cycle</h4></div>
 
+- [ ] [Zook's 10 Rules For Responisble Big Data Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399)
+
+    - [ ] Acknowledge that data are people and can do harm.
+    - [ ] Recognize that privacy is more than a binary value.
+    - [ ] Guard against the reidentification of your data.
+    - [ ] Practice ethical data sharing.
+    - [ ] Consider the strengths and limitations of your data; big does not automatically mean better.
+    - [ ] Debate the tough, ethical choices.
+    - [ ] Develop a code of conduct for your organization, research community, or industry.
+    - [ ] Design your data and systems for auditability.
+    - [ ] Engage with the broader consequences of data and analysis practices.
+    - [ ]  Know when to break these rules.
+
 - [x] SMART Goals
     
     SMART goals stands for Specific, Measurable, Achievable, Relevant, and Time-Bound (Kat, 2021).
@@ -2366,6 +2441,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Wrike. (2022). *What Is Waterfall Project Management?*. https://www.wrike.com/project-management-guide/faq/what-is-waterfall-project-management/.
 - APPDYNAMICS. (2022). *What is Database Management Systems (DBMS)?*. https://www.appdynamics.com/topics/database-management-systems.
 - Wikipedia. (16, May 2022). *Dimensionality reduction*. https://en.wikipedia.org/wiki/Dimensionality_reduction.
+- Zook, M., Barocas, S., Boyd, D., Crawford, K., Keller, E., Gangadharan, S. P., ... & Pasquale, F. (2017). Ten simple rules for responsible big data research. PLoS computational biology, 13(3), e1005399. https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399.
 
 ---
 
