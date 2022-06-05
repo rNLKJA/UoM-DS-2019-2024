@@ -397,6 +397,7 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
     - [ ] Average Linkage
     - [ ] Centroid Linakge
 - [ ] [Anomaly detection]()
+- [ ] [VAT: Visual Assessment of (Cluster) Tendency]()
 - [ ] [Indenpendent Component Analysis (IDA)]()
 - [ ] [Apriori algorithm]()
 - [ ] [Singular value decomposition]()
