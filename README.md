@@ -554,6 +554,8 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
                 - It speedup may allow the agent to act sonner to choose different, better actions.
             - Static environment
                 - the agent function is unchanged, only speedup the processing speed.
+    
+    
     </details>
     
 - [x] [Agent Environment](./doc/AI/agent/agent_environment.md)
@@ -661,6 +663,45 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     - A node is a data structure constituting part of a search tree includes parent, children, depth, path, cost g(x).
     
     > States do not have parents, children, depth, or path cost.
+    
+    <details open>
+    <summary>Questions</summary>
+    
+    - In BFS and DFS, an undiscovered node is marked discovered when it is first generated, and marked processed when it has been completely searched. At any given moment, several nodes might simultaneously be in the discovered state.
+        - Describe a graph on n vertices and root v such that Θ(n) nodes are simultaneously in the discovered state when conducting BFS starting from v.
+            - A graph of depth 1 where v has n children, the tree becomes a list where the search time will be Θ(n)。
+        - Repeat the above question, but for DFS.
+            - A graph of depth n with a single linear branch of children extending from v. In this case the tree will be a stick.
+        - Describe a graph on n vertices and root v such that at some point Θ(n) remain undiscovered, while Θ(n) nodes have been processed during DFS starting from v.
+            - A graph of depth n/2 with two linear equal-length branches of children extending from v. Note the case in the second question is not acceptable here as any node along the chain is not marked processed util the recursion returns.
+    
+    - Recall the iterative deepening search (IDS) strategy
+        - Derive the time complexity of iterative deepening search on a graph with branching factor b and minimum goal depth d.
+            - Within each iteration, IDS exhaustively enumerates all nodes up to the current depth. At depth n, the size of this set is b^n, Nodes at all levels apart from d are re-generated multiple-times.
+            - The node in the penultimate layer are generated twice, the nodes in the third-last layer are genereted three times, and so on, with the root node generated d times. This implies that an upper bound on the number of generated nodes, and hence the time complexity is:
+                - d + (d + 1)b + (d + 2)b^2 + ... + 2d^{d-1} + b^d  = O(b^d). So asymptotically approaches to BFS.
+        - Can you think of a situation where IDS performs much worse than regular depth-first search?
+            - Consider the situation where the graph is a linear chain with depth d. DFS terminates in d iteration but IDS takes \sum^d_{n=1} n(n+1)/2 iterations.
+        - BFS and IDS are not optimal in general. State a necessary condition on the cost function g : paths → R for both methods to be optimal.
+            - Necessary for g to be a non-decreasing function of depth - otherwise the cost of a path from the start to the goal state could be decreased by taking a path with a greater number of actions. This can be formally proved via induction.
+    
+    - A graph G = (V,E) is connected if a path exists between any two vertices v1,v2 ∈ V. A connected component of a graph is a maximal subset Vc ⊆ V such that there exists a path between any two vertices in Vc. Describe an algorithm, using graph search, that accepts an arbitrary graph G as input and counts the number of connected components of G.
+        - For undirected graphs with a finite state space, BFS/DFS will eventually enumerate all vertices within a connected component, starting at an arbitrary node within the connected component, since the vertex ordering is irrelevant:
+            - Start at an arbitrary node.
+            - Run BFS/DFS until the frontier is exhausted - all proceesed vertices belong to the first connected component.
+            - Restart BFS/DFS from an arbitrary undiscovered node until all vertices have been marked processed, counting the number of restarts time.
+    
+    - Your tutor’s job is to arrange n ill-behaved children in a straight line, facing front. They are given a list of m statements of the form "child i hates child j". If i hates j, they cannot put i somewhere behind j, because i is then capable of throwing something at j.
+        - They have enlisted your help to design an algorithm which orders the line (or says it is not possible), using depth-first search. Analyze the running time of your algorithm.
+            - From a directed graph with the vertices corresponding to children and an edge pointing from i to j if j hates i.
+            - Topologically sort the graph as follows:
+                - Form a stack which will hold the topologically sorted nodes.
+                - Perform DFS, and push nodes σ onto stack only after all descendants of σ in the graph have been fully explored/processed. If there is an edge i -> j, this guarantees that i is only pusehd onto the stack after j.
+                - The top node on the stack always has no incoming edge from any vertex in the stack.
+                - Repreatedly popping nodes off the stack yields a topological ordering where i will always precede j if j hates i.
+        - For the class photo, the children must be arranged in rows such that if i hates j, i must be in a lower-numbered row than j, otherwise it is possible for i to drop something on j. Design an efficient algorithm to find the minimum number of rows needed.
+            - Construct the graph as before. The seating position of children not involved in a hate relation are irrelevant (these represent singleton disconnected nodes), so we want to find the height of the connected component of the graph of maximum height. This can be found in O(m+n) time using BFS to enumerate all vertices within each connected components.
+    </details>
         
 - [x] [Uniform Search Algorithm](./doc/AI/solving/uninformed_search.md)
 
@@ -689,6 +730,27 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     h(σ) ≤ cost(σ, σ′,A) + h(σ′) ∀σ ∈ Σ, A(σ) = σ′
     
     This is the triangle inequality applied to costs of graph states. Here cost(σ, σ′,A) denotes the cost to the agent of taking action A in state σ to end up in state σ′.
+
+    <details open>
+    <summary>Questions</summary>
+    
+    - Suppose that we run a greedy best-first (graph) search algorithm with the heuristic function for node σ set to the negative of the path cost, h(σ) = −g(σ). What sort of search will the greedy search emulate?
+        - This emulates depth-frist search, noting that for froniter F: argmin f(σ) = argmax(σ).
+    - The heuristic path algorithm is a best-first search where the evaluation function contains a relative weighting factor w: f(σ) = (2 −w)g(σ) + wh(σ).
+        - What kind of search does this perform for w = 0, w = 1, and w = 2?
+            - w = 0: uniform cost search
+            - w = 1: A* search
+            - w = 2: Gready Best First Search
+        - For what values is it optimal, assuming that the heuristic h is admissible? Hint: recall the condition for optimality of A∗.
+            - Note that f(σ) = (2 - w)(g(σ) + w / (2 - w) h(σ)), a scaled version of A* with heuristic w/(2-w)h(σ). We require this to be admissible, hence require w / (2-w) ≤ 1 ⇒ w ≤ 1. Non-negativity of the heuristic requires then 0 ≤w ≤1.
+    
+    - Recall that state generation refers to the creation of thedata structure σ representing the state, whereas state expansion refers to the generation ofall children of the present node.
+        - Should informed search algorithms apply the goal test upon state generation or state expansion, in order for the resulting search to be optimal? Does it make a difference from uninformed search algorithms?
+            - Apply the goal test on generation does not guarantee optimality in general for informed search methods (and UCS).
+            - There may be lower-cost paths living in the frontier which we have not explored. 
+            - However if we apply the goal test on expansion, all nodes in the frontier will have equal or larger path cost. For uniformed search algorithms (except UCS) this dose not affect optimality but will affect time complexity. For example, BFS time complexity becomes O(b^{d+1}) for goal test upon expansion.
+
+    </details>
 
 - [x] [Informed Search Algorithm](./doc/AI/solving/informed_search.md)
 
