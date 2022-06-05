@@ -392,6 +392,10 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
 - [ ] [k-means clustering (KMean)](./notebooks/KMean.ipynb)
 - [ ] [Hierarchical Clustering]()
+    - [ ] Sinlge Linkage
+    - [ ] Complete Linkage
+    - [ ] Average Linkage
+    - [ ] Centroid Linakge
 - [ ] [Anomaly detection]()
 - [ ] [Indenpendent Component Analysis (IDA)]()
 - [ ] [Apriori algorithm]()
@@ -730,10 +734,16 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     h(σ) ≤ cost(σ, σ′,A) + h(σ′) ∀σ ∈ Σ, A(σ) = σ′
     
     This is the triangle inequality applied to costs of graph states. Here cost(σ, σ′,A) denotes the cost to the agent of taking action A in state σ to end up in state σ′.
+    
+    > Admissibility results in optimality but may not be completeness in general.
 
+- [x] [Informed Search Algorithm](./doc/AI/solving/informed_search.md)
+
+     Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
+     
     <details open>
     <summary>Questions</summary>
-    
+
     - Suppose that we run a greedy best-first (graph) search algorithm with the heuristic function for node σ set to the negative of the path cost, h(σ) = −g(σ). What sort of search will the greedy search emulate?
         - This emulates depth-frist search, noting that for froniter F: argmin f(σ) = argmax(σ).
     - The heuristic path algorithm is a best-first search where the evaluation function contains a relative weighting factor w: f(σ) = (2 −w)g(σ) + wh(σ).
@@ -742,19 +752,25 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
             - w = 1: A* search
             - w = 2: Gready Best First Search
         - For what values is it optimal, assuming that the heuristic h is admissible? Hint: recall the condition for optimality of A∗.
-            - Note that f(σ) = (2 - w)(g(σ) + w / (2 - w) h(σ)), a scaled version of A* with heuristic w/(2-w)h(σ). We require this to be admissible, hence require w / (2-w) ≤ 1 ⇒ w ≤ 1. Non-negativity of the heuristic requires then 0 ≤w ≤1.
-    
+            - Note that f(σ) = (2 - w)(g(σ) + w / (2 - w) h(σ)), a scaled version of A* with heuristic w/(2-w)h(σ). We require this to be admissible, hence require w / (2-w) ≤ 1 ⇒ w ≤ 1. Non-negativity of the heuristic requires then 0 ≤ w ≤1.
+
     - Recall that state generation refers to the creation of thedata structure σ representing the state, whereas state expansion refers to the generation ofall children of the present node.
         - Should informed search algorithms apply the goal test upon state generation or state expansion, in order for the resulting search to be optimal? Does it make a difference from uninformed search algorithms?
             - Apply the goal test on generation does not guarantee optimality in general for informed search methods (and UCS).
             - There may be lower-cost paths living in the frontier which we have not explored. 
             - However if we apply the goal test on expansion, all nodes in the frontier will have equal or larger path cost. For uniformed search algorithms (except UCS) this dose not affect optimality but will affect time complexity. For example, BFS time complexity becomes O(b^{d+1}) for goal test upon expansion.
 
+    - n vehicles occupy squares (1,1) through (n,1) (i.e., the bottom row) of an n×n grid. The vehicles must be moved to the top row but in reverse order; so the vehicle i that starts in (i,1) must end up in (n −i + 1,n). On each time step, every one of the n vehicles can move one square up, down, left, or right, or stay put; but if a vehicle stays put, one other adjacent vehicle (but not more than one) can hop over it. Two vehicles cannot occupy the same square.
+        - Find an expression for the size of the state space in terms of n.
+            - n^2! / (n^2 - n)!
+        - Find an expression for the branching factor in terms of n. 
+            - 5^n
+        - Give a (non-trivial) admissible heuristic h_i for the number of moves it takes for a single vehicle i starting in (xi,yi) to its goal state, (n −i + 1,n).
+            Manhattan Distance
+        - Is \sum_i h_i an admissible heuristic for this problem? How about max{h1,...,hn} or min{h1,...,hn}?
+            - The first will not be admissible general as vehicles can move simultaneously. Note for the 'hop' operation one vehicle must remain and other jump 2 steps, meaning the toal distance travelled by all cars per move is bounded above by n. The total distance D moved by all vehicles from the start to goal state is bounded below by n min{h_1,...,h_n} ≤ D. Hence the minimum number of steps requird to attain D is min{h_1,...,h_n}. 
+        
     </details>
-
-- [x] [Informed Search Algorithm](./doc/AI/solving/informed_search.md)
-
-     Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
 
 - [x] Uninformed Search vs. Informed Search (Geeks for Geeks, 2021)
     
@@ -899,6 +915,45 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
 
     *Limitation of the minimax algorithm*:
     - The main drawback of the minimax algorithm is that it gets really slow for complex games such as Chess, go, etc. This type of games has a huge branching factor, and the player has lots of choices to decide. This limitation of the minimax algorithm can be improved from [alpha-beta pruning](./alpha_beta_pruning.md).
+    
+    <details>
+    <summary>Questions</summary>
+    
+    - Here you will investigate the fundamentals of minimax and alpha- beta pruning. Consider noughts and crosses on a 3 ×3 grid. Define Xn as the number of rows, columns or diagonals with exactly n crosses and no noughts. Define On analogously. Assume our utility function assigns +1 to any position with X3 = 1 and −1 to any position with O3 = 1, with all other positions having zero utility. For nonterminal positions, use the evaluation function f(s) = 3X_2(s) + X_1(s) −(3O_2(s) + O_1(s)) . Assume the cross player goes first.
+        - Find an (possibly approximate) expression for the size of the state space in terms of n, i.e. how many possible configurations exist.
+            - b = 9, m = 9, naively obvious bounds are 9^9, 9! or 3^9. Note number of possible games > number of unique states as a game consider state ordering.
+        - Construct the whole game tree starting with an empty board down to depth 2 (i.e., one X and one O on the board), taking symmetry into account. Mark the evaluations of all positions at depth 2.
+            - Root has a minimax value of +1
+            - At depth of 1, MIN encounters the following values:
+                - X at top left: -1
+                - X at top mid: -2
+                - X at centre: +1
+            - Continuous
+        - Use minimax to mark the backed-up values for the positions at depth 1, and use these values to choose the optimal move for the X player.
+            - See above
+        - Circle the nodes at depth 2 that would not be evaluated if alpha-beta pruning was applied, assuming the nodes were generated in the optimal order for alpha-beta pruning.
+            - In total, 8 of the 12 leaf nodes ca nbe pruned by alpha-beta with optimal move ordering.
+        
+    - Why is minimax less reasonable than expectiminimax as a practical decision-making principle for a complex agent acting in the real world?
+        - The real world is often stochastic and in complex environments with inherent randomness it is generally necessary to use probability distribution to parameterize our uncertainty. 
+        - More practically, minimax assumes an optimal adversary - it is more likely that optimal responses to an agent's actions are not guaranteed. 
+        - Minimax makes decisions based on the potentially low-probability worst case scenario. 
+        - Recall that expectiminimax uses the expected utility over its children. This weights events and their corresponding outcomes according to their probability in the expectation, so may be more robust to higly negative but very rare events.
+    
+    - The minimax algorithm returns the best move for MAX under the assumption that MIN plays optimally. What happens when MIN plays suboptimally?
+        - Assertion: For every game tree, the utility obtained by MAX using minimax decisions against a suboptimal MIN will be never be lower than the utility obtained playing against an optimal MIN.
+            - Consider a MIN node whose children are terminal nodes. For a suboptimal opponent, the utility of the node is greater or equal than the value than if MIN played optimally, U(σ_min) >= U*(σ_min).
+            - Hence ther value of the parent MAX node, which assumes the maximum among all it's children, is greater than the ase for an optimal MIN player.
+            - Repeat this argument until the root node and conclude that the assertion is ture, the max player always enjoys payoff greater or equal to the case of an optimal MIN player.
+    
+    - Minimax and alpha-beta as presented assume a zero-sum setting with boundedutility functions. This question prompts you to consider the consequences of removing theseassumptions.
+        - Describe how the minimax and alpha–beta algorithms change for two-player, non-zero-sum games in which each player has a distinct utility function and both utility functionsare known to both players.
+            - For non-zero sum games between two players A and B, a single value is not sufficient to describe the utility of a node, and should instead be replaced by a tuple of vaelus (v_A, v_B), giving the minimax value/utility of the state for each respective player. At each stage the player whose turn it is to move selects the action that yeilds the highest v_i value.
+            - Alpha-beta pruning is not possible in this context as the game is not necessaryily adversial and the two players are not necessarily copmeting against each other - the utility functiosn may be entirely independent, and neither player may be particularly fussed about what the other player does. There may no longer be situations where one player will never let the other player down a particular branch of the game tree.
+        - What happens in the almost cooperative case, where the utility functions differ by atmost a positive constant k > 0, i.e. UA = UB + k?
+            - The optimal strategy in this scenario is for both players to cooperate to reach the maximum-valued leaf - the agents work together to achieve a mutually desirable goal.
+    
+    </details>
 
 - [x] [Alpha-beta Pruning](./doc/AI/search/alpha_beta_pruning.md)
 
