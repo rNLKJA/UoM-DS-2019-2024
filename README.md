@@ -327,6 +327,7 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Mutual Information]()
 - [ ] [Information Gain]()
 - [ ] [Joint Mutual Information]()
+- [ ] [Bootstrap Evaluation]()
 
 ---
 
@@ -444,6 +445,8 @@ The term "artificial intelligence" had previously been used to describe machines
 - Acting like a human
 - Acting rationally
     - The rational agent: perform actions which will (most likely) achieve one's goals.
+    
+    > A rational agent acts to maximize the expectation of the performance measure, conditioned on the percept sequence to date, and whatever built-in knowledge the agent posseses.
 
 >  "It is a branch of computer science by which we can create intelligent machines which can behave like a human, think like humans, and able to make decisions." (Java T Point) 
 
@@ -488,6 +491,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
 
 - [x] [Types of Agent](./doc/AI/agent/types_of_agent.md)
     
+    **Agent Architectures**<br>
     Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
     - *Simple reflex agent*：only chooses actions based on the current percept, and ignores all preceding information.
     - *Model-based reflex agent*：maintains some internal state which depends on the percept history, useful if the current environment cannot be fully described by the current percept.
@@ -500,7 +504,32 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     Agent types: choose and justify choice of agent type for a given problem.
     
     Environment types: characterise the environment for a given problem.
-    
+
+    <details open>
+    <summary>Questions [True/False]</summary>
+
+    - An agent that senses only partial information about the state cannot be perfectly rational.
+        - FALSE
+        - Rationality refers to optimality of decisions according to some performance measuer conditioned upon the evidence provided by the percept sequence, in addition to whatever prior knowledge it has.
+    - There exist task environments in which no pure reflex agent can behave rationally.
+        - TRUE
+        - Pure reflex agents cannot maintain a history of past actions/percepts, so nay environment where optimality erquires conditioning on the previous state(s) satisfies this criterion.
+    - Suppose an agent selects its action uniformly at random from the set of possible actions. There exists a deterministic task environment in which this agent is rational.
+        - TRUE
+        - Consider the situation where all actions taken yield the same rewards.
+    - An agent which chooses the action with the highest expected value under the performance measure is superior to all other agents in the long run.
+        - 'Highest expected value' was left deliberately ambiguous as a discussion point.
+        - TRUE
+            - If we assume this references to maximization of the total cumulative performance measure in the future, then the agent is optimal by definition.
+        - FALSE
+            - If this instead refers to immediate reward observed at each stage, choosing the action with the highest expected value at the current timestep is greedy, and may be suboptimal, as aficionados of dynamic programming can attest
+            - Sometimes it is necessary to sacrifies immediate reward for long-term optimality. 
+    - Every agent is rational in an unobservable environment.
+        - FALSE
+        - It is possible to build in prior knowledge into an agent about acceptable behaviour in the absense of observations. An agent lacking this prior knowledge may take suboptimal actions in unobservable environment.
+
+    </details>
+
 - [x] [Intelligent Agent](./doc/AI/agent/intelligent_agent.md)
 
     Any agent composed with four parts:
@@ -512,6 +541,20 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     In short, an agent can be anything that perceiveits environment through sensors and act upon that environment through actuators. An Agent runs in the cycle of perceiving, thinking, and acting.
     
     An AI system can be defined as the study of the rational agent and its environment. The agents sense the environment through sensors and act on their environment through actuators. An AI agent can have mental properties such as knowledge, belief, intention, etc.
+    
+    <details open>
+    <summary>Questions</summary>
+        
+    - Do agent functions exist which cannot be implemented by any agent program? If yes, give a counterexample.
+        - Yes
+        - if the agent function rquires solving an undecidable problem - e.g. suppose the agentfunction required one to solve a Diophantine equation or decide wheter an arbitrary Turing machien halts. THen there is no agent program capable of implementing this agent function.
+    - Suppose we keep the agent program fixed but speed up the machine by a factor of two. Does this change the agent function? Will your answer change depending on the environment type?
+        - Depends on the program and the environment
+            - Dynamic environment
+                - It speedup may allow the agent to act sonner to choose different, better actions.
+            - Static environment
+                - the agent function is unchanged, only speedup the processing speed.
+    </details>
     
 - [x] [Agent Environment](./doc/AI/agent/agent_environment.md)
 
@@ -526,6 +569,20 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     - *Episodic/sequential*: If an agent's percept sequence is divided into noninteracting episodes, where the agent executes a single action based on the current percept, the environment is episodic. In a sequential environment, the current action may affect future environment state and hence future decisions.
     - *Static/Dynamic*:If the environment can change when the agent is deliberating (executing the agent program), then the environment is dynamic, otherwise static.
     - *Discrete/continuous*: If the environment has a finite number of distinct states, then the agent only has to contend with a finite set of percepts, and the environment is discrete, otherwise continuous. Similarly, if an agent can choose between a finite number of actions, the action set is discrete.
+    
+    <details open>
+    <summary>Questions</summary>
+    
+    For each of the following activities, characterize the task environment in terms of its properties: 
+    - Playing soccer
+        - Partially observable, stochastic, sequential, dynamic, continous, multi-agent
+    - Shopping for used books on the internet
+        - Partially observable, deterministic, sequential, static, single agent.
+        - This can be multi-agent and dynamic if we buy books via auction, or dynamic if we purchase on a long enough scale that book offers change.
+    - Bidding on an item at an auction
+        - Fully observable, stochastic (assuming non-rational actors), sequential, static, discrete, multi-agent.
+    
+    </details>
 
 - [x] [Turing Test in AI](./doc/AI/agent/turing_test.md)
 
