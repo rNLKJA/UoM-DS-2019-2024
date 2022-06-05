@@ -915,6 +915,43 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
 
     *Limitation of the minimax algorithm*:
     - The main drawback of the minimax algorithm is that it gets really slow for complex games such as Chess, go, etc. This type of games has a huge branching factor, and the player has lots of choices to decide. This limitation of the minimax algorithm can be improved from [alpha-beta pruning](./alpha_beta_pruning.md).
+
+- [x] [Alpha-beta Pruning](./doc/AI/search/alpha_beta_pruning.md)
+
+    Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm. As we have seen in the minimax search algorihtm that the number of game states it has examine are exponential in depth of the tree. Since we cannot eliminate the exponent, but we can cut it to half. Hence there is a technique by which without chekcing each node of the game tree we can compute the corerct minimax decision, and this technique is called pruning. This involves two threshold parameter Alpha and Beta for future expansion, so it is called alpha-beta pruning. It is also called Alpha-Beta Algorithm. Alpha-beta pruning can be applied at any depth of a tree, and sometimes it not only prune the tree leaves but also entire sub-tree. The two-parameter can be defined as: 
+
+    - *Alpha*: The best (highest-value) choice we have found so far at any point along the path for maximier. The initial value of alpha is -inf.
+    - *Beta*: The best (lowest-value) choice we have found so far at any point along the path for minimier. The initial value of beta is inf.
+
+    The alpha-beta pruning is a standard minimax algorithm returns the same move as the standard algorithm does, but it removes all the nodes which are not really affecting the final decision but making algorithm slow. Hence by pruning these node, it makes the algorithm fast.
+    
+    Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm.
+    
+    ```
+    function MAX-VALUE(state, game, α, β) returns the minimax value of state
+        inputs: state, current state in game
+                game, game description
+                α, the best score for MAX along the path to state
+                β, the best score for MIN along the path to state
+
+        if CUTOFF-TEST(state) then return EVAL(state)
+        for each s in SUCCESSORS(state) do
+            α <- MAX(α, MIN-VALUE(s, game, α, β))
+            if α >= β then return β
+        end
+        return α
+        
+    function MIN-VALUE(state, game, α, β) returns the minimax value of state
+        if CUTOFF-TEST(state) then return EVAL(state)
+            β <- MIN(β, MAX-VALUE(s, game, α, β))
+            if β <= α then return α
+        end
+        return β
+    ```
+    
+    Pruning does not affect final reulst. 
+    
+    The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}). As a result, the agent could doubles depth of search.
     
     <details>
     <summary>Questions</summary>
@@ -954,43 +991,6 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
             - The optimal strategy in this scenario is for both players to cooperate to reach the maximum-valued leaf - the agents work together to achieve a mutually desirable goal.
     
     </details>
-
-- [x] [Alpha-beta Pruning](./doc/AI/search/alpha_beta_pruning.md)
-
-    Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm. As we have seen in the minimax search algorihtm that the number of game states it has examine are exponential in depth of the tree. Since we cannot eliminate the exponent, but we can cut it to half. Hence there is a technique by which without chekcing each node of the game tree we can compute the corerct minimax decision, and this technique is called pruning. This involves two threshold parameter Alpha and Beta for future expansion, so it is called alpha-beta pruning. It is also called Alpha-Beta Algorithm. Alpha-beta pruning can be applied at any depth of a tree, and sometimes it not only prune the tree leaves but also entire sub-tree. The two-parameter can be defined as: 
-
-    - *Alpha*: The best (highest-value) choice we have found so far at any point along the path for maximier. The initial value of alpha is -inf.
-    - *Beta*: The best (lowest-value) choice we have found so far at any point along the path for minimier. The initial value of beta is inf.
-
-    The alpha-beta pruning is a standard minimax algorithm returns the same move as the standard algorithm does, but it removes all the nodes which are not really affecting the final decision but making algorithm slow. Hence by pruning these node, it makes the algorithm fast.
-    
-    Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm.
-    
-    ```
-    function MAX-VALUE(state, game, α, β) returns the minimax value of state
-        inputs: state, current state in game
-                game, game description
-                α, the best score for MAX along the path to state
-                β, the best score for MIN along the path to state
-
-        if CUTOFF-TEST(state) then return EVAL(state)
-        for each s in SUCCESSORS(state) do
-            α <- MAX(α, MIN-VALUE(s, game, α, β))
-            if α >= β then return β
-        end
-        return α
-        
-    function MIN-VALUE(state, game, α, β) returns the minimax value of state
-        if CUTOFF-TEST(state) then return EVAL(state)
-            β <- MIN(β, MAX-VALUE(s, game, α, β))
-            if β <= α then return α
-        end
-        return β
-    ```
-    
-    Pruning does not affect final reulst. 
-    
-    The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}). As a result, the agent could doubles depth of search.
     
 - [ ] [Temporal Difference Learning (TDLeaf(λ))]()
 
@@ -1028,6 +1028,50 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     if λ = 1: weights adjusted to move r(s_i, w) towards r(s_N)
         i.e. the final true reward (better if eval() is unrealistic)
     ```
+    
+    By using the reinforcment learning in game play, with a large number of games experience, the probability of taking a move that leads to a loss should go to zero, and the probability of taking a move that leads to a win should approach to 1, so that the agent will favor the optimal action. This assumes taht every move in every possible state has been visited sufficiently many times so that we can obtain a viable estimate of its usefullness.
+    
+    <details open>
+    <summary>Questions</summary>
+    
+    Recall for a general state s, and parametric evaluation function Eval(s; θ) we would like
+Eval(s; θ) ≈ U(s), where U(s) is the backed-up utility of the terminal state that arises from
+playing the game out from state s, using minimax up to depth l with the evaluation function
+Eval for both players.
+    
+    We have to play s out to completion in order to make a single weight update based on s. But playing out s to completion generates multiple intermediate states {s_t,s_{t+1},...,s_N} that we may use to refine our weight updates.
+    - Assume the objective function is ℓ(θ; s) = 1/2 (U(s) −Eval(s; θ))^2. Show that the gradient descent weight update from playing a state s until completion is: θ ←θ + η (U(s) −Eval(s; θ)) ∇_θ Eval(s; θ).
+        
+        ```
+        This follows from the chain rule:
+            ∇_θ ℓ(θ; s) = −∇_θ Eval(s; θ)(U(s) −Eval(s; θ))
+        Subtitute into the update rule θ ← θ −η∇_θ ℓ(θ; σ) to obtain the result.
+        ```
+    
+    - By using minimax with depth l to look ahead, we only calculate rewards from states of depth l in the future. If sl is the state whose reward ultimately propagates back to s via minimax, the weight update rule is: θ ← θ + η U(s) −Eval(s^l; θ)∇_θEval(s^l; θ) To be clear, here Eval(sl; θ) is the evaluation obtained for state s by applying Eval to the leaf nodes of a depth l minimax search from s. The weight update rule tries to make Eval(s_l; θ) a good approximation to the true terminal utility. If {s_t,s_{t+1},...,s_N} are the states encountered in a training game starting at time step t, we define the evaluation function at the terminal state s_N as the utility of s_t. The contribution to the parameter update by passing through state s_t is θ ←θ + η Eval(s^l_N; θ) −Eval(s^l_t; θ)∇_θ Eval(s^l_t; θ). Show the total update to the parameter vector for all N −1 moves made from state s_1 is: θ ← θ + η \sum^{N-1}_{i=1} Eval(s^l_N; θ) − Eval(s^l_i; θ)∇_θ Eval(s^l_i; θ). 
+        
+        ```
+        The parameter update for all N - 1 is the sum of all incremental updates ∆θ_t due to passing through states s_t:
+            θ ← θ + \sum^{N−1}_{t=1} ∆θ_t
+              = θ + η\sum^{N-1}_{t=1} Eval(s^l_N; θ) −Eval(s^l_i; θ) ∇_θ Eval(s^l_i; θ)
+        ```
+    
+    - Finally, we note that Eval(s_N; θ) −Eval(s^l_i,θ) is a telescoping series: Eval(slN; θ) −Eval(sli; θ) = \sum^{N-1}+{m=1} Eval(s^l_{m+1}; θ) −Eval(s^l_m; θ) Define the temporal differences d_m = Eval(s^l_{m+1}; θ) −Eval(s^l_m; θ). Show the update rule reduces to: θ ←θ + η\sum^{N-1}_{i=1} (∇_θ Eval(s^l_i; θ) \sum^{N-1}_{m=i}d_m).
+        - Straight forward from the definitions.
+    - We can insert a decay term λ ∈[0,1] which controls the effect of this telescoping: θ ← θ + η\sum^{N-1}_{i=1} (∇_θ Eval(s^l_i; θ) \sum^{N-1}_{m=i} λ^{m-i}d_m). This is the final update rule for TDLeaf(λ). Identify the update rules for the λ = 0 and λ = 1 cases, how does the behaviour of the updates qualitatively change as we increase λ?
+    
+        ```
+        For λ = 0, (noting that lim_{x→0^+}x_0 = 1), only m = i term in the inner sum is non-zero, and the update looks like:
+            θ ← θ + η\sum^{N-1}_{t=1} ∇_θ Eval(s^l_t; θ)[Eval(s^l_t+1; θ) −Eval(s^l_t; θ)]
+        This is known as the one-step temporal difference update, training is guided to minimize the change in reward between consecutive status.
+        
+        For λ = 1, the telescope collapses to yield:
+            θ ← θ + η\sum^{N-1}_{t=1} ∇_θ Eval(s^l_t; θ)[U(s) −Eval(s^l_t; θ)]
+        Here training is being guided to miniumize the difference between each state's s_t predicted reward with the final state's utility at time step N. This is equivalent to gradient descent using only terminal state utilities as targets.
+        Setting 0 < λ < 1 controls how far into the future the algorithm should look ahead in determining its update. Increasing λ interpolates between the short-sighted one-step λ = 0 behavior and the long-sighted λ = 1 behavior.
+        ```
+    
+    </details>
 
 - [ ] [Monte Carlo Search Tree](./doc/AI/search/monte_carlo_search_tree.md)
 
