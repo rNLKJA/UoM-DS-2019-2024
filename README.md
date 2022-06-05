@@ -401,6 +401,13 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Indenpendent Component Analysis (IDA)]()
 - [ ] [Apriori algorithm]()
 - [ ] [Singular value decomposition]()
+- [ ] [DBSCAN]()
+- [ ] [Mean Shift]()
+- [ ] [OPTICS]()
+- [ ] [Spectral Clustering]()
+- [ ] [Guassian Mixture Model]()
+- [ ] [BIRCH]()
+- [ ] [Agglomerative Clustering]()
 
 ---
 
