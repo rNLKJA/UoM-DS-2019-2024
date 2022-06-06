@@ -1971,10 +1971,32 @@ Data structure is a specialised format for organizing, processing retrieving and
   
 - [ ] [Stack]()
 - [ ] [Queue]()
+- [ ] [Sparse Table]()
+- [ ] [Heap]()
+    - Min/MAX Heap
+    - Binomial Heap
+    - Fibonacci Heap
+    - Skew Heap
+    - Leftist Heap
+    - Soft Heap
+    - Pairing Heap
+    - Shadow Heap
 - [ ] [Tree]()
+    - [ ] [Red Balck Tree]()
+    - [ ] [AVL(Adelson-Velsky and Landis) Tree]()
+    - [ ] [B Tree]()
+    - [ ] [B+ Tree]()
+    - [ ] [Splay Tree]()
+    - [ ] [AA Tree]()
 - [ ] [Graph]()
+- [ ] [Adjacency List]()
+- [ ] [Adjacency matrix]()
 - [ ] [Sorting Algorithms]()
 - [ ] [Searching Algorithms]()
+- [ ] [Records]()
+- [ ] [Container]()
+- [ ] [Control Table]()
+
 
 ---
 
@@ -2101,10 +2123,23 @@ Some uncategoried notes.
         - Database
         - Tables
         - Spreadsheet
+- [ ] [Data Smoothing Methods]()
+
+    In statistics and image processing, to smooth a data set is to create an approximating function that attempts to capture important patterns in the data, while leaving out noise or other fine-scale structures/rapid phenomena. In smoothing, the data points of a signal are modified so individual points higher than the adjacent points (presumably because of noise) are reduced, and points that are lower than the adjacent points are increased leading to a smoother signal. Smoothing may be used in two important ways that can aid in data analysis by being able to extract more information from the data as long as the assumption of smoothing is reasonable and by being able to provide analyses that are both flexible and robust. Many different algorithms are used in smoothing ([Wikipedia](https://en.wikipedia.org/wiki/Smoothing)).
+    
+    - [ ] [Simple Exponential]()
+    - [ ] [Moving Average]()
+    - [ ] [Random Walk]()
+    - [ ] [Exponential Moving Average]()
+    - [ ] [Laplace Smoothing]()
+    - [ ] [Epsilon Smoothing]()
+- [ ] [Data Wrangling]()
 - [ ] Experimental Design
     - Future Selection
     - Dimensionality Reduction
     - Performance Evaluation
+- [ ] Bias & Variance Tradeoff
+- [ ] Uncertainty Quantification
 - [ ] Differential Privacy
 - [ ] Big Data Analytics (BDA)
     
