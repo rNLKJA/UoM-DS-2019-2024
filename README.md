@@ -384,8 +384,10 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [AdaBoost]()
 - [ ] [XGBoost]()
 - [ ] [Light GBM]()
-- [ ] [Recommending System]()
-
+- [ ] [Recommender System](https://thingsolver.com/introduction-to-recommender-systems/)
+    
+    <img src="./img/types-of-recommender-systems.png" align=center />
+    
 ---
 
 <div align=center><h4>Unsupervised Learning Methods</h4></div>
@@ -405,10 +407,16 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 - [ ] [Mean Shift]()
 - [ ] [OPTICS]()
 - [ ] [Spectral Clustering]()
-- [ ] [Guassian Mixture Model]()
+- [ ] [Mixture of Gaussians]()
 - [ ] [BIRCH]()
 - [ ] [Agglomerative Clustering]()
 
+- [ ] Supervised learning vs. Unsupervised learning
+    
+    |            | Supervised Learning              | Unsupervised Learning    |
+    | ---------- | -------------------------------- | ------------------------ |
+    | Discrete   | Classification<br>Categorization | Clustering               |
+    | Continuous | Regression                       | Dimensionality Reduction |
 ---
 
 <img src="./img/fabio-oyXis2kALVg-unsplash.jpg" width=100%>
@@ -2076,8 +2084,39 @@ Some uncategoried notes.
 
 ---
 
-<div align=center><h4>Concepts</h4></div>
+<div align=center><h4>Data Science Related Concepts</h4></div>
 
+- [ ] [Data Types]()
+- [ ] [Data Formats]()
+    - Unstructured
+        - Text files/documents
+        - Audio
+        - Video
+        - Social media
+    - Semi-structured
+        - XML
+        - JSON
+        - Webpages
+    - Structured
+        - Database
+        - Tables
+        - Spreadsheet
+- [ ] Experimental Design
+    - Future Selection
+    - Dimensionality Reduction
+    - Performance Evaluation
+- [ ] Differential Privacy
+- [ ] Big Data Analytics (BDA)
+    
+    > The ability to collect, store, and process increasingly large and complex data sets from a variety of sources, into competitive advantage.
+    
+    - Stakeholders of BDA
+        - Individual
+        - Organizations
+        - Society
+        
+- [ ] [Visual Assessment of Tendency (VAT) Plot]()
+- [ ] [Parallel Coordinate Plot (PCP)]()
 - [ ] [k-anonymity]()
 - [ ] [l-diversity]()
 - [x] [FAIR principle](https://www.go-fair.org/fair-principles/)
