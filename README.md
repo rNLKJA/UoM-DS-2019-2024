@@ -1307,6 +1307,14 @@ Eval for both players.
         
     Normalisation:
         P(M) = P(M|H)P(H) + P(M|¬H)P(H)
+        
+    Odds Ratio:
+        r = P(A|B) / P(¬A|B)
+        let p = P(A|B)
+            r = p / (1 - p) => r - rp = p => r = p + rp => r = p(1 + r) => p = r / 1 + r (DanielLC, Rubdy & AstraSequi, 2020)
+            
+    Others:
+        P(A|B) + P(A|¬B) = 1
     ```
     
     Conditional Probability: P(X|H) = P(X|H)P(H) / P(X)
@@ -1324,6 +1332,8 @@ Eval for both players.
      > P(H|X, Y) = P(X|H, Y) P(H|Y) / P(X, Y)
      
      Bayes' Theorem is an apparently simple consequence of the definition of conditional probability, but has deep consequences. The basic intuition here is that going in one direction. e.g. P(X|H) is easier than finding the probability P(H|X) in the other direction.
+
+    > Odds Ratio = P(M|H)P(H) / P(M|H^c)P(H^c)
 
 - [x] [Beyesian Belief Network](./doc/AI/uncertainty/beysian_belief_network.md)
 
@@ -1842,27 +1852,27 @@ What kinds of properties characterise an effective mechansim design for auctions
 <details open>
 <summary>Questions</summary>
 
-    - Your class will conduct a set of in-class auctions to gain experience with each type of action. The basic process is the following:
-        1. The auctioneer reveals the good to be auctioned.
-        2. You are given a card that indicates your redemption value (V ) of the good. You can think of this as your private value for the good.
-        3. Think of a rational bidding strategy for each type of auction. Record the bids made.
-        4. The auctioneer conducts the auction.
-        5. If you win the auction, you ’pay’ the auctioneer the appropriate amount based on the type of auction. Your profit/loss is P = V −W .
+- Your class will conduct a set of in-class auctions to gain experience with each type of action. The basic process is the following:
+    1. The auctioneer reveals the good to be auctioned.
+    2. You are given a card that indicates your redemption value (V ) of the good. You can think of this as your private value for the good.
+    3. Think of a rational bidding strategy for each type of auction. Record the bids made.
+    4. The auctioneer conducts the auction.
+    5. If you win the auction, you ’pay’ the auctioneer the appropriate amount based on the type of auction. Your profit/loss is P = V −W .
 
-        Follow the above process for (1) an English auction, (2) a Dutch auction, (3) a first-price, sealed-bid auction and (4) a second-price, sealed-bid auction. In the case of a sealed-bid auction, you should write your name and bid on a piece of paper, which is discreetly handed to the auctioneer.    
-        - What strategy did you use in each auction?
-        - How did the amount paid to the auctioneer vary between auctions?
-        - How did the profit of the winning bidder vary between auctions?
+    Follow the above process for (1) an English auction, (2) a Dutch auction, (3) a first-price, sealed-bid auction and (4) a second-price, sealed-bid auction. In the case of a sealed-bid auction, you should write your name and bid on a piece of paper, which is discreetly handed to the auctioneer.    
+    - What strategy did you use in each auction?
+    - How did the amount paid to the auctioneer vary between auctions?
+    - How did the profit of the winning bidder vary between auctions?
 
-        | Auction Type                       | Dominant Strategy                                                                                                 | Amount Paid to Auctioneer     | 
-        | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------- |
-        | English Auction                    | Keep bidding in small bids while the current cost is below your utility value v_i for the good                    | Highest Bids                  |
-        | Dutch Auction                      | NAN                                                                                                               | Current Auctioneer Call Value |
-        | First-Price, Sealed-Bid            | NAN                                                                                                               | Highest Bids                  |
-        | Second-Price, Sealed-Bid (Vickrey) | can show that it is to simply bid your value v_i for the good                                                     | Second-Highest Bids           |
+    | Auction Type                       | Dominant Strategy                                                                                                 | Amount Paid to Auctioneer     | 
+    | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+    | English Auction                    | Keep bidding in small bids while the current cost is below your utility value v_i for the good                    | Highest Bids                  |
+    | Dutch Auction                      | NAN                                                                                                               | Current Auctioneer Call Value |
+    | First-Price, Sealed-Bid            | NAN                                                                                                               | Highest Bids                  |
+    | Second-Price, Sealed-Bid (Vickrey) | can show that it is to simply bid your value v_i for the good                                                     | Second-Highest Bids           |
 
-        - Solution
-            - Straightforward using definitions of auction types. Note in the Dutch and first-price, sealed-bid auctions there is no dominant strategy. Bidder i has a private valuation v_i but their optimal action depends on the private values of other bidders, unknown to i. When the price reaches v_i or below, the bidder must decide to bid and claim the item at a higher price than necesary, or wait and risk losing the item to another bidder. Their behavior will depend on a probabilty model p_i(v_i,...,v_n) over the private valuations of all n bidders. This is similar to the first-price sealed-bid auction, where agents' bids depend on estimation of the private valuations of other bidders.  
+    - Solution
+        - Straightforward using definitions of auction types. Note in the Dutch and first-price, sealed-bid auctions there is no dominant strategy. Bidder i has a private valuation v_i but their optimal action depends on the private values of other bidders, unknown to i. When the price reaches v_i or below, the bidder must decide to bid and claim the item at a higher price than necesary, or wait and risk losing the item to another bidder. Their behavior will depend on a probabilty model p_i(v_i,...,v_n) over the private valuations of all n bidders. This is similar to the first-price sealed-bid auction, where agents' bids depend on estimation of the private valuations of other bidders.  
 </details>
 
 ---
@@ -2624,6 +2634,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Fisher, R., Perkins, S., Walker, A & Wolfar, E. *Skeletonization/Medial Axis Transform*. https://homepages.inf.ed.ac.uk/rbf/HIPR2/skeleton.html.
 - Wikipedia. (21, May 2022). *Constraint Satisfaction Problem*. https://en.wikipedia.org/wiki/Constraint_satisfaction_problem.
 - Nimmisha, S. (Dec 2022). *Classification of stages of Diabetic Retinopathy using Deep Learning*. https://www.researchgate.net/publication/347447352_Classification_of_stages_of_Diabetic_Retinopathy_using_Deep_Learning.
+- DanielLC, Rubdy & AstraSequi. (26, Sep 2020). *Odds*. https://www.lesswrong.com/tag/odds.
 
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
