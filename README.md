@@ -1602,6 +1602,103 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
     
     - Tree-structure CSPs can be solved in linear time
     - Iterative min-conflicts is usually effective in practice.
+    
+    - The degree heuristic relates to what variable we should assign next and states that we should pick the variable that has the most constraints on the remaining variables.
+    - Where as the least constraining value relates to what order the values should be tried once we have already picked a variable in the CSP. The least constraining value states that we should choose the least constraining value (ie. the one that least restricts the values for other variables)
+    
+    <details open>
+    <summary>Questions</summary>
+    
+    - The n-Queens problem is a classic benchmark search problem. Given an n x n chessboard, the aim is to place a total of n queens on the board, so that no queen data can capture any other person.
+        - Derive a nontrivial upper bound on the size of the state space of general n.
+            - Stupid: 2^n^{2} (n^2 squares, 2 possible states for each).
+            - Very Very Bad: n^2! / ( (n^2 - n)!n! ) (Permutations of n queens on n x n board).
+            - Very Bad: n^2 (1 queen per row)
+            - OK: n(n-2)(n-4)...= \prod^{[n/2]-1}_{i=1}(n-2i). (Each queen eliminates at least two squares in next row)
+            - Good: No known formula for the exact number of solutions
+        - Develop a CSP formulation for this problem. Specify the relevant variables together with their domains, and the constraints between relevant variables.
+            - Variables: Position of queen in row r
+            - Represent positions of queens through array Q[1,...,n]. Element r of the array, Q[r], indicates the position of the queen in row r.
+            - Domain: Q[r] ∈ {1,...,n}
+            - Constraints:
+                - Let i != j be row indexes.
+                - Q[i] != Q[j] (same column placement forbidden)
+                - |Q[j] - Q[i]| != |j - i| (diagonal placment forbidden)
+            - Constraint graph
+                - Nodes: Variables Q[i]
+                - Edges represent constraints between variables. Every queen can theorertically attack every other queen on the chessboard, so our constraint graph is a clique; we have an edge connecting every pair of variables in the CSP. In n-Queens it suffices to consider binary constraints as the queen in row i independently threatens the queens in rows j, k.
+        - Design an algorithm, in pseudo-code, that counts the number of valid n-Queens configurations using backtracking. 
+            ```python
+            def nQueens(Q: List[int], r: int) -> int:
+                # Q: vector holding column indices for queen assignments
+                # r: row index for recursion
+                
+                if r == n:
+                    return 1
+                    
+                solutions = 0
+                
+                for i in range(n):
+                    # check if placement is legal, given previous placements
+                    legal = True
+                    for j in range(r):
+                        # i loops over the proposed placement column
+                        if (Q[j] == i) or (abs(Q[j] - i) == (r - j)):
+                            legal = False
+                            break
+                
+                    # if legal, extend recursively
+                    if legal:
+                        Q[r] = i
+                        solutions += nQueens[Q, r+1]
+                
+                return solution
+                
+            Q = [None for _ in range(n)]
+            return nQueens(Q, 0)
+            ```
+    - [Apparent paradox] Explain why it is a good heuristic to choose the variable that is most constrained but the value that is least constraining in a CSP search.
+        - The search tree for solutions grows exponentially, but most branches are invalid combinations of assignments.
+        - The Minimum Remaining Values (MRV) heuristic choose the variable most likely to cause a failure - if search fails early, backtrack and prune the search space. If the current partial solution cannot be expanded into a complete solution, is it better to know earlier instead of wasting time searching exponentially many dead-ends.
+        - Because we need to find a single solution, we want to be generous and select the value that allows the most future assignments to avoid conflict. This makes it more likely the search will find a complete solution.
+        - This asymmetry makes it better to use MRV to prune exponentially growing search space by choosing least-promising successors first, but increase the probability of success for all successors via the least constrainting value heuristic.
+    
+    - Use the AC-3 algorithm to show that arc consistency can detect the inconsistency of the partial assignment {WA = Green, V = Red} for the problem of colouring the map of Australia in Figure
+    
+        <img src='./img/map-coloring-constriants-problem.png' align=center />
+    
+        - Wish to color states that no neighboring states share the same color.
+        - To detect inconsistency, reduce the domain of some variable in graph to zero => no possible color assignments for that variable.
+        
+        ```
+        Initial value domains
+            - WA = {G}
+            - V = {R}
+            - NT = {R, G, B}
+            - SA = {R, G, B}
+            - Q = {R, G, B}
+            - NSW = {R, G, B}
+        
+        Pop WA-SA arc from the queue (degree heuristic)
+            - SA = {R, B}
+        Pop SA-V arc from queue
+            - SA = {B}
+        Pop NT-WA arc from queue
+            - NT = {R, B}
+        Pop NT-SA arc from queue
+            - NT = {R}
+        Pop NT-Q arc from queue
+            - Q = {G, B}
+        Pop SA-Q arc from queue
+            - Q = {G}
+        No legal assignment for NSW, CSP is inconsistent, terminate.
+        ```
+    - What is the time complexity of running the AC-3 arc consistency algorithm on a tree-structured CSP? Give your answer in terms of the number of edges on the constraint graph, E, and the maximum possible domain size, D.
+        - A tree-structured CSP has no loops in the constraint graph. We first choose an arbitray node to serve as the root, convert all undirected edges to directed edges pointing away from the root, and then topologically sort the resulting directed acyclic graph.
+        - Make the resulting graph directed arc-consistent by performing a backward pass from the tail to the root, enforcing arc consistency for all arcs Parent(X_i) -> X_i. This will prune the domain of the variables in the constraint graph. Throw a failure value if this is not possible.
+        - Now start at the root, and perform a forward assignment using standard backtracking. But note we already enforced arc-consistency on all the arcs, so irrespective of the assignment we choose for any given node, there will be at least one consistent assignment to all its children, guaranteeing a solution. Hence this step never actucally has to backtrack.
+        - Checking consistent requires O(D^2) operations (pairwise comparison), and no arc must be considered more than once in the absence of backtracking, for a worst-case runtime O(ED^2).
+    </details>
 
 ---
 
@@ -1676,7 +1773,7 @@ What kinds of properties characterise an effective mechansim design for auctions
     - auctioneer start by asking for a minimum (reserve) price
     - auctioneer invites bids from bidders, which must be higher than the current highest price receivied (perhaps requirign a minimum bid increment).
     - auctioneer ends when no further bids received, and good is sold if final bid exceeds reserve price.
-    - price paid by winner is theri final (highets) bid.
+    - price paid by winner is their final (highets) bid.
     
     > **Domaint Strategy**: Keep bidding in small bids while the current cost is below your utility value v_i for the good.
     
@@ -1694,7 +1791,7 @@ What kinds of properties characterise an effective mechansim design for auctions
     Protocle and outcome rule:
     - auctioneer starts by asking for extremenly hgih initial value.
     - auctioneer repreadedly lowers the price of the good in small steps.
-    - acution ends when someone makes a bid at the current offer price.
+    - auction ends when someone makes a bid at the current offer price.
     - price paid by winner is the price when their bid was made.
     
     Can suffer from similar problems to the English auction.
@@ -1741,6 +1838,32 @@ What kinds of properties characterise an effective mechansim design for auctions
 - Auctions are a mechanism to allocate resoures in multi-agent environments.
 - Appropriate mechansim design can achieve desriable behaviour among selfish agents.
 - Types of auctions in theory practical case studies of online auctions.
+
+<details open>
+<summary>Questions</summary>
+
+    - Your class will conduct a set of in-class auctions to gain experience with each type of action. The basic process is the following:
+        1. The auctioneer reveals the good to be auctioned.
+        2. You are given a card that indicates your redemption value (V ) of the good. You can think of this as your private value for the good.
+        3. Think of a rational bidding strategy for each type of auction. Record the bids made.
+        4. The auctioneer conducts the auction.
+        5. If you win the auction, you ’pay’ the auctioneer the appropriate amount based on the type of auction. Your profit/loss is P = V −W .
+
+        Follow the above process for (1) an English auction, (2) a Dutch auction, (3) a first-price, sealed-bid auction and (4) a second-price, sealed-bid auction. In the case of a sealed-bid auction, you should write your name and bid on a piece of paper, which is discreetly handed to the auctioneer.    
+        - What strategy did you use in each auction?
+        - How did the amount paid to the auctioneer vary between auctions?
+        - How did the profit of the winning bidder vary between auctions?
+
+        | Auction Type                       | Dominant Strategy                                                                                                 | Amount Paid to Auctioneer     | 
+        | ---------------------------------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------- |
+        | English Auction                    | Keep bidding in small bids while the current cost is below your utility value v_i for the good                    | Highest Bids                  |
+        | Dutch Auction                      | NAN                                                                                                               | Current Auctioneer Call Value |
+        | First-Price, Sealed-Bid            | NAN                                                                                                               | Highest Bids                  |
+        | Second-Price, Sealed-Bid (Vickrey) | can show that it is to simply bid your value v_i for the good                                                     | Second-Highest Bids           |
+
+        - Solution
+            - Straightforward using definitions of auction types. Note in the Dutch and first-price, sealed-bid auctions there is no dominant strategy. Bidder i has a private valuation v_i but their optimal action depends on the private values of other bidders, unknown to i. When the price reaches v_i or below, the bidder must decide to bid and claim the item at a higher price than necesary, or wait and risk losing the item to another bidder. Their behavior will depend on a probabilty model p_i(v_i,...,v_n) over the private valuations of all n bidders. This is similar to the first-price sealed-bid auction, where agents' bids depend on estimation of the private valuations of other bidders.  
+<details>
 
 ---
 
