@@ -1863,7 +1863,7 @@ What kinds of properties characterise an effective mechansim design for auctions
 
         - Solution
             - Straightforward using definitions of auction types. Note in the Dutch and first-price, sealed-bid auctions there is no dominant strategy. Bidder i has a private valuation v_i but their optimal action depends on the private values of other bidders, unknown to i. When the price reaches v_i or below, the bidder must decide to bid and claim the item at a higher price than necesary, or wait and risk losing the item to another bidder. Their behavior will depend on a probabilty model p_i(v_i,...,v_n) over the private valuations of all n bidders. This is similar to the first-price sealed-bid auction, where agents' bids depend on estimation of the private valuations of other bidders.  
-<details>
+</details>
 
 ---
 
