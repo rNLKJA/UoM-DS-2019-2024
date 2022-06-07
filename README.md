@@ -519,6 +519,9 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     - *Utility-based agent*：compares the desirability of different environment states via a utility function. This allows the comparison of different goal states and action sequences and tradeoffs between different goals.
     - *Learning Agent*: can learn from its past experiences or it has learning capabilities. It starts to act with basic knowledge and then is able to act and adapt automatically through learning. 
     
+    *Difference between a goal-based agent and a utility-based agent*.
+        - While a goal-based agentcan identify action sequences that achieve a given goal, utility based agents can choose between alternative action sequences that satisfy a goal, by using a utility measure on the sequence of states in the solution.
+    
     Agent model: charaterise requirements for an agent in terms of its percepts, actions, environment and performance measure.
     
     Agent types: choose and justify choice of agent type for a given problem.
@@ -813,7 +816,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     Hill Climbing is mostly used when a good heuristic is available.
     
-    In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state.
+    In this algorithm, we don't need to maintain and handle the search tree or graph as it only keeps a single current state, past information is not useful.
     
     ```
     function HILL-CLIMBING(problem) returns a solution state
@@ -889,7 +892,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     - perfection is unattainable => must approximate and make trade-offs 
     - uncertainty limits the value of look-ahead 
     - programs could use TDLearning (self-learning agent) to learn the game from past game experience or using supervised learning like gradient decent search to find the best solution.
-        - problems
+        - problems using unsupervised learning with gradient descent search is not a good approach for learning in game playing search.
             - Delayed reinforcement: reward resulting from an action may not be received until several time steps later, which also slows down the learning.
             - Credit assignment: need to know which action(s) was responsible for the outcome.
     
@@ -1433,9 +1436,10 @@ The CSP is solved when values are assigned to all variables in X without violati
         - e.g., job scheduling, variables are start/end days for each job
         - need a constraint language, e.g. StartJob_1 + 5 <= StartJob_3
         - linear constraints solvable, nonlinear undecidable
+    - Discrete variables have finite domain with roughly O(d^n) complete assignments, where n is the number of variables in the CSP. For example, scheduling.
 - Continuous Variables
     - e.g. start/end times for Hubble Telescope observations
-    - linear constraints solvable in polynomial time by linear programming (LP) methods.
+    - linear constraints solvable in polynomial time by linear programming (LP) methods. For example, Start/End times for Hubble Telescople observations.
 
 **Varieties of Constraints**
 - *Unary* constraints involve a single variable. e.g. SA != Green
@@ -1533,7 +1537,7 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
         - If D_i unchanged, move onto next arc. Otherwise append all arcs (X_k, X_i) where X_k is adjacement to X_i to the queue.
         - AC-3 is not a solution method but defines an equivalent problem that is faster to traverse via backtracking, as the variables have smaller domains.
         
-        > **Arc consistency**: simplest form of propagation makes each arc consistent.
+        > **Arc consistency**: simplest form of constraint propagation makes each arc consistent.
         
         X -> Y is arc consistent iff for every x of X there is at least one value of y of Y that satisfies the constraint between X and Y.
         
@@ -1708,6 +1712,10 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
         - Make the resulting graph directed arc-consistent by performing a backward pass from the tail to the root, enforcing arc consistency for all arcs Parent(X_i) -> X_i. This will prune the domain of the variables in the constraint graph. Throw a failure value if this is not possible.
         - Now start at the root, and perform a forward assignment using standard backtracking. But note we already enforced arc-consistency on all the arcs, so irrespective of the assignment we choose for any given node, there will be at least one consistent assignment to all its children, guaranteeing a solution. Hence this step never actucally has to backtrack.
         - Checking consistent requires O(D^2) operations (pairwise comparison), and no arc must be considered more than once in the absence of backtracking, for a worst-case runtime O(ED^2).
+    
+    - Briefly describe the operation of the most constrainted-variable heuristic for the forward checking search algorithm.
+        - When backtracking, choose the variable with the most constraints with respect to the other unassigned variables.
+    
     </details>
 
 ---
@@ -1752,10 +1760,11 @@ Formally, an auction takes place between an auctioneer agent, who allocates a go
     - _Many goods_: many goods are available in the auction
     
     So bids can include both the price and number of goods wanted by the bidder (e.g., auctioning mobile phone specturm), known as a combinatorial auction.
-    
-*Factors affecting mechanism design*
 
-A major factor is how bidding agents put a value on the good to be auctioned.
+*Why can a sealed-bid auction help prevent collusion*
+- Bidders cannot see each others' bids. Hence they cannot use their bids to send a price signal to other bidders.
+
+*Factors affecting mechanism design*: A major factor is how bidding agents put a value on the good to be auctioned.
 *Private value*: Each bidder i has a utility value v_i that reflects the worth of good to the bidder.
 *Common value*: The worth of the good is the same for all bidders, but that worth is unknown a priori, and must be estimated by each bidder.
 
@@ -1922,6 +1931,9 @@ Must make assumptions about the way the world behaves in order to interpret the 
 - Mapping: give poase and observed landmarks, update map distribution.
 - Simultaneous Localization and Mapping (SLAM): given observed landmarks, update pose and map distribution.
 - Probabilistic formulation of SLAM: add landmark localtion L1, ..., Lk to the state vector, proceed as for localization.
+
+*Difference between Vonoroi diagrams for skeletonisation in robot path planning.*
+- It can be computationally difficult to compute Vonoroi diagrams in high-dimensional configuration space.
 
 **Bayesian Inference on Sensors**<br>
 Need some way to determine whether an obstacle is there, given multiple measurements from a sensor.
