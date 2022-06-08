@@ -2305,7 +2305,7 @@ Some uncategoried notes.
     | The values cannot be divided into subdivisions into smaller pieces         | The values can be divided into subdivisions into smaller pieces              |
     | Discrete data have spaces between the values                               | Continuous data are in the form of a continuous sequence                     |
     
-- [ ] Data Formats (IBM Cloud Education)
+- [x] Data Formats (IBM Cloud Education)
     - Unstructured data
     
         In the modern world of big data, unstructured data is the most abundant. It’s so prolific because unstructured data could be anything: media, imaging, audio, sensor data, text data, and much more. Unstructured simply means that it is datasets (typical large collections of files) that aren’t stored in a structured database format. Unstructured data has an internal structure, but it’s not predefined through data models. It might be human generated, or machine generated in a textual or a non-textual format.
