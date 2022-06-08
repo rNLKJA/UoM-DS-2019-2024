@@ -1,10 +1,10 @@
-<img src="../img/brett-jordan-TMj1c5wlO3k-unsplash.jpg" width=100% />
+<img src="./img/brett-jordan-TMj1c5wlO3k-unsplash.jpg" width=100% />
 
 <div align=center><h4>Data Driven Process Improvement</h4></div>
 
 | Data-Driven Process Improvement      | Data Analysis and Visualization        | Applied Analytics and Data for Decision Making     | 
 | ------------------------------------ | -------------------------------------- | -------------------------------------------------- |
-| [Operations and Performance Goals](./doc/DDPI/operations-and-performance-goals.md) | [Data Analysis Software Tools]()       | [Applying Analytics to Implement Solution]()       |
+| [Operations and Performance Goals](./doc/operations-and-performance-goals.md) | [Data Analysis Software Tools]()       | [Applying Analytics to Implement Solution]()       |
 | [Data Collection]()                  | [Statistical Process Control (SPC)]()  | [Data-Driven Operational Excellence]()             |
 | [Process Mapping]()                  | [Data Visualisation and Translation]() | [Applying Data-Driven Decision]()                  |
 | [Capstone Project 1]()               | [Capstone Project 2]()                 | [Capstone 3]()                                     |

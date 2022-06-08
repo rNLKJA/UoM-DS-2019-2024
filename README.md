@@ -1,4 +1,4 @@
-<img src="./img/st_kilda.jpg" width=100% alt='st_kilda melb vic au'>
+<img src="./Pictures/st_kilda.jpg" width=100% alt='st_kilda melb vic au'>
 
 <div align=center><h1>Data Science Path from Undergradate to Master</h1></div>
 

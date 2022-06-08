@@ -1,4 +1,4 @@
-<img src="../img/shubham-dhage-T9rKvI3N0NM-unsplash.jpg" width=100% />
+<img src="./img/shubham-dhage-T9rKvI3N0NM-unsplash.jpg" width=100% />
 
 <div align=center><h3>Block Chain <a href='https://www.javatpoint.com/blockchain-tutorial'>(Java T Point)</a></h3></div>
 

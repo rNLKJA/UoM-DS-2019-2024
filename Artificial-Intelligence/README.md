@@ -1,4 +1,4 @@
-<img src="../img/possessed-photography-U3sOwViXhkY-unsplash.jpg" width=100% />
+<img src="./img/possessed-photography-U3sOwViXhkY-unsplash.jpg" width=100% />
 
 <div align=center><h3>Artificial Intelligence</h3></div>
 
@@ -45,10 +45,10 @@ The term "artificial intelligence" had previously been used to describe machines
 
 | **Based on Capabilities**                          | **Based on functionality**                               |
 | -------------------------------------------------- | -------------------------------------------------------- |
-| [Weak AI / Narrow AI](../doc/AI/types/narrow_ai.md) | [Reactive Machines](../doc/AI/types/reactive_machines.md) | 
-| [General AI](../doc/AI/types/general_ai.md)         | [Limited Memory](../doc/AI/types/limited_memory.md)       |
-| [Super AI](../doc/AI/types/super_ai.md)             | [Theory of Mind](../doc/AI/types/theory_of_mind.md)       |
-|                                                    | [Self-Awareness](../doc/AI/types/self_awareness.md)       |
+| [Weak AI / Narrow AI](./doc/types/narrow_ai.md) | [Reactive Machines](./doc/types/reactive_machines.md) | 
+| [General AI](./doc/types/general_ai.md)         | [Limited Memory](./doc/types/limited_memory.md)       |
+| [Super AI](./doc/types/super_ai.md)             | [Theory of Mind](./doc/types/theory_of_mind.md)       |
+|                                                    | [Self-Awareness](./doc/types/self_awareness.md)       |
 
 ---
 
@@ -60,7 +60,7 @@ We evaluate agent behavior through the performance measure. A rational agent act
 
 A self-learning agent may undertake actions to modify future percepts, and/or adjust the agent function as it accumulates experience.
 
-- [x] [Types of Agent](../doc/AI/agent/types_of_agent.md)
+- [x] [Types of Agent](./doc/agent/types_of_agent.md)
     
     **Agent Architectures**<br>
     Agents can be grouped into five classes based on their degree of perceived intelligence and capability. All these agents can improve their performance and generate better action over the time. These are given below:
@@ -104,7 +104,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
 
     </details>
 
-- [x] [Intelligent Agent](../doc/AI/agent/intelligent_agent.md)
+- [x] [Intelligent Agent](./doc/agent/intelligent_agent.md)
 
     Any agent composed with four parts:
     - *Percepts*: percepts or observations of the environment, made by sensors
@@ -132,7 +132,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     
     </details>
     
-- [x] [Agent Environment](../doc/AI/agent/agent_environment.md)
+- [x] [Agent Environment](./doc/agent/agent_environment.md)
 
     An environment is everything in the world which surrounds the agent, but it is not a part of an agent itself. An environment can be described as a situation in which an agent is present.
 
@@ -160,7 +160,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     
     </details>
 
-- [x] [Turing Test in AI](../doc/AI/agent/turing_test.md)
+- [x] [Turing Test in AI](./doc/agent/turing_test.md)
 
     Turing Test was introduced by Alan Turing in his 1950 paper, "Computing Machinery and Intelligence", which considered the question, "Can Machine think?"
     
@@ -200,7 +200,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     return action
 ```
 
-- [x] [Search Algorithms](../doc/AI/solving/search_algo.md)
+- [x] [Search Algorithms](./doc/solving/search_algo.md)
 
     Search algorithms are one of the most important areas of Artificial Intelligence. This topic will explain all about the search algorithms in AI.
     
@@ -277,7 +277,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
             - Construct the graph as before. The seating position of children not involved in a hate relation are irrelevant (these represent singleton disconnected nodes), so we want to find the height of the connected component of the graph of maximum height. This can be found in O(m+n) time using BFS to enumerate all vertices within each connected components.
     </details>
         
-- [x] [Uniform Search Algorithm](../doc/AI/solving/uninformed_search.md)
+- [x] [Uniform Search Algorithm](./do/solving/uninformed_search.md)
 
     Uninformed search is a class of general-purpose search algorithms which operats in brute-force way. Uninformed search algorithms do not have additional information about state or search space other than how to traverse the tree, so it is also called blind search.
 
@@ -307,7 +307,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     > Admissibility results in optimality but may not be completeness in general.
 
-- [x] [Informed Search Algorithm](../doc/AI/solving/informed_search.md)
+- [x] [Informed Search Algorithm](./doc/solving/informed_search.md)
 
      Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
      
@@ -355,7 +355,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     | It is more lengthy while implementation               | It is less lengthy while implementation          |
     | DFS, BFS, DLS, UCS, IDDFS                             | Best-First search, A* search                     |
 
-- [x] [Hill Climbing Algorithm](../doc/AI/solving/hill_climbing.md)
+- [x] [Hill Climbing Algorithm](./doc/solving/hill_climbing.md)
 
     Hill climbing algorithm is a local search algorithm which continuously moves in the direction of increasing elevation/value to find the peak of the mountain or best solution to the problem. It terminates when it reaches a peak value where no neighbor has a higher value.
     
@@ -384,7 +384,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     The problem of hill-climbing algorithm is it can get stuck on local maxima.
     
-- [x] [Means-Ends Analysis](../doc/AI/solving/means_ends_analysis.md)
+- [x] [Means-Ends Analysis](./doc/solving/means_ends_analysis.md)
 
     Means-Ends Analysis is problem-solving techniques used in Artificial intelligence for limiting search in AI programs. It is a mixture of Backward and Forward search technique. The MEA process centered on the evaluation of the difference between the curernt state and goal state.
 
@@ -426,7 +426,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
 
 <div align=center><h4>Adversarial Search</h4></div>
 
-- [x] [Adversarial Search](../doc/AI/search/adversarial_search.md)
+- [x] [Adversarial Search](./doc/search/adversarial_search.md)
     
     Adversarial search is a search, where we examine the problem which arises when we try to plan ahead of the world and other agents are planning against us.
     
@@ -447,7 +447,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
             - Delayed reinforcement: reward resulting from an action may not be received until several time steps later, which also slows down the learning.
             - Credit assignment: need to know which action(s) was responsible for the outcome.
     
-- [x] [Minimax Search](../doc/AI/search/minimax.md)
+- [x] [Minimax Search](./doc/search/minimax.md)
 
     > Minimax is a perfect play for deterministic, perfect-information games.
 
@@ -484,9 +484,9 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     These two approach are effective to shortern the time complexity and space complexity of minimax search. 
 
     *Limitation of the minimax algorithm*:
-    - The main drawback of the minimax algorithm is that it gets really slow for complex games such as Chess, go, etc. This type of games has a huge branching factor, and the player has lots of choices to decide. This limitation of the minimax algorithm can be improved from [alpha-beta pruning](../doc/AI/search/alpha_beta_pruning.md).
+    - The main drawback of the minimax algorithm is that it gets really slow for complex games such as Chess, go, etc. This type of games has a huge branching factor, and the player has lots of choices to decide. This limitation of the minimax algorithm can be improved from [alpha-beta pruning](./doc/search/alpha_beta_pruning.md).
 
-- [x] [Alpha-beta Pruning](../doc/AI/search/alpha_beta_pruning.md)
+- [x] [Alpha-beta Pruning](./doc/search/alpha_beta_pruning.md)
 
     Alpha-beta pruning is a modified version of the minimax algorithm. It is an optimization technique for the minimax algorithm. As we have seen in the minimax search algorihtm that the number of game states it has examine are exponential in depth of the tree. Since we cannot eliminate the exponent, but we can cut it to half. Hence there is a technique by which without chekcing each node of the game tree we can compute the corerct minimax decision, and this technique is called pruning. This involves two threshold parameter Alpha and Beta for future expansion, so it is called alpha-beta pruning. It is also called Alpha-Beta Algorithm. Alpha-beta pruning can be applied at any depth of a tree, and sometimes it not only prune the tree leaves but also entire sub-tree. The two-parameter can be defined as: 
 
@@ -643,7 +643,7 @@ Eval for both players.
     
     </details>
 
-- [ ] [Monte Carlo Search Tree](../doc/AI/search/monte_carlo_search_tree.md)
+- [ ] [Monte Carlo Search Tree](./doc/search/monte_carlo_search_tree.md)
 
     In computer science, Monte Carlo tree search (MCTS) is a heuristic search algorithm for some kinds of decision processes, most notably those employed in software that plays board games. In that context MCTS is used to solve the game tree.
     
@@ -682,7 +682,7 @@ Eval for both players.
 
 <div align=center><h4>Knowledge Represent</h4></div>
 
-- [x] [Knowledge Based Agent](../doc/AI/knowledge/knowledge_based_agent.md)
+- [x] [Knowledge Based Agent](./doc/knowledge/knowledge_based_agent.md)
 
     An intelligent agent needs knowledge about the real world for taking decisions and reasoning to act efficiently. Knowledge-based agents are those agents who have the capability of maintaining an internal state of knowledge, reason over that knowledge, update their knowledge after observations and take actions. These agents can represent the world with some formal representation and act intelligently.
     
@@ -697,14 +697,14 @@ Eval for both players.
     - An agent can deduce the internal representation of the world
     - An agent can deduce appropriate actions
 
-- [x] [Knowledge Representation](../doc/AI/knowledge/knowledge_representation.md)
+- [x] [Knowledge Representation](./doc/knowledge/knowledge_representation.md)
 
     Humans are best at understanding, reasoning, and interpreting knowledge. Human knows things, which is knowledge and as per their knowledge they perform various actions in the real world. But how machines do all these things comes under knowledge representation and reasoning. Hence we can describe Knowledge representation as following:
     - Knowledge representation and reasoning (KR, KRR) is the part of Artificial intelligence which concerned with AI agents thinking and how thinking contributes to intelligent behavior of agents.
     - It is responsible for representing information about the real world so that a computer can understand and can utilize this knowledge to solve the complex real world problems such as diagnosis a medical condition or communicating with humans in natural language.
     - It is also a way which describes how we can represent knowledge in artificial intelligence. Knowledge representation is not just storing data into some database, but it also enables an intelligent machine to learn from that knowledge and experiences so that it can behave intelligently like a human.
 
-- [x] [Knowledge Representation Techniques](../doc/AI/knowledge/knowledge_representation_techniques.md)
+- [x] [Knowledge Representation Techniques](./doc/knowledge/knowledge_representation_techniques.md)
 
     There are mainly four ways of knowledge representation which are given as follows:
     - Logical representaiton
@@ -773,11 +773,11 @@ Eval for both players.
     | It operates in the forward direction | It operates in the backward direction |
     | Forward chaining is aimed for any conclusion | Backward chaining is only aimed for the required data |
 
-- [x] [Reasoning in AI](../doc/AI/knowledge/reasoning_in_AI.md)
+- [x] [Reasoning in AI](./doc/knowledge/reasoning_in_AI.md)
 
     The reasoning is the mental process of deriving logical conclusion and make predictions from available knowledge, facts, and beliefs. Or we can say, "Reasoning is a way to infer facts from existing data." It is a general process of thinking rationally, to find valid conclusions.
     
-- [x] [Inductive vs. Deductive Reasoning](../doc/AI/knowledge/Inductive_vs_deductive.md)
+- [x] [Inductive vs. Deductive Reasoning](./doc/knowledge/Inductive_vs_deductive.md)
 
     | **Basis for comparison** | **Deductive Reasoning**  | **Inductive Reasoning** |
     | ------------------------ | ------------------------ | ----------------------- |
@@ -794,7 +794,7 @@ Eval for both players.
 
 <div align=center><h4>Uncertain Knowledge R</h4></div>
 
-- [x] [Probabilistic Reasoning in AI](../doc/AI/uncertainty/probabilitis_reasoning.md)
+- [x] [Probabilistic Reasoning in AI](./doc/uncertainty/probabilitis_reasoning.md)
 
     To represetn uncertain, where we are not sure about the predicates, we need uncertain reasoning or probabilisitic reasoning.
     
@@ -840,7 +840,7 @@ Eval for both players.
     - For nontrivial domains, we must find a way to reduce the joint size.
     - Independence and conditional independence provide the tools.
     
-- [x] [Bayes Theorem in AI](../doc/AI/uncertainty/bayes_theorm.md)
+- [x] [Bayes Theorem in AI](./doc/uncertainty/bayes_theorm.md)
 
     Bayes' theorem is also known as Baye's rule, Bayes' Law, or Bayesian reasoning, which detemines the probability of an event with uncertain knowledge. In probability theory, it relates the conditional probability and marginal probabilities of two random events. Bayes' theorem was named after the British matehmatician Thomas Bayes. The Bayesian inference is an application of Bayes' theorem, which is fundamental to Bayesian statistics. It is a way to calculate the value of P(B|A) with the knowledge P(A|B). Bayes' theorem allows updating the probability prediction of an event by observing new information of the real world.
     
@@ -889,7 +889,7 @@ Eval for both players.
 
     > Odds Ratio = P(M|H)P(H) / P(M|H^c)P(H^c)
 
-- [x] [Beyesian Belief Network](../doc/AI/uncertainty/beysian_belief_network.md)
+- [x] [Beyesian Belief Network](./doc/uncertainty/beysian_belief_network.md)
 
     Bayesian networks are probabilistic, because these networks are built from a probablity distribution, and also use probability theory for prediction and anomaly detection. Real world applications are probablistic in nature, and to represent the relationship between mutiple events, we need a Bayesian network. It can also be used in various tasks including prediction, anomaly detection, diagnositcs, automated insight, reasoning, time series prediction, and decision making under uncertainty.
     
@@ -1126,7 +1126,7 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
         
         **Tree Structure CSPs** 
         
-        Theorem: if the constraint graph has no loops, the CSP can be solved in O(nd^2) time. Compare to general CSPs, where worst-case time is O(d^n). This property also applies to logical and probabilisitic [reasoning](../doc/AI/knowledge/knowledge_based_agent.md).
+        Theorem: if the constraint graph has no loops, the CSP can be solved in O(nd^2) time. Compare to general CSPs, where worst-case time is O(d^n). This property also applies to logical and probabilisitic [reasoning](./doc/knowledge/knowledge_based_agent.md).
         
         ```
         1. Choose a variable as root, order variables from root to leaves such that every node's parent precedes it in the ordering

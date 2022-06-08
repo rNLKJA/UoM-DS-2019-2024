@@ -1,4 +1,4 @@
-<img src="../img/arseny-togulev-MECKPoKJYjM-unsplash.jpg" width=100% />
+<img src="./img/arseny-togulev-MECKPoKJYjM-unsplash.jpg" width=100% />
 
 <div align=center><h3>Machine Learning</h3></div>
 

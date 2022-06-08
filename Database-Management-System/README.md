@@ -1,4 +1,4 @@
-<img src="../img/database-management-system.jpg" width=100% />
+<img src="./img/database-management-system.jpg" width=100% />
     
 <div align=center><h3>Database Management System <a href='https://www.appdynamics.com/topics/database-management-systems'>(ADDYNAMICS)</a></h3></div>
 

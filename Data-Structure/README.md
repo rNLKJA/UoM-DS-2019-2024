@@ -1,4 +1,4 @@
-<img src="../img/ricardo-gomez-angel-ZUwXnS7K7Ok-unsplash.jpg" width=100% />
+<img src="./img/ricardo-gomez-angel-ZUwXnS7K7Ok-unsplash.jpg" width=100% />
 
 <div align=center><h3>Data Structure</h3></div>
 

@@ -1,4 +1,4 @@
-<img src="../img/vighnesh-dudani-ZQSs0YZUNfA-unsplash.jpg" width=100% />
+<img src="./img/vighnesh-dudani-ZQSs0YZUNfA-unsplash.jpg" width=100% />
 <div align=center><h4>Data Science Related Concepts</h4></div>
 
 - [x] Data Types
