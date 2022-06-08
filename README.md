@@ -8,6 +8,8 @@ For me, this is more like a revision notes / cheatsheet for my future data scien
 If you notice something not so clear or errors or contents that confusing to other audiences, just start an issue and let's see what we can improve on it.
 Also, if there is a better way for categorisation, don't be hesitate starting a new issue! Let's make DS life more easier!
 
+For now this repository is not complete yet which means that there are a lots of topic has a status of incomplete! If you would like to share your notes/insights/ideas etc., just start a new issue and create your notes!
+
 One thing I like to mention is although I may paraphrase some concept in my own words, sometimes I will directly copy past the concept from others' work. 
 You can always find the original page just follow the reference page. Maybe the original content could give you a better understanding.
 
@@ -22,6 +24,10 @@ You can always find the original page just follow the reference page. Maybe the 
 - [Dataset Search](https://datasetsearch.research.google.com/): The Dataset search is a search engine designed specifically for data sets.
 - [China Bureau of Statistics](https://data.stats.gov.cn/): National Bureau of Statistics of China contains demographic information of provience, city, etc.
 - [Australian Bureau of Statistics](https://www.abs.gov.au/census): Australian Census Data.
+- [Registry of Open Data on AWS](https://registry.opendata.aws/)
+- [Yelp Dataset](https://www.yelp.com/dataset)
+
+You may want to find additional dataset not belong to part of the above list, try search via [google dataset search](https://datasetsearch.research.google.com/)!
 
 ---
 
