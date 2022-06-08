@@ -6,7 +6,7 @@
 
 <div align=center><h4>Math Miscs</h4></div>
 
-- [x] [Minkowski distance](./notebooks/MISC/Minkowski.ipynb)
+- [x] [Minkowski distance](./notebooks/Minkowski.ipynb)
     
     The Minkowski distance or Minkowski metric is a metric in a normed vector space which can be considered as a generalization of both the Euclidean distance and the Manhattan distance. It is named after the German mathematician Hermann Minkowski.
     
