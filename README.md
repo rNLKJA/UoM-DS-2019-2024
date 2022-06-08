@@ -2156,7 +2156,6 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [ ] [Container]()
 - [ ] [Control Table]()
 
-
 ---
 
 <img src="./img/database-management-system.jpg" width=100% />
@@ -2259,11 +2258,7 @@ Blockchain technology has become popular because of the following.
 <!-- <img src="./img/absolutvision-82TpEld0_e4-unsplash.jpg" width=100% /> -->
 <img src="./img/vighnesh-dudani-ZQSs0YZUNfA-unsplash.jpg" width=100% />
 
-<div align=center><h3>Others</h3></div>
-
-Some uncategoried notes.
-
----
+<div align=center><h3>Some Uncategoried Notes.</h3></div>
 
 <div align=center><h4>Data Science Related Concepts</h4></div>
 
@@ -2457,6 +2452,11 @@ Some uncategoried notes.
     
 - [ ] Game Theory
 
+- [ ] SWOT Analysis
+    - Strength
+    - Weakness
+    - Opportunities
+    - Threats
 
 ---
 
@@ -2507,10 +2507,25 @@ Some uncategoried notes.
 
 | Data-Driven Process Improvement      | Data Analysis and Visualization        | Applied Analytics and Data for Decision Making     | 
 | ------------------------------------ | -------------------------------------- | -------------------------------------------------- |
-| [Operations and Performance Goals]() | [Data Analysis Software Tools]()       | [Applying Analytics to Implement Solution]()       |
+| [Operations and Performance Goals](./doc/DDPI/operations-and-performance-goals.md) | [Data Analysis Software Tools]()       | [Applying Analytics to Implement Solution]()       |
 | [Data Collection]()                  | [Statistical Process Control (SPC)]()  | [Data-Driven Operational Excellence]()             |
 | [Process Mapping]()                  | [Data Visualisation and Translation]() | [Applying Data-Driven Decision]()                  |
 | [Capstone Project 1]()               | [Capstone Project 2]()                 | [Capstone 3]()                                     |
+
+<details close>
+<summary>Recommend Reading List</summary>
+    
+**Opertaions and Performance Goals**
+    - *Goal Alignment Failure*
+        - [The True Measures of Success](https://hbr.org/2012/10/the-true-measures-of-success)
+        - [Why Your Data Strategy Needs to Align with Your Business Strategy](https://hbr.org/2012/10/the-true-measures-of-success)
+    - *Understand Business Needs*
+        - [Strategic Deployment: How To Think Like Toyota](https://www.industryweek.com/leadership/strategic-planning-execution/article/21962381/strategic-deployment-how-to-think-like-toyota)
+        - [An Introduction to the Lean Concept of Catchball](https://blog.kainexus.com/improvement-disciplines/lean/catchball/introduction)
+        - [The alignment of information systems with organizational objectives and strategies in health care](http://eta.health.usf.edu/publichealth/PHC6146/Module7/Bush%20et%20al%20-%20The%20alignment%20of%20information%20systems%20with%20organizational%20objectives%20&%20strategies%20in%20health%20care.pdf)
+**
+    
+</details>
 
 ---
 
