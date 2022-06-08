@@ -1048,7 +1048,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
         i.e. the final true reward (better if eval() is unrealistic)
     ```
     
-    By using the reinforcment learning in game play, with a large number of games experience, the probability of taking a move that leads to a loss should go to zero, and the probability of taking a move that leads to a win should approach to 1, so that the agent will favor the optimal action. This assumes taht every move in every possible state has been visited sufficiently many times so that we can obtain a viable estimate of its usefullness.
+    By using the reinforcment learning in game play, with a large number of games experience, the probability of taking a move that leads to a loss should go to zero, and the probability of taking a move that leads to a win should approach to 1, so that the agent will favor the optimal action. This assumes that every move in every possible state has been visited sufficiently many times so that we can obtain a viable estimate of its usefullness.
     
     <details open>
     <summary>Questions</summary>
@@ -2267,31 +2267,63 @@ Some uncategoried notes.
 
 <div align=center><h4>Data Science Related Concepts</h4></div>
 
-- [ ] Data Types
+- [x] Data Types
 
     “Data is the new oil.” Today data is everywhere in every field. Whether you are a data scientist, marketer, businessman, data analyst, researcher, or you are in any other profession, you need to play or experiment with raw or structured data. This data is so important for us that it becomes important to handle and store it properly, without any error. While working on these data, it is important to know the types of data to process them and get the right results. There are two types of data: Qualitative and Quantitative data, which are further classified into four types of data: nominal, ordinal, discrete, and Continuous (Great Learning Team, 2021).
+    
+    *Qualitative or Categorical Data*
+    - Qualitative or Categorical Data is data that can’t be measured or counted in the form of numbers. These types of data are sorted by category, not by number. That’s why it is also known as Categorical Data. These data consist of audio, images, symbols, or text. The gender of a person, i.e., male, female, or others, is qualitative data.
+    - Qualitative data tells about the perception of people. This data helps market researchers understand the customers’ tastes and then design their ideas and strategies accordingly. 
+    - Qualitative data can be classified into two parts.
 
     | Types of Data   | Description  |
     | --------------- | ------------ |
-    | Nominal Data    |
-    | Ordinal Data    |
-    | Discrete Data   |
-    | Continuous Data |
+    | Nominal Data    | Nominal Data is used to label variables without any order or quantitative value. The colour of hair can be considered nominal data, as one colour can’t be compared with another colour |
+    | Ordinal Data    | Ordinal data have natural ordering where a number is present in some kind of order by their position on the scale. These data are used for observation like customer satisfaction, happiness, etc., but we can’t do any arithmetical tasks on them |
+    | Discrete Data   | The term discrete means distinct or separate. The discrete data contain the values that fall under integers or whole numbers. The total number of students in a class is an example of discrete data. These data can’t be broken into decimal or fraction values |
+    | Continuous Data | Continuous data are in the form of fractional numbers. It can be the version of an android phone, the height of a person, the length of an object, etc. Continuous data represents information that can be divided into smaller levels. The continuous variable can take any value within a range.  |
     
-- [ ] [Data Formats]()
-    - Unstructured
-        - Text files/documents
-        - Audio
-        - Video
-        - Social media
-    - Semi-structured
-        - XML
-        - JSON
-        - Webpages
-    - Structured
-        - Database
-        - Tables
-        - Spreadsheet
+    *Difference Between Nominal and Ordinal Data*
+    
+    | Nominal Data                                                                                  | Ordinal Data                                                                                                |
+    | --------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+    | Nominal data can't be quantified, neither they have any intrinsic ordering                    | Ordinal data gives some kind of sequential order by their position on the scale                             |
+    | Nominal data is qualitative data or categorical data                                          | Ordinal data is said to be "in-between" qualitative data and quantitative data                              |
+    | They don't provide any quantitative value, neither we can perform any arithematical operation | They provide sequence and can assign numbers to oridinal data but cannot perform the arithmetical operation |
+    | Nominal data cannot be used to compare with one another                                       | Ordinal data can help to compare one item with another by ranking or ordering                               |
+    
+    *Quantitative Data*
+    - Quantitative data can be expressed in numerical values, which makes it countable and includes statistical data analysis. These kinds of data are also known as Numerical data. It answers the questions like, “how much,” “how many,” and “how often.” For example, the price of a phone, the computer’s ram, the height or weight of a person, etc., falls under the quantitative data. 
+    - Quantitative data can be used for statistical manipulation and these data can be represented on a wide variety of graphs and charts such as bar graphs, histograms, scatter plots, boxplot, pie charts, line graphs, etc.
+    
+    *Difference Between Discrete and Continous Data*
+    
+    | Discrete Data | Continuous Data |
+    | ------------- | --------------- |
+    | Discrete data are countable and finite, they are whole numbers or integers | Continuous data are measureable, they are in the form of fraction or decimal |
+    | Discrete data are represented mainly by bar graphs                         | Continuous data are represented in the form of a historgram                  |
+    | The values cannot be divided into subdivisions into smaller pieces         | The values can be divided into subdivisions into smaller pieces              |
+    | Discrete data have spaces between the values                               | Continuous data are in the form of a continuous sequence                     |
+    
+- [ ] Data Formats (IBM Cloud Education)
+    - Unstructured data
+    
+        In the modern world of big data, unstructured data is the most abundant. It’s so prolific because unstructured data could be anything: media, imaging, audio, sensor data, text data, and much more. Unstructured simply means that it is datasets (typical large collections of files) that aren’t stored in a structured database format. Unstructured data has an internal structure, but it’s not predefined through data models. It might be human generated, or machine generated in a textual or a non-textual format.
+        
+    - Semi-structured data
+        
+        Semi-structured data (e.g., JSON, CSV, XML) is the “bridge” between structured and unstructured data. It does not have a predefined data model and is more complex than structured data, yet easier to store than unstructured data.
+         
+    - Structured data
+    
+        Structured data — typically categorized as quantitative data — is highly organized and easily decipherable by machine learning algorithms. Developed by IBM in 1974, structured query language (SQL) is the programming language used to manage structured data. By using a relational (SQL) database, business users can quickly input, search and manipulate structured data.
+    
+    | Data Formats    | Pros | Cons |
+    | --------------- | ---- | ---- |
+    | Structured      | Easily used by machine learning (ML) algorithms<br>Easily used by business users<br>Accessible by more tools<br> | Limited usage<br>Limited storage options<br> |
+    | Unstructured    | Native format<br>Fast accumulation rates<br>Data lake storage<br> | Requires expertise<br>Specialized tools |
+    | Semi-structured | No constrainted to fixed architecture<br>More storable and portable<br>Flexible to schema | Hard to evaluate when scale is large |
+        
 - [ ] [Data Smoothing Methods]()
 
     In statistics and image processing, to smooth a data set is to create an approximating function that attempts to capture important patterns in the data, while leaving out noise or other fine-scale structures/rapid phenomena. In smoothing, the data points of a signal are modified so individual points higher than the adjacent points (presumably because of noise) are reduced, and points that are lower than the adjacent points are increased leading to a smoother signal. Smoothing may be used in two important ways that can aid in data analysis by being able to extract more information from the data as long as the assumption of smoothing is reasonable and by being able to provide analyses that are both flexible and robust. Many different algorithms are used in smoothing ([Wikipedia](https://en.wikipedia.org/wiki/Smoothing)).
@@ -2679,6 +2711,11 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Geeks for Geeks. (24, May 2022). *Stack in Python*. https://www.geeksforgeeks.org/stack-in-python/.
 - Sanfoundry. (2022). *Python program to implement Stack using Linked List*. https://www.sanfoundry.com/python-program-implement-stack-using-linked-list/.
 - pythonds. (2022). *4.5. Implementing a Stack in Python*. https://runestone.academy/ns/books/published/pythonds/BasicDS/ImplementingaStackinPython.html.
+
+**Data Science**
+- Great Learning Team. (27, Sep 2021). *4 Types Of Data – Nominal, Ordinal, Discrete and Continuous*. https://www.mygreatlearning.com/blog/types-of-data/.
+- IBM Cloud Education. (29, Jun, 2021). *A look into structured and unstructured data, their key differences and which form best meets your business needs*. https://www.ibm.com/cloud/blog/structured-vs-unstructured-data.
+- Rachel, W. (17, Nov 2020). https://monkeylearn.com/blog/semi-structured-data/.
 
 **Others**
 - GO FAIR. (2021). *FAIR Principles**. https://www.go-fair.org/fair-principles/.
