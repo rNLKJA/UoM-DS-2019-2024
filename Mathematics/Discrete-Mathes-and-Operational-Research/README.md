@@ -1,4 +1,4 @@
-<img src="../../img/koukichi-takahashi-fZdX9BW8WDs-unsplash.jpg" width=100% />
+<img src="./img/koukichi-takahashi-fZdX9BW8WDs-unsplash.jpg" width=100% />
 
 <div align=center><h4>Discrete Mathes and Operations Research: Linear Programming</h4></div>
 

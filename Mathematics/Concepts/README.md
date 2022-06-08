@@ -1,4 +1,4 @@
-<img src="../../img/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg" width=100% />
+<img src="./img/dan-cristian-padure-h3kuhYUCE9A-unsplash.jpg" width=100% />
 
 <div align=center><h3>Mathematical Concepts</h3></div>
 
