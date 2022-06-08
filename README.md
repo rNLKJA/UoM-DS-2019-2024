@@ -2267,7 +2267,17 @@ Some uncategoried notes.
 
 <div align=center><h4>Data Science Related Concepts</h4></div>
 
-- [ ] [Data Types]()
+- [ ] Data Types
+
+    “Data is the new oil.” Today data is everywhere in every field. Whether you are a data scientist, marketer, businessman, data analyst, researcher, or you are in any other profession, you need to play or experiment with raw or structured data. This data is so important for us that it becomes important to handle and store it properly, without any error. While working on these data, it is important to know the types of data to process them and get the right results. There are two types of data: Qualitative and Quantitative data, which are further classified into four types of data: nominal, ordinal, discrete, and Continuous (Great Learning Team, 2021).
+
+    | Types of Data   | Description  |
+    | --------------- | ------------ |
+    | Nominal Data    |
+    | Ordinal Data    |
+    | Discrete Data   |
+    | Continuous Data |
+    
 - [ ] [Data Formats]()
     - Unstructured
         - Text files/documents
@@ -2665,6 +2675,10 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Data Structure**
 - David, L & Sarah, L. (Mar, 2021). *Data Structure*. Search Data Management. https://www.techtarget.com/searchdatamanagement/definition/data-structure.
 - Java T Point. (2022). *Linked list*. https://www.javatpoint.com/ds-linked-list.
+- Java T Point. (2022). *Linked list implementation of stack*. ds-linked-list-implementation-of-stack.
+- Geeks for Geeks. (24, May 2022). *Stack in Python*. https://www.geeksforgeeks.org/stack-in-python/.
+- Sanfoundry. (2022). *Python program to implement Stack using Linked List*. https://www.sanfoundry.com/python-program-implement-stack-using-linked-list/.
+- pythonds. (2022). *4.5. Implementing a Stack in Python*. https://runestone.academy/ns/books/published/pythonds/BasicDS/ImplementingaStackinPython.html.
 
 **Others**
 - GO FAIR. (2021). *FAIR Principles**. https://www.go-fair.org/fair-principles/.
