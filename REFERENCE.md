@@ -1,6 +1,6 @@
 ---
 
-<img src="../img/jezael-melgoza-layMbSJ3YOE-unsplash.jpg" width=100% />
+<img src="./img/jezael-melgoza-layMbSJ3YOE-unsplash.jpg" width=100% />
 
 <div align=center><h2>Reference</h2></div>
 
