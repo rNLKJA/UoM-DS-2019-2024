@@ -1098,7 +1098,7 @@ Eval for both players.
     
     MCTS is an algorithm that figures out the best move out of a set of moves by Selecting → Expanding → Simulating → Updating the nodes in tree to find the final solution. This method is repeated until it reaches the solution and learns the policy of the game (SAGAR, 2018).
     
-- [ ] [Backtracking]()
+- [x] [Backtracking]()
     
     Backtracking refers to a general method of building sequence of decisions to solve a graph problem incrementally. Suppose we have a partial solution to a problem we would like to extend: A = (a_1, a_2, ..., a_k). To choose next solution component, a_{k+1}:
     - Recursively evaluate every possible consistent with past decisions. When we establish that a partial solution cannot be extended into a complete solution, or is worse than the current best solution, we terminate the recursive call, thereby pruning regions of state space from the search tree which cannot contain a solution (or an optimal solution if we have some notion of optimality). We backtrack to the deepest node with unexpanded children and invoke recursion again.
@@ -2113,8 +2113,20 @@ Data structure is a specialised format for organizing, processing retrieving and
     | Insertion | O(n)             | 
     | Deletion  | O(n)             |
     | Search    | O(n)             |
+    
+    - [Skip list implementation](./notebooks/DS/skip-list.ipynb)
+    
+        A skip list is a probabilistic data structure. The skip list is used to store a sorted list of elements or data with a linked list. It allows the process of the elements or data to view efficiently. In one single step, it skips several elements of the entire list, which is why it is known as a skip list.
+
+        The skip list is an extended version of the linked list. It allows the user to search, remove, and insert the element very quickly. It consists of a base list that includes a set of elements which maintains the link hierarchy of the subsequent elements.
   
-- [ ] [Stack]()
+- [ ] [Stack](./notebooks/DS/stack.ipynb)
+    
+    A Stack is a linear data structure that follows the LIFO (Last-In-First-Out) principle. Stack has one end, whereas the Queue has two ends (front and rear). It contains only one pointer top pointer pointing to the topmost element of the stack. Whenever an element is added in the stack, it is added on the top of the stack, and the element can be deleted only from the stack. In other words, a stack can be defined as a container in which insertion and deletion can be done from the one end known as the top of the stack.
+    - It is called as stack because it behaves like a real-world stack, pilles of books, etc.
+    - A stack is an abstract data type with a pre-defined capacity, which means that it can store the elements of a limited size.
+    - It is a data structure that follows some order to insert and delete the elements, and that order can be LIFO or FILO.
+    
 - [ ] [Queue]()
 - [ ] [Sparse Table]()
 - [ ] [Heap]()
