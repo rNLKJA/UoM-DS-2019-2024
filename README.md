@@ -2120,12 +2120,14 @@ Data structure is a specialised format for organizing, processing retrieving and
 
         The skip list is an extended version of the linked list. It allows the user to search, remove, and insert the element very quickly. It consists of a base list that includes a set of elements which maintains the link hierarchy of the subsequent elements.
   
-- [ ] [Stack](./notebooks/DS/stack.ipynb)
+- [x] [Stack](./notebooks/DS/stack.ipynb)
     
     A Stack is a linear data structure that follows the LIFO (Last-In-First-Out) principle. Stack has one end, whereas the Queue has two ends (front and rear). It contains only one pointer top pointer pointing to the topmost element of the stack. Whenever an element is added in the stack, it is added on the top of the stack, and the element can be deleted only from the stack. In other words, a stack can be defined as a container in which insertion and deletion can be done from the one end known as the top of the stack.
     - It is called as stack because it behaves like a real-world stack, pilles of books, etc.
     - A stack is an abstract data type with a pre-defined capacity, which means that it can store the elements of a limited size.
     - It is a data structure that follows some order to insert and delete the elements, and that order can be LIFO or FILO.
+    
+    [Stack Implementataion Code](./notebooks/DS/stack-implementation.ipynb)
     
 - [ ] [Queue]()
 - [ ] [Sparse Table]()
