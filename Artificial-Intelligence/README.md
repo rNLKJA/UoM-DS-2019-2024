@@ -712,54 +712,46 @@ Eval for both players.
     - Frame Representation
     - Production Rules
     
-- [ ] Propositional Logic
+- [x] [Propositional Logic](./doc/propositional-logic.md)
 
     Propositional logial (PL) is the simplest form of logic where all the statements are made by propositions. A proposition is a declarative statement which is either true or false. It is a technique of knowledge representation in logical and mathematical form.
     
-- [ ] Rules of Inferece
+- [x] [Rules of Inferece](./doc/rules-of-inference)
 
     In artificial intelligence, we need intelligent computers which can create new logic from old logic or by evidence, so generating the conclusions from evidence and facts is termed as inference.
-
-- [ ] Example of Knowledge-Based Agent
-    - [ ] The Wumpus world
-    - [ ] Knowledge-base for Wumps World
     
-- [ ] First-order logic
+- [x] [First-order logic](./doc/first-order-logic.md)
 
     First-order logic is another way of knowledge representation in artificial intelligence. It is an extension to propositional logic. FOL is sufficiently expressive to represent the natural language statements in a concise way. First-order logic also known as Predicate logic or First-order predicate logic. First order logic is a powerful language that develops information about the objects in a more easy way and can also express the relationship between thoese objects. First-order logic (like natural language) does not only assume that the world contains facts like propositional logic but also assumes the following things in the world:
     - **Objects**: A, B, people, numbers, colors, wards, theories, squares, pits, ...
     - **Relations**: It can be unary reltaion such : red, round, is adjacent, or n-any relation such as: the sister of, the brother of, has color, comes between, ...
     - **Functions**: Father of, best friend, third inning of, end of, ...
-    
-    As a natural language, first-order logic also has two main parts:
-    - Syntax
-    - Semantics
-
-- [ ] Knowledge Engineering in FOL
+   
+- [x] [Knowledge Engineering in FOL](./doc/knowledge-engineering-in-fol.md)
 
     The process of constructing a knowledge-base in first-order logic is called as knowledge- engineering. In knowledge-engineering, someone who investigates a particular domain, learns important concept of that domain, and generates a formal representation of the objects, is known as knowledge engineer.
     
-- [ ] Inference in First-order logic
+- [x] [Inference in First-order logic](./doc/inference-in-first-order-logic.md)
 
     Inference in First-Order Logic is used to deduce new facts or sentences from existing sentences. Before understanding the FOL inference rule, let's understand some basic terminologies used in FOL.
     
-- [ ] Unification in FOL
+- [x] [Unification in FOL](./doc/unification-in-fol.md)
 
     Unification is a process of making two different logical atomic expressions identical by finding a substitution. Unification depends on the substitution process.
     It takes two literals as input and makes them identical using substitution.
     Let Ψ1 and Ψ2 be two atomic sentences and 𝜎 be a unifier such that, Ψ1𝜎 = Ψ2𝜎, then it can be expressed as UNIFY(Ψ1, Ψ2).
 
-- [ ] Resolution in FOL
+- [x] [Resolution in FOL](./doc/resolution-in-fol.md)
 
     Resolution is a theorem proving technique that proceeds by building refutation proofs, i.e., proofs by contradictions. It was invented by a Mathematician John Alan Robinson in the year 1965.
 
     Resolution is used, if there are various statements are given, and we need to prove a conclusion of those statements. Unification is a key concept in proofs by resolutions. Resolution is a single inference rule which can efficiently operate on the conjunctive normal form or clausal form.
 
-- [ ] Forward Chaining and Backward Chaining
+- [x] [Forward Chaining and Backward Chaining](./doc/forward-chaining-and-backward-chaining.md)
     
     In artificial intelligence, forward and backward chaining is one of the important topics, but before understanding forward and backward chaining lets first understand that from where these two terms came.
     
-- [ ] Forward Chaining vs. Backward Chaining
+- [x] [Forward Chaining vs. Backward Chaining](./doc/forward-chaining-vs-backward-chaining.md)
 
     | Forward Chaining | Backward Chaining |
     | ---- | ---- |
