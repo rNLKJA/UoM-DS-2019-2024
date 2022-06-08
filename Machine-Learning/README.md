@@ -25,7 +25,7 @@ Data analysis such as regression or classification can be done in the reduced sp
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Feature projection (also called feature extraction) transforms the data from the high-dimensional space to a space of fewer dimensions. The data transformation may be linear, as in principal component analysis (PCA), but many nonlinear dimensionality reduction techniques also exist.[4][5] For multidimensional data, tensor representation can be used in dimensionality reduction through multilinear subspace learning.
 
-- [ ] [Principal Component Analysis (PCA)](./dr/notebooks/PCA.ipynb)
+- [ ] [Principal Component Analysis (PCA)](./notebooks/PCA.ipynb)
 - [ ] [t-distributed stochastic neighbor embedding (t-SNE)]()
 - [ ] [Kernel PCA]()
 - [ ] [Graph-based kernel PCA]()
