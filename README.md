@@ -12,54 +12,6 @@ One thing I like to mention is although I may paraphrase some concept in my own 
 You can always find the original page just follow the reference page. Maybe the original content could give you a better understanding.
 
 ---
-<details close>
-<summary><h3>Table of Contents</h3></summary>
-<br>
-    
-- [Notebooks](#notebooks)
-    - [Mathematical Concepts](#mathematical-concepts)
-        - [Probability](#probability)
-        - [Statistics](#statistics)
-        - [Discrete Mathes and Operations Research: Linear Programming](#discrete-mathes-and-operations-research-linear-programming)
-        - [Techniques in Operations Research](#techniques-in-operational-research)
-        - [Voting methods](#voting-methods)
-    - [Machine Learning](#machine-learning)
-        - [Evaluation Metrics](#evaluation-metrics)
-        - [Dimensionality Reduction Methods](#dimensionality-reduction-methods)
-        - [Wrapper Methods](#wrapper-methods)
-        - [Embeded Methods](#embeded-methods)
-        - [Ensemble Learning](#ensemble-learning)
-        - [Data Processing Concepts](#data-processing-concepts)
-        - [Supervised Learning Methods](#supervised-learning-methods)
-        - [Unsupervised Learning Methods](#unsupervised-learning-methods)
-    - [Neural Network](#neural-network)
-        - [Activation Functions](#activation-functions)
-    - [Artificial Intelligence](./Artificial-Intelligence)
-        - [Intelligent Agent](#intelligent-agent)
-        - [Problem-solving](#problem-solving)
-        - [Adversarial Search](#adversarial-search)
-        - [Knowledge Represent](#knowledge-represent)
-        - [Uncertain Knowledge R](#uncertain-knowledge-r)
-    - [Natural Language Processing](#natural-language-processing)
-    - [Frontend Development](#frontend-development)
-    - [Backend Development](#backend-development)
-    - [Data Structure](#data-structure)
-    - [Cluster and Cloud Computing](#cluster-and-cloud-computing)
-    - [Database Management System](#database-management-system)
-    - [Block Chain](#block-chain)
-    - [Online Data Sources](#online-data-sources)
-    - [Others](#others)
-        - [Concepts](#concepts)
-        - [Programming skills](#programming-skills)
-        - [Database skills](#database-skills)
-        - [Data Driven Process Improvement](#data-driven-process-improvement)
-        - [Data Science Lifecycle](#data-science-lifecycle)
-- [Reference](#reference)
-</details>
-
----
-
-<img src="./img/claudio-schwarz-fyeOxvYvIyY-unsplash.jpg" width=100% />
 
 <div align=center><h3>Online Dataset Sources</h3></div>
 

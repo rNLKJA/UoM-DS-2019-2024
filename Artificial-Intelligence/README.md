@@ -79,7 +79,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     
     Environment types: characterise the environment for a given problem.
 
-    <details open>
+    <details close>
     <summary>Questions [True/False]</summary>
 
     - An agent that senses only partial information about the state cannot be perfectly rational.
@@ -116,7 +116,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     
     An AI system can be defined as the study of the rational agent and its environment. The agents sense the environment through sensors and act on their environment through actuators. An AI agent can have mental properties such as knowledge, belief, intention, etc.
     
-    <details open>
+    <details close>
     <summary>Questions</summary>
         
     - Do agent functions exist which cannot be implemented by any agent program? If yes, give a counterexample.
@@ -146,7 +146,7 @@ A self-learning agent may undertake actions to modify future percepts, and/or ad
     - *Static/Dynamic*:If the environment can change when the agent is deliberating (executing the agent program), then the environment is dynamic, otherwise static.
     - *Discrete/continuous*: If the environment has a finite number of distinct states, then the agent only has to contend with a finite set of percepts, and the environment is discrete, otherwise continuous. Similarly, if an agent can choose between a finite number of actions, the action set is discrete.
     
-    <details open>
+    <details close>
     <summary>Questions</summary>
     
     For each of the following activities, characterize the task environment in terms of its properties: 
@@ -238,7 +238,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     > States do not have parents, children, depth, or path cost.
     
-    <details open>
+    <details close>
     <summary>Questions</summary>
     
     - In BFS and DFS, an undiscovered node is marked discovered when it is first generated, and marked processed when it has been completely searched. At any given moment, several nodes might simultaneously be in the discovered state.
@@ -311,7 +311,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
 
      Informed Search algorithms have information on the goal state which helps in more efficient searching. This information is obtained by a function that estimates how close a state is to the goal state (Geeks for Geeks, 2021). 
      
-    <details open>
+    <details close>
     <summary>Questions</summary>
 
     - Suppose that we run a greedy best-first (graph) search algorithm with the heuristic function for node σ set to the negative of the path cost, h(σ) = −g(σ). What sort of search will the greedy search emulate?
@@ -523,7 +523,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     The order of search nodes is important in alpha-beta pruning. If we have the worst-ordering, the time complexity will be exactly the same as minimax O(b^m). However, if we have an ideal ordering, then the time complexity will reduce in half since the best node always on the left side of the tree, complexity will be O(b^{m/2}). As a result, the agent could doubles depth of search.
     
-    <details open>
+    <details close>
     <summary>Questions</summary>
     
     - Here you will investigate the fundamentals of minimax and alpha- beta pruning. Consider noughts and crosses on a 3 ×3 grid. Define Xn as the number of rows, columns or diagonals with exactly n crosses and no noughts. Define On analogously. Assume our utility function assigns +1 to any position with X3 = 1 and −1 to any position with O3 = 1, with all other positions having zero utility. For nonterminal positions, use the evaluation function f(s) = 3X_2(s) + X_1(s) −(3O_2(s) + O_1(s)) . Assume the cross player goes first.
@@ -601,7 +601,7 @@ funtion SIMPLE-PROBLEM-SOVING-AGENT(p) returns an action
     
     By using the reinforcment learning in game play, with a large number of games experience, the probability of taking a move that leads to a loss should go to zero, and the probability of taking a move that leads to a win should approach to 1, so that the agent will favor the optimal action. This assumes that every move in every possible state has been visited sufficiently many times so that we can obtain a viable estimate of its usefullness.
     
-    <details open>
+    <details close>
     <summary>Questions</summary>
     
     Recall for a general state s, and parametric evaluation function Eval(s; θ) we would like
@@ -1171,7 +1171,7 @@ In the real world, CSP could be any *scheduling* or *planning* problems.
     - The degree heuristic relates to what variable we should assign next and states that we should pick the variable that has the most constraints on the remaining variables.
     - Where as the least constraining value relates to what order the values should be tried once we have already picked a variable in the CSP. The least constraining value states that we should choose the least constraining value (ie. the one that least restricts the values for other variables)
     
-    <details open>
+    <details close>
     <summary>Questions</summary>
     
     - The n-Queens problem is a classic benchmark search problem. Given an n x n chessboard, the aim is to place a total of n queens on the board, so that no queen data can capture any other person.
@@ -1409,7 +1409,7 @@ What kinds of properties characterise an effective mechansim design for auctions
 - Appropriate mechansim design can achieve desriable behaviour among selfish agents.
 - Types of auctions in theory practical case studies of online auctions.
 
-<details open>
+<details close>
 <summary>Questions</summary>
 
 - Your class will conduct a set of in-class auctions to gain experience with each type of action. The basic process is the following:
