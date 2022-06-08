@@ -2518,18 +2518,18 @@ Some uncategoried notes.
 
 <div align=center><h4>Data Science Life Cycle</h4></div>
 
-- [ ] [Zook's 10 Rules For Responisble Big Data Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399)
+- [x] [Zook's 10 Rules For Responisble Big Data Research](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399)
 
-    - [ ] Acknowledge that data are people and can do harm.
-    - [ ] Recognize that privacy is more than a binary value.
-    - [ ] Guard against the reidentification of your data.
-    - [ ] Practice ethical data sharing.
-    - [ ] Consider the strengths and limitations of your data; big does not automatically mean better.
-    - [ ] Debate the tough, ethical choices.
-    - [ ] Develop a code of conduct for your organization, research community, or industry.
-    - [ ] Design your data and systems for auditability.
-    - [ ] Engage with the broader consequences of data and analysis practices.
-    - [ ]  Know when to break these rules.
+    - Acknowledge that data are people and can do harm.
+    - Recognize that privacy is more than a binary value.
+    - Guard against the reidentification of your data.
+    - Practice ethical data sharing.
+    - Consider the strengths and limitations of your data; big does not automatically mean better.
+    - Debate the tough, ethical choices.
+    - Develop a code of conduct for your organization, research community, or industry.
+    - Design your data and systems for auditability.
+    - Engage with the broader consequences of data and analysis practices.
+    - Know when to break these rules.
 
 - [x] SMART Goals
     
@@ -2716,6 +2716,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Great Learning Team. (27, Sep 2021). *4 Types Of Data – Nominal, Ordinal, Discrete and Continuous*. https://www.mygreatlearning.com/blog/types-of-data/.
 - IBM Cloud Education. (29, Jun, 2021). *A look into structured and unstructured data, their key differences and which form best meets your business needs*. https://www.ibm.com/cloud/blog/structured-vs-unstructured-data.
 - Rachel, W. (17, Nov 2020). https://monkeylearn.com/blog/semi-structured-data/.
+- Zook, M., Barocas, S., Boyd, D., Crawford, K., Keller, E., Gangadharan, S. P., ... & Pasquale, F. (2017). Ten simple rules for responsible big data research. PLoS computational biology, 13(3), e1005399. https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399.
 
 **Others**
 - GO FAIR. (2021). *FAIR Principles**. https://www.go-fair.org/fair-principles/.
@@ -2734,7 +2735,6 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Wrike. (2022). *What Is Waterfall Project Management?*. https://www.wrike.com/project-management-guide/faq/what-is-waterfall-project-management/.
 - APPDYNAMICS. (2022). *What is Database Management Systems (DBMS)?*. https://www.appdynamics.com/topics/database-management-systems.
 - Wikipedia. (16, May 2022). *Dimensionality reduction*. https://en.wikipedia.org/wiki/Dimensionality_reduction.
-- Zook, M., Barocas, S., Boyd, D., Crawford, K., Keller, E., Gangadharan, S. P., ... & Pasquale, F. (2017). Ten simple rules for responsible big data research. PLoS computational biology, 13(3), e1005399. https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005399.
 
 ---
 
