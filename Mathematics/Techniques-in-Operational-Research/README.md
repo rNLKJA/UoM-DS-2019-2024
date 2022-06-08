@@ -1,4 +1,4 @@
-<img src="../../img/alex-knight-Ys-DBJeX0nE-unsplash.jpg" width=100% />
+<img src="./img/alex-knight-Ys-DBJeX0nE-unsplash.jpg" width=100% />
 
 <div align=center><h4>Techniques of Operational Research</h4></div>
 

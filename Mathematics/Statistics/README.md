@@ -1,4 +1,4 @@
-<img src="../../img/pexels-anna-nekrashevich-6801648.jpg" width=100% />
+<img src="./img/pexels-anna-nekrashevich-6801648.jpg" width=100% />
 
 <div align=center><h4>Statistics</h4></div>
 

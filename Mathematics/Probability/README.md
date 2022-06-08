@@ -1,4 +1,4 @@
-<img src="../../img/pexels-lukas-669619.jpg" width=100% />
+<img src="./img/pexels-lukas-669619.jpg" width=100% />
 
 <div align=center><h4>Probability</h4></div>
 
