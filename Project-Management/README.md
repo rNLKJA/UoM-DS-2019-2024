@@ -1,4 +1,4 @@
-<img src="../img/pexels-tima-miroshnichenko-6694878.jpg" width=100% />
+<img src="./img/pexels-tima-miroshnichenko-6694878.jpg" width=100% />
 
 <div align=center><h4>Project Management</h4></div>
  

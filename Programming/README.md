@@ -1,4 +1,4 @@
-<img src="../img/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg" width=100% />
+<img src="./img/fotis-fotopoulos-6sAl6aQ4OWI-unsplash.jpg" width=100% />
 
 <div align=center><h4>Programming Skills</h4></div>
 
