@@ -94,7 +94,30 @@ Data structure is a specialised format for organizing, processing retrieving and
 - [ ] [Adjacency List]()
 - [ ] [Adjacency matrix]()
 - [ ] [Sorting Algorithms]()
-- [ ] [Searching Algorithms]()
+    - Bubble Sort
+    - Couting Sort
+    - Heap Sort
+    - Insertion Sort
+    - Selection Sort
+    - Merge Sort
+    - Quick Sort
+- [ ] Searching Algorithms
+    - [Linear Search](./doc/linear-search.md)
+        
+        Linear search is also called as sequential search algorithm. It is the simplest searching algorithm. In Linear search, we simply traverse the list completely and match each element of the list with the item whose location is to be found. If the match is found, then the location of the item is returned; otherwise, the algorithm returns NULL.
+
+        It is widely used to search an element from the unordered list, i.e., the list in which items are not sorted. The worst-case time complexity of linear search is O(n).
+        
+        [Linear Search Implementation Code](./notebooks/linear-search.ipynb)
+        
+    - [Binary Search](./doc/binary-search.md)
+        
+        Binary search is the search technique that works efficiently on sorted lists. Hence, to search an element into some list using the binary search technique, we must ensure that the list is sorted.
+
+        Binary search follows the divide and conquer approach in which the list is divided into two halves, and the item is compared with the middle element of the list. If the match is found then, the location of the middle element is returned. Otherwise, we search into either of the halves depending upon the result produced through the match.
+        
+        [Binary Search Implementation Code](./notebooks/binary-search.ipynb)
+        
 - [ ] [Records]()
 - [ ] [Container]()
 - [ ] [Control Table]()

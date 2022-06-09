@@ -43,6 +43,9 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - pythonds. (2022). *4.5. Implementing a Stack in Python*. https://runestone.academy/ns/books/published/pythonds/BasicDS/ImplementingaStackinPython.html.
 - Wikipedia. (26, May 2022). *Queue (abstract data type)*. https://en.wikipedia.org/wiki/Queue_(abstract_data_type).
 - Java T Point. (2022). *Queue*. https://www.javatpoint.com/data-structure-queue.
+- Java T Point. (2022). *Linear Search*. https://www.javatpoint.com/linear-search.
+- Java T Point. (2022). *Binary Search*. https://www.javatpoint.com/binary-search.
+- Geeks for Geeks. (2, Jun 2022). *Binary Search*. https://www.geeksforgeeks.org/binary-search/.
 
 **Data Science**
 - Great Learning Team. (27, Sep 2021). *4 Types Of Data – Nominal, Ordinal, Discrete and Continuous*. https://www.mygreatlearning.com/blog/types-of-data/.
