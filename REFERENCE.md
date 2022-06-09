@@ -41,6 +41,8 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Geeks for Geeks. (24, May 2022). *Stack in Python*. https://www.geeksforgeeks.org/stack-in-python/.
 - Sanfoundry. (2022). *Python program to implement Stack using Linked List*. https://www.sanfoundry.com/python-program-implement-stack-using-linked-list/.
 - pythonds. (2022). *4.5. Implementing a Stack in Python*. https://runestone.academy/ns/books/published/pythonds/BasicDS/ImplementingaStackinPython.html.
+- Wikipedia. (26, May 2022). *Queue (abstract data type)*. https://en.wikipedia.org/wiki/Queue_(abstract_data_type).
+- Java T Point. (2022). *Queue*. https://www.javatpoint.com/data-structure-queue.
 
 **Data Science**
 - Great Learning Team. (27, Sep 2021). *4 Types Of Data – Nominal, Ordinal, Discrete and Continuous*. https://www.mygreatlearning.com/blog/types-of-data/.

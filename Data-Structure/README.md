@@ -54,16 +54,25 @@ Data structure is a specialised format for organizing, processing retrieving and
 
         The skip list is an extended version of the linked list. It allows the user to search, remove, and insert the element very quickly. It consists of a base list that includes a set of elements which maintains the link hierarchy of the subsequent elements.
   
-- [x] [Stack](../notebooks/DS/stack.ipynb)
+- [x] [Stack](./notebooks/stack.ipynb)
     
     A Stack is a linear data structure that follows the LIFO (Last-In-First-Out) principle. Stack has one end, whereas the Queue has two ends (front and rear). It contains only one pointer top pointer pointing to the topmost element of the stack. Whenever an element is added in the stack, it is added on the top of the stack, and the element can be deleted only from the stack. In other words, a stack can be defined as a container in which insertion and deletion can be done from the one end known as the top of the stack.
     - It is called as stack because it behaves like a real-world stack, pilles of books, etc.
     - A stack is an abstract data type with a pre-defined capacity, which means that it can store the elements of a limited size.
     - It is a data structure that follows some order to insert and delete the elements, and that order can be LIFO or FILO.
     
-    [Stack Implementataion Code](../notebooks/DS/stack-implementation.ipynb)
+    [Stack Implementataion Code](./notebooks/stack-implementation.ipynb)
     
-- [ ] [Queue]()
+- [ ] [Queue](./notebooks/queue.ipynb)
+
+    In computer science, a queue is a collection of entities that are maintained in a sequence and can be modified by the addition of entities at one end of the sequence and the removal of entities from the other end of the sequence. By convention, the end of the sequence at which elements are added is called the back, tail, or rear of the queue, and the end at which elements are removed is called the head or front of the queue, analogously to the words used when people line up to wait for goods or services (Wikipedia, 2022).
+
+    The operation of adding an element to the rear of the queue is known as enqueue, and the operation of removing an element from the front is known as dequeue. Other operations may also be allowed, often including a peek or front operation that returns the value of the next element to be dequeued without dequeuing it.
+
+    A queue can be defined as an ordered list which enables insert operations to be performed at one end called REAR and delete operations to be performed at another end called FRONT.
+    
+    ![queue](./img/queue.png)
+    
 - [ ] [Sparse Table]()
 - [ ] [Heap]()
     - Min/MAX Heap
