@@ -17,6 +17,7 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - Wikipedia. (6, May 2022). *Operational research*. https://en.wikipedia.org/wiki/Operations_research.
 - Wikipedia. (21, May 2022). *Voting*. https://en.wikipedia.org/wiki/Voting#Voting_methods.
 - Elaine, J H & Jonathan, G. (11, Nov 2021). *What is mathematics*. https://www.livescience.com/38936-mathematics.html. 
+- Wikipedia. (2, Apr 2022). *Covariance*. https://en.wikipedia.org/wiki/Covariance.
 
 **Machine Learning Articles**
 - Onel, H. (11, Sep 2018). *Machine Learning Basics with the K-Nearest Neighbors Algorithm*. https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)

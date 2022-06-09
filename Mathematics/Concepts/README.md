@@ -15,6 +15,7 @@
 - [ ] Discrete Variable
 - [ ] Continuous Variable
 - [ ] [Standard Deviation and Variance]()
+- [ ] [Covariance](./notebooks/covaraince)
 - [ ] [Eigenvalue & Eigenvectors]()
 - [ ] [Variability of Sums (Covariance)]()
 - [ ] [Correlation]()

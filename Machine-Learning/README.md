@@ -52,7 +52,7 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
 <div align=center><h4>Evaluation Metrics</h4></div>
 
-- [ ] [TP, FP, TN, FN]()
+- [x] TP, FP, TN, FN
 
     Performance measurement TP, TN, FP, FN are the parameters used in the evaluation of specificity, sensitivity and accuracy.
     - True Positive or TP is the number of perfectly identified DR pictures. 
@@ -66,7 +66,25 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
     <img src="./img/Performance-measurement-TP-TN-FP-FN-are-the-parameters-used-in-the-evaluation-of.png" align=center />
     
-- [ ] [Confusion Matrix]()
+    By using TP, FP, TN, FN, we can calculate the sensitivity, specificity, accuracy, precision, negative predictive value to evaluate our machine learning model performance.
+    - Sensitivity = TP / (TP + FN)
+    - Specificity = TN / (FP + TN)
+    - Accuracy = (TP + TN) / (TP + FN + FP + TN)
+    - Precision = TP / (TP + FP)
+    - Negative Predictive Value: TN / (TN + FN)
+    
+- [x] Confusion Matrix
+    
+    Confusion matrix can be usd in error analysis which answer the question: why a given model has misclassified an instance in the way it has. Use Confusion matrix, we could:
+    - Identifying different "classes" or error that the system makes (predicted vs. actual labels).
+    - Hypothesising as to what has caused the different errors, and testing those hypotheses against the actual data.
+    - Quantifying whether (for different classes) it is a question of data quantity/sparsity, or something more fundamental than that.
+    - Feeding those hypotheses back into feature/model engineering to see if the model can be improved.
+
+> **Error Analysis**: Why a given model has misclassified an instance in the way it has.
+
+> **Model Interpretability**: Why a given model has classified an instance in the way it has.
+
 - [ ] [Precision, Recall, F1-score]()
 - [ ] [Area Under the Curve - Receiver Operating Characteristics (AUC-ROC)]()
 - [ ] [Log loss]()
