@@ -6,7 +6,7 @@ Hey you! If you find this README doc means that you are interested in Data Scien
 
 | Subject Code | Subject Naｍe | Commentary |
 | :----------: | :------------ | ---------- | 
-| COMP10001    | Foundation of Computation  | |
+| COMP10001    | Foundation of Computation  | This subject provides you an insight of programming world, the aim of this subject is to help student understand the basic programming logics, it's quite fun for overall experience, for easy WAM boost, I suggest you attempt summer intensive course, questions are relatively easier compare to the semester courses |
 | COMP10002    | Foundation of Algorithm    | |
 | INFO20003    | Database System            | |
 | COMP20003    | Algorithms and Data Structure | |
