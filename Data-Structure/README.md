@@ -118,6 +118,13 @@ Data structure is a specialised format for organizing, processing retrieving and
         
         [Binary Search Implementation Code](./notebooks/binary-search.ipynb)
         
+    - Linear Search vs. Binary Search
+        - Input data needs to be sorted in Binary Search and not in Linear Search
+        - Linear search does the sequential access whereas Binary search access data randomly.
+        - The time complexity of linear search O(n) , Binary search has time complexity O(log n).
+        - Linear search performs equality comparisons and Binary search performs ordering comparisons
+        
+        
 - [ ] [Records]()
 - [ ] [Container]()
 - [ ] [Control Table]()
