@@ -9,5 +9,5 @@
 | AI system is concerned about maximizing the chances of success. |Machine learning is mainly concerned about accuracy and patterns |
 | The main applications of AI are Siri, customer support using catboats, Expert System, Online game playing, intelligent humanoid robot, etc. |The main applications of machine learning are Online recommender system, Google search algorithms, Facebook auto friend tagging suggestions, etc |
 | On the basis of capabilities, AI can be divided into three types, which are, Weak AI, General AI, and Strong AI. |Machine learning can also be divided into mainly three types that are Supervised learning, Unsupervised learning, and Reinforcement learning |
-| It includes learning, reasoning, and self-correction.	It includes learning and self-correction when introduced with new data |
+| It includes learning, reasoning, and self-correction | It includes learning and self-correction when introduced with new data |
 | AI completely deals with Structured, semi-structured, and unstructured data. |Machine learning deals with Structured and semi-structured data |
