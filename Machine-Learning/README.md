@@ -99,6 +99,66 @@ In the complete life cycle process, to solve a problem, we can create a machine 
 
 ---
 
+#### Data Preprocessing in Machine Learning
+
+Data preprocessing is a process of preparing the raw data and making it suitable for a machine learning model. It is the first and crucial step while creating a machine learning model.
+
+When creating a machine learning project, it is not always a case that we come across the clean and formatted data. And while doing any operation with data, it is mandatory to clean it and put it a formatted way. So for this, we use data preprocessing task.
+
+#### Why do we need Data Preprocessing
+
+A real-world data generally contains noises, missing values, and maybe in an unusable format which cannot be directly used for machine learning models. Data preprocessing is required tasks for cleaning the data and making it suitable for a machine learning model which also increases the accuracy and efficiency of a machine learning model. It involves below steps:
+- Getting the dataset
+
+    To create a machine learning model, the first thing we required is a dataset as a machine learning model completely works on data. The collected data for a particular problem in a proper format is known as the dataset.
+    
+    Dataset may be of different formats for different purposes, such as, if we want to create a machine learning model for business purpose, then dataset will be different with the dataset required for a liver patient. So each dataset is different from another dataset. To use the dataset in our code, we usually put it into a CSV file. However, sometimes, we may also need to use an HTML or xlsx. file.
+    
+- Importing libraries
+
+    In order to perform data preprocessing using Python, we need to import some predefined Python libraries. Most common libraries are: numpy, pandas and matplotlib.
+    
+- Importing datasets
+
+    We need to import the datasets which we have collected for our machine learning project. But before importing a dataset, we need to set the current directory as a working directory. To set a working directory in Spyder IDE, we need to follow the below steps:
+    - Save your Python file in the directory which contains dataset
+    - Go to File explorer option in IDE (jupyter/Spyder) and select the required directory.
+
+- Finding missing data
+
+    The next step of data preprocessing is to handle missing data in the datasets. If our dataset contains some missing data, then it may create a huge problem for our machine learning model. Hence it is necessary to handle missing values present in the dataset.
+
+    Ways to handle missing data: There are mainly two ways to handle missing data, which are:
+    - By deleting the particular row: The first way is used to commonly deal with null values. In this way, we just delete the specific row or column which consists of null values. But this way is not so efficient and removing data may lead to loss of information which will not give the accurate output.
+    - By calculating the mean: In this way, we will calculate the mean of that column or row which contains any missing value and will put it on the place of missing value. This strategy is useful for the features which have numeric data such as age, salary, year, etc. Here, we will use this approach.
+    - To handle missing values, we will use Scikit-learn library in our code, which contains various libraries for building machine learning models.
+
+- Encoding categorical data
+
+    Categorical data is data which has some categories such as, in our dataset; there are two categorical variable, Country, and Purchased.
+
+    Since machine learning model completely works on mathematics and numbers, but if our dataset would have a categorical variable, then it may create trouble while building the model. So it is necessary to encode these categorical variables into numbers.
+
+- Splitting dataset into training and test set
+
+    In machine learning data preprocessing, we divide our dataset into a training set and test set. This is one of the crucial steps of data preprocessing as by doing this, we can enhance the performance of our machine learning model.
+
+    Suppose, if we have given training to our machine learning model by a dataset and we test it by a completely different dataset. Then, it will create difficulties for our model to understand the correlations between the models.
+
+    If we train our model very well and its training accuracy is also very high, but we provide a new dataset to it, then it will decrease the performance. So we always try to make a machine learning model which performs well with the training set and also with the test dataset. Here, we can define these datasets as:
+
+    ![data-preprocessing-machine-learning-5](./img/data-preprocessing-machine-learning-5.png)
+    
+    Training Set: A subset of dataset to train the machine learning model, and we already know the output.
+
+    Test set: A subset of dataset to test the machine learning model, and by using the test set, model predicts the output.
+    
+- Feature scaling
+
+    Feature scaling is the final step of data preprocessing in machine learning. It is a technique to standardize the independent variables of the dataset in a specific range. In feature scaling, we put our variables in the same range and in the same scale so that no any variable dominate the other variable.
+
+---
+
 <div align=center><h4>Dimensionality Reduction Methods</h4></div>
 
 [[Wikipedia](https://en.wikipedia.org/wiki/Dimensionality_reduction)] Dimensionality reduction, or dimension reduction, is the transformation of data from a high-dimensional space into a low-dimensional space so that the low-dimensional representation retains some meaningful properties of the original data, ideally close to its intrinsic dimension. Working in high-dimensional spaces can be undesirable for many reasons; raw data are often sparse as a consequence of the curse of dimensionality, and analyzing the data is usually computationally intractable (hard to control or deal with). Dimensionality reduction is common in fields that deal with large numbers of observations and/or large numbers of variables, such as signal processing, speech recognition, neuroinformatics, and bioinformatics.
@@ -230,67 +290,140 @@ Supervised learning is a type of machine learning method in which we provide sam
 
 The system creates a model using labeled data to understnad the datasets and learn about each data, once the training and processing are done then we test the model by providing a sample data to check whether it is predicting the exact output or not.
 
+> Goal: Learn mappting from attributes to concepts: concept = f(attributes)
+
 To goal of supervised machine learning is to map input data with the output data. The supervised learning is based on supervision, and it is the same as when a student learns things in the supervision of the teacher. The example of supervised learning is spam filtering.
 
 Supervised learning can be grouped further in two categories of algorithms:
 - Classification
+    - [ ] [Decision Tree](./notebooks/supervised/classification/)
+    - [ ] [Random Forest](./notebooks/supervised/classification/)
+    - [ ] [Logistic Regression](./notebooks/supervised/classification/)
+    - [ ] [K Nearest Neighbors](./notebooks/supervised/classification/KNN.ipynb)
+    - [ ] [Perceptron](./notebooks/supervised/classification/Perceptron.ipynb)
+    - [ ] [Navie Bayes](./notebooks/supervised/classification/NaiveBayes.ipynb)
+    - [ ] [Support Vector Machine (SVM)](./notebooks/supervised/classification/SVM.ipynb)
+    - [ ] [AdaBoost](./notebooks/supervised/classification/)
+    - [ ] [XGBoost](./notebooks/supervised/classification/)
+    - [ ] [Light GBM](./notebooks/supervised/classification/)
+    - [ ] [Recommender System](https://thingsolver.com/introduction-to-recommender-systems/)
+    
+        <img src="./img/types-of-recommender-systems.png" align=center />
+
 - Regression
- 
-- [ ] [K Nearest Neighbors](./notebooks/SL/KNN.ipynb)
-- [ ] [Regression](./notebooks/SL/Regression.ipynb)
-    - [ ] [Linear Regression](./notebooks/SL/LinearRegression.ipynb)
-    - [ ] [Simple Linear Regression]()
-    - [ ] [Multiple Linear Regression]()  
-    - [ ] [Logistic Regression](./notebooks/SL/LogisticRegression.ipynb)
-    - [ ] [Backward Elimination]()
-    - [ ] [Polynomial Regression]()
-- [ ] [Perceptron](./notebooks/SL/Perceptron.ipynb)
-- [ ] [Navie Bayes](./notebooks/SL/NaiveBayes.ipynb)
-- [ ] [Support Vector Machine (SVM)](./notebooks/SL/SVM.ipynb)
-- [ ] [Decision Tree]()
-- [ ] [Random Forest]()
-- [ ] [AdaBoost]()
-- [ ] [XGBoost]()
-- [ ] [Light GBM]()
-- [ ] [Recommender System](https://thingsolver.com/introduction-to-recommender-systems/)
+
+    Regression algorithms are used if there is a relationship between the input variable and the output variable. It is used for the prediction of continous variables, such as Weather forecasting, Market Treds, etc. Below are some popular Regression algorithms which come under supervised learning.
     
-    <img src="./img/types-of-recommender-systems.png" align=center />
-    
+    - [ ] [Linear Regression](./notebooks/supervised/regression/LinearRegression.ipynb)
+    - [ ] [Simple Linear Regression](./notebooks/supervised/regression)
+    - [ ] [Multiple Linear Regression](./notebooks/supervised/regression)  
+    - [ ] [Logistic Regression](./notebooks/supervised/regression/LogisticRegression.ipynb)
+    - [ ] [Backward Elimination](./notebooks/supervised/regression)
+    - [ ] [Polynomial Regression](./notebooks/supervised/regression)
+    - [ ] [Bayesian Linear Regression](./notebooks/supervised/regression)
+
+| Advantages of Supervised Learning | Disadvantages of Supervised Learning |
+| ---- | ---- |
+| With the help of supervised learning, the model can predict the output on the basis of prior experiences | Supservised learning models are not suitable for handling the complex tasks |
+| In supervised learning, we can have an exact idea about the classes of objects | Supervised learning cannot predict the correct output if the test data is different from the training dataset |
+| Supervised learning model helps us to solve various real-world problems such as fraud detection, spam filtering | Training requireds lots of computation times |
+| | In supervised learning, we need enough knowledge about the classes of object |
+
 ---
 
 <div align=center><h4>Unsupervised Learning Methods</h4></div>
 
-Unsupervised learning is a learning method in which a machien learns without any supervision. The trianing is provided to the machine with the set of data that has not been labeled, classified, or categorized, and the algorithm needs to act on that data without any supervision. The goal of unsupervised learning is to restructure the input data into new features or a group of objects with similar patterns.
+Unsupervised learning is a learning method in which a machien learns without any supervision. The trianing is provided to the machine with the set of data that has not been labeled, classified, or categorized, and the algorithm needs to act on that data without any supervision. The goal of unsupervised learning is to restructure the input data into new features or a group of objects with similar patterns. For example:
+- Unsupervised learning is helpful to finding useful insights from data
+- Unsupervised learning is much similar as a human learns to think by their own experiences, which makes it clser to the real AI
+- Unsupervised learning works on unlabeled and uncategorized data which make unsupervised learning more important
+- In real-world, we do not always have input data with the corresponding output so to solve such cases, we need unsupervised learning 
+
+> Goal: learn mapping from attributes to concepts: concept = f(attributes)
 
 In unsupervised learning, we don't have a predetermined result. The machien tires to find useful insights from the huge amount of data. It can be further classified into two categories:
 - Clustering
 - Association
+    - Detect useful patterns, associations, correlations or casual relations between attributes or between attirbutes and concept.
+    - A good pattern is a combination of attribute values where the presence of certain values strongly predicts the presence of other values.
+    - Any kind of structure is considered interesting and there may be no "right" answer.
+    - Evaluation can be difficult, potentially many possible association rules in one dataset.
 
-- [ ] [k-means clustering (KMean)](./notebooks/KMean.ipynb)
-- [ ] [Hierarchical Clustering]()
+- [ ] [k-means clustering (KMean)](./notebooks/unsupervised/clustering/KMean.ipynb)
+- [ ] [Hierarchical Clustering](./notebooks/unsupervised/clustering/)
     - [ ] Sinlge Linkage
     - [ ] Complete Linkage
     - [ ] Average Linkage
     - [ ] Centroid Linakge
 - [ ] [Anomaly detection]()
-- [ ] [VAT: Visual Assessment of (Cluster) Tendency]()
+- [ ] [VAT: Visual Assessment of (Cluster) Tendency](./notebooks/unsupervised/clustering/)
 - [ ] [Indenpendent Component Analysis (IDA)]()
 - [ ] [Apriori algorithm]()
 - [ ] [Singular value decomposition]()
-- [ ] [DBSCAN]()
+- [ ] [DBSCAN](./notebooks/unsupervised/clustering/)
 - [ ] [Mean Shift]()
 - [ ] [OPTICS]()
 - [ ] [Spectral Clustering]()
 - [ ] [Mixture of Gaussians]()
 - [ ] [BIRCH]()
 - [ ] [Agglomerative Clustering]()
+- [ ] [Neural Networks]()
+- [ ] [Apriori Algorithm]()
+- [ ] [Singular value decomposition]()
 
-- [ ] Supervised learning vs. Unsupervised learning
+| Advantages of Unsupervised Learning | Disadvantages of Unsupervised Learning |
+| ----------------------------------- | -------------------------------------- |
+| Unsupervised learning is used for more complex tasks as compared to supervised learning because, in unsupervised learning, we don't have labeled input data | Unsupervised learning is intrinsically more difficult than supervised learning as it does not have corresponding output |
+| Unsupervised learning is preferable as it is easy to get unlabeled data in comparison to labeled data | The result of the unsupervised learning algorithm might be less accurate as input data is not labeled, and algorithms do not know the exact output in advance |
+
+#### Supervised learning vs. Unsupervised learning
     
-    |            | Supervised Learning              | Unsupervised Learning    |
-    | ---------- | -------------------------------- | ------------------------ |
-    | Discrete   | Classification<br>Categorization | Clustering               |
-    | Continuous | Regression                       | Dimensionality Reduction |
+|            | Supervised Learning              | Unsupervised Learning    |
+| ---------- | -------------------------------- | ------------------------ |
+| Discrete   | Classification<br>Categorization | Clustering               |
+| Continuous | Regression                       | Dimensionality Reduction |
+
+| Supervised learning | Unsupervised learning |
+| ------------------- | --------------------- |
+| Supervised learning algorithms are trained using labeled data | Unsupervised learning algorithms are trained using unlabeled data |
+| Supervised learning model takes direct feedback to check if it is predicting correct output or not | Unsupervised learning model does not take any feedback |
+| Supervised learning model predicts the output | Unsupervised learning model finds the hidden patterns in data |
+| In supervised learning, input data is provided to the model along with the output | In unsupervised learning, only input data is provided to the model |
+| The goal of supervised learning is to train the model so that it can predict the output when it is given new data | The goal of unsupervised learning is to find the hidden patterns and useful insights from the unknown dataset |
+| Supervised learning needs supervision to train the model | Unsupervised learning does not need any supervision to train the model |
+| Supervised learning can be categorized in Classification and Regression problems | Unsupervised Learning can be classified in Clustering and Associations problems |
+| Supervised learning can be used for those cases where we know the input as well as corresponding outputs | Unsupervised learning can be used for those cases where we have only input data and no corresponding output data |
+| Supervised learning model produces an accurate result | Unsupervised learning model may give less accurate result as compared to supervised learning |
+| Supervised learning is not close to true Artificial intelligence as in this, we first train the model for each data, and then only it can predict the correct output | Unsupervised learning is more close to the true Artificial Intelligence as it learns similarly as a child learns daily routine things by his experiences |
+| It includes various algorithms such as Linear Regression, Logistic Regression, Support Vector Machine, Multi-class Classification, Decision tree, Bayesian Logic, etc. | It includes various algorithms such as Clustering, KNN, and Apriori algorithm |
+
+---
+
+#### Marr's levels of Analysis
+Framework for understanding information processing systems.
+- Computational Level: what is the goal of this system.
+    - What structure does this machine learning model expect to see in the world?
+    - What rule/pattern/model/etc. explains this data?
+- Algorithm Level: How do you achieve the goal, algorithms and dadta structure?
+    - Given a model, what's the best fit for this data?
+    - Usually involves minimizing an error or loss function.
+- Implementation Level: Physical implmenetation (circuits, neurons).
+    - How to find that best fit in finite time.
+    - Not always possible to solve exactly.
+
+---
+
+> **About model assumptions**: What kinds of assumptions might a machine learning model make then tackling these problems?
+
+Every model makes assumptions about the world and how the concepts we want to learn relate to the attributes of the data.
+- *The first assumption we make is that the concept is actually related to the attributes?*
+
+    This assumption is so obvious that we rarely discuss it – usually we only include attributes that we think are likely to predict the concept. For example, you would probably not use “patient’s favourite song” as an attribute for skin cancer detection. However, this attribute might actually be a good predictor, because your favourite song can be a good predictor of your age, and age is a risk factor for skin cancer. You could probably come up with other “weird” predictors for each of the example models.
+
+- *Secondly, each model makes assumptions about the ways the attributes can relate to the concepts.*
+
+    For example, does it make more sense for the models to treat all attributes as independent predictors, or would it be better to use a model that allows the predictors to interact? In most of these cases we would expect the attributes to interact in complex ways but allowing interactions could lead to an overly complex model in the cases where there are many attributes to start with (for example, in the customer purchasing model). For the problems with numeric attributes, would we generally expect linear (or monotonic, e.g., strictly increasing or decreasing) relationships between the attributes and concepts. This is often a good simplifying assumption for machine learning, but it limits what a model can learn. For example, the relationship between “best burrito” and price might be U-shaped – very cheap and very expensive burritos might be less popular than burritos priced somewhere in the middle.
+
 ---
 
 <img src="./img/fabio-oyXis2kALVg-unsplash.jpg" width=100%>
