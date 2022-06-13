@@ -94,6 +94,8 @@ In the complete life cycle process, to solve a problem, we can create a machine 
     The last step of machine learning life cycle is deployment, where we deploy the model in the real-world system.
 
     If the above-prepared model is producing an accurate result as per our requirement with acceptable speed, then we deploy the model in the real system. But before deploying the project, we will check whether it is improving its performance using available data or not. The deployment phase is similar to making the final report for a project.
+    
+---
 
 [**Difference between Aritifical Intelligence (AI) and Machine Learning**](./doc/diff-AI-ML.md)
 
