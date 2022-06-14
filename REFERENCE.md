@@ -22,6 +22,8 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 **Machine Learning Articles**
 - Onel, H. (11, Sep 2018). *Machine Learning Basics with the K-Nearest Neighbors Algorithm*. https://towardsdatascience.com/machine-learning-basics-with-the-k-nearest-neighbors-algorithm-6a6e71d01761)
 - Wikipedia. (26, May 2022). *Machine learning*. https://en.wikipedia.org/wiki/Machine_learning.
+- Teemu, K. (12, Sep 2020). *A Look at Precision, Recall, and F1-Score*. https://towardsdatascience.com/a-look-at-precision-recall-and-f1-score-36b5fd0dd3ec.
+- Harikrishnan, N. B. (11, Dec 2019). *Confusion Matrix, Accuracy, Precision, Recall, F1 Score*. https://medium.com/analytics-vidhya/confusion-matrix-accuracy-precision-recall-f1-score-ade299cf63cd.
 
 **Artificial Intelligence Articles**
 - Wikipedia. (30, May 2022). *Artificial Intelligent*. https://en.wikipedia.org/wiki/Artificial_intelligence.

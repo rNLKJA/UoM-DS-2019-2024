@@ -2,7 +2,7 @@
 
 <div align=center><h3>Machine Learning</h3></div>
 
-[[Wikipedia](https://en.wikipedia.org/wiki/Machine_learning)] Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance on some set of tasks.[1] It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so.[2] Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
+[[Wikipedia](https://en.wikipedia.org/wiki/Machine_learning)] Machine learning (ML) is a field of inquiry devoted to understanding and building methods that 'learn', that is, methods that leverage data to improve performance on some set of tasks. It is seen as a part of artificial intelligence. Machine learning algorithms build a model based on sample data, known as training data, in order to make predictions or decisions without being explicitly programmed to do so. Machine learning algorithms are used in a wide variety of applications, such as in medicine, email filtering, speech recognition, and computer vision, where it is difficult or unfeasible to develop conventional algorithms to perform the needed tasks.
 
 **Key points show the importance of Machine Learning**
 - Rapid increment in the production of data
@@ -240,7 +240,26 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
 > **Model Interpretability**: Why a given model has classified an instance in the way it has.
 
-- [ ] [Precision, Recall, F1-score]()
+- [x] Accuracy, Precision, Recall, Specificity, F1-score
+
+    **Accuracy**: the base metric used for model evaluation, describing the number of correct predictions over all predictions.
+    - Accuracy = (TP + TN) / (TP + FN + FP + TN) = Number of correct predictions / Number of all predictions = Number of correct prediction / Size of Dataset
+    
+    **Precision**: a measure of how many of the positive predictions made are correct (TP). 
+    - Precision = TP / (TP + FP) = Number of correctly predicted positive instances / Number of positive predictions
+    
+    **Recall**: a measure of how many of the positive cases the classifier correctly predicted, over all the positive cases in the data. It is also referred as *Sensitivity*.
+    - Recall = TP / (TP + FN) = Number of correctly predicted positive instances / Number of total positive instance in the dataset
+    
+    **Specificity**: Specificity is a measure of how many negative predictions made are correctly (true negatives).
+    - Specificity = TN / (FP + TN)  = Number of correctly predicted negative instances / Number of total negative instances
+    
+    **F1-Score**: a measure combining both precision and recall. It is generally described as the harmonic mean of the two. Harmonic mean is just another way to calculate the "average" values, generally described as more suitable ratios (such as precision and recall) than the traditional arithmetric mean. 
+    - F1-score = 2 * (Precision * Recall) / (Precision + Recall)
+    - The idea is to provide a single metric that weights the two ratios (precision and recall) in a balanced way, requiring both to have a higher value for the F1-score value to rise.
+    - Very small precision or recall will result in lower overall score. Thus it helps balance the two metrics.
+    - If you choose your positive class as the one with fewer samples, F1-score can help balance the metric across positive/negative samples.
+    
 - [ ] [Area Under the Curve - Receiver Operating Characteristics (AUC-ROC)]()
 - [ ] [Log loss]()
 - [ ] [Entropy]()
@@ -263,8 +282,8 @@ For very-high-dimensional datasets (e.g. when performing similarity search on li
 
 <div align=center><h4>Embeded Methods</h4></div>
 
-- [ ] [Lasso Regularization (L1)]()
-- [ ] [Ridge Regularization (L2)]()
+- [ ] [Lasso Regularization (L1)](./notebooks/supervised/regression/lasso.ipynb)
+- [ ] [Ridge Regularization (L2)](./notebooks/supervised/regression/ridge.ipynb)
 - [ ] [Random Forest Importance]()
 
 ---
@@ -327,24 +346,77 @@ Supervised learning can be grouped further in two categories of algorithms:
         - If there is only one input variable (x), then such linear regression is called simple linear regression. And if there is more than one input variable, then such linear regression is called multiple linear regression.
         - The relationship between variables in the linear regression model can be explained via mathematical equation Y = aX + b.
     
-    - [ ] [Simple Linear Regression](./notebooks/supervised/regression/)
     - [ ] [Multiple Linear Regression](./notebooks/supervised/regression/)  
     - [ ] [Logistic Regression](./notebooks/supervised/regression/LogisticRegression.ipynb)
+    
+        - Logistic regression is another supervised learning algorithm which is used to solve the classification problems. In classification problems, we have dependent variables in a binary or discrete format such as 0 or 1.
+        - Logistic regression algorithm works with the categorical variable such as 0 or 1, Yes and No, True or False, Spam or not Spam, etc.
+        - It is a predictive analysis algorithm which works on the concept of probability.
+        - Logistic regression is a type of regression, but it is different from the linear regression algorithm in the term how they are used.
+        - Logistic regression uses sigmoid function or logistic function which is a complex cost function. This sigmoid function is used to model the data in logistic regression. The function can be represented as:
+            - f(x) = 1 / (1 + e^{-x})
+                - f(x) = Output between the 0 and 1 value
+                - x = input to the function
+                - e = base of natural logarithm
+        - It uses the concept of threshold levels, values above the threshold level are rounded up to 1, and values below the threshold level are rounded up to 0.
+        - There are three types of logistic regression:
+            - Binary(0/1, pass/fail)
+            - Multi(cats, dogs, lions)
+            - Ordinal(low, medium, high)
+        
     - [ ] [Backward Elimination](./notebooks/supervised/regression/)
     - [ ] [Polynomial Regression](./notebooks/supervised/regression/)
+    
+        - Polynomial Regression is a type of regression which models the non-linear dataset using a linear model.
+        - It is similar to multiple linear regression, but it fits a non-linear curve between the value of x and corresponding conditional values of y.
+        - Suppose there is a dataset which consists of datapoints which are present in a non-linear fashion, so for such case, linear regression will not best fit to those datapoints. To cover such datapoints, we need Polynomial regression.
+        - In polynomial regression, the original features are transformed into polynomial features of given degree and then modeled using a linear model. Which means the datapoints are best fitted using a polynomial line.
+        
+        <img src="./img/types-of-regression5" align=center />
+        
+        - The prediction for polynomial regression also derived from linear regression equation that means linear regression equation Y = b_0 + b_1 x is transformed into Polynomial regression equation Y = b_0 + b_1 x^2 + b_3 x^3 + ... + b_n x^n.
+        - Here Y is the predicted/target output, b_0, b_1, ..., b_n are the regression coefficients. x is our independent/input variable.
+        - The models is still linear as the coefficients are still linear with quadratic.
+        
+        > This is different from Multiple Linear regression in such a way that in Polynomial regression, a single element has different degrees instead of multiple variables with the same degree.
+    
     - [ ] [Bayesian Linear Regression](./notebooks/supervised/regression/)
     - [ ] [Support Vector Regression](./notebooks/supervised/regression/)
     - [ ] [Decision Tree Regression](./notebooks/supervised/regression/)
+    
+        - Decision Tree is a supervised learning algorithm which can be used for solving both classification and regression problems.
+        - It can solve problems for both categorical and numerical data.
+        - Decision Tree regression builds a tree-like structure in which each internal node represents the "test" for an attribute, each branch represent the result of the test, and each leaft node represents the final decision or result.
+        - A decision tree is constructured starting from the root node/parent node (dataset), which splits into left and right child nodes (subsets of dataset). These child nodes are further dividied into their children node, and themselves become the parent node of those nodes.
+        
     - [ ] [Random Forest Regression](./notebooks/supervised/regression/)
-    - [ ] [Ridge Regression](./notebooks/supervised/regression/)
-    - [ ] [Lasso Regression](./notebooks/supervised/regression/)
+    
+        - Random forest uses Bagging or Bootstrap Aggregation technique of ensemble learning in which aggregated decision tree runs in parallel and do not interact with each other. 
+        - With the help of Random Forest regression, we can prevent overfitting in the model by creating random subsets of the dataset.
+        
+    - [ ] [Ridge Regression](./notebooks/supervised/regression/ridge.ipynb)
+    
+        - Ridge regression is one of the most robust versions of linear regression in which a small amount of bias is introduced so that we can get better long term predictions.
+        - The amount of bias added to the model is known as Ridge Regression penalty. We can compute this penalty term by multiplying with the lambda to the squared weight of eac hindividual features.
+        - The equation for ridge regression will be: L(x, y) = min( sum( y_i - w_ix_i)^2 + lambda sum(w_i)^2 )
+        - A general linear or polynomial regression will fail if there is high collinearity between the indepedent variables, so to solve such problems, Ridge regression can be used.
+        - Ridge regression is a regularization technique, which is used to reduce the complexity of the model. It is also called as L2 regularization.
+        - It helps to solve the problems if we have more parameters than samples.
+        
+    - [ ] [Lasso Regression](./notebooks/supervised/regression/lasso.ipynb)
+        
+        - Lasso regression is another regularization technique to reduce the complexity of the model.
+        - It is similar to the Ridge Regression except the penalty term contains only the absolute weights instead of a square of weights.
+        - Since it takes absolute values, hence, it can shrink the slope to 0, whereas the Ridge regression can only shrink it near to 0.
+        - It is also called L1 regularization. The equation for Lasso regression will be: L(x, y) = min( sum(y_i - w_ix_i)^2 + lambda sum(|w_i|))
+---
 
-| Advantages of Supervised Learning | Disadvantages of Supervised Learning |
-| ---- | ---- |
-| With the help of supervised learning, the model can predict the output on the basis of prior experiences | Supservised learning models are not suitable for handling the complex tasks |
-| In supervised learning, we can have an exact idea about the classes of objects | Supervised learning cannot predict the correct output if the test data is different from the training dataset |
-| Supervised learning model helps us to solve various real-world problems such as fraud detection, spam filtering | Training requireds lots of computation times |
-| | In supervised learning, we need enough knowledge about the classes of object |
+| Advantages of Supervised Learning                                                                               | Disadvantages of Supervised Learning                                                                          |
+| --------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| With the help of supervised learning, the model can predict the output on the basis of prior experiences        | Supservised learning models are not suitable for handling the complex tasks                                   |
+| In supervised learning, we can have an exact idea about the classes of objects                                  | Supervised learning cannot predict the correct output if the test data is different from the training dataset |
+| Supervised learning model helps us to solve various real-world problems such as fraud detection, spam filtering | Training requireds lots of computation times                                                                  |
+|                                                                                                                 | In supervised learning, we need enough knowledge about the classes of object                                  |
 
 ---
 
