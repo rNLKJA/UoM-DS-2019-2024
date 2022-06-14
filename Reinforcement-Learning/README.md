@@ -1,14 +1,14 @@
 <img src="./img/ricardo-gomez-angel-z6CcN8rlftY-unsplash.jpg" width=100% />
 
-<div align=center><h3>Reinforcement Learning</h3></div>
+<div align=center><h2>Reinforcement Learning</h2></div>
 
 Reinforcement learning is a feedback-based learning method, in which a learning agent gets a reward for each right action and gets a penalty for each wrong action. The agent learns automatically with these feedbacks and improves its performance. In reinforcement learning, the agent interacts with the environment and explores it. The goal of an agent is to get the most reward points, and hence its performance. 
 
-- [ ] [What is Reinforcement Learning](#what-is-reinforcement-learning)
-- [ ] [Terms used in Reinforcement Learning](#terms-used-in-reinforcement-learning)
-- [ ] [Key features of Reinforcement Learning](#key-features-of-reinforcement-learning)
+- [x] [What is Reinforcement Learning](#what-is-reinforcement-learning)
+- [x] [Terms used in Reinforcement Learning](#terms-used-in-reinforcement-learning)
+- [x] [Key features of Reinforcement Learning](#key-features-of-reinforcement-learning)
 - [ ] [Elements of Reinforcement Learning]()
-- [ ] [Approaches to implementing Reinforcement Learning](#approaches-to-implement-reinforcement-learning)
+- [x] [Approaches to implementing Reinforcement Learning](#approaches-to-implement-reinforcement-learning)
 - [ ] [How does Reinforcement Learning Work]()
 - [ ] [The Ballman Equation]()
 - [ ] [Types of Reinforcement Learning]()

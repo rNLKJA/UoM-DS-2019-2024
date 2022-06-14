@@ -39,5 +39,23 @@ Readings:
 
 ## Gap Analysis
 
+Gap analysis can be performed broadly for an entire organization, or with a narrow view, honing in on a particular department or function.
+
+A gap analysis can be summarised into these questions:
+- Where are we now?
+- Where do we wish we were?
+- How are we going to close the gap?
+
+Gap analysis will help an organization with:
+- Determine where they are missing KPIs.
+- Understand how well their stratigies objectives align with their KPIs.
+
 ## Plan Execution
 
+*Action Plan*
+- Useful way to visualize tasks necessary to complete a goal.
+- Identifies who is responsible for completing each task.
+- Indicates when task should be completed.
+- An action plan can be used to monitor progress toward closing gaps.
+    
+    A good action plan includes tasks, dates, and individuals responsible for task completion, helping the team to monitor the process and ensure milestones are met in timely fashion.
