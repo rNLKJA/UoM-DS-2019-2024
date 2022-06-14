@@ -297,6 +297,7 @@ The system creates a model using labeled data to understnad the datasets and lea
 To goal of supervised machine learning is to map input data with the output data. The supervised learning is based on supervision, and it is the same as when a student learns things in the supervision of the teacher. The example of supervised learning is spam filtering.
 
 Supervised learning can be grouped further in two categories of algorithms:
+
 - Classification
     - [ ] [Decision Tree](./notebooks/supervised/classification/)
     - [ ] [Random Forest](./notebooks/supervised/classification/)
@@ -316,13 +317,27 @@ Supervised learning can be grouped further in two categories of algorithms:
 
     Regression algorithms are used if there is a relationship between the input variable and the output variable. It is used for the prediction of continous variables, such as Weather forecasting, Market Treds, etc. Below are some popular Regression algorithms which come under supervised learning.
     
+    - [x] [Regression Analysis](./doc/regression.md)
     - [ ] [Linear Regression](./notebooks/supervised/regression/LinearRegression.ipynb)
-    - [ ] [Simple Linear Regression](./notebooks/supervised/regression)
-    - [ ] [Multiple Linear Regression](./notebooks/supervised/regression)  
+    
+        - Linear regression is a statistical regression method which is used for predictive analysis.
+        - It is one of the very simple and easy algorithm which works on regression and shows the relationship between the continuous variables.
+        - It is used for solving the regression problem in machine learning.
+        - Linear regression shows the linear relationship between the independent variable (X-axis) and the dependent variable (Y-axis), hence called linear regression.
+        - If there is only one input variable (x), then such linear regression is called simple linear regression. And if there is more than one input variable, then such linear regression is called multiple linear regression.
+        - The relationship between variables in the linear regression model can be explained via mathematical equation Y = aX + b.
+    
+    - [ ] [Simple Linear Regression](./notebooks/supervised/regression/)
+    - [ ] [Multiple Linear Regression](./notebooks/supervised/regression/)  
     - [ ] [Logistic Regression](./notebooks/supervised/regression/LogisticRegression.ipynb)
-    - [ ] [Backward Elimination](./notebooks/supervised/regression)
-    - [ ] [Polynomial Regression](./notebooks/supervised/regression)
-    - [ ] [Bayesian Linear Regression](./notebooks/supervised/regression)
+    - [ ] [Backward Elimination](./notebooks/supervised/regression/)
+    - [ ] [Polynomial Regression](./notebooks/supervised/regression/)
+    - [ ] [Bayesian Linear Regression](./notebooks/supervised/regression/)
+    - [ ] [Support Vector Regression](./notebooks/supervised/regression/)
+    - [ ] [Decision Tree Regression](./notebooks/supervised/regression/)
+    - [ ] [Random Forest Regression](./notebooks/supervised/regression/)
+    - [ ] [Ridge Regression](./notebooks/supervised/regression/)
+    - [ ] [Lasso Regression](./notebooks/supervised/regression/)
 
 | Advantages of Supervised Learning | Disadvantages of Supervised Learning |
 | ---- | ---- |
