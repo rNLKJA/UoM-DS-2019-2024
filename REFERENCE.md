@@ -74,3 +74,4 @@ All references' style follow the APA7 format based on [UoM APA7 Guide](https://l
 - APPDYNAMICS. (2022). *What is Database Management Systems (DBMS)?*. https://www.appdynamics.com/topics/database-management-systems.
 - Wikipedia. (16, May 2022). *Dimensionality reduction*. https://en.wikipedia.org/wiki/Dimensionality_reduction.
 - freeCodeCamp.org. (13, May 2020). *SQLite Databases With Python - Full Course*. Youtube. https://www.youtube.com/watch?v=byHcYRpMgI4&list=WL&index=6&t=1023s
+- Java T Point. (2022). *DBMS Tutorial*. https://www.javatpoint.com/dbms-tutorial
