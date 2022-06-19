@@ -14,4 +14,6 @@ You can always find the original page just follow the reference page. Maybe the 
 
 ---
 
-<div align=right><p>@rNLKJA</p></div>
+<div align=right>
+  <img src="https://contrib.rocks/image?repo=rNLKJA/UoM-DS-2019-2024" />
+</div>
