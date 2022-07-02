@@ -234,12 +234,12 @@ The degree of relationship can be defined as the number of occurrences in one en
     
 ## Relational Data Model
 ### Relational Model Concept
-Relational model can represent as a table columns and rows. Each row is known as a tuple. Each table of the column has a name or attribute.
+The relational model can represent as a table columns and rows. Each row is known as a tuple. Each table of the column has a name or attribute.
 
 - **Domain**: It contains a set of atomic values that an attribute can take.
 - **Attribute**: It contains the name of a column in a particular table. Each attribute $A_i$ must have a domain, $\text{dom}(A_i)$.
-- **Relational Instance**: In the relational database system, the relational instance is represented by finite set of tuples. Relation instances do not have duplicate duples.
-- **Relational Schema**: A relational schema contains the name of the relation and name of all columns or attribtues.
+- **Relational Instance**: In the relational database system, the relational instance is represented by a finite set of tuples. Relation instances do not have duplicate tuples.
+- **Relational Schema**: A relational schema contains the name of the relation and the name of all columns or attributes.
 - **Relational Key**: In the relational key, each row has one or more attributes. It can identify the row in the relation uniquely.
 
 #### Properties of Relations
@@ -248,23 +248,23 @@ Relational model can represent as a table columns and rows. Each row is known as
 - Each attribute contains a distinct name
 - Attribute domain has no significance
 - Tuple has no duplicate value
-- Order of tuple cn have a different sequence
+- Order of tuples can have a different sequence
 
 ### Relational Algebra
-Relational algebra is a procedural query language. It gives a step by step process to obtain result of the query. It uses operators to perform queries.
+Relational algebra is a procedural query language. It gives a step-by-step process to obtain the result of the query. It uses operators to perform queries.
 
 #### Types of Relational Operation
-There are seven types of relational operation: select operation, project operation, union operation, set intersetion, set difference, cartesian product and rename operation. 
+There are seven types of relational operation: select operation, project operation, union operation, set intersection, set difference, cartesian product and rename operation. 
 
 ##### Select Operation
 - The select operation selects tuples that satisfy a given predicate.
 - It is denoted by sigma($\sigma$)
 - $\sigma$ is used for selection prediction
 - $r$ is used for relation
-- $p$ is used as a propositional logical formula which may use connectros like: AND, OR, and NOT. These relational can use as relational operators like  =, ≠, ≥, <, >, ≤.
+- $p$ is used as a propositional logical formula which may use connectors like: AND, OR, and NOT. These relational can use as relational operators like  =, ≠, ≥, <, >, ≤.
 
 ##### Project Operation
-- This operation shows the list of those attributes that we wish to appear in the result. Rest of the attributes are eliminated from the table. 
+- This operation shows the list of those attributes that we wish to appear in the result. The rest of the attributes are eliminated from the table. 
 - It is denoted by ∏. `∏ NAME, CITY (CUSTOMER)` (project NAME, CITY from table CUSTOMER)
 
 ##### Union Operation
@@ -276,14 +276,14 @@ There are seven types of relational operation: select operation, project operati
 
 ##### Set Intersection
 - Suppose there are two tuples R and S. The set intersection operation contains all tuples that are in both R & S. 
-- It denoted by intersection ∩.
+- It is denoted by intersection ∩.
 
 ##### Set Difference
 - Suppose there are two tuples R and S. The set intersection operation contains all tuples that are in R but not in S.
 - It is denoted by intersection minus (-).
 
 ##### Cartesian Product
-- The Cartesian product is used to combine each row in one table with each row in the other table. It is also known as a cross product.
+- The Cartesian product is used to combine each row in one table with each row in the other table. It is also known as a cross-product.
 - It is denoted by X.
 
 ##### Rename Operation
@@ -301,25 +301,25 @@ A join operation combines related tuples from different relations, if and only i
 - The outer join operation is an extension of the join operation. It is used to deal with missing information.
 
 ###### Left Outer Join
-- Left outer joing contains the set of tuples of all combinations in R and S that are equal on their common attribute names.
-- In the left outer join, tuples in R have no matrching tuples in S.
+- Left outer join contains the set of tuples of all combinations in R and S that are equal on their common attribute names.
+- In the left outer join, tuples in R have no matching tuples in S.
 - It is denoted by ⟕.
 
 ###### Right Outer Join
 - Right outer join contains the set of tuples of all combinations in R and S that are equal on their common attribute names.
-- In right outer join, tuples in S have no matching tuples in R.
+- In the right outer join, tuples in S have no matching tuples in R.
 - It is denoted by ⟖.- 
 
 ###### Full Outer Join
 - Full outer join is like a left or right join except that it contains all rows from both tables.
-- In full outer join, tuples in R that have no matching tuples in S and tuples in S that have no matching tuples in R in their common attribute name.
+- In full outer join, tuples in R have no matching tuples in S and tuples in S that have no matching tuples in R in their common attribute name.
 - It is denoted by ⟗.- 
 
 ##### Equal Join
 It is also known as an inner join. It is the most common join. It is based on matched data as per the equality condition. The equi join uses the comparison operator(=).
 
 ### Integrity Constraints
-- Integrity constarints are a set of rules. It is used to maintain the quality of information.
+- Integrity constraints are a set of rules. It is used to maintain the quality of information.
 - Integrity constraints ensure that the data insertion, updating, and other processes have to be performed in such a way that data integrity is not affected.
 - Thus, integrity is used to guard against accidental damage to the database.
 
@@ -328,7 +328,7 @@ It is also known as an inner join. It is the most common join. It is based on ma
 - The data type of domain includes string, character, time, date, currency, etc. The value of the attribute must be available in the corresponding domain.
 
 #### Entity Integrity Constraints
-- The entity integrity constraint states that primary key value can't be null.
+- The entity integrity constraint states that the primary key value can't be null.
 - This is because the primary key value is used to identify individual rows in relation and if the primary key has a null value, then we can't identify those rows.
 - A table can contain a null value other than the primary key field.
 
@@ -341,22 +341,22 @@ It is also known as an inner join. It is the most common join. It is based on ma
 - An entity set can have multiple keys, but out of which one key will be the primary key. A primary key can contain a unique and null value in the relational table.
 
 ### Relational Calculus
-There is an alternate way of formulating queries known as Relational Calculus. Relational calculus is a non-procedural query language. In the non-procedural query language, the user is concerned with the details of how to obtain the end results. The relational calculus tells what to do but never explains how to do. Most commercial relational languages are based on aspects of relational calculus including SQL-QBE and QUEL.
+There is an alternate way of formulating queries known as Relational Calculus. Relational calculus is a non-procedural query language. In the non-procedural query language, the user is concerned with the details of how to obtain the results. The relational calculus tells what to do but never explains how to do it. Most commercial relational languages are based on aspects of relational calculus including SQL-QBE and QUEL.
 
-It is based on Predicate calculus, a name derived from branch of symbolic language. A predicate is a truth-valued function with arguments. On substituting values for the arguments, the function result in an expression called a proposition. It can be either true or false. It is a tailored version of a subset of the Predicate Calculus to communicate with the relational database.
+It is based on Predicate calculus, a name derived from a branch of symbolic language. A predicate is a truth-valued function with arguments. On substituting values for the arguments, the function result in an expression called a proposition. It can be either true or false. It is a tailored version of a subset of the Predicate Calculus to communicate with the relational database.
 
-Many of the calculus expressions involves the use of Quantifiers. There are two types of quantitiers:
+Many calculus expressions involve the use of Quantifiers. There are two types of quantities:
 - Universal Quantifiers: The universal quantifier denoted by ∀ is read as for all which means that in a given set of tuples exactly all tuples satisfy a given condition.
-- Existential Quantifiers: The existential quantifier denoted by ∃ is read as for all which means that in a given set of tuples there is at least one occurrences whose value satisfy a given condition.
+- Existential Quantifiers: The existential quantifier denoted by ∃ is read as for all which means that in a given set of tuples there is at least one occurrence whose value satisfies a given condition.
 
 Before using the concept of quantifier in formulas, we need to know the concept of Free and Bound Variables.
 
 A tuple variable t is bound if it is quantified which means that if it appears in any occurrences a variable that is not bound is said to be free.
 
-Free and bound variable may be compared with global and local variable of programming languages.
+Free and bound variables may be compared with the global and local variables of programming languages.
 
 #### Tuple Relational Calculus (TRC)
-It is a non-procedural query language which is based on finding a number of tuple variables also known as range variable for which predicate holds true. It describes the desired information without giving a specific procedure for obtaining that information. The tuple relational calculus is specified to select the tuples in a relation. In TRC, filtering variable uses the tuples of a relation. The result of the relation can have one or more tuples.
+It is a non-procedural query language that is based on finding several tuple variables also known as range variables for which the predicate holds. It describes the desired information without giving a specific procedure for obtaining that information. The tuple relational calculus is specified to select the tuples in a relation. In TRC, the filtering variable uses the tuples of a relation. The result of the relation can have one or more tuples.
 
 #### Domain Relational Calculus (DRC)
 The second form of relation is known as Domain relational calculus. In domain relational calculus, filtering variable uses the domain of attributes. Domain relational calculus uses the same operators as tuple calculus. It uses logical connectives ∧ (and), ∨ (or) and ┓ (not). It uses Existential (∃) and Universal Quantifiers (∀) to bind the variable. The QBE or Query by example is a query language related to domain relational calculus.
@@ -369,17 +369,17 @@ The second form of relation is known as Domain relational calculus. In domain re
 - Normalization divides the larger table into smaller and links them using relationships.
 - The normal form is used to reduce redundancy from the database table.
 
-The main reason for normalizing the relations is removing these anomalies. Failure to eliminate anomalies leads to data redundancy and can cause data integrity and other problems as the database grows. Normalization consists of a series of guidelines that helps to guide you in creating a good database structure.
+The main reason for normalizing the relations is to remove these anomalies. Failure to eliminate anomalies leads to data redundancy and can cause data integrity and other problems as the database grows. Normalization consists of a series of guidelines that helps to guide you in creating a good database structure.
 
 ### Function Dependency
-The functional dependency is a relationship that exists between two attributes. It typically exists between the primary key and non-key attribute within a table. The left side of FD is known as a deterimnant, the right side of the production is known as a dependent.
+Functional dependency is a relationship that exists between two attributes. It typically exists between the primary key and non-key attribute within a table. The left side of FD is known as a determinant, and the right side of the production is known as a dependent.
 
 #### Types of Functional Dependency
-There are two types of functional dependency, trivial or non-trivial functional dependency.
+There are two types of functional dependency, trivial and non-trivial functional dependency.
 
 ##### Trivial Functional Dependency
 - A → B has trivial functional dependency if B is a subset of A.
-- The following dependencies are also trivial like: A → A, B → B.
+- The following dependencies are also trivial: A → A, B → B.
 
 ```
 Example
@@ -392,15 +392,15 @@ Also, Employee_Id → Employee_Id and Employee_Name → Employee_Name
 
 ##### Non-trivial Functional Dependency
 - A → B has a non-trivial functional dependency if B is not a subset of A.
-- When A intersection B is NULL, then A → B is called as complete non-trivial.
+- When A intersection B is NULL, then A → B is called a complete non-trivial.
 
 ### Inference Rule
-- The Armstrong's axioms are the basic inference rule.
+- Armstrong's axioms are the basic inference rule.
 - Armstrong's axioms are used to conclude functional dependencies on a relational database.
-- The inference rule is a type of assertion. It can apply to set of FD (functional dependency) to derive other FD.
-- Using the inference rule, we can derive addtional functional dependency from the initial set.
+- The inference rule is a type of assertion. It can apply to a set of FD (functional dependency) to derive other FD.
+- Using the inference rule, we can derive additional functional dependency from the initial set.
 
-The function dependency has 6 types of inference rule.
+The function dependency has 6 types of inference rules.
 
 #### Reflexive Rule ($IR_1$)
 In the reflexive rule, if Y is a subset of X, then X determines Y.
@@ -408,12 +408,12 @@ In the reflexive rule, if Y is a subset of X, then X determines Y.
 If X ⊇ Y then X → Y.
 
 #### Augmentation Rule ($IR_2$)
-The augmentation is also called as a partial dependency. In augmentation, if X determines Y, then XZ determines YZ for any Z.
+The augmentation is also called a partial dependency. In augmentation, if X determines Y, then XZ determines YZ for any Z.
 
 If X → Y then XZ → YZ.
 
 #### Transitive Rule ($IR_3$)
-In the transitive rule, if X determines Y and Y determine Z, then X must also determine Z.
+In the transitive rule, if X determines Y and Y determines Z, then X must also determine Z.
 
 If X → Y and Y → Z then X → Z. 
 
@@ -423,9 +423,9 @@ Union rule says, if X determines Y and X determines Z, then X must also determin
 If X → Y and X → Z then X → YZ.
 
 #### Decomposition Rule ($IR_5$)
-Decomposition rule is also known as project rule. It is the reverse of union rule.
+The decomposition rule is also known as the project rule. It is the reverse of the union rule.
 
-This Rule says, if X determines Y and Z, then X determines Y and X determines Z separately.
+This rule says, if X determines Y and Z, then X determines Y and X determines Z separately.
 
 If X → YZ then X → Y and X → Z.
 
@@ -436,38 +436,38 @@ If X → Y and YZ → W then XZ → W.
 
 ### DBMS Normalisation
 A large database defined as a single relation may result in data duplication. This repetition of data may result in:
-- Marketing relations very large.
+- Marketing relations are very large.
 - It isn't easy to maintain and update data as it would involve searching many records in relation.
 - Wastage and poor utilization of disk space and resources.
 - The likelihood of errors and inconsistencies increases.
 
-So to handle these problems, we should analyze the decompose the relations with redundant data into smaller, simpler, and well-structured relations that are satisfy desirable properties. Normalisation is a process of decomposing the relations into relations with fewer attributes.
+So to handle these problems, we should analyze the decompose the relations with redundant data into smaller, simpler, and well-structured relations that satisfy desirable properties. Normalisation is a process of decomposing the relations into relations with fewer attributes.
 
 Data modification anomalies can be categorized into three types:
-- **Insertion Anomaly**: Insertion Anomaly refers to when one cannot insert a new tuple into a relationship due to lack of data.
+- **Insertion Anomaly**: Insertion Anomaly refers to when one cannot insert a new tuple into a relationship due to a lack of data.
 - **Deletion Anomaly**: The delete anomaly refers to the situation where the deletion of data results in the unintended loss of some other important data.
 - **Updatation Anomaly**: The update anomaly is when an update of a single data value requires multiple rows of data to be updated.
 
 #### Types of Normal Forms
-Normalisation works through a serires of stages called Normal forms. The normal forms apply to individual relations. The relation is said to be in particular normal form if it satisfies constraints.
+Normalisation works through a series of stages called Normal forms. The normal forms apply to individual relations. The relation is said to be in particular normal form if it satisfies constraints.
 
 ![](https://static.javatpoint.com/dbms/images/dbms-normalization.png)
 
 | Normal Form | Description |
 | ---- | ---- |
 | 1NF | A relation is in 1NF if it contains an atomic value |
-| 2NF | A relation will be in 2NF if it is in 1NF and all non-key attributes are fully functional dependent on the primary key |
+| 2NF | A relation will be in 2NF if it is in 1NF and all non-key attributes are fully functional and dependent on the primary key |
 | 3NF | A relation will be in 3NF if it is in 2NF and no transition dependency form |
-| BCNF | A stronger defition of 3NF is known as Boyce Codd's normal form |
+| BCNF | A stronger definition of 3NF is known as Boyce Codd's normal form |
 | 4NF | A relation will be in 4NF if it is in Boyce Codd's normal form and has no multi-valued dependency |
 | 5NF | A relation is in 5NF. If it is in 4NF and does not contain any join dependency, joining should be lossless |
 
 #### DBMS 1NF
-- A relation will be 1NF if it contains an atomoci value.
-- It states that an attribute of a table cannot hold multiple values. It must hold only single-valued attribute.
-- First normal form disabllows the multi-valued attribute, composite attribute, and their combinations.
+- A relation will be 1NF if it contains an atomic value.
+- It states that an attribute of a table cannot hold multiple values. It must hold only a single-valued attribute.
+- First normal form disallows the multi-valued attribute, composite attribute, and their combinations.
 
-Example: Relation EMPLOYEE is not in 1NF because of multi-valued attribute EMP_PHONE.
+Example: Relation EMPLOYEE is not in 1NF because of the multi-valued attribute EMP_PHONE.
 
 | EMP_ID | EMP_NAME | EMP_PHONE | EMP_STAT | 
 | ---- | ---- | ---- | ---- |
@@ -487,7 +487,7 @@ The decomposition of the EMPLOYEE table into 1NF has been shown below:
 
 #### DBMS 2NF
 - In the 2NF, relational must be in 1NF.
-- In the second normal form, all non-key attributes are fully functional dependent on the primary key.
+- In the second normal form, all non-key attributes are fully functional and dependent on the primary key.
 
 Example: Let's assume, a school can store the data of teachers and the subjects they teach. In a school, a teacher can teach more than one subject.
 
@@ -499,7 +499,7 @@ Example: Let's assume, a school can store the data of teachers and the subjects 
 | 83 | Math | 38| 
 | 83 | Computer | 38| 
 
-In the given table, non-prime attribute TEACHER_AGE is dependent on TEACHER_ID which is a proper subset of a candidate key. That's why it violates the rule for 2NF.
+In the given table, the non-prime attribute TEACHER_AGE is dependent on TEACHER_ID which is a proper subset of a candidate key. That's why it violates the rule for 2NF.
 
 To convert the given table into 2NF, we decompose it into two tables:
 
@@ -519,11 +519,11 @@ To convert the given table into 2NF, we decompose it into two tables:
 | 83         | Computer  | 
 
 #### DBMS 3NF
-- A relation will be in 3NF if it is in 2NF and not contain any transitive partial dependency.
-- 3NF is used to reduce the data duplication. It is also used to achieve the data integrity.
-- If there is no transitive dependency for non-prime attributes, then the relation must be in third normal form.
+- A relation will be in 3NF if it is in 2NF and does not contain any transitive partial dependency.
+- 3NF is used to reduce data duplication. It is also used to achieve data integrity.
+- If there is no transitive dependency for non-prime attributes, then the relationship must be in the third normal form.
 
-A relation is in third normal form if it holds atleast one of the following conditions for every non-trivial function dependency X → Y.
+A relation is in third normal form if it holds at least one of the following conditions for every non-trivial function dependency X → Y.
 1. X is a super key.
 2. Y is a prime attribute, i.e., each element of Y is part of some candidate key.
 
@@ -542,7 +542,7 @@ Candidate key: {EMP_ID}
 
 Non-prime attributes: In the given table, all attributes except EMP_ID are non-prime.
 
-Here, EMP_STATE & EMP_CITY dependent on EMP_ZIP and EMP_ZIP dependent on EMP_ID. The non-prime attributes (EMP_STATE, EMP_CITY) transitively dependent on super key(EMP_ID). It violates the rule of third normal form.
+Here, EMP_STATE & EMP_CITY dependent on EMP_ZIP and EMP_ZIP dependent on EMP_ID. The non-prime attributes (EMP_STATE, EMP_CITY) are transitively dependent on the super key(EMP_ID). It violates the rule of the third normal form.
 
 That's why we need to move the EMP_CITY and EMP_STATE to the new <EMPLOYEE_ZIP> table, with EMP_ZIP as a Primary key.
 
@@ -563,7 +563,7 @@ That's why we need to move the EMP_CITY and EMP_STATE to the new <EMPLOYEE_ZIP> 
 | 462007 | MP | Bhopal | 
 
 #### DBMS BCNF
-- BCNF is the advance version of 3NF. It is stricter than 3NF.
+- BCNF is the advanced version of 3NF. It is stricter than 3NF.
 - A table is in BCNF if every functional dependency X → Y, X is the super key of the table.
 - For BCNF, the table should be in 3NF, and for every FD, LHS is super key.
 
@@ -614,11 +614,11 @@ Candidate keys:
 - For the second table: EMP_DEPT
 - For the third table: {EMP_ID, EMP_DEPT}
 
-Now, this is in BCNF because left side part of both the functional dependencies is a key.
+Now, this is in BCNF because the left side part of both the functional dependencies is a key.
 
 #### DBMS 4NF
-- A relation will be in 4NF if it is in Boyce Codd normal form and has no multi-valued dependency.
-- For a dependency A → B, if for a single value of A, multiple values of B exists, then the relation will be a multi-valued dependency.
+- A relation will be in 4NF if it is in Boyce Codd's normal form and has no multi-valued dependency.
+- For a dependency A → B, if for a single value of A, multiple values of B exist, then the relationship will be a multi-valued dependency.
 
 | STU_ID | COURSE | HOBBY |
 | ---- | ---- | ---- |
@@ -628,7 +628,7 @@ Now, this is in BCNF because left side part of both the functional dependencies 
 | 74 | Biology | Cricket | 
 | 59 | Physics | Hockey | 
 
-The given STUDENT table is in 3NF, but the COURSE and HOBBY are two independent entity. Hence, there is no relationship between COURSE and HOBBY.
+The given STUDENT table is in 3NF, but the COURSE and HOBBY are two independent entities. Hence, there is no relationship between COURSE and HOBBY.
 
 In the STUDENT relation, a student with STU_ID, 21 contains two courses, Computer and Math and two hobbies, Dancing and Singing. So there is a Multi-valued dependency on STU_ID, which leads to unnecessary repetition of data.
 
@@ -651,8 +651,8 @@ So to make the above table into 4NF, we can decompose it into two tables:
 | 59 | Hockey |  
 
 #### DBMS 5NF
-- A relation is in 5NF if it is in 4NF and not contains any join dependency and joining should be lossless.
-- 5NF is satisfied when all the tables are broken into as many tables as possible in order to avoid redundancy.
+- A relation is in 5NF if it is in 4NF and does not contain any join dependency and joining should be lossless.
+- 5NF is satisfied when all the tables are broken into as many tables as possible to avoid redundancy.
 - 5NF is also known as Project-join normal form (PJ/NF).
 
 | SUBJECT | LECTURER | SEMESTER | 
@@ -663,9 +663,9 @@ So to make the above table into 4NF, we can decompose it into two tables:
 | Math | Akash | Semester 2 | 
 | Chemistry | Praveen | Semester 1 | 
 
-In the above table, John takes both Computer and Math class for Semester 1 but he doesn't take Math class for Semester 2. In this case, combination of all these fields required to identify a valid data.
+In the above table, John takes both Computer and Math classes for Semester 1 but he doesn't take Math classes for Semester 2. In this case, a combination of all these fields is required to identify valid data.
 
-Suppose we add a new Semester as Semester 3 but do not know about the subject and who will be taking that subject so we leave Lecturer and Subject as NULL. But all three columns together acts as a primary key, so we can't leave other two columns blank.
+Suppose we add a new Semester as Semester 3 but do not know about the subject and who will be taking that subject so we leave Lecturer and Subject as NULL. But all three columns together act as a primary key, so we can't leave the other two columns blank.
 
 So to make the above table into 5NF, we can decompose it into three relations P1, P2 & P3:
 
@@ -684,7 +684,7 @@ So to make the above table into 5NF, we can decompose it into three relations P1
 | Math | Akash | 
 | Chemistry | Praveen | 
 
-| SEMSTER | LECTURER | 
+| SEMESTER | LECTURER | 
 | ---- | ---- |
 | Semester 1 | Anshika | 
 | Semester 1 | John | 
@@ -702,7 +702,7 @@ So to make the above table into 5NF, we can decompose it into three relations P1
 | Enforces the concept of relational integrity | |
 
 ### Relational Decomposition
-- When a relation in the relational model is not in appropriate normal form then the decomposition of a relation is required.
+- When a relation in the relational model is not inappropriate normal form then the decomposition of a relationship is required.
 - In a database, it breaks the table into multiple tables.
 - If the relation has no proper decomposition, then it may lead to problems like loss of information.
 - Decomposition is used to eliminate some of the problems of bad design like anomalies, inconsistencies, and redundancy.
@@ -716,9 +716,9 @@ So to make the above table into 5NF, we can decompose it into three relations P1
 - It is an important constraint of the database.
 - In the dependency preservation, at least one decomposed table must satisfy every dependency.
 - If a relation R is decomposed into relation R1 and R2, then the dependencies of R either must be a part of R1 or R2 or must be derivable from the combination of functional dependencies of R1 and R2.
-- For example, suppose there is a relation R (A, B, C, D) with functional dependency set (A->BC). The relational R is decomposed into R1(ABC) and R2(AD) which is dependency preserving because FD A->BC is a part of relation R1(ABC).
+- For example, suppose there is a relation R (A, B, C, D) with a functional dependency set (A->BC). The relational R is decomposed into R1(ABC) and R2(AD) which is dependency preserving because FD A->BC is a part of relation R1(ABC).
 
-### Multivaled Depedency
+### Multivalued Dependency
 - Multivalued dependency occurs when two attributes in a table are independent of each other but, both depend on a third attribute.
 - A multivalued dependency consists of at least two attributes that are dependent on a third attribute that's why it always requires at least three attributes.
 
@@ -733,18 +733,18 @@ So to make the above table into 5NF, we can decompose it into three relations P1
 
 ### Inclusion Dependence
 - Multivalued dependency and join dependency can be used to guide database design although they both are less common than functional dependencies.
-- Inclusion dependencies are quite common. They typically show little influence on designing of the database.
+- Inclusion dependencies are quite common. They typically show little influence on the design of the database.
 - The inclusion dependency is a statement in which some columns of a relation are contained in other columns.
 - The example of inclusion dependency is a foreign key. In one relation, the referring relation is contained in the primary key column(s) of the referenced relation.
-- Suppose we have two relations R and S which was obtained by translating two entity sets such that every R entity is also an S entity.
-- Inclusion dependency would be happen if projecting R on its key attributes yields a relation that is contained in the relation obtained by projecting S on its key attributes.
+- Suppose we have two relations R and S which were obtained by translating two entity sets such that every R entity is also an S entity.
+- Inclusion dependency would happen if projecting R on its key attributes yields a relation that is contained in the relation obtained by projecting S on its key attributes.
 - In inclusion dependency, we should not split groups of attributes that participate in an inclusion dependency.
 - In practice, most inclusion dependencies are key-based that is involved only keys.
 
 ### Canonical Cover
 In the case of updating the database, the responsibility of the system is to check whether the existing functional dependencies are getting violated during the process of updating. In case of a violation of functional dependencies in the new database state, the rollback of the system must take place.
 
-A canonical cover or irreducible a set of functional dependencies FD is a simplified set of FD that has a similar closure as the original set FD.
+A canonical cover or irreducible set of functional dependencies FD is a simplified set of FD that has a similar closure as the original set FD.
 
 An attribute of an FD is said to be extraneous if we can remove it without changing the closure of the set of FD.
 
@@ -752,11 +752,90 @@ An attribute of an FD is said to be extraneous if we can remove it without chang
 
 ## Transaction Processing
 ### Transaction
+- The transaction is a set of logically related operation. It contains a group of tasks.
+- A transaction is an action or serires of actions. It is performed by a single user to perform operations for accessing the contents of the database.
+
+**Operations of Transaction**
+
+Following are the main operations of transaction.
+- READ(X): Read operation is used to read the value of X from the database and stores it in a buffer in main memory.
+- WRITE(X): Write operation is used to write the value back to the database from the buffer.
+
 ### Transaction Property
-### Stats of Transaction
+The transaction has four properties. These are used to maintain consistency in a database, before and after the transaction.
+
+#### Property of Transaction
+##### Atomoicity
+- It states that all operations of the transaction take place at once if not, the transaction is aborted.
+- There is no widway, i.e., the transaction cannot occur partially. Each transaction is treated as one unit and either run to copmletion or is not executed at all.
+
+Atommicity involves the following two operations:
+- Abort: If a transaction aborts then all the changes made are not visible.
+- Commit: If a transaction commits then all the changes made are visible.
+
+##### Consistency 
+- The integrity constraints are maintained so that the database is consistent before and after the transaction.
+- The execution of a transaction will leave a database in either its prior stable state or a new stable state.
+- The consistent property of database states that every transaction sees a consistent database instance.
+- The transaction is used to transform the database from one consistent state to another consistent state.
+
+##### Isolation
+- It shows that the data which is used at the time of execution of a transaction cannot be used by the second transaction until the first one is completed.
+- In isolation, if the transaction T1 is being executed and using the data item X, then that data item can't be accessed by any other transaction T2 until the transaction T1 ends.
+- The concurrency control subsystem of the DBMS enforced the isolation property.
+
+##### Durability
+- The durability property is used to indicate the performance of the database's consistent state. It states that the transaction made the permanent changes.
+- They cannot be lost by the erroneous operation of a faulty transaction or by the system failure. When a transaction is completed, then the database reaches a state known as the consistent state. That consistent state cannot be lost, even in the event of a system's failure.
+- The recovery subsystem of the DBMS has the responsibility of Durability property.
+
+### States of Transaction
+
+![](https://static.javatpoint.com/dbms/images/dbms-states-of-transaction.png)
+
+In a database, the transaction can be in one of the following states:
+- Active State
+    - The active state is the first state of every transaction. In this state, the transaction is being executed.
+- Partialy commited
+    - In the partially commited state, a transaction executes its final operation, but the data is still not saved to the database.
+- Commited
+    - A transaction is said to be in a committed state if it executes all its operations successfully. In this state, all the effects are now permanently saved on the database system.
+- Failed state
+    - If any of the checks made by the database recovery system fails, then the transaction is said to be in the failed state.
+- Aborted
+    - If any of the checks fail and the transaction has reached a failed state then the database recovery system will make sure that the database is in its previous consistent state. If not then it will abort or roll back the transaction to bring the database in a consistency state.
+    - If the transaction fails in the middle of the transaction then before executing the transaction, all executed transactions are rolled back to its consistent state.
+    - After aborting the transaction, the database recovery module will select one of the two operations:
+        - Re-start the transaction
+        - Kill the transaction
+
 ### DBMS Schedule
-### Testing of Serializability
+A series of operation from one transaction to another transaction is known as schedule. It is used to preserve the order of the operation in each of the individual transaction.
+
+#### Serial Schedule
+The serial schedule is a type of schedule where one transaction is executed completely before starting another transaction. In the serial schedule, when the first transaction completes its cycle, then the next transaction is executed.
+
+#### Non-Serial Schedule
+If interleaving of operations is allowed, then there will be non-serial schedule. It contains many possible orders in which the system can execute the individual operations of the transactions.
+
+#### Serializable Schedule
+The serializability of schedules is used to find non-serial schedules that allow the transaction to execute concurrently without interfering with one another. It identifies which schedules are correct when executions of the transaction have interleaving of their operations. A non-serial schedule will be serializable if its result is equal to the result of its transactions executed serially.
+
 ### Conflict Schedule
+A schedule is called conflict serializability if after swapping of non-conflicting operations, it can transform into a serial schedule.
+The schedule will be a conflict serializable if it is conflict equivalent to a serial schedule.
+
+#### Conflict Operations
+The two operations become conflicting if all conditions satisfy:
+- Both belong to seperate transcations.
+- They have the same data item.
+- They contain at least one write operation.
+
+#### Conflict Equivalent
+In the conflict equivalent, one can be transformed to another by swapping non-conflicting operations. Two schedules are said to be conflict equivalent if and only if:
+- They contain the same set of the transaction.
+- If each pair of conflict operations are ordered in the same way.
+
 ### View Serializability
 ### Recoverability of Schedule
 ### Failure Classification
