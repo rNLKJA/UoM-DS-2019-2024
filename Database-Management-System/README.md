@@ -503,7 +503,6 @@ In the given table, the non-prime attribute TEACHER_AGE is dependent on TEACHER_
 
 To convert the given table into 2NF, we decompose it into two tables:
 
-
 | TEACHER_ID | TEACHER_AGE | 
 | ---------- | ----------- |
 | 25         | 30          | 
@@ -837,11 +836,63 @@ In the conflict equivalent, one can be transformed to another by swapping non-co
 - If each pair of conflict operations are ordered in the same way.
 
 ### View Serializability
+- A schedule will view serializable if it is view equivalent to a serial schedule.
+- If a schedule is conflict serializable, then it will be view serializable.
+- The view serializable which does not conflict serializable contains blind writers.
+
 ### Recoverability of Schedule
+Sometimes a transaction may not execute completely due to a software issue, system crash or hardware failure. In that case, the failed transation has to be rollback. But some other transaction may also have used value produced by the failed transaction. So we have to rollback those transactions.
+
+> **Irrecoverable schedule**: The schedule will be irrecoverable if T_j reads the updated value of T_i and T_j commited before T_i commit.
+
+> **Recoverable with cascading rollback**: The schedule will be recoverable with cascading rollback if T_j reads the updated value of T_i. Commit of T_j is delayed till commit of T_i.
+
 ### Failure Classification
+To find that where the problem has occurred, we generalize a failure into the following categories:
+- The transaction failure occurs if fails to execute or when it reaches a point from where it can't go any further. If a few transaction or process is hurt, then this is called as transaction failure. Reasons for a transaction failure could be:
+    - Logical errors: If a transaction cannot complete due to some code error or an internal error condition, then the logical error occurs.
+    - Syntax errors: If occurs where the DBMS itself terminates an active transation because the database system is not able to execute it. 
+- System crash failure can occur due to power failure or other hardware or software failure.
+- Disk Failure
+    - It occurs where hard-disk drives or storage drives used to fail frequently. It was a common problem in the early days of technology evolution.
+    - Disk failure occurs due to the formation of bad sectors, disk head crash, and unreachability to the disk or any other failure, which destroy all or part of disk storage.
+
 ### Log-Based Recovery
+- The log is a sequence of records. Log of each transaction is maintained in some stable storage so that if any failure occurs, then it can be recovered from there.
+- If any operation is performed on the database, then it will be recorded in the log.
+- But the process of storing the logs should be done before the actual transaction is applied in the database.
+
+- Deferred database modification
+    - The deferred modification technique occurs if the transation does not modify the database until it has commited.
+    - In this method, all the logs are created and stored in the stable storage, and the database is updated when a transaction commits.
+- Immediate database modification
+    - The immediate modification technique occurs if database modification occurs while the transaction is still active.
+    - In this technique, the database is modified immeidately after every operation. It follows an actual database modification.
+
+**Recovery using Log records**
+When the system is crashed, then the system consults the log to find which transactions need to be undone and which need to be redone.
+- If the log contains the record <T_i, start> and <T_i, commit>, then the transation T_i needs to be redone.
+- If log contains record <T_n, start> but does not contain the record either <T_i, commit> or <T_i, abort>, then the Transaction T_i to be undone.
+
 ### DBMS Checkpoint
+- The checkpoint is a type of mechansim where all the previous logs are removed from the system and permanelty stored in the storage disk.
+- The checkpoint is like a bookmart. While the execution of the transation, such checkpoints are marked, and the transaction is executed then using the steps of the transation, the log files will be created.
+- When it reaches to the checkpoint, then the transaction will be updated into the database, and till that point, the entire log file will be removed from the file. Then the log file is updated with the new step of transaction till next checkpoint and so on.
+- The checkpoint is used to declare a point before which the DBMS was in the consistent state, and all transaction were commited.
+
 ### Deadlock in DBMS
+A deadlock is a condition where two or more transaction are waiting indefinitely for one another to give up locks. Deadlocks is said to be one of the most feared complications in DBMS as no task ever gets finished and is in waiting state forever.
+
+**Deadlock Avoidance**
+- When a database is stuck in a deadlock state, then it is better to avoid the database rather than aborting or restating the database. This is a waste of time and resource.
+- Deadlock avoidance mechanism is used to detect any deadlock situation in advance. A method like "wait for graph" is used for detecting the deadlock situation but this method is suitable only for the smaller database. For the larger database, deadlock prevention method can be used.
+
+**Deadlock Detection**
+In a database, when a transaction waits indefinitely to obtain a lock, then the DBMS should detect whether the transaction is involved in a deadlock or not. The lock manager maintains a Wait for the graph to detect the deadlock cycle in the database.
+
+**Deadlock Prevention**
+- Deadlock prevention method is suitable for a large database. If the resources are allocated in such a way that deadlock never occurs, then the deadlock can be prevented.
+- The Database management system analyzes the operations of the transaction whether they can create a deadlock situation or not. If they do, then the DBMS never allowed that transaction to be executed.
 
 ---
 
